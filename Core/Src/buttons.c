@@ -21,7 +21,7 @@
 
 UIBUTTON(B1)
 {
-   return HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin);
+   return !HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin);
 }
 
 UIBUTTONS(&B1);
@@ -52,6 +52,7 @@ void uibuttons_fire_falling_edge(uibutton_t *button)
 #if (UIBUTTONS_ENABLE_SINGLE_PRESS || UIBUTTONS_ENABLE_LONG_PRESS)
 void uibuttons_fire_short_press(uibutton_t *button)
 {
+
 
 }
 #endif
@@ -93,6 +94,10 @@ void uibuttons_fire_longest_release(uibutton_t *button)
 
 void uibuttons_fire_repeat_press(uibutton_t *button)
 {
+   if(button == &B1)
+   {
+      process_start(&batdetect,NULL);
+   }
 
 }
 

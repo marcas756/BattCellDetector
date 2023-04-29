@@ -24,6 +24,8 @@
 #include "myos.h"
 #include "leds.h"
 #include "buttons.h"
+#include "debug.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -39,9 +41,19 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 
+#if DEBUG_MAIN
+#define DBG(...) DBG_FUNC(__VA_ARGS__)
+#else
+#define DBG(...)
+#endif
+
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc;
+
+TIM_HandleTypeDef htim21;
+
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
@@ -52,16 +64,89 @@ UART_HandleTypeDef huart2;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_ADC_Init(void);
+static void MX_TIM21_Init(void);
 /* USER CODE BEGIN PFP */
 /* USER CODE BEGIN PFP */
 int __io_putchar(int ch);
 /* USER CODE END PFP */
 
-
-/* USER CODE END PFP */
-
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+#define BATDETECT_VREF 3.31
+#define BATDETECT_SAMPLES 4
+#define BATDETECT_PAUSE (TIMESTAMP_TICKS_PER_SEC/200  )
+
+
+#define  batdetect_attach_load()    HAL_GPIO_WritePin(VBATT_LOAD_GPIO_Port, VBATT_LOAD_Pin, GPIO_PIN_SET)
+#define  batdetect_detach_load()    HAL_GPIO_WritePin(VBATT_LOAD_GPIO_Port, VBATT_LOAD_Pin, GPIO_PIN_RESET)
+
+
+
+
+
+
+PROCESS(batdetect,batdetect);
+PROCESS_THREAD(batdetect)
+{
+   static etimer_t et;
+   static uint8_t samples;
+   static uint16_t u0,ul;
+   static rtimer_timestamp_t start;
+
+
+   PROCESS_BEGIN();
+
+
+
+
+   u0 = ul = 0;
+
+   const ADC_ChannelConfTypeDef sConfig = {ADC_CHANNEL_0,ADC_RANK_CHANNEL_NUMBER};
+
+   if (HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef*)&sConfig) != HAL_OK)
+   {
+     Error_Handler();
+   }
+
+   for(samples = 0; samples < BATDETECT_SAMPLES; samples++)
+   {
+      batdetect_attach_load();
+      PROCESS_SLEEP(&et,BATDETECT_PAUSE);
+
+      HAL_ADC_Start(&hadc);
+      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK )
+      {
+         PROCESS_SUSPEND();
+      }
+
+      ul+=HAL_ADC_GetValue(&hadc);
+
+      batdetect_detach_load();
+
+      start = rtimer_now();
+      PROCESS_SLEEP(&et,BATDETECT_PAUSE);
+      DBG("%d\n",RTIMER_TIMESTAMP_DIFF(rtimer_now(),start));
+      HAL_ADC_Start(&hadc);
+      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK )
+      {
+         PROCESS_SUSPEND();
+      }
+
+      u0+=HAL_ADC_GetValue(&hadc);
+   }
+
+
+
+   DBG("%d;%d\n",u0,ul);
+
+
+
+   PROCESS_END();
+}
+
+
 
 /* USER CODE END 0 */
 
@@ -94,11 +179,20 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
+  MX_ADC_Init();
+  MX_TIM21_Init();
   /* USER CODE BEGIN 2 */
+
+
+
+
+  /* Perform an ADC automatic self-calibration */
+  HAL_ADCEx_Calibration_Start(&hadc,ADC_SINGLE_ENDED);
 
   myos_init();
   leds_init();
   buttons_init();
+
 
   /* USER CODE END 2 */
 
@@ -167,6 +261,120 @@ void SystemClock_Config(void)
 }
 
 /**
+  * @brief ADC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC_Init(void)
+{
+
+  /* USER CODE BEGIN ADC_Init 0 */
+
+  /* USER CODE END ADC_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC_Init 1 */
+
+  /* USER CODE END ADC_Init 1 */
+
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  */
+  hadc.Instance = ADC1;
+  hadc.Init.OversamplingMode = DISABLE;
+  hadc.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
+  hadc.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc.Init.SamplingTime = ADC_SAMPLETIME_3CYCLES_5;
+  hadc.Init.ScanConvMode = ADC_SCAN_DIRECTION_FORWARD;
+  hadc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc.Init.ContinuousConvMode = DISABLE;
+  hadc.Init.DiscontinuousConvMode = DISABLE;
+  hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc.Init.DMAContinuousRequests = DISABLE;
+  hadc.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc.Init.Overrun = ADC_OVR_DATA_PRESERVED;
+  hadc.Init.LowPowerAutoWait = DISABLE;
+  hadc.Init.LowPowerFrequencyMode = DISABLE;
+  hadc.Init.LowPowerAutoPowerOff = DISABLE;
+  if (HAL_ADC_Init(&hadc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel to be converted.
+  */
+  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC_Init 2 */
+
+  /* USER CODE END ADC_Init 2 */
+
+}
+
+/**
+  * @brief TIM21 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM21_Init(void)
+{
+
+  /* USER CODE BEGIN TIM21_Init 0 */
+
+  /* USER CODE END TIM21_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM21_Init 1 */
+
+  /* USER CODE END TIM21_Init 1 */
+  htim21.Instance = TIM21;
+  htim21.Init.Prescaler = 512;
+  htim21.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim21.Init.Period = 65535;
+  htim21.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim21.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+  if (HAL_TIM_Base_Init(&htim21) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim21, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_OC_Init(&htim21) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim21, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_TIMING;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_OC_ConfigChannel(&htim21, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM21_Init 2 */
+
+  /* USER CODE END TIM21_Init 2 */
+
+}
+
+/**
   * @brief USART2 Initialization Function
   * @param None
   * @retval None
@@ -182,7 +390,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 500000;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
@@ -216,10 +424,9 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, VBATT_LOAD_Pin|LD2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -227,20 +434,20 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LD2_Pin */
-  GPIO_InitStruct.Pin = LD2_Pin;
+  /*Configure GPIO pins : VBATT_LOAD_Pin LD2_Pin */
+  GPIO_InitStruct.Pin = VBATT_LOAD_Pin|LD2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PB13 */
-  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  /*Configure GPIO pin : PA8 */
+  GPIO_InitStruct.Pin = GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF2_MCO;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  GPIO_InitStruct.Alternate = GPIO_AF0_MCO;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

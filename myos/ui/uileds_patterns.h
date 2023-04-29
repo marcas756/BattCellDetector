@@ -44,6 +44,8 @@ EXTERN_UILEDS_PATTERN(medium_flashing);
 EXTERN_UILEDS_PATTERN(slow_flashing);
 EXTERN_UILEDS_PATTERN(single_flash);
 EXTERN_UILEDS_PATTERN(double_flash);
+EXTERN_UILEDS_PATTERN(heart_beat);
 EXTERN_UILEDS_PATTERN(triple_flash);
+
 
 #endif /* UILEDS_PATTERNS_H_ */

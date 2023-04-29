@@ -10,6 +10,8 @@
 
 #include "uibuttons.h"
 
+EXTERN_UIBUTTON(LD2);
+
 void buttons_init(void);
 
 #endif /* BUTTONS_H_ */

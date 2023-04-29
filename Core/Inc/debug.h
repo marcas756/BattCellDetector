@@ -58,7 +58,8 @@
 
 /* application modules */
 #define DEBUG_PROCESS   0
-#define DEBUG_BUTTONS   1
+#define DEBUG_BUTTONS   0
+#define DEBUG_MAIN      1
 
 /* ...... */
 

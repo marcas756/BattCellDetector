@@ -99,9 +99,7 @@ struct process_t {
 struct process_event_t {
    process_event_id_t id;
    void *data;
-#if (MYOSCONF_PROC_EVENT_FROM == MYOSCONF_YES)
    process_t *from;
-#endif
    process_t *to;
 };
 
@@ -162,7 +160,7 @@ int process_thread_##name(process_t *process, process_event_t *evt)
    do{ \
       process_post(PROCESS_THIS(),PROCESS_EVENT_CONTINUE,NULL); \
       PROCESS_WAIT_EVENT(PROCESS_EVENT_CONTINUE); \
-   while(0)
+   }while(0)
 
 void process_module_init(void);
 void process_init( process_t *process, process_thread_t thread );

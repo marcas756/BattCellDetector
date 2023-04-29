@@ -37,14 +37,21 @@
 
 #include <stdint.h>  
 
+#include "stm32l0xx_ll_tim.h"
+#include "stm32l0xx_hal_tim.h"
+
+extern TIM_HandleTypeDef htim21;
+
 typedef uint16_t rtimer_arch_timestamp_t;
 typedef uint16_t rtimer_arch_timespan_t;
 
 #define RTIMER_TIMESTAMP_ARCH_DIFF(a,b)         ((int16_t)((a)-(b)))
-#define RTIMER_ARCH_TICKS_PER_SEC   (((rtimer_arch_timestamp_t)(~((rtimer_arch_timestamp_t)(0)))+1)/2)
+#define RTIMER_ARCH_RESOLUTION                  (16e-6)        //!< 16us
+#define RTIMER_ARCH_TICKS_PER_SEC               (1/RTIMER_ARCH_RESOLUTION)
 
-rtimer_arch_timestamp_t rtimer_arch_now(void);
+
+#define rtimer_arch_now()        ((rtimer_arch_timestamp_t)LL_TIM_GetCounter(TIM21))
 void rtimer_arch_timer_set(rtimer_arch_timestamp_t stop);
-void rtimer_arch_module_init(void);
+#define rtimer_arch_init()       HAL_TIM_Base_Start(&htim21)
 
 #endif /* RTIMER_ARCH_H_ */

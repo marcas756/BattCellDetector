@@ -33,41 +33,8 @@
 
 
 #include "rtimer_arch.h"
-#include <time.h>
-#include <signal.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/time.h>
-/*
-   ITIMER_REAL
-   This timer counts down in real (i.e., wall clock) time.
-   At each expiration, a SIGALRM signal is generated.
 
-   ITIMER_VIRTUAL
-   This timer counts down against the user-mode CPU time
-   consumed by the process.  (The measurement includes CPU
-   time consumed by all threads in the process.)  At each
-   expiration, a SIGVTALRM signal is generated.
 
-   ITIMER_PROF
-   This timer counts down against the total (i.e., both user
-   and system) CPU time consumed by the process.  (The
-   measurement includes CPU time consumed by all threads in
-   the process.)  At each expiration, a SIGPROF signal is
-   generated.
-
-   In conjunction with ITIMER_VIRTUAL, this timer can be used
-   to profile user and system CPU time consumed by the
-   process.
-*/
-
-void rtimer_arch_module_init(void)
-{
-}
-
-rtimer_arch_timestamp_t rtimer_arch_now(void)
-{
-}
 
 void rtimer_arch_timer_set(rtimer_arch_timestamp_t stop)
 {

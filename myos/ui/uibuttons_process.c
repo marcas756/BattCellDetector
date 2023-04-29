@@ -54,7 +54,7 @@ PROCESS_THREAD(uibuttons_process)
         PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
 
         do{
-        	UIBUTTONS_POLL_ALL();
+            UIBUTTONS_POLL_ALL();
             etimer_reset(&et);
         }while(etimer_expired(&et));
     }
@@ -66,7 +66,7 @@ PROCESS_THREAD(uibuttons_process)
 
 
 
-void uibuttons_process_module_init(void)
+void uibuttons_process_init(void)
 {
     process_start(&uibuttons_process,NULL);
 }

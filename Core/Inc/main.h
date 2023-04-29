@@ -31,12 +31,13 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "process.h"
 
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
+PROCESS_EXTERN(batdetect);
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -61,6 +62,10 @@ void Error_Handler(void);
 #define B1_GPIO_Port GPIOC
 #define MCO_Pin GPIO_PIN_0
 #define MCO_GPIO_Port GPIOH
+#define VBATT_SNS_Pin GPIO_PIN_0
+#define VBATT_SNS_GPIO_Port GPIOA
+#define VBATT_LOAD_Pin GPIO_PIN_1
+#define VBATT_LOAD_GPIO_Port GPIOA
 #define USART_TX_Pin GPIO_PIN_2
 #define USART_TX_GPIO_Port GPIOA
 #define USART_RX_Pin GPIO_PIN_3

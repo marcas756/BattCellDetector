@@ -80,18 +80,16 @@ bool process_post(process_t *to, process_event_id_t evtid, void* data)
    }
 
    evt = RINGBUFFER_TAIL_PTR(process_event_queue);
-#if (MYOSCONF_PROC_EVENT_FROM == MYOSCONF_YES)
+
    evt->from = PROCESS_THIS();
-#endif
+
    evt->to = to;
    evt->id = evtid;
    evt->data = data;
 
-#if (MYOSCONF_PROC_EVENT_FROM == MYOSCONF_YES)
+
    DBG_PROCESS("post from %p to %p evtid=%d ...\n",(void*)evt->from,(void*)evt->to,evt->id);
-#else
-   DBG_PROCESS("post to %p evtid=%d ...\n",(void*)evt->to,evt->id);
-#endif
+
 
    RINGBUFFER_PUSH(process_event_queue);
 
@@ -101,11 +99,8 @@ bool process_post(process_t *to, process_event_id_t evtid, void* data)
 bool process_deliver_event(process_event_t *evt)
 {
 
-#if (MYOSCONF_PROC_EVENT_FROM == MYOSCONF_YES)
+
    DBG_PROCESS("deliver_event from %p to %p evtid=%d ...\n",(void*)evt->from,(void*)evt->to,evt->id);
-#else
-   DBG_PROCESS("deliver_event to %p evtid=%d ...\n",(void*)evt->to,evt->id);
-#endif
 
    if ( PROCESS_IS_RUNNING(evt->to) )
    {
@@ -130,18 +125,15 @@ bool process_deliver_event(process_event_t *evt)
 bool process_post_sync(process_t *to, process_event_id_t evtid, void* data)
 {
    process_event_t evt;
-#if (MYOSCONF_PROC_EVENT_FROM== MYOSCONF_YES)
+
    evt.from = PROCESS_THIS();
-#endif
+
    evt.to = to;
    evt.id = evtid;
    evt.data = data;
 
-#if (MYOSCONF_PROC_EVENT_FROM == MYOSCONF_YES)
+
    DBG_PROCESS("post_sync from %p to %p evtid=%d ...\n",(void*)evt.from,(void*)evt.to,evt.id);
-#else
-   DBG_PROCESS("post_sync to %p evtid=%d ...\n",(void*)evt.to,evt.id);
-#endif
 
    return process_deliver_event(&evt);
 }
@@ -164,9 +156,9 @@ bool process_start(process_t *process, void* data)
       process_event_t evt;
 
       evt.to = process;
-#if (MYOSCONF_PROC_EVENT_FROM == MYOSCONF_YES)
+
       evt.from = PROCESS_THIS();
-#endif
+
       evt.data = data;
       evt.id = PROCESS_EVENT_START;
 
@@ -196,8 +188,12 @@ void process_poll(process_t *process)
 
 int process_run(void)
 {
+
+   rtimer_timestamp_t start,stop;
+
    /* Poll should only be triggered by interrupts. Interrupts always have a higher priority than the main loop context by definition.
       Thus we first handle all poll requests from interrupts first, before we deliver the next non polling event to a process. */
+
    while(process_global_pollreq)
    {
       process_t *process;

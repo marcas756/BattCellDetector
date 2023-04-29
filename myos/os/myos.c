@@ -2,7 +2,7 @@
  
    https://opensource.org/licenses/BSD-3-Clause
  
-   Copyright 2013-2021 Marco Bacchi <marco@bacchi.at>
+   Copyright 2013-2023 Marco Bacchi <marco@bacchi.at>
    
    Redistribution and use in source and binary forms, with or without 
    modification, are permitted provided that the following conditions are met:
@@ -31,9 +31,62 @@
    POSSIBILITY OF SUCH DAMAGE.
 */
 
-
-
 #include "myos.h"
+
+#if (MYOSCONF_STATISTICS)
+
+typedef struct {
+   unsigned realtime : 1;
+   unsigned eventqueue : 1;
+}myos_errflags_t;
+
+typedef struct {
+   myos_errflags_t errflags;
+   rtimer_timespan_t maxlaptime;
+}myos_stats_t;
+
+
+myos_stats_t myos_stats;
+
+
+PROCESS(idle_process,idle_process);
+PROCESS_THREAD(idle_process)
+{
+   static timestamp_t start,stop;
+   static rtimer_timestamp_t rtstart,rtstop;
+
+   PROCESS_BEGIN();
+
+   start = timestamp_now();
+   rtstart = rtimer_now();
+
+   while(1)
+   {
+      PROCESS_SUSPEND();
+
+      rtstop = rtimer_now();
+      stop = timestamp_now();
+
+
+      if( TIMESTAMP_DIFF(stop,start) > 1 ) // more than one tick behind ?
+      {
+         myos_stats.errflags.realtime = 1;
+      }
+
+      rtstart = RTIMER_TIMESTAMP_DIFF(rtstop,rtstart);
+
+      if ( rtstart > myos_stats.maxlaptime )
+      {
+         myos_stats.maxlaptime = rtstart;
+      }
+
+      start = stop;
+      rtstart = rtstop;
+   }
+
+   PROCESS_END();
+}
+#endif
 
 void myos_init(void)
 {
@@ -42,4 +95,10 @@ void myos_init(void)
     timer_module_init();
     ptimer_module_init();
     ctimer_module_init();
+    rtimer_init();
+
+#if (MYOSCONF_STATISTICS)
+    process_start(&idle_process,NULL);
+#endif
+
 }

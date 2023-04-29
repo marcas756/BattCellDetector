@@ -69,7 +69,9 @@ void uileds_handler()
             current->set_led(current->pattern[current->pstate].lstate^current->inverted);
 
             if (!current->pattern[++current->pstate].duration)
+            {
                 current->pstate=0;
+            }
         }
 
         current->timer--;

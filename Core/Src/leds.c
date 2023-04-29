@@ -20,6 +20,5 @@ UILEDS_LEDS(&LD2);
 void leds_init()
 {
    process_start(&uileds_process,NULL);
-   UILEDS_SET_PATTERN(LD2,triple_flash,UILEDS_ORIG);
+   UILEDS_SET_PATTERN(LD2,heart_beat,UILEDS_ORIG);
 }
-

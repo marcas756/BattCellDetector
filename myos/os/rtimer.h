@@ -46,6 +46,7 @@ typedef rtimer_timestamp_t rtimer_timespan_t;
 
 #define RTIMER_TICKS_PER_SEC                RTIMER_ARCH_TICKS_PER_SEC
 #define rtimer_now()                        rtimer_arch_now()
+#define rtimer_init()                       rtimer_arch_init()
 #define RTIMER_TIMESTAMP_DIFF               RTIMER_TIMESTAMP_ARCH_DIFF
 #define rtimer_timestamp_less_than(a,b)    (RTIMER_TIMESTAMP_DIFF((a),(b)) < 0)
 typedef void(*rtimer_callback_t)(void* data);
@@ -56,8 +57,6 @@ typedef struct {
    rtimer_callback_t callback;
    void* data;
 } rtimer_t;
-
-
 
 
 

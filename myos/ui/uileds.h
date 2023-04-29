@@ -66,6 +66,10 @@ struct uileds_t{
 
 extern const uileds_t* const uileds_all_leds [];
 
+#define UILEDS_PATTERN(name,size) \
+      uileds_state_t uileds_pattern_##name [size]
+
+
 #define UILEDS_PATTERN_BEGIN(name) \
         const uileds_state_t uileds_pattern_##name [] = {
 
