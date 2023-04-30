@@ -26,6 +26,7 @@
 #include "buttons.h"
 #include "debug.h"
 
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -192,7 +193,6 @@ int main(void)
   myos_init();
   leds_init();
   buttons_init();
-
 
   /* USER CODE END 2 */
 

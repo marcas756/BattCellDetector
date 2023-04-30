@@ -35,15 +35,6 @@
 
 #if (MYOSCONF_STATISTICS)
 
-typedef struct {
-   unsigned realtime : 1;
-   unsigned eventqueue : 1;
-}myos_errflags_t;
-
-typedef struct {
-   myos_errflags_t errflags;
-   rtimer_timespan_t maxlaptime;
-}myos_stats_t;
 
 
 myos_stats_t myos_stats;

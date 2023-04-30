@@ -34,6 +34,7 @@
 
 #include "rtimer.h"
 #include <stdlib.h>
+#include "critical.h"
 
 
 rtimer_t *rtimer_next = NULL;

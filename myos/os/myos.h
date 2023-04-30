@@ -38,7 +38,6 @@
 
 #include "myosconf.h"
 
-
 #include "critical.h"
 #include "pt.h"
 #include "process.h"
@@ -49,6 +48,23 @@
 #include "ctimer.h"
 #include "etimer.h"
 #include "rtimer.h"
+
+#if (MYOSCONF_STATISTICS)
+
+typedef struct {
+   unsigned realtime : 1;
+   unsigned eventqueue : 1;
+}myos_errflags_t;
+
+typedef struct {
+   myos_errflags_t errflags;
+   rtimer_timespan_t maxlaptime;
+   rtimer_timespan_t maxproctime;
+}myos_stats_t;
+
+extern myos_stats_t myos_stats;
+
+#endif
 
 void myos_init(void);
 

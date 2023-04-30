@@ -37,9 +37,9 @@
 #define RTIMER_H_
 
 
-#include "myos.h"
-#include "rtimer_arch.h"
 
+#include "rtimer_arch.h"
+#include "stdbool.h"
 
 typedef rtimer_arch_timestamp_t rtimer_timestamp_t;
 typedef rtimer_timestamp_t rtimer_timespan_t;

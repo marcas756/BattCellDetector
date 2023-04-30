@@ -33,7 +33,7 @@
 
 
 
-
+#include "myos.h"
 #include "process.h"
 #include <stdlib.h>
 #include "debug.h"
@@ -76,21 +76,20 @@ bool process_post(process_t *to, process_event_id_t evtid, void* data)
 
    if( RINGBUFFER_FULL(process_event_queue) )
    {
+#if (MYOSCONF_STATISTICS)
+      myos_stats.errflags.eventqueue = 1;
+#endif
       return false;
    }
 
    evt = RINGBUFFER_TAIL_PTR(process_event_queue);
 
    evt->from = PROCESS_THIS();
-
    evt->to = to;
    evt->id = evtid;
    evt->data = data;
 
-
    DBG_PROCESS("post from %p to %p evtid=%d ...\n",(void*)evt->from,(void*)evt->to,evt->id);
-
-
    RINGBUFFER_PUSH(process_event_queue);
 
    return true;
@@ -98,43 +97,54 @@ bool process_post(process_t *to, process_event_id_t evtid, void* data)
 
 bool process_deliver_event(process_event_t *evt)
 {
-
-
    DBG_PROCESS("deliver_event from %p to %p evtid=%d ...\n",(void*)evt->from,(void*)evt->to,evt->id);
 
    if ( PROCESS_IS_RUNNING(evt->to) )
    {
       PROCESS_CONTEXT_BEGIN(evt->to);
 
-      if ( PROCESS_THIS()->thread(PROCESS_THIS(),evt) == PT_STATE_TERMINATED )
+#if (MYOSCONF_STATISTICS)
+      rtimer_timespan_t slicetime = rtimer_now();
+#endif
+
+      int pstate = PROCESS_THIS()->thread(PROCESS_THIS(),evt);
+
+#if (MYOSCONF_STATISTICS)
+      slicetime = rtimer_now() - slicetime;
+
+      if ( slicetime > PROCESS_THIS()->maxslicetime )
+      {
+         PROCESS_THIS()->maxslicetime = slicetime;
+      }
+#endif
+
+      if (  pstate == PT_STATE_TERMINATED )
       {
          plist_erase(&process_running_list, PROCESS_THIS());
          /* broadcast exit to all ? */
       }
 
+
       PROCESS_CONTEXT_END();
 
-      DBG_PROCESS("deliver_event success\n");
       return true;
    }
 
-   DBG_PROCESS("deliver_event failure\n");
+
+
    return false;
 }
 
 bool process_post_sync(process_t *to, process_event_id_t evtid, void* data)
 {
-   process_event_t evt;
-
-   evt.from = PROCESS_THIS();
-
-   evt.to = to;
-   evt.id = evtid;
-   evt.data = data;
-
+   process_event_t evt = {
+         .from = PROCESS_THIS(),
+         .to = to,
+         .id = evtid,
+         .data = data
+   };
 
    DBG_PROCESS("post_sync from %p to %p evtid=%d ...\n",(void*)evt.from,(void*)evt.to,evt.id);
-
    return process_deliver_event(&evt);
 }
 
@@ -152,26 +162,7 @@ bool process_start(process_t *process, void* data)
    PT_INIT(&process->pt);
    plist_push_front(&process_running_list, process);
 
-   {
-      process_event_t evt;
-
-      evt.to = process;
-
-      evt.from = PROCESS_THIS();
-
-      evt.data = data;
-      evt.id = PROCESS_EVENT_START;
-
-      PROCESS_CONTEXT_BEGIN(evt.to);
-
-      if ( PROCESS_THIS()->thread(PROCESS_THIS(),&evt) == PT_STATE_TERMINATED )
-      {
-         plist_erase(&process_running_list, PROCESS_THIS());
-         /* broadcast exit to all ? */
-      }
-
-      PROCESS_CONTEXT_END();
-   }
+   process_post_sync(process, PROCESS_EVENT_START, data)
 
    DBG_PROCESS("start %p success\n",(void*)process);
 
@@ -189,10 +180,11 @@ void process_poll(process_t *process)
 int process_run(void)
 {
 
-   rtimer_timestamp_t start,stop;
-
    /* Poll should only be triggered by interrupts. Interrupts always have a higher priority than the main loop context by definition.
       Thus we first handle all poll requests from interrupts first, before we deliver the next non polling event to a process. */
+#if (MYOSCONF_STATISTICS)
+   rtimer_timespan_t proctime = rtimer_now();
+#endif
 
    while(process_global_pollreq)
    {
@@ -216,6 +208,17 @@ int process_run(void)
       process_deliver_event(RINGBUFFER_HEAD_PTR(process_event_queue));
       RINGBUFFER_POP(process_event_queue);
    }
+
+
+#if (MYOSCONF_STATISTICS)
+   proctime = rtimer_now() - proctime;
+
+   if ( proctime > myos_stats.maxproctime )
+   {
+      myos_stats.maxproctime = proctime;
+   }
+
+#endif
 
    return RINGBUFFER_COUNT(process_event_queue)+process_global_pollreq;
 }

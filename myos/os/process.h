@@ -48,6 +48,7 @@
 #include "pt.h"
 #include "ringbuffer.h"
 #include <stdbool.h>
+#include "rtimer.h"
 
 
 #if (MYOSCONF_PROC_LIST_TYPE == MYOSCONF_DLIST)
@@ -92,6 +93,11 @@ struct process_t {
    process_thread_t thread;
    void* data;
    pt_t pt;
+
+#if (MYOSCONF_STATISTICS)
+   rtimer_timespan_t maxslicetime;
+#endif
+
    bool pollreq;
 };
 
