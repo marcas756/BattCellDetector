@@ -35,10 +35,7 @@
 
 #if (MYOSCONF_STATISTICS)
 
-
-
 myos_stats_t myos_stats;
-
 
 PROCESS(idle_process,idle_process);
 PROCESS_THREAD(idle_process)
@@ -81,7 +78,7 @@ PROCESS_THREAD(idle_process)
 
 void myos_init(void)
 {
-    process_module_init();
+    process_init();
     timestamp_module_init();
     timer_module_init();
     ptimer_module_init();

@@ -25,6 +25,7 @@
 #include "leds.h"
 #include "buttons.h"
 #include "debug.h"
+#include "string.h"
 
 
 /* USER CODE END Includes */
@@ -77,7 +78,7 @@ int __io_putchar(int ch);
 
 #define BATDETECT_VREF 3.31
 #define BATDETECT_SAMPLES 4
-#define BATDETECT_PAUSE (TIMESTAMP_TICKS_PER_SEC/200  )
+#define BATDETECT_PAUSE (TIMESTAMP_TICKS_PER_SEC/250)
 
 
 #define  batdetect_attach_load()    HAL_GPIO_WritePin(VBATT_LOAD_GPIO_Port, VBATT_LOAD_Pin, GPIO_PIN_SET)
@@ -85,64 +86,61 @@ int __io_putchar(int ch);
 
 
 
+typedef struct {
+   uint16_t u1;
+   uint16_t u2;
+}batdetect_measurement_t;
 
 
+#define BATDETECT_LOAD     0
+#define BATDETECT_NOLOAD   1
+batdetect_measurement_t batdetect_measurements [2];
+
+const ADC_ChannelConfTypeDef sConfigCh0 = {.Channel = ADC_CHANNEL_0};
+const ADC_ChannelConfTypeDef sConfigCh1 = {.Channel = ADC_CHANNEL_1};;
 
 PROCESS(batdetect,batdetect);
 PROCESS_THREAD(batdetect)
 {
    static etimer_t et;
    static uint8_t samples;
-   static uint16_t u0,ul;
-   static rtimer_timestamp_t start;
-
 
    PROCESS_BEGIN();
 
-
-
-
-   u0 = ul = 0;
-
-   const ADC_ChannelConfTypeDef sConfig = {ADC_CHANNEL_0,ADC_RANK_CHANNEL_NUMBER};
-
-   if (HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef*)&sConfig) != HAL_OK)
-   {
-     Error_Handler();
-   }
+   memset(batdetect_measurements,0,sizeof(batdetect_measurements));
 
    for(samples = 0; samples < BATDETECT_SAMPLES; samples++)
    {
+
+
       batdetect_attach_load();
       PROCESS_SLEEP(&et,BATDETECT_PAUSE);
 
+      HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef*)&sConfigCh0);
       HAL_ADC_Start(&hadc);
-      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK )
-      {
-         PROCESS_SUSPEND();
-      }
+      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK ){PROCESS_SUSPEND();}
+      batdetect_measurements[BATDETECT_LOAD].u1 += HAL_ADC_GetValue(&hadc);
 
-      ul+=HAL_ADC_GetValue(&hadc);
+      HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef*)&sConfigCh1);
+      HAL_ADC_Start(&hadc);
+      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK ){PROCESS_SUSPEND();}
+      batdetect_measurements[BATDETECT_LOAD].u2 += HAL_ADC_GetValue(&hadc);
+
+
 
       batdetect_detach_load();
-
-      start = rtimer_now();
       PROCESS_SLEEP(&et,BATDETECT_PAUSE);
-      DBG("%d\n",RTIMER_TIMESTAMP_DIFF(rtimer_now(),start));
+
+      HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef*)&sConfigCh0);
       HAL_ADC_Start(&hadc);
-      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK )
-      {
-         PROCESS_SUSPEND();
-      }
+      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK ){PROCESS_SUSPEND();}
+      batdetect_measurements[BATDETECT_NOLOAD].u1 += HAL_ADC_GetValue(&hadc);
 
-      u0+=HAL_ADC_GetValue(&hadc);
+      HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef*)&sConfigCh1);
+      HAL_ADC_Start(&hadc);
+      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK ){PROCESS_SUSPEND();}
+      batdetect_measurements[BATDETECT_NOLOAD].u2 += HAL_ADC_GetValue(&hadc);
    }
-
-
-
-   DBG("%d;%d\n",u0,ul);
-
-
 
    PROCESS_END();
 }
@@ -183,9 +181,6 @@ int main(void)
   MX_ADC_Init();
   MX_TIM21_Init();
   /* USER CODE BEGIN 2 */
-
-
-
 
   /* Perform an ADC automatic self-calibration */
   HAL_ADCEx_Calibration_Start(&hadc,ADC_SINGLE_ENDED);
@@ -288,7 +283,7 @@ static void MX_ADC_Init(void)
   hadc.Init.ScanConvMode = ADC_SCAN_DIRECTION_FORWARD;
   hadc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc.Init.ContinuousConvMode = DISABLE;
-  hadc.Init.DiscontinuousConvMode = DISABLE;
+  hadc.Init.DiscontinuousConvMode = ENABLE;
   hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc.Init.DMAContinuousRequests = DISABLE;
@@ -306,6 +301,14 @@ static void MX_ADC_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel to be converted.
+  */
+  sConfig.Channel = ADC_CHANNEL_1;
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
   {
     Error_Handler();

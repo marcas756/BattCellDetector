@@ -44,7 +44,7 @@
 #define MYOSCONF_PROC_EVENT_QUEUE_SIZE   8
 #define MYOSCONF_PTIMER_LIST_TYPE        MYOSCONF_SLIST
 #define MYOSCONF_RTIMER_LIST_TYPE        MYOSCONF_SLIST
-#define MYOSCONF_STATISTICS              1
+#define MYOSCONF_STATISTICS              0
 typedef uint8_t process_event_id_t;
 
 

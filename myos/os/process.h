@@ -168,8 +168,8 @@ int process_thread_##name(process_t *process, process_event_t *evt)
       PROCESS_WAIT_EVENT(PROCESS_EVENT_CONTINUE); \
    }while(0)
 
-void process_module_init(void);
-void process_init( process_t *process, process_thread_t thread );
+void process_init(void);
+void process_init_process( process_t *process, process_thread_t thread );
 bool process_start(process_t *process, void* data);
 bool process_post(process_t *to, process_event_id_t evtid, void* data);
 bool process_post_sync(process_t *to, process_event_id_t evtid, void* data);

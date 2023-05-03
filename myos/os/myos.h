@@ -60,6 +60,7 @@ typedef struct {
    myos_errflags_t errflags;
    rtimer_timespan_t maxlaptime;
    rtimer_timespan_t maxproctime;
+   uint8_t maxqueuecount;
 }myos_stats_t;
 
 extern myos_stats_t myos_stats;

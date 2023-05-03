@@ -60,7 +60,7 @@ static bool process_global_pollreq = false;
 
 
 
-void process_module_init(void)
+void process_init(void)
 {
    /* start with an empty process list and an empty event queue */
    plist_init(&process_running_list);
@@ -92,6 +92,13 @@ bool process_post(process_t *to, process_event_id_t evtid, void* data)
    DBG_PROCESS("post from %p to %p evtid=%d ...\n",(void*)evt->from,(void*)evt->to,evt->id);
    RINGBUFFER_PUSH(process_event_queue);
 
+#if (MYOSCONF_STATISTICS)
+   if( RINGBUFFER_COUNT(process_event_queue) >  myos_stats.maxqueuecount  )
+   {
+      myos_stats.maxqueuecount = RINGBUFFER_COUNT(process_event_queue);
+   }
+#endif
+
    return true;
 }
 
@@ -99,7 +106,7 @@ bool process_deliver_event(process_event_t *evt)
 {
    DBG_PROCESS("deliver_event from %p to %p evtid=%d ...\n",(void*)evt->from,(void*)evt->to,evt->id);
 
-   if ( PROCESS_IS_RUNNING(evt->to) )
+   if ( PROCESS_IS_RUNNING(evt->to) || evt->id == PROCESS_EVENT_START)
    {
       PROCESS_CONTEXT_BEGIN(evt->to);
 
@@ -129,8 +136,6 @@ bool process_deliver_event(process_event_t *evt)
 
       return true;
    }
-
-
 
    return false;
 }
@@ -162,7 +167,7 @@ bool process_start(process_t *process, void* data)
    PT_INIT(&process->pt);
    plist_push_front(&process_running_list, process);
 
-   process_post_sync(process, PROCESS_EVENT_START, data)
+   process_post_sync(process, PROCESS_EVENT_START, data);
 
    DBG_PROCESS("start %p success\n",(void*)process);
 
@@ -223,7 +228,7 @@ int process_run(void)
    return RINGBUFFER_COUNT(process_event_queue)+process_global_pollreq;
 }
 
-void process_init( process_t *process, process_thread_t thread )
+void process_init_process( process_t *process, process_thread_t thread )
 {
    process->thread = thread;
    process->data = NULL;
