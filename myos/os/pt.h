@@ -1,6 +1,5 @@
 /*
  * Copyright (c) 2004-2005, Swedish Institute of Computer Science.
- * Copyright (c) 2013-2021, Marco Bacchi <marco@bacchi.at>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,7 +28,8 @@
  *
  * This file is part of the Contiki operating system.
  *
- * Author: Adam Dunkels <adam@sics.se>, Marco Bacchi <marco@bacchi.at>
+ * Author: Adam Dunkels <adam@sics.se>
+ *
  */
 
 

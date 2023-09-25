@@ -1,5 +1,7 @@
 #include "crc16.h"
 
+// https://gist.github.com/hemonserrat/d6b1a9ceff6a3a4d01fc0c706a4be325
+
 uint16_t crc16_acc(uint16_t seed, uint16_t polynom, uint8_t byte)
 {
     unsigned char i;
