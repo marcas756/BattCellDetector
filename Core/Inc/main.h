@@ -74,6 +74,10 @@ void Error_Handler(void);
 #define VBATT_LOAD_GPIO_Port GPIOA
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
+#define SIGIN_Pin GPIO_PIN_6
+#define SIGIN_GPIO_Port GPIOC
+#define DEBUG_Pin GPIO_PIN_8
+#define DEBUG_GPIO_Port GPIOC
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14

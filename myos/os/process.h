@@ -78,6 +78,7 @@ typedef slist_node_t plist_node_t;
 #define PROCESS_EVENT_POLL      1
 #define PROCESS_EVENT_CONTINUE  2
 #define PROCESS_EVENT_TIMEOUT   3
+#define PROCESS_EVENT_EXIT      4
 
 #define PROCESS_BROADCAST NULL
 
@@ -94,7 +95,7 @@ struct process_t {
    void* data;
    pt_t pt;
 
-#if (MYOSCONF_STATISTICS)
+#if (MYOSCONF_STATS)
    rtimer_timespan_t maxslicetime;
 #endif
 
@@ -156,17 +157,39 @@ int process_thread_##name(process_t *process, process_event_t *evt)
    (PT_IS_RUNNING(&(processptr)->pt))
 
 
-#define PROCESS_BEGIN()                 PT_BEGIN(&PROCESS_PT())
+#define PROCESS_BEGIN() \
+   if(PROCESS_EVENT_ID() == PROCESS_EVENT_EXIT) {PT_EXIT(&PROCESS_PT());} \
+   PT_BEGIN(&PROCESS_PT())
+
+
+
 #define PROCESS_END()                   PT_END(&PROCESS_PT())
 #define PROCESS_WAIT_EVENT(evtid)       PT_YIELD_UNTIL(&PROCESS_PT(), PROCESS_EVENT_ID() == evtid)
 #define PROCESS_WAIT_EVENT_UNTIL(cond)  PT_YIELD_UNTIL(&PROCESS_PT(), cond)
 #define PROCESS_WAIT_ANY_EVENT()        PT_YIELD(&PROCESS_PT())
+
+
 
 #define PROCESS_SUSPEND() \
    do{ \
       process_post(PROCESS_THIS(),PROCESS_EVENT_CONTINUE,NULL); \
       PROCESS_WAIT_EVENT(PROCESS_EVENT_CONTINUE); \
    }while(0)
+
+
+/**
+ * Specify an action when a process exits.
+ *
+ * \note This declaration must come immediately before the
+ * PROCESS_BEGIN() macro.
+ *
+ * \param handler The action to be performed.
+ *
+ * \hideinitializer
+ */
+#define PROCESS_EXITHANDLER(handler) if(evt == PROCESS_EVENT_EXIT) { handler; }
+
+
 
 void process_init(void);
 void process_init_process( process_t *process, process_thread_t thread );

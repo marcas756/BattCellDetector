@@ -33,7 +33,7 @@
 
 #include "myos.h"
 
-#if (MYOSCONF_STATISTICS)
+#if (MYOSCONF_STATS)
 
 myos_stats_t myos_stats;
 
@@ -85,7 +85,14 @@ void myos_init(void)
     ctimer_module_init();
     rtimer_init();
 
-#if (MYOSCONF_STATISTICS)
+
+#if (MYOSCONF_PTIMERS)
+    ptimer_module_init();
+    ctimer_module_init();
+    etimer_module_init();
+#endif
+
+#if (MYOSCONF_STATS)
     process_start(&idle_process,NULL);
 #endif
 

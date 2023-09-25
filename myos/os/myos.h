@@ -49,7 +49,7 @@
 #include "etimer.h"
 #include "rtimer.h"
 
-#if (MYOSCONF_STATISTICS)
+#if (MYOSCONF_STATS)
 
 typedef struct {
    unsigned realtime : 1;
@@ -61,6 +61,7 @@ typedef struct {
    rtimer_timespan_t maxlaptime;
    rtimer_timespan_t maxproctime;
    uint8_t maxqueuecount;
+   uint8_t ptlist_size_max;
 }myos_stats_t;
 
 extern myos_stats_t myos_stats;

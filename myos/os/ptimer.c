@@ -35,44 +35,70 @@
 #include "myos.h"
 
 
+
+
 static ptlist_t ptimer_running_list;
-static ptimer_t *ptimer_next_to_expire = NULL;
+timestamp_t ptimer_next_stop = 0;
+bool ptimer_pending = false;
 
-void ptimer_next_update(ptimer_t *ptimer)
+
+#if MYOSCONF_STATS
+size_t ptimer_list_size;
+#endif
+
+const process_event_t ptimer_poll_evt = {
+      .to = &ptimer_process,
+      .id = PROCESS_EVENT_POLL,
+      .data = NULL
+};
+
+
+static void ptimer_next_stop_update(ptimer_t *ptimer)
 {
-   if( ptimer_next_to_expire )
-   {
-      timestamp_t next_stop = timer_timestamp_stop(&ptimer_next_to_expire->timer);
-      timestamp_t this_stop = timer_timestamp_stop(&ptimer->timer);
+   timestamp_t this_stop = timer_timestamp_stop(&ptimer->timer);
 
-      if( timestamp_less_than(this_stop,next_stop) )
+   if( ptimer_pending )
+   {
+      if( timestamp_less_than(this_stop,ptimer_next_stop) )
       {
-         CRITICAL_EXPRESSION(ptimer_next_to_expire = ptimer);
+         ptimer_next_stop = this_stop;
       }
    }
    else
    {
-      CRITICAL_EXPRESSION(ptimer_next_to_expire = ptimer);
+     ptimer_next_stop = this_stop;
+     ptimer_pending = true;
    }
 }
 
 void ptimer_add_to_list(ptimer_t *ptimer)
 {
-   if ( !ptimer->running )
+   if ( !ptimer->running)
    {
-      ptimer->running = true;
       ptlist_push_front(&ptimer_running_list,ptimer);
+      ptimer->running = true;
+
+#if MYOSCONF_STATS
+      if(++ptimer_list_size > myos_stats.ptlist_size_max)
+      {
+          myos_stats.ptlist_size_max = ptimer_list_size;
+      }
+#endif
+
    }
 
-   ptimer_next_update(ptimer);
+   ptimer_next_stop_update(ptimer);
 }
 
 void ptimer_remove_from_list(ptimer_t *ptimer)
 {
    if( ptimer->running )
    {
-      ptimer->running = false;
       ptlist_erase(&ptimer_running_list,ptimer);
+      ptimer->running = false;
+#if MYOSCONF_STATS
+      ptimer_list_size--;
+#endif
    }
 }
 
@@ -87,35 +113,35 @@ PROCESS_THREAD(ptimer_process)
    while(1)
    {
       PROCESS_WAIT_EVENT(PROCESS_EVENT_POLL);
-
-      CRITICAL_EXPRESSION(ptimer_next_to_expire = NULL);
+      ptimer_pending = false;
 
       ptimer_t *curr = (ptimer_t*)ptlist_begin(&ptimer_running_list);
 
       while(curr != (ptimer_t*)ptlist_end(&ptimer_running_list))
       {
+         ptimer_t *next = (ptimer_t*)ptlist_next(&ptimer_running_list,curr);
+
          if( ptimer_expired(curr) )
          {
-            ptimer_t *next = (ptimer_t*)ptlist_next(&ptimer_running_list,curr);
-
             /* remove ptimer from list */
-            curr->running = false;
             ptlist_erase(&ptimer_running_list,curr);
+            curr->running = false;
+#if MYOSCONF_STATS
+            ptimer_list_size--;
+#endif
 
             if( curr->handler )
             {
-               curr->handler(curr);
+              curr->handler((void*)(curr));
             }
-
-            curr = next;
          }
          else
          {
-            ptimer_next_update(curr);
-            curr  = (ptimer_t*)ptlist_next(&ptimer_running_list,curr);
+            ptimer_next_stop_update(curr);
          }
-      }
 
+         curr = next;
+      }
    }
 
    PROCESS_END();
@@ -135,11 +161,6 @@ void ptimer_restart(ptimer_t* ptimer)
    ptimer_add_to_list(ptimer);
 }
 
-void ptimer_restart_with_new_span(ptimer_t* ptimer, timespan_t span)
-{
-   timer_set_span(&ptimer->timer,span);
-   ptimer_restart(ptimer);
-}
 
 void ptimer_reset(ptimer_t* ptimer)
 {
@@ -147,25 +168,37 @@ void ptimer_reset(ptimer_t* ptimer)
    ptimer_add_to_list(ptimer);
 }
 
-void ptimer_reset_with_new_span(ptimer_t* ptimer, timespan_t span)
-{
-   timer_set_span(&ptimer->timer,span);
-   ptimer_reset(ptimer);
-}
 
-void ptimer_poll_if_necessary(void)
-{
-   if (ptimer_next_to_expire && ptimer_expired(ptimer_next_to_expire))
-   {
-      process_poll(&ptimer_process);
-   }
-}
 
-void ptimer_process_if_necessary(void)
+extern bool process_deliver_event(process_event_t *evt);
+
+
+void ptimer_processing(void)
 {
-   if (ptimer_next_to_expire && ptimer_expired(ptimer_next_to_expire))
+
+#if MYOSCONF_STATS
+    rtimer_timestamp_t start;
+    rtimer_timespan_t slicetime;
+#endif
+
+   if ( ptimer_pending && timestamp_passed(ptimer_next_stop) )
    {
-      process_post_sync(&ptimer_process, PROCESS_EVENT_POLL, NULL);
+        ptimer_pending = false;
+
+#if MYOSCONF_STATS
+        start = rtimer_now();
+#endif
+
+        process_deliver_event((process_event_t*)&ptimer_poll_evt);
+
+#if MYOSCONF_STATS
+        slicetime = (rtimer_timespan_t)RTIMER_TIMESTAMP_DIFF(rtimer_now(),start);
+
+        if( ptimer_process.maxslicetime < slicetime )
+        {
+            ptimer_process.maxslicetime = slicetime;
+        }
+#endif
    }
 }
 

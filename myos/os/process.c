@@ -34,11 +34,9 @@
 
 
 #include "myos.h"
-#include "process.h"
 #include <stdlib.h>
 #include "debug.h"
-#include "timestamp.h"
-#include "critical.h"
+
 
 
 
@@ -76,7 +74,7 @@ bool process_post(process_t *to, process_event_id_t evtid, void* data)
 
    if( RINGBUFFER_FULL(process_event_queue) )
    {
-#if (MYOSCONF_STATISTICS)
+#if (MYOSCONF_STATS)
       myos_stats.errflags.eventqueue = 1;
 #endif
       return false;
@@ -92,7 +90,7 @@ bool process_post(process_t *to, process_event_id_t evtid, void* data)
    DBG_PROCESS("post from %p to %p evtid=%d ...\n",(void*)evt->from,(void*)evt->to,evt->id);
    RINGBUFFER_PUSH(process_event_queue);
 
-#if (MYOSCONF_STATISTICS)
+#if (MYOSCONF_STATS)
    if( RINGBUFFER_COUNT(process_event_queue) >  myos_stats.maxqueuecount  )
    {
       myos_stats.maxqueuecount = RINGBUFFER_COUNT(process_event_queue);
@@ -110,13 +108,13 @@ bool process_deliver_event(process_event_t *evt)
    {
       PROCESS_CONTEXT_BEGIN(evt->to);
 
-#if (MYOSCONF_STATISTICS)
+#if (MYOSCONF_STATS)
       rtimer_timespan_t slicetime = rtimer_now();
 #endif
 
       int pstate = PROCESS_THIS()->thread(PROCESS_THIS(),evt);
 
-#if (MYOSCONF_STATISTICS)
+#if (MYOSCONF_STATS)
       slicetime = rtimer_now() - slicetime;
 
       if ( slicetime > PROCESS_THIS()->maxslicetime )
@@ -174,6 +172,25 @@ bool process_start(process_t *process, void* data)
    return true;
 }
 
+bool process_exit(process_t *process)
+{
+   DBG_PROCESS("exit %p ...\n",(void*)process);
+
+   if( !PROCESS_IS_RUNNING(process) )
+   {
+      DBG_PROCESS("exit %p failure\n",(void*)process);
+      return false;
+   }
+
+   process_post_sync(process, PROCESS_EVENT_EXIT, NULL);  // gets automatically removed from list!
+
+   DBG_PROCESS("exit %p success\n",(void*)process);
+
+   return true;
+}
+
+
+
 void process_poll(process_t *process)
 {
    DBG_PROCESS("polling %p \n",(void*)process);
@@ -182,12 +199,12 @@ void process_poll(process_t *process)
 }
 
 
-int process_run(void)
+inline int process_run(void)
 {
 
    /* Poll should only be triggered by interrupts. Interrupts always have a higher priority than the main loop context by definition.
       Thus we first handle all poll requests from interrupts first, before we deliver the next non polling event to a process. */
-#if (MYOSCONF_STATISTICS)
+#if (MYOSCONF_STATS)
    rtimer_timespan_t proctime = rtimer_now();
 #endif
 
@@ -195,17 +212,22 @@ int process_run(void)
    {
       process_t *process;
 
-      CRITICAL_EXPRESSION(process_global_pollreq = false);
+      process_global_pollreq = false;
 
       plist_foreach(&process_running_list,process)
       {
          if( process->pollreq )
          {
-            CRITICAL_EXPRESSION(process->pollreq = false);
+            process->pollreq = false;
             process_post_sync(process, PROCESS_EVENT_POLL, NULL);
          }
       }
    }
+
+#if (MYOSCONF_PTIMERS)
+   ptimer_processing();
+#endif
+
 
 
    if( RINGBUFFER_COUNT(process_event_queue) )
@@ -215,7 +237,7 @@ int process_run(void)
    }
 
 
-#if (MYOSCONF_STATISTICS)
+#if (MYOSCONF_STATS)
    proctime = rtimer_now() - proctime;
 
    if ( proctime > myos_stats.maxproctime )
@@ -228,11 +250,4 @@ int process_run(void)
    return RINGBUFFER_COUNT(process_event_queue)+process_global_pollreq;
 }
 
-void process_init_process( process_t *process, process_thread_t thread )
-{
-   process->thread = thread;
-   process->data = NULL;
-   PT_INIT(&process->pt);
-   process->pollreq = false;
-}
 

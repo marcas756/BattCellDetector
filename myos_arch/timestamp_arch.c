@@ -35,8 +35,6 @@
 #include"timestamp_arch.h"
 #include "main.h"
 
-extern void ptimer_poll_if_necessary(void);
-
 volatile timestamp_arch_t timestamp_arch_counter = 0;
 
 void SysTick_Handler(void)

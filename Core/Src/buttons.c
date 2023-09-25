@@ -94,10 +94,7 @@ void uibuttons_fire_longest_release(uibutton_t *button)
 
 void uibuttons_fire_repeat_press(uibutton_t *button)
 {
-   if(button == &B1)
-   {
-      process_start(&batdetect,NULL);
-   }
+
 
 }
 

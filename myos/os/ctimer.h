@@ -60,13 +60,9 @@ struct ctimer_t {
 #define ctimer_module_init() ptimer_module_init()
 void ctimer_start(ctimer_t *ctimer, timespan_t span, ctimer_callback_t callback, void *data);
 #define ctimer_restart(ctimerptr)                       ptimer_restart((ptimer_t*)ctimerptr)
-#define ctimer_restart_with_new_span(ctimerptr,span)    ptimer_restart_with_new_span((ptimer_t*)ctimerptr,span)
 #define ctimer_reset(ctimerptr)                         ptimer_rreset((ptimer_t*)ctimerptr)
-#define ctimer_reset_with_new_span(ctimerptr,span)      ptimer_reset_with_new_span((ptimer_t*)ctimerptr,span)
 #define ctimer_stop(ctimerptr)                          ptimer_stop((ptimer_t*)ctimerptr)
 #define ctimer_expired(ctimerptr)                       ptimer_expired((ptimer_t*)ctimerptr)
-#define ctimer_left(ctimerptr)                          ptimer_left((ptimer_t*)ctimerptr)
-
 
 
 #endif /* CTIMER_H_ */

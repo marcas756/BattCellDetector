@@ -102,7 +102,7 @@ typedef uint8_t ptstate_t;
  *
  * \hideinitializer
  */
-#define PT_THREAD(name_args) pt_state_t name_args
+#define PT_THREAD(name_args) ptstate_t name_args
 
 /**
  * Declare the start of a protothread inside the C function
@@ -233,8 +233,8 @@ typedef uint8_t ptstate_t;
  */
 #define PT_EXIT(pt)             \
   do {                          \
-    LC_SET_DEFAULT((pt)->lc)    \
-    return PT_STATE_TERMINATED;             \
+    LC_SET_DEFAULT((pt)->lc);   \
+    return PT_STATE_TERMINATED; \
   } while(0)
 
 /**

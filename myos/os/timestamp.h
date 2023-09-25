@@ -59,18 +59,18 @@ typedef timestamp_t timespan_t;
 #define timestamp_now timestamp_arch_now
 
 
+#define timestamp_less_than(a,b)    (TIMESTAMP_DIFF((a),(b)) < 0)
+#define timestamp_lessequal_than(a,b)    (TIMESTAMP_DIFF((a),(b)) <= 0)
 
 /*!
-    \brief      Checks if a provided time stamp is in the past
-    \details    Checks if the time stamp counter passed a provided time stamp yet.
+    \brief      Checks if a provided time stamp is reached
+    \details    Checks if the time stamp counter reached a provided time stamp yet.
 
     \param[in]      timestamp       Time stamp to check
     \returns 1 if time stamp is in the past, otherwise 0
 */
 #define timestamp_passed(timestamp) \
-    (timestamp_now()>(timestamp)) /* >= ? */
-
-#define timestamp_less_than(a,b)    (TIMESTAMP_DIFF((a),(b)) < 0)
+      timestamp_lessequal_than(timestamp,timestamp_now())
 
 
 /*!
@@ -78,15 +78,16 @@ typedef timestamp_t timespan_t;
     \param[in]      timestamp       Time stamp to wait for
 */
 #define timestamp_block_until(timestamp) \
-    do{}while(!timestamp_passed(timestamp))
+    while(!timestamp_passed(timestamp)){};
 
 /*!
     \brief      Blocks for some time
     \param[in]      timespan      Time to block
 */
-#define timestamp_block_for(timespan)                       \
-    do{                                                     \
-        timestamp_block_until(timestamp_now()+(timespan));                      \
+#define timestamp_block_for(timespan)                     \
+    do{                                                   \
+        timestamp_t stop = timespan+timestamp_now();      \
+        timestamp_block_until(stop);                      \
     }while(0)
 
 

@@ -76,75 +76,35 @@ int __io_putchar(int ch);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-#define BATDETECT_VREF 3.31
-#define BATDETECT_SAMPLES 4
-#define BATDETECT_PAUSE (TIMESTAMP_TICKS_PER_SEC/250)
-
-
-#define  batdetect_attach_load()    HAL_GPIO_WritePin(VBATT_LOAD_GPIO_Port, VBATT_LOAD_Pin, GPIO_PIN_SET)
-#define  batdetect_detach_load()    HAL_GPIO_WritePin(VBATT_LOAD_GPIO_Port, VBATT_LOAD_Pin, GPIO_PIN_RESET)
 
 
 
-typedef struct {
-   uint16_t u1;
-   uint16_t u2;
-}batdetect_measurement_t;
 
 
-#define BATDETECT_LOAD     0
-#define BATDETECT_NOLOAD   1
-batdetect_measurement_t batdetect_measurements [2];
-
-const ADC_ChannelConfTypeDef sConfigCh0 = {.Channel = ADC_CHANNEL_0};
-const ADC_ChannelConfTypeDef sConfigCh1 = {.Channel = ADC_CHANNEL_1};;
-
-PROCESS(batdetect,batdetect);
-PROCESS_THREAD(batdetect)
+PROCESS(test,test);
+PROCESS_THREAD(test)
 {
    static etimer_t et;
-   static uint8_t samples;
+
 
    PROCESS_BEGIN();
 
-   memset(batdetect_measurements,0,sizeof(batdetect_measurements));
+   etimer_start(&et, TIMESTAMP_TICKS_PER_SEC/250, PROCESS_THIS(), PROCESS_EVENT_TIMEOUT, NULL);
 
-   for(samples = 0; samples < BATDETECT_SAMPLES; samples++)
+   while(1)
    {
 
+      PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
 
-      batdetect_attach_load();
-      PROCESS_SLEEP(&et,BATDETECT_PAUSE);
-
-      HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef*)&sConfigCh0);
-      HAL_ADC_Start(&hadc);
-      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK ){PROCESS_SUSPEND();}
-      batdetect_measurements[BATDETECT_LOAD].u1 += HAL_ADC_GetValue(&hadc);
-
-      HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef*)&sConfigCh1);
-      HAL_ADC_Start(&hadc);
-      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK ){PROCESS_SUSPEND();}
-      batdetect_measurements[BATDETECT_LOAD].u2 += HAL_ADC_GetValue(&hadc);
-
-
-
-      batdetect_detach_load();
-      PROCESS_SLEEP(&et,BATDETECT_PAUSE);
-
-      HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef*)&sConfigCh0);
-      HAL_ADC_Start(&hadc);
-      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK ){PROCESS_SUSPEND();}
-      batdetect_measurements[BATDETECT_NOLOAD].u1 += HAL_ADC_GetValue(&hadc);
-
-      HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef*)&sConfigCh1);
-      HAL_ADC_Start(&hadc);
-      while( HAL_ADC_PollForConversion(&hadc, 0) != HAL_OK ){PROCESS_SUSPEND();}
-      batdetect_measurements[BATDETECT_NOLOAD].u2 += HAL_ADC_GetValue(&hadc);
+      while(etimer_expired(&et))
+      {
+         etimer_reset(&et);
+         HAL_GPIO_TogglePin(DEBUG_GPIO_Port, DEBUG_Pin);
+      }
    }
 
    PROCESS_END();
 }
-
 
 
 /* USER CODE END 0 */
@@ -189,6 +149,8 @@ int main(void)
   leds_init();
   buttons_init();
 
+  process_start(&test,NULL);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -196,7 +158,7 @@ int main(void)
   while (1)
   {
      process_run();
-     ptimer_process_if_necessary();
+
 
     /* USER CODE END WHILE */
 
@@ -431,6 +393,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, VBATT_LOAD_Pin|LD2_Pin, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(DEBUG_GPIO_Port, DEBUG_Pin, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
@@ -443,6 +408,19 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : SIGIN_Pin */
+  GPIO_InitStruct.Pin = SIGIN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(SIGIN_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : DEBUG_Pin */
+  GPIO_InitStruct.Pin = DEBUG_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(DEBUG_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PA8 */
   GPIO_InitStruct.Pin = GPIO_PIN_8;

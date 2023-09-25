@@ -42,7 +42,7 @@
 
     \return     Precessor of current node
 */
-void ctimer_timeout_handler(ptimer_t* ptimer)
+static void ctimer_timeout_handler(ptimer_t* ptimer)
 {
    ctimer_t *ctimer = (ctimer_t*)ptimer;
 

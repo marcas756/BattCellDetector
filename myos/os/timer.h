@@ -56,10 +56,14 @@ typedef struct {
 
 void timer_start(timer_t *timer, timespan_t span);
 
-timespan_t timer_left(timer_t *timer);
 
+/*!
+    \brief      Resets a previously set timer
+    \details    Adds the currently set timespan to the timers start time.
+
+    \param[in]      timer       Timer instance to reset
+*/
 void timer_reset(timer_t *timer);
-void timer_set_span(timer_t *timer, timespan_t span);
 
 /*!
     \brief      Restarts a previously set timer
@@ -69,10 +73,21 @@ void timer_set_span(timer_t *timer, timespan_t span);
     \param[in]      timer       Timer instance to restart
 */
 void timer_restart(timer_t *timer);
-bool timer_expired(timer_t *timer);
+
 
 #define timer_timestamp_stop(timerptr) \
       ((timerptr)->start + (timerptr)->span)
+
+/*!
+    \brief      Check if timer expired
+    \details    Checks if timer expired. Timer will expire as soon as the time span
+                provided with timer_start is elapsed.
+
+    \param[in]      timer       Timer instance to check
+    \returns    true if timer expired, false otherwise
+*/
+#define timer_expired(timerptr) \
+      timestamp_passed(timer_timestamp_stop(timerptr))
 
 #define timer_module_init timestamp_module_init
 
