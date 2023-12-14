@@ -1,0 +1,317 @@
+\hypertarget{uibuttons_8h}{}\doxysection{myos/ui/uibuttons.h File Reference}
+\label{uibuttons_8h}\index{myos/ui/uibuttons.h@{myos/ui/uibuttons.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}uibuttons\+\_\+conf.\+h\char`\"{}}\newline
+Include dependency graph for uibuttons.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{uibuttons_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uibuttons_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structuibutton__t}{uibutton\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_afaeaf1d08ae746f470609b3ac4e750b8}{UIBUTTONS\+\_\+\+STATE\+\_\+\+RELEASED}}~0
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_a8967cffa4eb5085fedaa550cccd8f60e}{UIBUTTONS\+\_\+\+STATE\+\_\+\+PRESSED}}~1
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_adb5016545a2adf2a0bdf6f9b232e249d}{UIBUTTONS\+\_\+\+STATE\+\_\+\+RELEASED\+\_\+\+DEBOUNCE}}~2
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_a65af3ad15b0a048e8c0a2f02803901b0}{UIBUTTONS\+\_\+\+STATE\+\_\+\+PRESSED\+\_\+\+DEBOUNCE}}~3
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_a6e764bf4009b55853992ccc79a610280}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+BASE}}~0
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_aa84852196cd8c77979b8cb27c94a2429}{UIBUTTON}}(name)
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_a0664ea00619f43002616f8cee1ef582c}{EXTERN\+\_\+\+UIBUTTON}}(name)~        extern \mbox{\hyperlink{structuibutton__t}{uibutton\+\_\+t}} name
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_a49f123538f7578ce928203c08456d0a0}{UIBUTTONS}}(...)
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_a57c04340213ba1689c0aa8b4b183728b}{UIBUTTONS\+\_\+\+COUNT}}~\mbox{\hyperlink{uibuttons__process_8c_a4e7d389387df197b4a3597e3f1cf83bf}{uibuttons\+\_\+count}}
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_ad5b589d691d0d5286bf6bfd04835a7f3}{UIBUTTONS\+\_\+\+GET\+\_\+\+ID}}(button)~    ((int)(button-\/\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}))
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_a6a0061788d87d15b32e1f2aad19ee229}{UIBUTTONS\+\_\+\+POLL\+\_\+\+SINGLE}}(id)~    \mbox{\hyperlink{uibuttons_8h_a9ce4048fd077d51b94cd0446d32b61dc}{uibuttons\+\_\+poll}}(\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}\mbox{[}id\mbox{]})
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_a3e235c9d20197fffb452436c28f7a682}{UIBUTTONS\+\_\+\+POLL\+\_\+\+ALL}}()~    do\{int tmp;for(tmp=0;tmp$<$\mbox{\hyperlink{uibuttons_8h_a57c04340213ba1689c0aa8b4b183728b}{UIBUTTONS\+\_\+\+COUNT}};tmp++)\mbox{\hyperlink{uibuttons_8h_a6a0061788d87d15b32e1f2aad19ee229}{UIBUTTONS\+\_\+\+POLL\+\_\+\+SINGLE}}(tmp);\}while(0)
+\item 
+\#define \mbox{\hyperlink{uibuttons_8h_a179cfc4403509bbee857d69b4b75b482}{UIBUTTONS\+\_\+\+INIT\+\_\+\+ALL}}()~      do\{int tmp;for(tmp=0;tmp$<$\mbox{\hyperlink{uibuttons_8h_a57c04340213ba1689c0aa8b4b183728b}{UIBUTTONS\+\_\+\+COUNT}};tmp++)\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}\mbox{[}tmp\mbox{]}-\/$>$prev\+\_\+state=\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}\mbox{[}tmp\mbox{]}-\/$>$get();\}while(0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef bool($\ast$ \mbox{\hyperlink{uibuttons_8h_ac0ed98a5aae9e02ff61fd8202a31c612}{uibuttons\+\_\+get\+\_\+t}}) ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba492fd5dd600062f8ec517962459c2a40}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+RISING\+\_\+\+EDGE}} = 0
+, \mbox{\hyperlink{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba35851e506fd5dd42bc2cc18cb1abced1}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+FALLING\+\_\+\+EDGE}}
+, \mbox{\hyperlink{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55badc1f7a7e229e1ec2ce14a99f4d9f587c}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+SHORT\+\_\+\+PRESS}}
+, \mbox{\hyperlink{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba81d837d98c1d95d1d41304f473b7975a}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+LONG\+\_\+\+PRESS}}
+, \newline
+\mbox{\hyperlink{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba746e63c8dcc38416bb723a9526d6623e}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+LONGER\+\_\+\+PRESS}}
+, \mbox{\hyperlink{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55bab68dbfdcaa9c722aeaa0d0e2d60968ed}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+LONGEST\+\_\+\+PRESS}}
+, \mbox{\hyperlink{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba826f55545ef8ede1f4398f309cebebe7}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+REPEAT\+\_\+\+PRESS}}
+, \mbox{\hyperlink{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55baf7aa4d438db0a77e84e562aa9eef69c6}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+SINGLE\+\_\+\+CLICK}}
+, \newline
+\mbox{\hyperlink{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba9f274973a65c082ee4c8019bf631ee89}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+DOUBLE\+\_\+\+CLICK}}
+, \mbox{\hyperlink{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba1c20920d26d0d5e3c89c9e04c2fd4c21}{UIBUTTONS\+\_\+\+EVENT\+\_\+\+TRIPLE\+\_\+\+CLICK}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uibuttons_8h_a9ce4048fd077d51b94cd0446d32b61dc}{uibuttons\+\_\+poll}} (\mbox{\hyperlink{structuibutton__t}{uibutton\+\_\+t}} $\ast$button)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{uibuttons_8h_a0664ea00619f43002616f8cee1ef582c}\label{uibuttons_8h_a0664ea00619f43002616f8cee1ef582c}} 
+\index{uibuttons.h@{uibuttons.h}!EXTERN\_UIBUTTON@{EXTERN\_UIBUTTON}}
+\index{EXTERN\_UIBUTTON@{EXTERN\_UIBUTTON}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{EXTERN\_UIBUTTON}{EXTERN\_UIBUTTON}}
+{\footnotesize\ttfamily \#define EXTERN\+\_\+\+UIBUTTON(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~        extern \mbox{\hyperlink{structuibutton__t}{uibutton\+\_\+t}} name}
+
+
+
+Definition at line 86 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_aa84852196cd8c77979b8cb27c94a2429}\label{uibuttons_8h_aa84852196cd8c77979b8cb27c94a2429}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTON@{UIBUTTON}}
+\index{UIBUTTON@{UIBUTTON}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTON}{UIBUTTON}}
+{\footnotesize\ttfamily \#define UIBUTTON(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        \textcolor{keywordtype}{bool} uibuttons\_get\_\#\#name(\textcolor{keywordtype}{void}); \(\backslash\)}
+\DoxyCodeLine{        uibutton\_t name = \{uibuttons\_get\_\#\#name\}; \(\backslash\)}
+\DoxyCodeLine{        bool uibuttons\_get\_\#\#name(\textcolor{keywordtype}{void})}
+
+\end{DoxyCode}
+
+
+Definition at line 81 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_a49f123538f7578ce928203c08456d0a0}\label{uibuttons_8h_a49f123538f7578ce928203c08456d0a0}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS@{UIBUTTONS}}
+\index{UIBUTTONS@{UIBUTTONS}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS}{UIBUTTONS}}
+{\footnotesize\ttfamily \#define UIBUTTONS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{const} \mbox{\hyperlink{structuibutton__t}{uibutton\_t}} *\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}[] = \{ \_\_VA\_ARGS\_\_ \}; \(\backslash\)}
+\DoxyCodeLine{    const \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{uibuttons__process_8c_a4e7d389387df197b4a3597e3f1cf83bf}{uibuttons\_count}} = \textcolor{keyword}{sizeof}(\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}})/\textcolor{keyword}{sizeof}(\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}[0]);}
+
+\end{DoxyCode}
+
+
+Definition at line 89 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_a57c04340213ba1689c0aa8b4b183728b}\label{uibuttons_8h_a57c04340213ba1689c0aa8b4b183728b}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_COUNT@{UIBUTTONS\_COUNT}}
+\index{UIBUTTONS\_COUNT@{UIBUTTONS\_COUNT}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS\_COUNT}{UIBUTTONS\_COUNT}}
+{\footnotesize\ttfamily \#define UIBUTTONS\+\_\+\+COUNT~\mbox{\hyperlink{uibuttons__process_8c_a4e7d389387df197b4a3597e3f1cf83bf}{uibuttons\+\_\+count}}}
+
+
+
+Definition at line 93 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_a6e764bf4009b55853992ccc79a610280}\label{uibuttons_8h_a6e764bf4009b55853992ccc79a610280}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_BASE@{UIBUTTONS\_EVENT\_BASE}}
+\index{UIBUTTONS\_EVENT\_BASE@{UIBUTTONS\_EVENT\_BASE}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS\_EVENT\_BASE}{UIBUTTONS\_EVENT\_BASE}}
+{\footnotesize\ttfamily \#define UIBUTTONS\+\_\+\+EVENT\+\_\+\+BASE~0}
+
+
+
+Definition at line 44 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_ad5b589d691d0d5286bf6bfd04835a7f3}\label{uibuttons_8h_ad5b589d691d0d5286bf6bfd04835a7f3}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_GET\_ID@{UIBUTTONS\_GET\_ID}}
+\index{UIBUTTONS\_GET\_ID@{UIBUTTONS\_GET\_ID}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS\_GET\_ID}{UIBUTTONS\_GET\_ID}}
+{\footnotesize\ttfamily \#define UIBUTTONS\+\_\+\+GET\+\_\+\+ID(\begin{DoxyParamCaption}\item[{}]{button }\end{DoxyParamCaption})~    ((int)(button-\/\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}))}
+
+
+
+Definition at line 95 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_a179cfc4403509bbee857d69b4b75b482}\label{uibuttons_8h_a179cfc4403509bbee857d69b4b75b482}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_INIT\_ALL@{UIBUTTONS\_INIT\_ALL}}
+\index{UIBUTTONS\_INIT\_ALL@{UIBUTTONS\_INIT\_ALL}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS\_INIT\_ALL}{UIBUTTONS\_INIT\_ALL}}
+{\footnotesize\ttfamily \#define UIBUTTONS\+\_\+\+INIT\+\_\+\+ALL(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~      do\{int tmp;for(tmp=0;tmp$<$\mbox{\hyperlink{uibuttons_8h_a57c04340213ba1689c0aa8b4b183728b}{UIBUTTONS\+\_\+\+COUNT}};tmp++)\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}\mbox{[}tmp\mbox{]}-\/$>$prev\+\_\+state=\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}\mbox{[}tmp\mbox{]}-\/$>$get();\}while(0)}
+
+
+
+Definition at line 104 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_a3e235c9d20197fffb452436c28f7a682}\label{uibuttons_8h_a3e235c9d20197fffb452436c28f7a682}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_POLL\_ALL@{UIBUTTONS\_POLL\_ALL}}
+\index{UIBUTTONS\_POLL\_ALL@{UIBUTTONS\_POLL\_ALL}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS\_POLL\_ALL}{UIBUTTONS\_POLL\_ALL}}
+{\footnotesize\ttfamily \#define UIBUTTONS\+\_\+\+POLL\+\_\+\+ALL(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~    do\{int tmp;for(tmp=0;tmp$<$\mbox{\hyperlink{uibuttons_8h_a57c04340213ba1689c0aa8b4b183728b}{UIBUTTONS\+\_\+\+COUNT}};tmp++)\mbox{\hyperlink{uibuttons_8h_a6a0061788d87d15b32e1f2aad19ee229}{UIBUTTONS\+\_\+\+POLL\+\_\+\+SINGLE}}(tmp);\}while(0)}
+
+
+
+Definition at line 101 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_a6a0061788d87d15b32e1f2aad19ee229}\label{uibuttons_8h_a6a0061788d87d15b32e1f2aad19ee229}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_POLL\_SINGLE@{UIBUTTONS\_POLL\_SINGLE}}
+\index{UIBUTTONS\_POLL\_SINGLE@{UIBUTTONS\_POLL\_SINGLE}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS\_POLL\_SINGLE}{UIBUTTONS\_POLL\_SINGLE}}
+{\footnotesize\ttfamily \#define UIBUTTONS\+\_\+\+POLL\+\_\+\+SINGLE(\begin{DoxyParamCaption}\item[{}]{id }\end{DoxyParamCaption})~    \mbox{\hyperlink{uibuttons_8h_a9ce4048fd077d51b94cd0446d32b61dc}{uibuttons\+\_\+poll}}(\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}\mbox{[}id\mbox{]})}
+
+
+
+Definition at line 98 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_a8967cffa4eb5085fedaa550cccd8f60e}\label{uibuttons_8h_a8967cffa4eb5085fedaa550cccd8f60e}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_STATE\_PRESSED@{UIBUTTONS\_STATE\_PRESSED}}
+\index{UIBUTTONS\_STATE\_PRESSED@{UIBUTTONS\_STATE\_PRESSED}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS\_STATE\_PRESSED}{UIBUTTONS\_STATE\_PRESSED}}
+{\footnotesize\ttfamily \#define UIBUTTONS\+\_\+\+STATE\+\_\+\+PRESSED~1}
+
+
+
+Definition at line 40 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_a65af3ad15b0a048e8c0a2f02803901b0}\label{uibuttons_8h_a65af3ad15b0a048e8c0a2f02803901b0}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_STATE\_PRESSED\_DEBOUNCE@{UIBUTTONS\_STATE\_PRESSED\_DEBOUNCE}}
+\index{UIBUTTONS\_STATE\_PRESSED\_DEBOUNCE@{UIBUTTONS\_STATE\_PRESSED\_DEBOUNCE}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS\_STATE\_PRESSED\_DEBOUNCE}{UIBUTTONS\_STATE\_PRESSED\_DEBOUNCE}}
+{\footnotesize\ttfamily \#define UIBUTTONS\+\_\+\+STATE\+\_\+\+PRESSED\+\_\+\+DEBOUNCE~3}
+
+
+
+Definition at line 42 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_afaeaf1d08ae746f470609b3ac4e750b8}\label{uibuttons_8h_afaeaf1d08ae746f470609b3ac4e750b8}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_STATE\_RELEASED@{UIBUTTONS\_STATE\_RELEASED}}
+\index{UIBUTTONS\_STATE\_RELEASED@{UIBUTTONS\_STATE\_RELEASED}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS\_STATE\_RELEASED}{UIBUTTONS\_STATE\_RELEASED}}
+{\footnotesize\ttfamily \#define UIBUTTONS\+\_\+\+STATE\+\_\+\+RELEASED~0}
+
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+Definition at line 39 of file uibuttons.\+h.
+
+\mbox{\Hypertarget{uibuttons_8h_adb5016545a2adf2a0bdf6f9b232e249d}\label{uibuttons_8h_adb5016545a2adf2a0bdf6f9b232e249d}} 
+\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_STATE\_RELEASED\_DEBOUNCE@{UIBUTTONS\_STATE\_RELEASED\_DEBOUNCE}}
+\index{UIBUTTONS\_STATE\_RELEASED\_DEBOUNCE@{UIBUTTONS\_STATE\_RELEASED\_DEBOUNCE}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{UIBUTTONS\_STATE\_RELEASED\_DEBOUNCE}{UIBUTTONS\_STATE\_RELEASED\_DEBOUNCE}}
+{\footnotesize\ttfamily \#define UIBUTTONS\+\_\+\+STATE\+\_\+\+RELEASED\+\_\+\+DEBOUNCE~2}
+
+
+
+Definition at line 41 of file uibuttons.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{uibuttons_8h_ac0ed98a5aae9e02ff61fd8202a31c612}\label{uibuttons_8h_ac0ed98a5aae9e02ff61fd8202a31c612}} 
+\index{uibuttons.h@{uibuttons.h}!uibuttons\_get\_t@{uibuttons\_get\_t}}
+\index{uibuttons\_get\_t@{uibuttons\_get\_t}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{uibuttons\_get\_t}{uibuttons\_get\_t}}
+{\footnotesize\ttfamily typedef bool($\ast$ uibuttons\+\_\+get\+\_\+t) ()}
+
+
+
+Definition at line 60 of file uibuttons.\+h.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55b}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55b}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIBUTTONS\_EVENT\_RISING\_EDGE@{UIBUTTONS\_EVENT\_RISING\_EDGE}!uibuttons.h@{uibuttons.h}}\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_RISING\_EDGE@{UIBUTTONS\_EVENT\_RISING\_EDGE}}}\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba492fd5dd600062f8ec517962459c2a40}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba492fd5dd600062f8ec517962459c2a40}} 
+UIBUTTONS\+\_\+\+EVENT\+\_\+\+RISING\+\_\+\+EDGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIBUTTONS\_EVENT\_FALLING\_EDGE@{UIBUTTONS\_EVENT\_FALLING\_EDGE}!uibuttons.h@{uibuttons.h}}\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_FALLING\_EDGE@{UIBUTTONS\_EVENT\_FALLING\_EDGE}}}\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba35851e506fd5dd42bc2cc18cb1abced1}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba35851e506fd5dd42bc2cc18cb1abced1}} 
+UIBUTTONS\+\_\+\+EVENT\+\_\+\+FALLING\+\_\+\+EDGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIBUTTONS\_EVENT\_SHORT\_PRESS@{UIBUTTONS\_EVENT\_SHORT\_PRESS}!uibuttons.h@{uibuttons.h}}\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_SHORT\_PRESS@{UIBUTTONS\_EVENT\_SHORT\_PRESS}}}\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55badc1f7a7e229e1ec2ce14a99f4d9f587c}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55badc1f7a7e229e1ec2ce14a99f4d9f587c}} 
+UIBUTTONS\+\_\+\+EVENT\+\_\+\+SHORT\+\_\+\+PRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIBUTTONS\_EVENT\_LONG\_PRESS@{UIBUTTONS\_EVENT\_LONG\_PRESS}!uibuttons.h@{uibuttons.h}}\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_LONG\_PRESS@{UIBUTTONS\_EVENT\_LONG\_PRESS}}}\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba81d837d98c1d95d1d41304f473b7975a}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba81d837d98c1d95d1d41304f473b7975a}} 
+UIBUTTONS\+\_\+\+EVENT\+\_\+\+LONG\+\_\+\+PRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIBUTTONS\_EVENT\_LONGER\_PRESS@{UIBUTTONS\_EVENT\_LONGER\_PRESS}!uibuttons.h@{uibuttons.h}}\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_LONGER\_PRESS@{UIBUTTONS\_EVENT\_LONGER\_PRESS}}}\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba746e63c8dcc38416bb723a9526d6623e}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba746e63c8dcc38416bb723a9526d6623e}} 
+UIBUTTONS\+\_\+\+EVENT\+\_\+\+LONGER\+\_\+\+PRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIBUTTONS\_EVENT\_LONGEST\_PRESS@{UIBUTTONS\_EVENT\_LONGEST\_PRESS}!uibuttons.h@{uibuttons.h}}\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_LONGEST\_PRESS@{UIBUTTONS\_EVENT\_LONGEST\_PRESS}}}\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55bab68dbfdcaa9c722aeaa0d0e2d60968ed}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55bab68dbfdcaa9c722aeaa0d0e2d60968ed}} 
+UIBUTTONS\+\_\+\+EVENT\+\_\+\+LONGEST\+\_\+\+PRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIBUTTONS\_EVENT\_REPEAT\_PRESS@{UIBUTTONS\_EVENT\_REPEAT\_PRESS}!uibuttons.h@{uibuttons.h}}\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_REPEAT\_PRESS@{UIBUTTONS\_EVENT\_REPEAT\_PRESS}}}\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba826f55545ef8ede1f4398f309cebebe7}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba826f55545ef8ede1f4398f309cebebe7}} 
+UIBUTTONS\+\_\+\+EVENT\+\_\+\+REPEAT\+\_\+\+PRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIBUTTONS\_EVENT\_SINGLE\_CLICK@{UIBUTTONS\_EVENT\_SINGLE\_CLICK}!uibuttons.h@{uibuttons.h}}\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_SINGLE\_CLICK@{UIBUTTONS\_EVENT\_SINGLE\_CLICK}}}\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55baf7aa4d438db0a77e84e562aa9eef69c6}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55baf7aa4d438db0a77e84e562aa9eef69c6}} 
+UIBUTTONS\+\_\+\+EVENT\+\_\+\+SINGLE\+\_\+\+CLICK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIBUTTONS\_EVENT\_DOUBLE\_CLICK@{UIBUTTONS\_EVENT\_DOUBLE\_CLICK}!uibuttons.h@{uibuttons.h}}\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_DOUBLE\_CLICK@{UIBUTTONS\_EVENT\_DOUBLE\_CLICK}}}\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba9f274973a65c082ee4c8019bf631ee89}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba9f274973a65c082ee4c8019bf631ee89}} 
+UIBUTTONS\+\_\+\+EVENT\+\_\+\+DOUBLE\+\_\+\+CLICK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIBUTTONS\_EVENT\_TRIPLE\_CLICK@{UIBUTTONS\_EVENT\_TRIPLE\_CLICK}!uibuttons.h@{uibuttons.h}}\index{uibuttons.h@{uibuttons.h}!UIBUTTONS\_EVENT\_TRIPLE\_CLICK@{UIBUTTONS\_EVENT\_TRIPLE\_CLICK}}}\mbox{\Hypertarget{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba1c20920d26d0d5e3c89c9e04c2fd4c21}\label{uibuttons_8h_a06fc87d81c62e9abb8790b6e5713c55ba1c20920d26d0d5e3c89c9e04c2fd4c21}} 
+UIBUTTONS\+\_\+\+EVENT\+\_\+\+TRIPLE\+\_\+\+CLICK&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 46 of file uibuttons.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uibuttons_8h_a9ce4048fd077d51b94cd0446d32b61dc}\label{uibuttons_8h_a9ce4048fd077d51b94cd0446d32b61dc}} 
+\index{uibuttons.h@{uibuttons.h}!uibuttons\_poll@{uibuttons\_poll}}
+\index{uibuttons\_poll@{uibuttons\_poll}!uibuttons.h@{uibuttons.h}}
+\doxysubsubsection{\texorpdfstring{uibuttons\_poll()}{uibuttons\_poll()}}
+{\footnotesize\ttfamily void uibuttons\+\_\+poll (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuibutton__t}{uibutton\+\_\+t}} $\ast$}]{button }\end{DoxyParamCaption})}
+
+
+
+Definition at line 130 of file uibuttons.\+c.
+

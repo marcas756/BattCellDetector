@@ -1,0 +1,25 @@
+var uigfx_8c =
+[
+    [ "uigfx_clear", "uigfx_8c.html#a0d9ea8947dcf6c3c53cd03dfc161961a", null ],
+    [ "uigfx_draw_char", "uigfx_8c.html#a9848ef97cdadc5d6fccc38007f2c83ef", null ],
+    [ "uigfx_draw_circle", "uigfx_8c.html#adc0b91adf67ece6f9408e51313d81a55", null ],
+    [ "uigfx_draw_ellipse", "uigfx_8c.html#a7b0aaf33769428cdd47cb261854d8a0b", null ],
+    [ "uigfx_draw_filled_circle", "uigfx_8c.html#a82656e132df9d35505dc6c8c93cb980c", null ],
+    [ "uigfx_draw_filled_ellipse", "uigfx_8c.html#a5156bc3f11dfee66785784aa9c2b5aff", null ],
+    [ "uigfx_draw_filled_rectangle", "uigfx_8c.html#aea45383377e946ba5ec6a4bca000af28", null ],
+    [ "uigfx_draw_hline", "uigfx_8c.html#a2000de2bc75aa70e92e3cd9a00698567", null ],
+    [ "uigfx_draw_image", "uigfx_8c.html#a7e2622399e75c06bfaf6f670833c7368", null ],
+    [ "uigfx_draw_line", "uigfx_8c.html#aa9a644292ebe5fbf78beffb52d690cbc", null ],
+    [ "uigfx_draw_pixel", "uigfx_8c.html#aff0b3b5448dd44813ca33808454b0e19", null ],
+    [ "uigfx_draw_put_char", "uigfx_8c.html#a7df3357ab8ec3742c5b41532ca15f3f1", null ],
+    [ "uigfx_draw_rectangle", "uigfx_8c.html#a033c0afbfad48dd92120e16b13ef1302", null ],
+    [ "uigfx_draw_string", "uigfx_8c.html#af9cf97d698b4e2e48aa5b6e95f5302e9", null ],
+    [ "uigfx_draw_vline", "uigfx_8c.html#afa86a10e6405949fedcc682b77c3d18b", null ],
+    [ "uigfx_draw_widget", "uigfx_8c.html#a53b33fc4014e382d1e513d04219824ce", null ],
+    [ "uigfx_init_widget", "uigfx_8c.html#a3a23e64f9c3dc354429c39256efef3e6", null ],
+    [ "uigfx_select_screen_widget", "uigfx_8c.html#ab71aa41fa6081d89c22f45d6d514f233", null ],
+    [ "uigfx_set_widget", "uigfx_8c.html#aeed21ed83d3e5a3090e49f9dabea17f1", null ],
+    [ "uigfx_string_newline", "uigfx_8c.html#a2ee707772e587810dd7c3dad8efc38f9", null ],
+    [ "uigfx_current_widget", "uigfx_8c.html#a3e309849c2a449c507f264af54838d1a", null ],
+    [ "uigfx_screen_widget", "uigfx_8c.html#ad1abad374011ef838fc78722f0893356", null ]
+];

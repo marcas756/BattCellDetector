@@ -1,0 +1,87 @@
+\hypertarget{etimer_8c}{}\doxysection{myos/os/etimer.c File Reference}
+\label{etimer_8c}\index{myos/os/etimer.c@{myos/os/etimer.c}}
+{\ttfamily \#include \char`\"{}etimer.\+h\char`\"{}}\newline
+Include dependency graph for etimer.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{etimer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{etimer_8c_ab7764074cac76b87f9a33f101c65367d}{process\+\_\+deliver\+\_\+event}} (\mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}} $\ast$evt)
+\item 
+void \mbox{\hyperlink{etimer_8c_a9ef455dfcf0940f07b1ff204fadcebe0}{etimer\+\_\+timeout\+\_\+handler}} (\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}} $\ast$ptimer)
+\item 
+void \mbox{\hyperlink{etimer_8c_a37c4c718c8252d6a5ea517e092213606}{etimer\+\_\+start}} (\mbox{\hyperlink{structetimer__t}{etimer\+\_\+t}} $\ast$etimer, \mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\+\_\+t}} span, \mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$to, process\+\_\+event\+\_\+id\+\_\+t evtid, void $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{etimer_8c_a37c4c718c8252d6a5ea517e092213606}\label{etimer_8c_a37c4c718c8252d6a5ea517e092213606}} 
+\index{etimer.c@{etimer.c}!etimer\_start@{etimer\_start}}
+\index{etimer\_start@{etimer\_start}!etimer.c@{etimer.c}}
+\doxysubsubsection{\texorpdfstring{etimer\_start()}{etimer\_start()}}
+{\footnotesize\ttfamily void etimer\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structetimer__t}{etimer\+\_\+t}} $\ast$}]{etimer,  }\item[{\mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\+\_\+t}}}]{span,  }\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{to,  }\item[{process\+\_\+event\+\_\+id\+\_\+t}]{evtid,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file etimer.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{etimer_8c_a37c4c718c8252d6a5ea517e092213606_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{etimer_8c_a37c4c718c8252d6a5ea517e092213606_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{etimer_8c_a9ef455dfcf0940f07b1ff204fadcebe0}\label{etimer_8c_a9ef455dfcf0940f07b1ff204fadcebe0}} 
+\index{etimer.c@{etimer.c}!etimer\_timeout\_handler@{etimer\_timeout\_handler}}
+\index{etimer\_timeout\_handler@{etimer\_timeout\_handler}!etimer.c@{etimer.c}}
+\doxysubsubsection{\texorpdfstring{etimer\_timeout\_handler()}{etimer\_timeout\_handler()}}
+{\footnotesize\ttfamily void etimer\+\_\+timeout\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}} $\ast$}]{ptimer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file etimer.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{etimer_8c_a9ef455dfcf0940f07b1ff204fadcebe0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{etimer_8c_a9ef455dfcf0940f07b1ff204fadcebe0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{etimer_8c_ab7764074cac76b87f9a33f101c65367d}\label{etimer_8c_ab7764074cac76b87f9a33f101c65367d}} 
+\index{etimer.c@{etimer.c}!process\_deliver\_event@{process\_deliver\_event}}
+\index{process\_deliver\_event@{process\_deliver\_event}!etimer.c@{etimer.c}}
+\doxysubsubsection{\texorpdfstring{process\_deliver\_event()}{process\_deliver\_event()}}
+{\footnotesize\ttfamily bool process\+\_\+deliver\+\_\+event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}} $\ast$}]{evt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file process.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{etimer_8c_ab7764074cac76b87f9a33f101c65367d_icgraph}
+\end{center}
+\end{figure}

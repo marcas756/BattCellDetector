@@ -33,7 +33,6 @@
     \brief      Provides preprocessor macros for bit manipulations
 
 
-
     \details    Bit field
 
                 A bit field is termed an unsigned integer in which single bits or
@@ -65,37 +64,83 @@
 #ifndef BITS_H_
 #define BITS_H_
 
-/*!
-     \brief     Read out bits from bit field by using a bit mask
-
-     \details   To read out one or more specific bits of a bit field, it is logically AND-ed with a bit mask.
-
-                Example
-
-                1-Bit:
-
-                    01001011 bit field
-                AND 00001000 bit mask
-                -------------
-                =   00001000 result
-
-                0-Bit:
-
-                    01001011 bit field
-                AND 00000100 bit mask
-                -------------
-                =   00000000 result
-*/
+/**
+ * @brief Reads out specific bits from a bit field using a bit mask.
+ * @details This macro allows for extracting specific bits from a bit field by performing
+ *          a logical AND operation with a bit mask. The bit mask should have bits set
+ *          (1s) at the positions you want to read and cleared (0s) elsewhere. When the
+ *          bit field is AND-ed with this mask, the resulting value contains the bits
+ *          from the original bit field that align with the 1s in the mask, with all
+ *          other bits set to 0.
+ *
+ *          This operation is commonly used to isolate a subset of bits within a larger
+ *          bit field for examination or further processing.
+ *
+ * Example Usage:
+ *      1-Bit:
+ *          01001011 (bit field)
+ *      AND 00001000 (bit mask)
+ *      ------------
+ *          00001000 (result - Bit extracted)
+ *
+ *      0-Bit:
+ *          01001011 (bit field)
+ *      AND 00000100 (bit mask)
+ *      ------------
+ *          00000000 (result - Bit not present)
+ *
+ * @param x The bit field from which to extract bits.
+ * @param m The bit mask specifying which bits to extract.
+ * @return The result of the bit field AND-ed with the bit mask.
+ */
 #define BITS(x,m)           ((x)&(m))
 
-/*!
-     \brief Toggle all bits of integer
-*/
+/**
+ * @brief Toggles all bits of an integer.
+ * @details This macro inverts all bits of the given integer. Each bit that is 0
+ *          becomes 1, and each bit that is 1 becomes 0. This is achieved using the
+ *          bitwise NOT operation. The inversion of bits is a common operation in
+ *          scenarios where you need to flip the bit pattern, for example, when
+ *          implementing bitwise algorithms or performing certain kinds of data
+ *          transformations.
+ *
+ * Example Usage:
+ *      Original:
+ *          01001011 (Original bit pattern of integer)
+ *      Invert:
+ *          ~01001011
+ *      ------------
+ *          10110100 (Inverted bit pattern)
+ *
+ * @param x The integer whose bits are to be toggled.
+ * @return The result of inverting all bits of the given integer.
+ */
 #define BITS_INVERT(x)      (~x)
 
-/*!
-     \brief     Test if all of the bits defined by bit mask are set in the bit field
-*/
+/**
+ * @brief Tests if all bits defined by a bit mask are set in the bit field.
+ * @details This macro checks whether all the bits specified in the bit mask are set
+ *          (i.e., are 1) in the given bit field. It first performs a logical AND
+ *          operation between the bit field and the bit mask, then compares the result
+ *          to the bit mask. If the comparison is equal, it means all the bits in the
+ *          bit field corresponding to the set bits in the mask are also set.
+ *
+ *          This operation is useful for checking the state of multiple bits at once
+ *          in a bit field, such as in flag checking or feature enabling scenarios.
+ *
+ * Example Usage:
+ *      Check if specific bits are set:
+ *          Bit field: 01101101
+ *          Bit mask:  00001101
+ *      Test:
+ *          (01101101 & 00001101) == 00001101
+ *      ------------
+ *          Result is true (all specified bits are set)
+ *
+ * @param x The bit field to test.
+ * @param m The bit mask defining which bits to check.
+ * @return True if all bits defined by the bit mask are set in the bit field, false otherwise.
+ */
 #define BITS_TEST(x,m)      (((x)&(m))==(m)))
 
 /*!

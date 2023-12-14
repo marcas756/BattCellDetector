@@ -1,0 +1,140 @@
+\hypertarget{etimer_8h}{}\doxysection{myos/os/etimer.h File Reference}
+\label{etimer_8h}\index{myos/os/etimer.h@{myos/os/etimer.h}}
+{\ttfamily \#include \char`\"{}myos.\+h\char`\"{}}\newline
+Include dependency graph for etimer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{etimer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{etimer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structetimer__t}{etimer\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{etimer_8h_aa189b280afad116a2fe8f7b9318382aa}{etimer\+\_\+module\+\_\+init}}()~\mbox{\hyperlink{ptimer_8h_ae7a8871f02efe1b7e41efdf1fc0b72e5}{ptimer\+\_\+module\+\_\+init}}()
+\item 
+\#define \mbox{\hyperlink{etimer_8h_aa11542cb9268c379223db1cdd3f2586e}{etimer\+\_\+restart}}(etimerptr)~\mbox{\hyperlink{ptimer_8h_a0a6b2385d6c2b3b7d9fb67dfaf354ede}{ptimer\+\_\+restart}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)etimerptr)
+\item 
+\#define \mbox{\hyperlink{etimer_8h_a654bb419558e8cc99373f8a441dd34f5}{etimer\+\_\+reset}}(etimerptr)~\mbox{\hyperlink{ptimer_8h_aed9b22eaecdb0eeb8031ffdaa5edd68b}{ptimer\+\_\+reset}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)etimerptr)
+\item 
+\#define \mbox{\hyperlink{etimer_8h_a647506cfa54590690ae01cceb62fbfd1}{etimer\+\_\+stop}}(etimerptr)~\mbox{\hyperlink{ptimer_8h_a906040f37907d7466f54f9d5a06f1af2}{ptimer\+\_\+stop}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)etimerptr)
+\item 
+\#define \mbox{\hyperlink{etimer_8h_aaf390190f4c43e6e99fe3c2ffb399d91}{etimer\+\_\+expired}}(etimerptr)~\mbox{\hyperlink{ptimer_8h_ab49316344f13f780decabfab54985ec0}{ptimer\+\_\+expired}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)etimerptr)
+\item 
+\#define \mbox{\hyperlink{etimer_8h_a769d072cf1de392c1d56b68be4b17e50}{PROCESS\+\_\+\+SLEEP}}(etimerptr,  span)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{etimer_8h_a37c4c718c8252d6a5ea517e092213606}{etimer\+\_\+start}} (\mbox{\hyperlink{structetimer__t}{etimer\+\_\+t}} $\ast$etimer, \mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\+\_\+t}} span, \mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$to, process\+\_\+event\+\_\+id\+\_\+t evtid, void $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{etimer_8h_aaf390190f4c43e6e99fe3c2ffb399d91}\label{etimer_8h_aaf390190f4c43e6e99fe3c2ffb399d91}} 
+\index{etimer.h@{etimer.h}!etimer\_expired@{etimer\_expired}}
+\index{etimer\_expired@{etimer\_expired}!etimer.h@{etimer.h}}
+\doxysubsubsection{\texorpdfstring{etimer\_expired}{etimer\_expired}}
+{\footnotesize\ttfamily \#define etimer\+\_\+expired(\begin{DoxyParamCaption}\item[{}]{etimerptr }\end{DoxyParamCaption})~\mbox{\hyperlink{ptimer_8h_ab49316344f13f780decabfab54985ec0}{ptimer\+\_\+expired}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)etimerptr)}
+
+
+
+Definition at line 52 of file etimer.\+h.
+
+\mbox{\Hypertarget{etimer_8h_aa189b280afad116a2fe8f7b9318382aa}\label{etimer_8h_aa189b280afad116a2fe8f7b9318382aa}} 
+\index{etimer.h@{etimer.h}!etimer\_module\_init@{etimer\_module\_init}}
+\index{etimer\_module\_init@{etimer\_module\_init}!etimer.h@{etimer.h}}
+\doxysubsubsection{\texorpdfstring{etimer\_module\_init}{etimer\_module\_init}}
+{\footnotesize\ttfamily \#define etimer\+\_\+module\+\_\+init(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{ptimer_8h_ae7a8871f02efe1b7e41efdf1fc0b72e5}{ptimer\+\_\+module\+\_\+init}}()}
+
+
+
+Definition at line 47 of file etimer.\+h.
+
+\mbox{\Hypertarget{etimer_8h_a654bb419558e8cc99373f8a441dd34f5}\label{etimer_8h_a654bb419558e8cc99373f8a441dd34f5}} 
+\index{etimer.h@{etimer.h}!etimer\_reset@{etimer\_reset}}
+\index{etimer\_reset@{etimer\_reset}!etimer.h@{etimer.h}}
+\doxysubsubsection{\texorpdfstring{etimer\_reset}{etimer\_reset}}
+{\footnotesize\ttfamily \#define etimer\+\_\+reset(\begin{DoxyParamCaption}\item[{}]{etimerptr }\end{DoxyParamCaption})~\mbox{\hyperlink{ptimer_8h_aed9b22eaecdb0eeb8031ffdaa5edd68b}{ptimer\+\_\+reset}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)etimerptr)}
+
+
+
+Definition at line 50 of file etimer.\+h.
+
+\mbox{\Hypertarget{etimer_8h_aa11542cb9268c379223db1cdd3f2586e}\label{etimer_8h_aa11542cb9268c379223db1cdd3f2586e}} 
+\index{etimer.h@{etimer.h}!etimer\_restart@{etimer\_restart}}
+\index{etimer\_restart@{etimer\_restart}!etimer.h@{etimer.h}}
+\doxysubsubsection{\texorpdfstring{etimer\_restart}{etimer\_restart}}
+{\footnotesize\ttfamily \#define etimer\+\_\+restart(\begin{DoxyParamCaption}\item[{}]{etimerptr }\end{DoxyParamCaption})~\mbox{\hyperlink{ptimer_8h_a0a6b2385d6c2b3b7d9fb67dfaf354ede}{ptimer\+\_\+restart}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)etimerptr)}
+
+
+
+Definition at line 49 of file etimer.\+h.
+
+\mbox{\Hypertarget{etimer_8h_a647506cfa54590690ae01cceb62fbfd1}\label{etimer_8h_a647506cfa54590690ae01cceb62fbfd1}} 
+\index{etimer.h@{etimer.h}!etimer\_stop@{etimer\_stop}}
+\index{etimer\_stop@{etimer\_stop}!etimer.h@{etimer.h}}
+\doxysubsubsection{\texorpdfstring{etimer\_stop}{etimer\_stop}}
+{\footnotesize\ttfamily \#define etimer\+\_\+stop(\begin{DoxyParamCaption}\item[{}]{etimerptr }\end{DoxyParamCaption})~\mbox{\hyperlink{ptimer_8h_a906040f37907d7466f54f9d5a06f1af2}{ptimer\+\_\+stop}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)etimerptr)}
+
+
+
+Definition at line 51 of file etimer.\+h.
+
+\mbox{\Hypertarget{etimer_8h_a769d072cf1de392c1d56b68be4b17e50}\label{etimer_8h_a769d072cf1de392c1d56b68be4b17e50}} 
+\index{etimer.h@{etimer.h}!PROCESS\_SLEEP@{PROCESS\_SLEEP}}
+\index{PROCESS\_SLEEP@{PROCESS\_SLEEP}!etimer.h@{etimer.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_SLEEP}{PROCESS\_SLEEP}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+SLEEP(\begin{DoxyParamCaption}\item[{}]{etimerptr,  }\item[{}]{span }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{   \textcolor{keywordflow}{do}\{ \(\backslash\)}
+\DoxyCodeLine{      etimer\_start(etimerptr, span, \mbox{\hyperlink{process_8h_a7176e97b72de41f5414ff7ed7f21c354}{PROCESS\_THIS}}(), \mbox{\hyperlink{process_8h_acdefdad965091a7d73b81b4b79d20cf3}{PROCESS\_EVENT\_CONTINUE}}, NULL); \(\backslash\)}
+\DoxyCodeLine{      PROCESS\_WAIT\_EVENT(\mbox{\hyperlink{process_8h_acdefdad965091a7d73b81b4b79d20cf3}{PROCESS\_EVENT\_CONTINUE}}); \(\backslash\)}
+\DoxyCodeLine{   \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line 56 of file etimer.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{etimer_8h_a37c4c718c8252d6a5ea517e092213606}\label{etimer_8h_a37c4c718c8252d6a5ea517e092213606}} 
+\index{etimer.h@{etimer.h}!etimer\_start@{etimer\_start}}
+\index{etimer\_start@{etimer\_start}!etimer.h@{etimer.h}}
+\doxysubsubsection{\texorpdfstring{etimer\_start()}{etimer\_start()}}
+{\footnotesize\ttfamily void etimer\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structetimer__t}{etimer\+\_\+t}} $\ast$}]{etimer,  }\item[{\mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\+\_\+t}}}]{span,  }\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{to,  }\item[{process\+\_\+event\+\_\+id\+\_\+t}]{evtid,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file etimer.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{etimer_8h_a37c4c718c8252d6a5ea517e092213606_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{etimer_8h_a37c4c718c8252d6a5ea517e092213606_icgraph}
+\end{center}
+\end{figure}

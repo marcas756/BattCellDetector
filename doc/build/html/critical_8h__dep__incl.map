@@ -1,0 +1,15 @@
+<map id="myos/os/critical.h" name="myos/os/critical.h">
+<area shape="rect" id="node1" title="Critical section handling." alt="" coords="476,5,613,32"/>
+<area shape="rect" id="node2" href="$myos_8h.html" title=" " alt="" coords="403,80,532,107"/>
+<area shape="rect" id="node13" href="$rtimer_8c.html" title=" " alt="" coords="557,80,687,107"/>
+<area shape="rect" id="node3" href="$ctimer_8h.html" title="Callback timer implementation (ctimer)" alt="" coords="5,155,140,181"/>
+<area shape="rect" id="node5" href="$etimer_8h.html" title=" " alt="" coords="164,155,299,181"/>
+<area shape="rect" id="node8" href="$myos_8c.html" title=" " alt="" coords="323,155,451,181"/>
+<area shape="rect" id="node9" href="$process_8c.html" title=" " alt="" coords="476,155,619,181"/>
+<area shape="rect" id="node10" href="$ptimer_8c.html" title=" " alt="" coords="643,155,777,181"/>
+<area shape="rect" id="node11" href="$ptimer_8h.html" title=" " alt="" coords="801,155,936,181"/>
+<area shape="rect" id="node12" href="$uibuttons__process_8c.html" title=" " alt="" coords="960,155,1167,181"/>
+<area shape="rect" id="node4" href="$ctimer_8c.html" title=" " alt="" coords="6,229,139,256"/>
+<area shape="rect" id="node6" href="$etimer_8c.html" title=" " alt="" coords="164,229,299,256"/>
+<area shape="rect" id="node7" href="$uileds__process_8c.html" title=" " alt="" coords="323,229,508,256"/>
+</map>

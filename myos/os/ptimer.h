@@ -68,6 +68,7 @@ typedef slist_node_t ptlist_node_t;
 #define ptlist_begin(listptr)                         slist_begin(listptr)
 #define ptlist_end(listptr)                           slist_end(listptr)
 #define ptlist_empty(listptr)                         slist_empty(listptr)
+#define ptlist_foreach(listptr,iterator)              slist_foreach(listptr,iterator)
 
 #endif
 

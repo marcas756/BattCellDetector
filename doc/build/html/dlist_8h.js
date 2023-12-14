@@ -1,0 +1,25 @@
+var dlist_8h =
+[
+    [ "dlist_node_t", "structdlist__node__t.html", "structdlist__node__t" ],
+    [ "dlist_back", "dlist_8h.html#ad1d2033bf85a976df0264660e75897f4", null ],
+    [ "dlist_begin", "dlist_8h.html#aa4882a8fe635c6d04587830d7816473e", null ],
+    [ "dlist_empty", "dlist_8h.html#a32d6434a21efbaa32af5c6ea7778fbca", null ],
+    [ "dlist_end", "dlist_8h.html#a6d3fcaf247e1020ca87d6cb65757a935", null ],
+    [ "dlist_erase", "dlist_8h.html#afafccb52bd9b1129aa39c59f6f3fbcd3", null ],
+    [ "dlist_foreach", "dlist_8h.html#a6f810c5c180e951efd3e89eca994dfb5", null ],
+    [ "dlist_front", "dlist_8h.html#a6f6a586785093d37647d26709d9d90c8", null ],
+    [ "dlist_init", "dlist_8h.html#a91b88be10a7e1ecc7763abae712aa7fc", null ],
+    [ "dlist_insert_after", "dlist_8h.html#a0d504f97bec128e16205f0fa63bce82f", null ],
+    [ "dlist_insert_before", "dlist_8h.html#a103da03cca6343606bc32a3c6a8fec9c", null ],
+    [ "dlist_next", "dlist_8h.html#a5d22ada75e1ef9d60ebe8d580f5ea05b", null ],
+    [ "DLIST_NODE_TYPE", "dlist_8h.html#a207dad2368bb8983a3fb2df6ca25a080", null ],
+    [ "dlist_pop_back", "dlist_8h.html#a31e6ae1179141b1425f476b5d9423b71", null ],
+    [ "dlist_pop_front", "dlist_8h.html#ab68129d82e32313b0174c636f735f80a", null ],
+    [ "dlist_prev", "dlist_8h.html#a79b530d7d8bc62657ffb605744bbc497", null ],
+    [ "dlist_push_back", "dlist_8h.html#aab234e0b85f3f015ac0419939efb4987", null ],
+    [ "dlist_push_front", "dlist_8h.html#a65124d2ea3f72b8fb6f511d89e74c0d1", null ],
+    [ "dlist_node_t", "dlist_8h.html#a0a945596fd137b14273b421383b45734", null ],
+    [ "dlist_t", "dlist_8h.html#af95cb0e87f5c2fc68cda38f6b98c77b7", null ],
+    [ "dlist_find", "dlist_8h.html#aba7d109449bb740a61d7e8558b1c9321", null ],
+    [ "dlist_size", "dlist_8h.html#a643bd1eb05da6561fcf98ea81bf160c6", null ]
+];

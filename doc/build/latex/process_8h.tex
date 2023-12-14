@@ -1,0 +1,603 @@
+\hypertarget{process_8h}{}\doxysection{myos/os/process.h File Reference}
+\label{process_8h}\index{myos/os/process.h@{myos/os/process.h}}
+{\ttfamily \#include \char`\"{}myosconf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ringbuffer.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}rtimer.\+h\char`\"{}}\newline
+Include dependency graph for process.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structprocess__t}{process\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{process_8h_a82326f09332cda37755cc1c245908468}{PROCESS\+\_\+\+EVENT\+\_\+\+QUEUE\+\_\+\+SIZE}}~8
+\item 
+\#define \mbox{\hyperlink{process_8h_a081de7acfba2d58e20105c5fd0ab62c6}{PROCESS\+\_\+\+EVENT\+\_\+\+START}}~0
+\item 
+\#define \mbox{\hyperlink{process_8h_aa651f4990d6044e87d5ded0762ef5fec}{PROCESS\+\_\+\+EVENT\+\_\+\+POLL}}~1
+\item 
+\#define \mbox{\hyperlink{process_8h_acdefdad965091a7d73b81b4b79d20cf3}{PROCESS\+\_\+\+EVENT\+\_\+\+CONTINUE}}~2
+\item 
+\#define \mbox{\hyperlink{process_8h_a78c78aa2263340eea0b3e6687f8e81e0}{PROCESS\+\_\+\+EVENT\+\_\+\+TIMEOUT}}~3
+\item 
+\#define \mbox{\hyperlink{process_8h_a05a3f7ccdd1fa76a632233b2fb925030}{PROCESS\+\_\+\+EVENT\+\_\+\+EXIT}}~4
+\item 
+\#define \mbox{\hyperlink{process_8h_a958ff4131a37eaf12b920da16749e3b7}{PROCESS\+\_\+\+BROADCAST}}~NULL
+\item 
+\#define \mbox{\hyperlink{process_8h_a7176e97b72de41f5414ff7ed7f21c354}{PROCESS\+\_\+\+THIS}}()~\mbox{\hyperlink{process_8h_aa9d7df66df6cc93749427c602a9ed0d4}{process\+\_\+current}}
+\item 
+\#define \mbox{\hyperlink{process_8h_aa1382b8e0e74913247dec3bcc95d60e0}{PROCESS\+\_\+\+CONTEXT\+\_\+\+BEGIN}}(processptr)
+\item 
+\#define \mbox{\hyperlink{process_8h_a2a15ab599dcfd4e1b8da2448c2763c72}{PROCESS\+\_\+\+CONTEXT\+\_\+\+END}}()
+\item 
+\#define \mbox{\hyperlink{process_8h_a75f11a49b16e9522d701da5900b58f84}{PROCESS}}(name,  threadname)
+\item 
+\#define \mbox{\hyperlink{process_8h_a52fad8ae5a2cdc77dcf7588160668689}{PROCESS\+\_\+\+EXTERN}}(name)~      extern \mbox{\hyperlink{structprocess__t}{process\+\_\+t}} name
+\item 
+\#define \mbox{\hyperlink{process_8h_a33258f17029ea7958284c70a33191c99}{PROCESS\+\_\+\+DATA}}()~(process-\/$>$data)
+\item 
+\#define \mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\+\_\+\+PT}}()~(process-\/$>$pt)
+\item 
+\#define \mbox{\hyperlink{process_8h_ad7e991b1e98c57b075a51b89ab67115d}{PROCESS\+\_\+\+EVENT\+\_\+\+DATA}}()~(evt-\/$>$data)
+\item 
+\#define \mbox{\hyperlink{process_8h_aa03d945686eafaac1474714c60120ce1}{PROCESS\+\_\+\+EVENT\+\_\+\+ID}}()~(evt-\/$>$id)
+\item 
+\#define \mbox{\hyperlink{process_8h_a13c8122399cc49e30a5a2405593136f6}{EXTERN\+\_\+\+PROCESS}}(name)~   extern \mbox{\hyperlink{structprocess__t}{process\+\_\+t}} name
+\item 
+\#define \mbox{\hyperlink{process_8h_a416f099b9ab74750b246a76ad1fab209}{PROCESS\+\_\+\+THREAD}}(name)~int process\+\_\+thread\+\_\+\#\#name(\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process, \mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}} $\ast$evt)
+\item 
+\#define \mbox{\hyperlink{process_8h_a546f54490c98d9dcb5f332fc7cc08160}{PROCESS\+\_\+\+RESPOND}}(evtid,  dataptr)~   process\+\_\+respond(evt,evtid,dataptr)
+\item 
+\#define \mbox{\hyperlink{process_8h_ad3f6015ca6bf770453b78d5ed3bcb4d3}{PROCESS\+\_\+\+INIT}}(processptr,  threadname)~   \mbox{\hyperlink{process_8h_aab238b68c176e90138159f41af9133f1}{process\+\_\+init}}(processptr, process\+\_\+thread\+\_\+\#\#threadname)
+\item 
+\#define \mbox{\hyperlink{process_8h_a9898acaeb0da57395341f917585a476b}{PROCESS\+\_\+\+IS\+\_\+\+RUNNING}}(processptr)~   (\mbox{\hyperlink{pt_8h_a43f309c7d8c427c5d926c9d09b40cdb2}{PT\+\_\+\+IS\+\_\+\+RUNNING}}(\&(processptr)-\/$>$pt))
+\item 
+\#define \mbox{\hyperlink{process_8h_a8efc62947f2ca2c870f52896e0dc1a81}{PROCESS\+\_\+\+BEGIN}}()
+\item 
+\#define \mbox{\hyperlink{process_8h_a9c2681a0070eba8a7c9fdf4dbb6db05e}{PROCESS\+\_\+\+END}}()~\mbox{\hyperlink{pt_8h_a7b04a0035bef29d905496c23bae066d2}{PT\+\_\+\+END}}(\&\mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\+\_\+\+PT}}())
+\item 
+\#define \mbox{\hyperlink{process_8h_aa46ca2a53e8a998d34e811117cebcc7e}{PROCESS\+\_\+\+WAIT\+\_\+\+EVENT}}(evtid)~\mbox{\hyperlink{pt_8h_ae3c821e3a388615528efda9d23c7d115}{PT\+\_\+\+YIELD\+\_\+\+UNTIL}}(\&\mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\+\_\+\+PT}}(), \mbox{\hyperlink{process_8h_aa03d945686eafaac1474714c60120ce1}{PROCESS\+\_\+\+EVENT\+\_\+\+ID}}() == evtid)
+\item 
+\#define \mbox{\hyperlink{process_8h_ab4ac732a442c8c0c9a668ee270570ad2}{PROCESS\+\_\+\+WAIT\+\_\+\+EVENT\+\_\+\+UNTIL}}(cond)~\mbox{\hyperlink{pt_8h_ae3c821e3a388615528efda9d23c7d115}{PT\+\_\+\+YIELD\+\_\+\+UNTIL}}(\&\mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\+\_\+\+PT}}(), cond)
+\item 
+\#define \mbox{\hyperlink{process_8h_aa5052d50b9594f82eae848731a66e516}{PROCESS\+\_\+\+WAIT\+\_\+\+ANY\+\_\+\+EVENT}}()~\mbox{\hyperlink{pt_8h_a155cba6121323726d02c00284428fed6}{PT\+\_\+\+YIELD}}(\&\mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\+\_\+\+PT}}())
+\item 
+\#define \mbox{\hyperlink{process_8h_a08968b5a93592f610e6e496d47171f08}{PROCESS\+\_\+\+SUSPEND}}()
+\item 
+\#define \mbox{\hyperlink{process_8h_a3dee46e19ad8848b86d9d06321b75c0e}{PROCESS\+\_\+\+EXITHANDLER}}(handler)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}} \mbox{\hyperlink{process_8h_ac07e5d221c5c6fdcb155b8405e52ff9a}{process\+\_\+event\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structprocess__t}{process\+\_\+t}} \mbox{\hyperlink{process_8h_a86e278270e65824e677bb14bd8efff7c}{process\+\_\+t}}
+\item 
+typedef int($\ast$ \mbox{\hyperlink{process_8h_acd0513dea8cbb0008f7b4aec536294db}{process\+\_\+thread\+\_\+t}}) (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process, \mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}} $\ast$evt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{process_8h_aab238b68c176e90138159f41af9133f1}{process\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{process_8h_a4964d48d3ef80ee601f207aac97dac95}{process\+\_\+init\+\_\+process}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process, \mbox{\hyperlink{process_8h_acd0513dea8cbb0008f7b4aec536294db}{process\+\_\+thread\+\_\+t}} thread)
+\item 
+bool \mbox{\hyperlink{process_8h_a50f9247e4a3c47c13d832e1463a585c7}{process\+\_\+start}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process, void $\ast$data)
+\item 
+bool \mbox{\hyperlink{process_8h_a742fabe4cec62ca189f77483f53745f0}{process\+\_\+exit}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process)
+\item 
+bool \mbox{\hyperlink{process_8h_a6468400d64b78487b602921f03bff5a4}{process\+\_\+post}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$to, process\+\_\+event\+\_\+id\+\_\+t evtid, void $\ast$data)
+\item 
+bool \mbox{\hyperlink{process_8h_ad4d3ed0e9fa272e2a9a2adc50c2561b4}{process\+\_\+post\+\_\+sync}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$to, process\+\_\+event\+\_\+id\+\_\+t evtid, void $\ast$data)
+\item 
+int \mbox{\hyperlink{process_8h_a4968157ca91c28e26075ab78a1a4fb56}{process\+\_\+run}} (void)
+\item 
+void \mbox{\hyperlink{process_8h_a5dbaa2bc9704cfc1ece24d6802c69d32}{process\+\_\+poll}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$ \mbox{\hyperlink{process_8h_aa9d7df66df6cc93749427c602a9ed0d4}{process\+\_\+current}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{process_8h_a13c8122399cc49e30a5a2405593136f6}\label{process_8h_a13c8122399cc49e30a5a2405593136f6}} 
+\index{process.h@{process.h}!EXTERN\_PROCESS@{EXTERN\_PROCESS}}
+\index{EXTERN\_PROCESS@{EXTERN\_PROCESS}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{EXTERN\_PROCESS}{EXTERN\_PROCESS}}
+{\footnotesize\ttfamily \#define EXTERN\+\_\+\+PROCESS(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~   extern \mbox{\hyperlink{structprocess__t}{process\+\_\+t}} name}
+
+
+
+Definition at line 140 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a75f11a49b16e9522d701da5900b58f84}\label{process_8h_a75f11a49b16e9522d701da5900b58f84}} 
+\index{process.h@{process.h}!PROCESS@{PROCESS}}
+\index{PROCESS@{PROCESS}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS}{PROCESS}}
+{\footnotesize\ttfamily \#define PROCESS(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{threadname }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{   \textcolor{keywordtype}{int} process\_thread\_\#\#threadname(\mbox{\hyperlink{structprocess__t}{process\_t}} *process, \mbox{\hyperlink{structprocess__event__t}{process\_event\_t}} *evt);  \(\backslash\)}
+\DoxyCodeLine{   process\_t name = \{\{0\},process\_thread\_\#\#threadname,0,\{0\},\textcolor{keyword}{false}\}}
+
+\end{DoxyCode}
+
+
+Definition at line 127 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a8efc62947f2ca2c870f52896e0dc1a81}\label{process_8h_a8efc62947f2ca2c870f52896e0dc1a81}} 
+\index{process.h@{process.h}!PROCESS\_BEGIN@{PROCESS\_BEGIN}}
+\index{PROCESS\_BEGIN@{PROCESS\_BEGIN}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_BEGIN}{PROCESS\_BEGIN}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+BEGIN(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{   \textcolor{keywordflow}{if}(\mbox{\hyperlink{process_8h_aa03d945686eafaac1474714c60120ce1}{PROCESS\_EVENT\_ID}}() == \mbox{\hyperlink{process_8h_a05a3f7ccdd1fa76a632233b2fb925030}{PROCESS\_EVENT\_EXIT}}) \{\mbox{\hyperlink{pt_8h_a905451249dca72ce0385bf2a9ff178ee}{PT\_EXIT}}(\&\mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\_PT}}());\} \(\backslash\)}
+\DoxyCodeLine{   PT\_BEGIN(\&\mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\_PT}}())}
+
+\end{DoxyCode}
+
+
+Definition at line 157 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a958ff4131a37eaf12b920da16749e3b7}\label{process_8h_a958ff4131a37eaf12b920da16749e3b7}} 
+\index{process.h@{process.h}!PROCESS\_BROADCAST@{PROCESS\_BROADCAST}}
+\index{PROCESS\_BROADCAST@{PROCESS\_BROADCAST}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_BROADCAST}{PROCESS\_BROADCAST}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+BROADCAST~NULL}
+
+
+
+Definition at line 82 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_aa1382b8e0e74913247dec3bcc95d60e0}\label{process_8h_aa1382b8e0e74913247dec3bcc95d60e0}} 
+\index{process.h@{process.h}!PROCESS\_CONTEXT\_BEGIN@{PROCESS\_CONTEXT\_BEGIN}}
+\index{PROCESS\_CONTEXT\_BEGIN@{PROCESS\_CONTEXT\_BEGIN}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_CONTEXT\_BEGIN}{PROCESS\_CONTEXT\_BEGIN}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+CONTEXT\+\_\+\+BEGIN(\begin{DoxyParamCaption}\item[{}]{processptr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{      \textcolor{keywordflow}{do}\{ \(\backslash\)}
+\DoxyCodeLine{         process\_t *process\_backup; \(\backslash\)}
+\DoxyCodeLine{         process\_backup = \mbox{\hyperlink{process_8h_a7176e97b72de41f5414ff7ed7f21c354}{PROCESS\_THIS}}(); \(\backslash\)}
+\DoxyCodeLine{         PROCESS\_THIS() = processptr}
+
+\end{DoxyCode}
+
+
+Definition at line 116 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a2a15ab599dcfd4e1b8da2448c2763c72}\label{process_8h_a2a15ab599dcfd4e1b8da2448c2763c72}} 
+\index{process.h@{process.h}!PROCESS\_CONTEXT\_END@{PROCESS\_CONTEXT\_END}}
+\index{PROCESS\_CONTEXT\_END@{PROCESS\_CONTEXT\_END}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_CONTEXT\_END}{PROCESS\_CONTEXT\_END}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+CONTEXT\+\_\+\+END(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{         \mbox{\hyperlink{process_8h_a7176e97b72de41f5414ff7ed7f21c354}{PROCESS\_THIS}}() = process\_backup; \(\backslash\)}
+\DoxyCodeLine{      \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line 122 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a33258f17029ea7958284c70a33191c99}\label{process_8h_a33258f17029ea7958284c70a33191c99}} 
+\index{process.h@{process.h}!PROCESS\_DATA@{PROCESS\_DATA}}
+\index{PROCESS\_DATA@{PROCESS\_DATA}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_DATA}{PROCESS\_DATA}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+DATA(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(process-\/$>$data)}
+
+
+
+Definition at line 134 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a9c2681a0070eba8a7c9fdf4dbb6db05e}\label{process_8h_a9c2681a0070eba8a7c9fdf4dbb6db05e}} 
+\index{process.h@{process.h}!PROCESS\_END@{PROCESS\_END}}
+\index{PROCESS\_END@{PROCESS\_END}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_END}{PROCESS\_END}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+END(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{pt_8h_a7b04a0035bef29d905496c23bae066d2}{PT\+\_\+\+END}}(\&\mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\+\_\+\+PT}}())}
+
+
+
+Definition at line 163 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_acdefdad965091a7d73b81b4b79d20cf3}\label{process_8h_acdefdad965091a7d73b81b4b79d20cf3}} 
+\index{process.h@{process.h}!PROCESS\_EVENT\_CONTINUE@{PROCESS\_EVENT\_CONTINUE}}
+\index{PROCESS\_EVENT\_CONTINUE@{PROCESS\_EVENT\_CONTINUE}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_EVENT\_CONTINUE}{PROCESS\_EVENT\_CONTINUE}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+EVENT\+\_\+\+CONTINUE~2}
+
+
+
+Definition at line 78 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_ad7e991b1e98c57b075a51b89ab67115d}\label{process_8h_ad7e991b1e98c57b075a51b89ab67115d}} 
+\index{process.h@{process.h}!PROCESS\_EVENT\_DATA@{PROCESS\_EVENT\_DATA}}
+\index{PROCESS\_EVENT\_DATA@{PROCESS\_EVENT\_DATA}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_EVENT\_DATA}{PROCESS\_EVENT\_DATA}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+EVENT\+\_\+\+DATA(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(evt-\/$>$data)}
+
+
+
+Definition at line 136 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a05a3f7ccdd1fa76a632233b2fb925030}\label{process_8h_a05a3f7ccdd1fa76a632233b2fb925030}} 
+\index{process.h@{process.h}!PROCESS\_EVENT\_EXIT@{PROCESS\_EVENT\_EXIT}}
+\index{PROCESS\_EVENT\_EXIT@{PROCESS\_EVENT\_EXIT}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_EVENT\_EXIT}{PROCESS\_EVENT\_EXIT}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+EVENT\+\_\+\+EXIT~4}
+
+
+
+Definition at line 80 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_aa03d945686eafaac1474714c60120ce1}\label{process_8h_aa03d945686eafaac1474714c60120ce1}} 
+\index{process.h@{process.h}!PROCESS\_EVENT\_ID@{PROCESS\_EVENT\_ID}}
+\index{PROCESS\_EVENT\_ID@{PROCESS\_EVENT\_ID}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_EVENT\_ID}{PROCESS\_EVENT\_ID}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+EVENT\+\_\+\+ID(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(evt-\/$>$id)}
+
+
+
+Definition at line 137 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_aa651f4990d6044e87d5ded0762ef5fec}\label{process_8h_aa651f4990d6044e87d5ded0762ef5fec}} 
+\index{process.h@{process.h}!PROCESS\_EVENT\_POLL@{PROCESS\_EVENT\_POLL}}
+\index{PROCESS\_EVENT\_POLL@{PROCESS\_EVENT\_POLL}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_EVENT\_POLL}{PROCESS\_EVENT\_POLL}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+EVENT\+\_\+\+POLL~1}
+
+
+
+Definition at line 77 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a82326f09332cda37755cc1c245908468}\label{process_8h_a82326f09332cda37755cc1c245908468}} 
+\index{process.h@{process.h}!PROCESS\_EVENT\_QUEUE\_SIZE@{PROCESS\_EVENT\_QUEUE\_SIZE}}
+\index{PROCESS\_EVENT\_QUEUE\_SIZE@{PROCESS\_EVENT\_QUEUE\_SIZE}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_EVENT\_QUEUE\_SIZE}{PROCESS\_EVENT\_QUEUE\_SIZE}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+EVENT\+\_\+\+QUEUE\+\_\+\+SIZE~8}
+
+
+
+Definition at line 72 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a081de7acfba2d58e20105c5fd0ab62c6}\label{process_8h_a081de7acfba2d58e20105c5fd0ab62c6}} 
+\index{process.h@{process.h}!PROCESS\_EVENT\_START@{PROCESS\_EVENT\_START}}
+\index{PROCESS\_EVENT\_START@{PROCESS\_EVENT\_START}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_EVENT\_START}{PROCESS\_EVENT\_START}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+EVENT\+\_\+\+START~0}
+
+
+
+Definition at line 76 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a78c78aa2263340eea0b3e6687f8e81e0}\label{process_8h_a78c78aa2263340eea0b3e6687f8e81e0}} 
+\index{process.h@{process.h}!PROCESS\_EVENT\_TIMEOUT@{PROCESS\_EVENT\_TIMEOUT}}
+\index{PROCESS\_EVENT\_TIMEOUT@{PROCESS\_EVENT\_TIMEOUT}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_EVENT\_TIMEOUT}{PROCESS\_EVENT\_TIMEOUT}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+EVENT\+\_\+\+TIMEOUT~3}
+
+
+
+Definition at line 79 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a3dee46e19ad8848b86d9d06321b75c0e}\label{process_8h_a3dee46e19ad8848b86d9d06321b75c0e}} 
+\index{process.h@{process.h}!PROCESS\_EXITHANDLER@{PROCESS\_EXITHANDLER}}
+\index{PROCESS\_EXITHANDLER@{PROCESS\_EXITHANDLER}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_EXITHANDLER}{PROCESS\_EXITHANDLER}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+EXITHANDLER(\begin{DoxyParamCaption}\item[{}]{handler }\end{DoxyParamCaption})}
+
+Specify an action when a process exits.
+
+\begin{DoxyNote}{Note}
+This declaration must come immediately before the \mbox{\hyperlink{process_8h_a8efc62947f2ca2c870f52896e0dc1a81}{PROCESS\+\_\+\+BEGIN()}} macro.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em handler} & The action to be performed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a52fad8ae5a2cdc77dcf7588160668689}\label{process_8h_a52fad8ae5a2cdc77dcf7588160668689}} 
+\index{process.h@{process.h}!PROCESS\_EXTERN@{PROCESS\_EXTERN}}
+\index{PROCESS\_EXTERN@{PROCESS\_EXTERN}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_EXTERN}{PROCESS\_EXTERN}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+EXTERN(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~      extern \mbox{\hyperlink{structprocess__t}{process\+\_\+t}} name}
+
+
+
+Definition at line 131 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_ad3f6015ca6bf770453b78d5ed3bcb4d3}\label{process_8h_ad3f6015ca6bf770453b78d5ed3bcb4d3}} 
+\index{process.h@{process.h}!PROCESS\_INIT@{PROCESS\_INIT}}
+\index{PROCESS\_INIT@{PROCESS\_INIT}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_INIT}{PROCESS\_INIT}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+INIT(\begin{DoxyParamCaption}\item[{}]{processptr,  }\item[{}]{threadname }\end{DoxyParamCaption})~   \mbox{\hyperlink{process_8h_aab238b68c176e90138159f41af9133f1}{process\+\_\+init}}(processptr, process\+\_\+thread\+\_\+\#\#threadname)}
+
+
+
+Definition at line 150 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a9898acaeb0da57395341f917585a476b}\label{process_8h_a9898acaeb0da57395341f917585a476b}} 
+\index{process.h@{process.h}!PROCESS\_IS\_RUNNING@{PROCESS\_IS\_RUNNING}}
+\index{PROCESS\_IS\_RUNNING@{PROCESS\_IS\_RUNNING}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_IS\_RUNNING}{PROCESS\_IS\_RUNNING}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+IS\+\_\+\+RUNNING(\begin{DoxyParamCaption}\item[{}]{processptr }\end{DoxyParamCaption})~   (\mbox{\hyperlink{pt_8h_a43f309c7d8c427c5d926c9d09b40cdb2}{PT\+\_\+\+IS\+\_\+\+RUNNING}}(\&(processptr)-\/$>$pt))}
+
+
+
+Definition at line 153 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a159527b60ea5e6b8e40f7470097ef321}\label{process_8h_a159527b60ea5e6b8e40f7470097ef321}} 
+\index{process.h@{process.h}!PROCESS\_PT@{PROCESS\_PT}}
+\index{PROCESS\_PT@{PROCESS\_PT}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_PT}{PROCESS\_PT}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+PT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(process-\/$>$pt)}
+
+
+
+Definition at line 135 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a546f54490c98d9dcb5f332fc7cc08160}\label{process_8h_a546f54490c98d9dcb5f332fc7cc08160}} 
+\index{process.h@{process.h}!PROCESS\_RESPOND@{PROCESS\_RESPOND}}
+\index{PROCESS\_RESPOND@{PROCESS\_RESPOND}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_RESPOND}{PROCESS\_RESPOND}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+RESPOND(\begin{DoxyParamCaption}\item[{}]{evtid,  }\item[{}]{dataptr }\end{DoxyParamCaption})~   process\+\_\+respond(evt,evtid,dataptr)}
+
+
+
+Definition at line 147 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a08968b5a93592f610e6e496d47171f08}\label{process_8h_a08968b5a93592f610e6e496d47171f08}} 
+\index{process.h@{process.h}!PROCESS\_SUSPEND@{PROCESS\_SUSPEND}}
+\index{PROCESS\_SUSPEND@{PROCESS\_SUSPEND}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_SUSPEND}{PROCESS\_SUSPEND}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+SUSPEND(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{   \textcolor{keywordflow}{do}\{ \(\backslash\)}
+\DoxyCodeLine{      process\_post(\mbox{\hyperlink{process_8h_a7176e97b72de41f5414ff7ed7f21c354}{PROCESS\_THIS}}(),\mbox{\hyperlink{process_8h_acdefdad965091a7d73b81b4b79d20cf3}{PROCESS\_EVENT\_CONTINUE}},NULL); \(\backslash\)}
+\DoxyCodeLine{      PROCESS\_WAIT\_EVENT(\mbox{\hyperlink{process_8h_acdefdad965091a7d73b81b4b79d20cf3}{PROCESS\_EVENT\_CONTINUE}}); \(\backslash\)}
+\DoxyCodeLine{   \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line 170 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a7176e97b72de41f5414ff7ed7f21c354}\label{process_8h_a7176e97b72de41f5414ff7ed7f21c354}} 
+\index{process.h@{process.h}!PROCESS\_THIS@{PROCESS\_THIS}}
+\index{PROCESS\_THIS@{PROCESS\_THIS}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_THIS}{PROCESS\_THIS}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+THIS(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{process_8h_aa9d7df66df6cc93749427c602a9ed0d4}{process\+\_\+current}}}
+
+
+
+Definition at line 114 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a416f099b9ab74750b246a76ad1fab209}\label{process_8h_a416f099b9ab74750b246a76ad1fab209}} 
+\index{process.h@{process.h}!PROCESS\_THREAD@{PROCESS\_THREAD}}
+\index{PROCESS\_THREAD@{PROCESS\_THREAD}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_THREAD}{PROCESS\_THREAD}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+THREAD(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~int process\+\_\+thread\+\_\+\#\#name(\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process, \mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}} $\ast$evt)}
+
+
+
+Definition at line 143 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_aa5052d50b9594f82eae848731a66e516}\label{process_8h_aa5052d50b9594f82eae848731a66e516}} 
+\index{process.h@{process.h}!PROCESS\_WAIT\_ANY\_EVENT@{PROCESS\_WAIT\_ANY\_EVENT}}
+\index{PROCESS\_WAIT\_ANY\_EVENT@{PROCESS\_WAIT\_ANY\_EVENT}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_WAIT\_ANY\_EVENT}{PROCESS\_WAIT\_ANY\_EVENT}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+WAIT\+\_\+\+ANY\+\_\+\+EVENT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{pt_8h_a155cba6121323726d02c00284428fed6}{PT\+\_\+\+YIELD}}(\&\mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\+\_\+\+PT}}())}
+
+
+
+Definition at line 166 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_aa46ca2a53e8a998d34e811117cebcc7e}\label{process_8h_aa46ca2a53e8a998d34e811117cebcc7e}} 
+\index{process.h@{process.h}!PROCESS\_WAIT\_EVENT@{PROCESS\_WAIT\_EVENT}}
+\index{PROCESS\_WAIT\_EVENT@{PROCESS\_WAIT\_EVENT}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_WAIT\_EVENT}{PROCESS\_WAIT\_EVENT}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+WAIT\+\_\+\+EVENT(\begin{DoxyParamCaption}\item[{}]{evtid }\end{DoxyParamCaption})~\mbox{\hyperlink{pt_8h_ae3c821e3a388615528efda9d23c7d115}{PT\+\_\+\+YIELD\+\_\+\+UNTIL}}(\&\mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\+\_\+\+PT}}(), \mbox{\hyperlink{process_8h_aa03d945686eafaac1474714c60120ce1}{PROCESS\+\_\+\+EVENT\+\_\+\+ID}}() == evtid)}
+
+
+
+Definition at line 164 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_ab4ac732a442c8c0c9a668ee270570ad2}\label{process_8h_ab4ac732a442c8c0c9a668ee270570ad2}} 
+\index{process.h@{process.h}!PROCESS\_WAIT\_EVENT\_UNTIL@{PROCESS\_WAIT\_EVENT\_UNTIL}}
+\index{PROCESS\_WAIT\_EVENT\_UNTIL@{PROCESS\_WAIT\_EVENT\_UNTIL}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_WAIT\_EVENT\_UNTIL}{PROCESS\_WAIT\_EVENT\_UNTIL}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+WAIT\+\_\+\+EVENT\+\_\+\+UNTIL(\begin{DoxyParamCaption}\item[{}]{cond }\end{DoxyParamCaption})~\mbox{\hyperlink{pt_8h_ae3c821e3a388615528efda9d23c7d115}{PT\+\_\+\+YIELD\+\_\+\+UNTIL}}(\&\mbox{\hyperlink{process_8h_a159527b60ea5e6b8e40f7470097ef321}{PROCESS\+\_\+\+PT}}(), cond)}
+
+
+
+Definition at line 165 of file process.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{process_8h_ac07e5d221c5c6fdcb155b8405e52ff9a}\label{process_8h_ac07e5d221c5c6fdcb155b8405e52ff9a}} 
+\index{process.h@{process.h}!process\_event\_t@{process\_event\_t}}
+\index{process\_event\_t@{process\_event\_t}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_event\_t}{process\_event\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}} \mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}}}
+
+
+
+Definition at line 1 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_a86e278270e65824e677bb14bd8efff7c}\label{process_8h_a86e278270e65824e677bb14bd8efff7c}} 
+\index{process.h@{process.h}!process\_t@{process\_t}}
+\index{process\_t@{process\_t}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_t}{process\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structprocess__t}{process\+\_\+t}} \mbox{\hyperlink{structprocess__t}{process\+\_\+t}}}
+
+
+
+Definition at line 1 of file process.\+h.
+
+\mbox{\Hypertarget{process_8h_acd0513dea8cbb0008f7b4aec536294db}\label{process_8h_acd0513dea8cbb0008f7b4aec536294db}} 
+\index{process.h@{process.h}!process\_thread\_t@{process\_thread\_t}}
+\index{process\_thread\_t@{process\_thread\_t}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_thread\_t}{process\_thread\_t}}
+{\footnotesize\ttfamily typedef int($\ast$ process\+\_\+thread\+\_\+t) (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process, \mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}} $\ast$evt)}
+
+
+
+Definition at line 88 of file process.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{process_8h_a742fabe4cec62ca189f77483f53745f0}\label{process_8h_a742fabe4cec62ca189f77483f53745f0}} 
+\index{process.h@{process.h}!process\_exit@{process\_exit}}
+\index{process\_exit@{process\_exit}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_exit()}{process\_exit()}}
+{\footnotesize\ttfamily bool process\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{process }\end{DoxyParamCaption})}
+
+
+
+Definition at line 174 of file process.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process_8h_a742fabe4cec62ca189f77483f53745f0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{process_8h_aab238b68c176e90138159f41af9133f1}\label{process_8h_aab238b68c176e90138159f41af9133f1}} 
+\index{process.h@{process.h}!process\_init@{process\_init}}
+\index{process\_init@{process\_init}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_init()}{process\_init()}}
+{\footnotesize\ttfamily void process\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{process_8h_aab238b68c176e90138159f41af9133f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{process_8h_a4964d48d3ef80ee601f207aac97dac95}\label{process_8h_a4964d48d3ef80ee601f207aac97dac95}} 
+\index{process.h@{process.h}!process\_init\_process@{process\_init\_process}}
+\index{process\_init\_process@{process\_init\_process}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_init\_process()}{process\_init\_process()}}
+{\footnotesize\ttfamily void process\+\_\+init\+\_\+process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{process,  }\item[{\mbox{\hyperlink{process_8h_acd0513dea8cbb0008f7b4aec536294db}{process\+\_\+thread\+\_\+t}}}]{thread }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{process_8h_a5dbaa2bc9704cfc1ece24d6802c69d32}\label{process_8h_a5dbaa2bc9704cfc1ece24d6802c69d32}} 
+\index{process.h@{process.h}!process\_poll@{process\_poll}}
+\index{process\_poll@{process\_poll}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_poll()}{process\_poll()}}
+{\footnotesize\ttfamily void process\+\_\+poll (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{process }\end{DoxyParamCaption})}
+
+
+
+Definition at line 193 of file process.\+c.
+
+\mbox{\Hypertarget{process_8h_a6468400d64b78487b602921f03bff5a4}\label{process_8h_a6468400d64b78487b602921f03bff5a4}} 
+\index{process.h@{process.h}!process\_post@{process\_post}}
+\index{process\_post@{process\_post}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_post()}{process\_post()}}
+{\footnotesize\ttfamily bool process\+\_\+post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{to,  }\item[{process\+\_\+event\+\_\+id\+\_\+t}]{evtid,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file process.\+c.
+
+\mbox{\Hypertarget{process_8h_ad4d3ed0e9fa272e2a9a2adc50c2561b4}\label{process_8h_ad4d3ed0e9fa272e2a9a2adc50c2561b4}} 
+\index{process.h@{process.h}!process\_post\_sync@{process\_post\_sync}}
+\index{process\_post\_sync@{process\_post\_sync}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_post\_sync()}{process\_post\_sync()}}
+{\footnotesize\ttfamily bool process\+\_\+post\+\_\+sync (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{to,  }\item[{process\+\_\+event\+\_\+id\+\_\+t}]{evtid,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 140 of file process.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process_8h_ad4d3ed0e9fa272e2a9a2adc50c2561b4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{process_8h_ad4d3ed0e9fa272e2a9a2adc50c2561b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{process_8h_a4968157ca91c28e26075ab78a1a4fb56}\label{process_8h_a4968157ca91c28e26075ab78a1a4fb56}} 
+\index{process.h@{process.h}!process\_run@{process\_run}}
+\index{process\_run@{process\_run}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_run()}{process\_run()}}
+{\footnotesize\ttfamily int process\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 201 of file process.\+c.
+
+\mbox{\Hypertarget{process_8h_a50f9247e4a3c47c13d832e1463a585c7}\label{process_8h_a50f9247e4a3c47c13d832e1463a585c7}} 
+\index{process.h@{process.h}!process\_start@{process\_start}}
+\index{process\_start@{process\_start}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_start()}{process\_start()}}
+{\footnotesize\ttfamily bool process\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{process,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 153 of file process.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{process_8h_a50f9247e4a3c47c13d832e1463a585c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{process_8h_aa9d7df66df6cc93749427c602a9ed0d4}\label{process_8h_aa9d7df66df6cc93749427c602a9ed0d4}} 
+\index{process.h@{process.h}!process\_current@{process\_current}}
+\index{process\_current@{process\_current}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{process\_current}{process\_current}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structprocess__t}{process\+\_\+t}}$\ast$ process\+\_\+current\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line 50 of file process.\+c.
+

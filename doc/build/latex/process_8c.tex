@@ -1,0 +1,193 @@
+\hypertarget{process_8c}{}\doxysection{myos/os/process.c File Reference}
+\label{process_8c}\index{myos/os/process.c@{myos/os/process.c}}
+{\ttfamily \#include \char`\"{}myos.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+Include dependency graph for process.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{process_8c_ae8924623ca601364965e3d88fb7f40fa}{DBG}}(...)
+\item 
+\#define \mbox{\hyperlink{process_8c_a4815442f2f7ca906d413ccd2781fdb99}{DBG\+\_\+\+PROCESS}}(...)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{process_8c_ad3f513c9f8bab868931e7b2900e6f23a}{RINGBUFFER\+\_\+\+TYPEDEF}} (process\+\_\+event\+\_\+queue, \mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}}, 8)
+\item 
+bool \mbox{\hyperlink{process_8c_a6468400d64b78487b602921f03bff5a4}{process\+\_\+post}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$to, process\+\_\+event\+\_\+id\+\_\+t evtid, void $\ast$data)
+\item 
+bool \mbox{\hyperlink{process_8c_ab7764074cac76b87f9a33f101c65367d}{process\+\_\+deliver\+\_\+event}} (\mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}} $\ast$evt)
+\item 
+bool \mbox{\hyperlink{process_8c_ad4d3ed0e9fa272e2a9a2adc50c2561b4}{process\+\_\+post\+\_\+sync}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$to, process\+\_\+event\+\_\+id\+\_\+t evtid, void $\ast$data)
+\item 
+bool \mbox{\hyperlink{process_8c_a50f9247e4a3c47c13d832e1463a585c7}{process\+\_\+start}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process, void $\ast$data)
+\item 
+bool \mbox{\hyperlink{process_8c_a742fabe4cec62ca189f77483f53745f0}{process\+\_\+exit}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process)
+\item 
+void \mbox{\hyperlink{process_8c_a5dbaa2bc9704cfc1ece24d6802c69d32}{process\+\_\+poll}} (\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$process)
+\item 
+int \mbox{\hyperlink{process_8c_a4968157ca91c28e26075ab78a1a4fb56}{process\+\_\+run}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$ \mbox{\hyperlink{process_8c_aa9d7df66df6cc93749427c602a9ed0d4}{process\+\_\+current}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{process_8c_ae8924623ca601364965e3d88fb7f40fa}\label{process_8c_ae8924623ca601364965e3d88fb7f40fa}} 
+\index{process.c@{process.c}!DBG@{DBG}}
+\index{DBG@{DBG}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{DBG}{DBG}}
+{\footnotesize\ttfamily \#define DBG(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_a4815442f2f7ca906d413ccd2781fdb99}\label{process_8c_a4815442f2f7ca906d413ccd2781fdb99}} 
+\index{process.c@{process.c}!DBG\_PROCESS@{DBG\_PROCESS}}
+\index{DBG\_PROCESS@{DBG\_PROCESS}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{DBG\_PROCESS}{DBG\_PROCESS}}
+{\footnotesize\ttfamily \#define DBG\+\_\+\+PROCESS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file process.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{process_8c_ab7764074cac76b87f9a33f101c65367d}\label{process_8c_ab7764074cac76b87f9a33f101c65367d}} 
+\index{process.c@{process.c}!process\_deliver\_event@{process\_deliver\_event}}
+\index{process\_deliver\_event@{process\_deliver\_event}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{process\_deliver\_event()}{process\_deliver\_event()}}
+{\footnotesize\ttfamily bool process\+\_\+deliver\+\_\+event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}} $\ast$}]{evt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file process.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process_8c_ab7764074cac76b87f9a33f101c65367d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{process_8c_a742fabe4cec62ca189f77483f53745f0}\label{process_8c_a742fabe4cec62ca189f77483f53745f0}} 
+\index{process.c@{process.c}!process\_exit@{process\_exit}}
+\index{process\_exit@{process\_exit}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{process\_exit()}{process\_exit()}}
+{\footnotesize\ttfamily bool process\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{process }\end{DoxyParamCaption})}
+
+
+
+Definition at line 174 of file process.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process_8c_a742fabe4cec62ca189f77483f53745f0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{process_8c_a5dbaa2bc9704cfc1ece24d6802c69d32}\label{process_8c_a5dbaa2bc9704cfc1ece24d6802c69d32}} 
+\index{process.c@{process.c}!process\_poll@{process\_poll}}
+\index{process\_poll@{process\_poll}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{process\_poll()}{process\_poll()}}
+{\footnotesize\ttfamily void process\+\_\+poll (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{process }\end{DoxyParamCaption})}
+
+
+
+Definition at line 193 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_a6468400d64b78487b602921f03bff5a4}\label{process_8c_a6468400d64b78487b602921f03bff5a4}} 
+\index{process.c@{process.c}!process\_post@{process\_post}}
+\index{process\_post@{process\_post}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{process\_post()}{process\_post()}}
+{\footnotesize\ttfamily bool process\+\_\+post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{to,  }\item[{process\+\_\+event\+\_\+id\+\_\+t}]{evtid,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_ad4d3ed0e9fa272e2a9a2adc50c2561b4}\label{process_8c_ad4d3ed0e9fa272e2a9a2adc50c2561b4}} 
+\index{process.c@{process.c}!process\_post\_sync@{process\_post\_sync}}
+\index{process\_post\_sync@{process\_post\_sync}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{process\_post\_sync()}{process\_post\_sync()}}
+{\footnotesize\ttfamily bool process\+\_\+post\+\_\+sync (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{to,  }\item[{process\+\_\+event\+\_\+id\+\_\+t}]{evtid,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 140 of file process.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{process_8c_ad4d3ed0e9fa272e2a9a2adc50c2561b4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{process_8c_ad4d3ed0e9fa272e2a9a2adc50c2561b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{process_8c_a4968157ca91c28e26075ab78a1a4fb56}\label{process_8c_a4968157ca91c28e26075ab78a1a4fb56}} 
+\index{process.c@{process.c}!process\_run@{process\_run}}
+\index{process\_run@{process\_run}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{process\_run()}{process\_run()}}
+{\footnotesize\ttfamily int process\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 201 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_a50f9247e4a3c47c13d832e1463a585c7}\label{process_8c_a50f9247e4a3c47c13d832e1463a585c7}} 
+\index{process.c@{process.c}!process\_start@{process\_start}}
+\index{process\_start@{process\_start}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{process\_start()}{process\_start()}}
+{\footnotesize\ttfamily bool process\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprocess__t}{process\+\_\+t}} $\ast$}]{process,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 153 of file process.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{process_8c_a50f9247e4a3c47c13d832e1463a585c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{process_8c_ad3f513c9f8bab868931e7b2900e6f23a}\label{process_8c_ad3f513c9f8bab868931e7b2900e6f23a}} 
+\index{process.c@{process.c}!RINGBUFFER\_TYPEDEF@{RINGBUFFER\_TYPEDEF}}
+\index{RINGBUFFER\_TYPEDEF@{RINGBUFFER\_TYPEDEF}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_TYPEDEF()}{RINGBUFFER\_TYPEDEF()}}
+{\footnotesize\ttfamily RINGBUFFER\+\_\+\+TYPEDEF (\begin{DoxyParamCaption}\item[{process\+\_\+event\+\_\+queue}]{,  }\item[{\mbox{\hyperlink{structprocess__event__t}{process\+\_\+event\+\_\+t}}}]{,  }\item[{8}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{process_8c_aa9d7df66df6cc93749427c602a9ed0d4}\label{process_8c_aa9d7df66df6cc93749427c602a9ed0d4}} 
+\index{process.c@{process.c}!process\_current@{process\_current}}
+\index{process\_current@{process\_current}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{process\_current}{process\_current}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structprocess__t}{process\+\_\+t}}$\ast$ process\+\_\+current = NULL}
+
+
+
+Definition at line 50 of file process.\+c.
+

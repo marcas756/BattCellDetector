@@ -1,0 +1,213 @@
+\hypertarget{timestamp_8h}{}\doxysection{myos/os/timestamp.h File Reference}
+\label{timestamp_8h}\index{myos/os/timestamp.h@{myos/os/timestamp.h}}
+
+
+Provides definitions to access and evaluate the systems time stamp counter.  
+
+
+{\ttfamily \#include \char`\"{}timestamp\+\_\+arch.\+h\char`\"{}}\newline
+Include dependency graph for timestamp.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{timestamp_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timestamp_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{timestamp_8h_a8cc979d1d16232f2f831a0917c6f404d}{TIMESTAMP\+\_\+\+TICKS\+\_\+\+PER\+\_\+\+SEC}}~TIMESTAMP\+\_\+\+ARCH\+\_\+\+TICKS\+\_\+\+PER\+\_\+\+SEC
+\item 
+\#define \mbox{\hyperlink{timestamp_8h_a16ec624ba4dd04b510b14ddbc75f3e0c}{TIMESTAMP\+\_\+\+DIFF}}~TIMESTAMP\+\_\+\+ARCH\+\_\+\+DIFF
+\item 
+\#define \mbox{\hyperlink{timestamp_8h_ad7f88aa8d600218761caca25cb72debc}{timestamp\+\_\+module\+\_\+init}}~timestamp\+\_\+arch\+\_\+module\+\_\+init
+\item 
+\#define \mbox{\hyperlink{timestamp_8h_ab3e436aa0a4a08d9c8121f3a1a61086f}{timestamp\+\_\+now}}~timestamp\+\_\+arch\+\_\+now
+\item 
+\#define \mbox{\hyperlink{timestamp_8h_a1e59342bd76a624c281f1c74e0415d73}{timestamp\+\_\+less\+\_\+than}}(a,  b)~(\mbox{\hyperlink{timestamp_8h_a16ec624ba4dd04b510b14ddbc75f3e0c}{TIMESTAMP\+\_\+\+DIFF}}((a),(b)) $<$ 0)
+\item 
+\#define \mbox{\hyperlink{timestamp_8h_a04a9c650b0e455a2cc34665f685ace35}{timestamp\+\_\+lessequal\+\_\+than}}(a,  b)~(\mbox{\hyperlink{timestamp_8h_a16ec624ba4dd04b510b14ddbc75f3e0c}{TIMESTAMP\+\_\+\+DIFF}}((a),(b)) $<$= 0)
+\item 
+\#define \mbox{\hyperlink{timestamp_8h_a474612c0e4a1638837ea69a3e3d5494e}{timestamp\+\_\+passed}}(timestamp)~      \mbox{\hyperlink{timestamp_8h_a04a9c650b0e455a2cc34665f685ace35}{timestamp\+\_\+lessequal\+\_\+than}}(timestamp,\mbox{\hyperlink{timestamp_8h_ab3e436aa0a4a08d9c8121f3a1a61086f}{timestamp\+\_\+now}}())
+\begin{DoxyCompactList}\small\item\em Checks if a provided time stamp is reached. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{timestamp_8h_ac73aa7af497da5a3567a80b9350a11b9}{timestamp\+\_\+block\+\_\+until}}(timestamp)~    while(!\mbox{\hyperlink{timestamp_8h_a474612c0e4a1638837ea69a3e3d5494e}{timestamp\+\_\+passed}}(timestamp))\{\};
+\begin{DoxyCompactList}\small\item\em Blocks until the time stamp provided is in the past. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{timestamp_8h_ada7ec4a95d0f8c19eba9d18d89a0fdc1}{timestamp\+\_\+block\+\_\+for}}(timespan)
+\begin{DoxyCompactList}\small\item\em Blocks for some time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef timestamp\+\_\+arch\+\_\+t \mbox{\hyperlink{timestamp_8h_a887299b90b480bd3682340876e33f5f1}{timestamp\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{timestamp_8h_a887299b90b480bd3682340876e33f5f1}{timestamp\+\_\+t}} \mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\+\_\+t}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides definitions to access and evaluate the systems time stamp counter. 
+
+Provides the architecture independent part to access and evaluate the systems time stamp counter. For architecture dependent part see \char`\"{}timestamp\+\_\+arch.\+h\char`\"{} of the corresponding architectural part.
+
+Time stamps are the base for all non real time timers used by the os. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{timestamp_8h_ada7ec4a95d0f8c19eba9d18d89a0fdc1}\label{timestamp_8h_ada7ec4a95d0f8c19eba9d18d89a0fdc1}} 
+\index{timestamp.h@{timestamp.h}!timestamp\_block\_for@{timestamp\_block\_for}}
+\index{timestamp\_block\_for@{timestamp\_block\_for}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{timestamp\_block\_for}{timestamp\_block\_for}}
+{\footnotesize\ttfamily \#define timestamp\+\_\+block\+\_\+for(\begin{DoxyParamCaption}\item[{}]{timespan }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do}\{                                                   \(\backslash\)}
+\DoxyCodeLine{        timestamp\_t stop = timespan+\mbox{\hyperlink{timestamp_8h_ab3e436aa0a4a08d9c8121f3a1a61086f}{timestamp\_now}}();      \(\backslash\)}
+\DoxyCodeLine{        timestamp\_block\_until(stop);                      \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Blocks for some time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em timespan} & Time to block \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file timestamp.\+h.
+
+\mbox{\Hypertarget{timestamp_8h_ac73aa7af497da5a3567a80b9350a11b9}\label{timestamp_8h_ac73aa7af497da5a3567a80b9350a11b9}} 
+\index{timestamp.h@{timestamp.h}!timestamp\_block\_until@{timestamp\_block\_until}}
+\index{timestamp\_block\_until@{timestamp\_block\_until}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{timestamp\_block\_until}{timestamp\_block\_until}}
+{\footnotesize\ttfamily \#define timestamp\+\_\+block\+\_\+until(\begin{DoxyParamCaption}\item[{}]{timestamp }\end{DoxyParamCaption})~    while(!\mbox{\hyperlink{timestamp_8h_a474612c0e4a1638837ea69a3e3d5494e}{timestamp\+\_\+passed}}(timestamp))\{\};}
+
+
+
+Blocks until the time stamp provided is in the past. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em timestamp} & Time stamp to wait for \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file timestamp.\+h.
+
+\mbox{\Hypertarget{timestamp_8h_a16ec624ba4dd04b510b14ddbc75f3e0c}\label{timestamp_8h_a16ec624ba4dd04b510b14ddbc75f3e0c}} 
+\index{timestamp.h@{timestamp.h}!TIMESTAMP\_DIFF@{TIMESTAMP\_DIFF}}
+\index{TIMESTAMP\_DIFF@{TIMESTAMP\_DIFF}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{TIMESTAMP\_DIFF}{TIMESTAMP\_DIFF}}
+{\footnotesize\ttfamily \#define TIMESTAMP\+\_\+\+DIFF~TIMESTAMP\+\_\+\+ARCH\+\_\+\+DIFF}
+
+
+
+Definition at line 54 of file timestamp.\+h.
+
+\mbox{\Hypertarget{timestamp_8h_a1e59342bd76a624c281f1c74e0415d73}\label{timestamp_8h_a1e59342bd76a624c281f1c74e0415d73}} 
+\index{timestamp.h@{timestamp.h}!timestamp\_less\_than@{timestamp\_less\_than}}
+\index{timestamp\_less\_than@{timestamp\_less\_than}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{timestamp\_less\_than}{timestamp\_less\_than}}
+{\footnotesize\ttfamily \#define timestamp\+\_\+less\+\_\+than(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(\mbox{\hyperlink{timestamp_8h_a16ec624ba4dd04b510b14ddbc75f3e0c}{TIMESTAMP\+\_\+\+DIFF}}((a),(b)) $<$ 0)}
+
+
+
+Definition at line 64 of file timestamp.\+h.
+
+\mbox{\Hypertarget{timestamp_8h_a04a9c650b0e455a2cc34665f685ace35}\label{timestamp_8h_a04a9c650b0e455a2cc34665f685ace35}} 
+\index{timestamp.h@{timestamp.h}!timestamp\_lessequal\_than@{timestamp\_lessequal\_than}}
+\index{timestamp\_lessequal\_than@{timestamp\_lessequal\_than}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{timestamp\_lessequal\_than}{timestamp\_lessequal\_than}}
+{\footnotesize\ttfamily \#define timestamp\+\_\+lessequal\+\_\+than(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(\mbox{\hyperlink{timestamp_8h_a16ec624ba4dd04b510b14ddbc75f3e0c}{TIMESTAMP\+\_\+\+DIFF}}((a),(b)) $<$= 0)}
+
+
+
+Definition at line 65 of file timestamp.\+h.
+
+\mbox{\Hypertarget{timestamp_8h_ad7f88aa8d600218761caca25cb72debc}\label{timestamp_8h_ad7f88aa8d600218761caca25cb72debc}} 
+\index{timestamp.h@{timestamp.h}!timestamp\_module\_init@{timestamp\_module\_init}}
+\index{timestamp\_module\_init@{timestamp\_module\_init}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{timestamp\_module\_init}{timestamp\_module\_init}}
+{\footnotesize\ttfamily \#define timestamp\+\_\+module\+\_\+init~timestamp\+\_\+arch\+\_\+module\+\_\+init}
+
+
+
+Definition at line 59 of file timestamp.\+h.
+
+\mbox{\Hypertarget{timestamp_8h_ab3e436aa0a4a08d9c8121f3a1a61086f}\label{timestamp_8h_ab3e436aa0a4a08d9c8121f3a1a61086f}} 
+\index{timestamp.h@{timestamp.h}!timestamp\_now@{timestamp\_now}}
+\index{timestamp\_now@{timestamp\_now}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{timestamp\_now}{timestamp\_now}}
+{\footnotesize\ttfamily \#define timestamp\+\_\+now~timestamp\+\_\+arch\+\_\+now}
+
+
+
+Definition at line 61 of file timestamp.\+h.
+
+\mbox{\Hypertarget{timestamp_8h_a474612c0e4a1638837ea69a3e3d5494e}\label{timestamp_8h_a474612c0e4a1638837ea69a3e3d5494e}} 
+\index{timestamp.h@{timestamp.h}!timestamp\_passed@{timestamp\_passed}}
+\index{timestamp\_passed@{timestamp\_passed}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{timestamp\_passed}{timestamp\_passed}}
+{\footnotesize\ttfamily \#define timestamp\+\_\+passed(\begin{DoxyParamCaption}\item[{}]{timestamp }\end{DoxyParamCaption})~      \mbox{\hyperlink{timestamp_8h_a04a9c650b0e455a2cc34665f685ace35}{timestamp\+\_\+lessequal\+\_\+than}}(timestamp,\mbox{\hyperlink{timestamp_8h_ab3e436aa0a4a08d9c8121f3a1a61086f}{timestamp\+\_\+now}}())}
+
+
+
+Checks if a provided time stamp is reached. 
+
+Checks if the time stamp counter reached a provided time stamp yet.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em timestamp} & Time stamp to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if time stamp is in the past, otherwise 0 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file timestamp.\+h.
+
+\mbox{\Hypertarget{timestamp_8h_a8cc979d1d16232f2f831a0917c6f404d}\label{timestamp_8h_a8cc979d1d16232f2f831a0917c6f404d}} 
+\index{timestamp.h@{timestamp.h}!TIMESTAMP\_TICKS\_PER\_SEC@{TIMESTAMP\_TICKS\_PER\_SEC}}
+\index{TIMESTAMP\_TICKS\_PER\_SEC@{TIMESTAMP\_TICKS\_PER\_SEC}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{TIMESTAMP\_TICKS\_PER\_SEC}{TIMESTAMP\_TICKS\_PER\_SEC}}
+{\footnotesize\ttfamily \#define TIMESTAMP\+\_\+\+TICKS\+\_\+\+PER\+\_\+\+SEC~TIMESTAMP\+\_\+\+ARCH\+\_\+\+TICKS\+\_\+\+PER\+\_\+\+SEC}
+
+
+
+Definition at line 53 of file timestamp.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}\label{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}} 
+\index{timestamp.h@{timestamp.h}!timespan\_t@{timespan\_t}}
+\index{timespan\_t@{timespan\_t}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{timespan\_t}{timespan\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{timestamp_8h_a887299b90b480bd3682340876e33f5f1}{timestamp\+\_\+t}} \mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\+\_\+t}}}
+
+
+
+Definition at line 57 of file timestamp.\+h.
+
+\mbox{\Hypertarget{timestamp_8h_a887299b90b480bd3682340876e33f5f1}\label{timestamp_8h_a887299b90b480bd3682340876e33f5f1}} 
+\index{timestamp.h@{timestamp.h}!timestamp\_t@{timestamp\_t}}
+\index{timestamp\_t@{timestamp\_t}!timestamp.h@{timestamp.h}}
+\doxysubsubsection{\texorpdfstring{timestamp\_t}{timestamp\_t}}
+{\footnotesize\ttfamily typedef timestamp\+\_\+arch\+\_\+t \mbox{\hyperlink{timestamp_8h_a887299b90b480bd3682340876e33f5f1}{timestamp\+\_\+t}}}
+
+
+
+Definition at line 56 of file timestamp.\+h.
+

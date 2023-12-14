@@ -1,0 +1,33 @@
+\doxysection{uileds\+\_\+process.\+c}
+\hypertarget{uileds__process_8c_source}{}\label{uileds__process_8c_source}\index{myos/ui/uileds\_process.c@{myos/ui/uileds\_process.c}}
+\mbox{\hyperlink{uileds__process_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uileds__process_8h}{uileds\_process.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{etimer_8h}{etimer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00033}\mbox{\hyperlink{uileds__process_8c_ae71fd1b2f097c52d7998fc76ad5a4a3e}{00033}}\ \mbox{\hyperlink{process_8h_a75f11a49b16e9522d701da5900b58f84}{PROCESS}}(uileds\_process,uileds\_process);}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00034}\mbox{\hyperlink{uileds__process_8c_a6188a95a9e01fbf9a97accf19755f29c}{00034}}\ \mbox{\hyperlink{process_8h_a416f099b9ab74750b246a76ad1fab209}{PROCESS\_THREAD}}(uileds\_process)}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structetimer__t}{etimer\_t}}\ et;}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{process_8h_a8efc62947f2ca2c870f52896e0dc1a81}{PROCESS\_BEGIN}}();}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{etimer_8c_a37c4c718c8252d6a5ea517e092213606}{etimer\_start}}(\&et,\ \mbox{\hyperlink{timestamp_8h_a8cc979d1d16232f2f831a0917c6f404d}{TIMESTAMP\_TICKS\_PER\_SEC}}/50,\ \mbox{\hyperlink{process_8h_a7176e97b72de41f5414ff7ed7f21c354}{PROCESS\_THIS}}(),\ \mbox{\hyperlink{process_8h_a78c78aa2263340eea0b3e6687f8e81e0}{PROCESS\_EVENT\_TIMEOUT}},\ NULL);}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{process_8h_ab4ac732a442c8c0c9a668ee270570ad2}{PROCESS\_WAIT\_EVENT\_UNTIL}}(\mbox{\hyperlink{etimer_8h_aaf390190f4c43e6e99fe3c2ffb399d91}{etimer\_expired}}(\&et));}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{uileds_8c_adffc6bc7abaf0695e7faf091da5b9049}{uileds\_handler}}();}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{etimer_8h_a654bb419558e8cc99373f8a441dd34f5}{etimer\_reset}}(\&et);}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(\mbox{\hyperlink{etimer_8h_aaf390190f4c43e6e99fe3c2ffb399d91}{etimer\_expired}}(\&et));}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{process_8h_a9c2681a0070eba8a7c9fdf4dbb6db05e}{PROCESS\_END}}();}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{uileds__process_8c_source_l00055}00055\ }
+
+\end{DoxyCode}

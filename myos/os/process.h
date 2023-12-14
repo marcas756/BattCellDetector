@@ -143,11 +143,9 @@ extern process_t *process_current;
 #define PROCESS_THREAD(name) \
 int process_thread_##name(process_t *process, process_event_t *evt)
 
-#if (MYOSCONF_PROC_EVENT_FROM == MYOSCONF_YES)
+
 #define PROCESS_RESPOND(evtid,dataptr) \
    process_respond(evt,evtid,dataptr)
-#endif
-
 
 #define PROCESS_INIT(processptr,threadname) \
    process_init(processptr, process_thread_##threadname)
@@ -186,13 +184,14 @@ int process_thread_##name(process_t *process, process_event_t *evt)
  *
  * \hideinitializer
  */
-#define PROCESS_EXITHANDLER(handler) if(evt == PROCESS_EVENT_EXIT) { handler; }
+#define PROCESS_EXITHANDLER(handler) if(PROCESS_EVENT_ID() == PROCESS_EVENT_EXIT) { handler; }
 
 
 
 void process_init(void);
 void process_init_process( process_t *process, process_thread_t thread );
 bool process_start(process_t *process, void* data);
+bool process_exit(process_t *process);
 bool process_post(process_t *to, process_event_id_t evtid, void* data);
 bool process_post_sync(process_t *to, process_event_id_t evtid, void* data);
 int process_run(void);

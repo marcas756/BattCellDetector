@@ -1,0 +1,448 @@
+\hypertarget{uigfx_8c}{}\doxysection{myos/ui/uigfx/uigfx.c File Reference}
+\label{uigfx_8c}\index{myos/ui/uigfx/uigfx.c@{myos/ui/uigfx/uigfx.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}uigfx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uigfx\+\_\+win\+\_\+conf.\+h\char`\"{}}\newline
+Include dependency graph for uigfx.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uigfx_8c_aeed21ed83d3e5a3090e49f9dabea17f1}{uigfx\+\_\+set\+\_\+widget}} (\mbox{\hyperlink{structuigfx__widget__t}{uigfx\+\_\+widget\+\_\+t}} $\ast$widget)
+\item 
+void \mbox{\hyperlink{uigfx_8c_ab71aa41fa6081d89c22f45d6d514f233}{uigfx\+\_\+select\+\_\+screen\+\_\+widget}} ()
+\item 
+void \mbox{\hyperlink{uigfx_8c_a3a23e64f9c3dc354429c39256efef3e6}{uigfx\+\_\+init\+\_\+widget}} (\mbox{\hyperlink{structuigfx__widget__t}{uigfx\+\_\+widget\+\_\+t}} $\ast$widget, int16\+\_\+t xpos, int16\+\_\+t ypos, uint16\+\_\+t xres, uint16\+\_\+t yres)
+\item 
+void \mbox{\hyperlink{uigfx_8c_aff0b3b5448dd44813ca33808454b0e19}{uigfx\+\_\+draw\+\_\+pixel}} (uint8\+\_\+t $\ast$buff, int16\+\_\+t x, int16\+\_\+t y, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_a2000de2bc75aa70e92e3cd9a00698567}{uigfx\+\_\+draw\+\_\+hline}} (uint8\+\_\+t $\ast$buf, int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t w, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_afa86a10e6405949fedcc682b77c3d18b}{uigfx\+\_\+draw\+\_\+vline}} (uint8\+\_\+t $\ast$buf, int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t h, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_aa9a644292ebe5fbf78beffb52d690cbc}{uigfx\+\_\+draw\+\_\+line}} (uint8\+\_\+t $\ast$buf, int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t x1, int16\+\_\+t y1, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_a033c0afbfad48dd92120e16b13ef1302}{uigfx\+\_\+draw\+\_\+rectangle}} (uint8\+\_\+t $\ast$buf, int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t l, int16\+\_\+t h, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_aea45383377e946ba5ec6a4bca000af28}{uigfx\+\_\+draw\+\_\+filled\+\_\+rectangle}} (uint8\+\_\+t $\ast$buf, int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t l, int16\+\_\+t h, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_adc0b91adf67ece6f9408e51313d81a55}{uigfx\+\_\+draw\+\_\+circle}} (uint8\+\_\+t $\ast$buf, int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t r, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_a82656e132df9d35505dc6c8c93cb980c}{uigfx\+\_\+draw\+\_\+filled\+\_\+circle}} (uint8\+\_\+t $\ast$buf, int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t r, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_a7b0aaf33769428cdd47cb261854d8a0b}{uigfx\+\_\+draw\+\_\+ellipse}} (uint8\+\_\+t $\ast$buf, int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t a, int16\+\_\+t b, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_a5156bc3f11dfee66785784aa9c2b5aff}{uigfx\+\_\+draw\+\_\+filled\+\_\+ellipse}} (uint8\+\_\+t $\ast$buf, int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t a, int16\+\_\+t b, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_a9848ef97cdadc5d6fccc38007f2c83ef}{uigfx\+\_\+draw\+\_\+char}} (uint8\+\_\+t $\ast$buf, \mbox{\hyperlink{structuigfx__font__t}{uigfx\+\_\+font\+\_\+t}} $\ast$font, int16\+\_\+t x0, int16\+\_\+t y0, char ch, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+int16\+\_\+t \mbox{\hyperlink{uigfx_8c_a7df3357ab8ec3742c5b41532ca15f3f1}{uigfx\+\_\+draw\+\_\+put\+\_\+char}} (uint8\+\_\+t $\ast$buf, \mbox{\hyperlink{structuigfx__font__t}{uigfx\+\_\+font\+\_\+t}} $\ast$font, int16\+\_\+t x0, int16\+\_\+t y0, char ch, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_af9cf97d698b4e2e48aa5b6e95f5302e9}{uigfx\+\_\+draw\+\_\+string}} (uint8\+\_\+t $\ast$buf, \mbox{\hyperlink{structuigfx__font__t}{uigfx\+\_\+font\+\_\+t}} $\ast$font, int16\+\_\+t x0, int16\+\_\+t y0, char $\ast$str, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+int16\+\_\+t \mbox{\hyperlink{uigfx_8c_a2ee707772e587810dd7c3dad8efc38f9}{uigfx\+\_\+string\+\_\+newline}} (\mbox{\hyperlink{structuigfx__font__t}{uigfx\+\_\+font\+\_\+t}} $\ast$font, int16\+\_\+t y0)
+\item 
+void \mbox{\hyperlink{uigfx_8c_a0d9ea8947dcf6c3c53cd03dfc161961a}{uigfx\+\_\+clear}} (uint8\+\_\+t $\ast$buf, \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{uigfx_8c_a7e2622399e75c06bfaf6f670833c7368}{uigfx\+\_\+draw\+\_\+image}} (uint8\+\_\+t $\ast$buf, \mbox{\hyperlink{structuigfx__image__t}{uigfx\+\_\+image\+\_\+t}} $\ast$image, int16\+\_\+t x0, int16\+\_\+t y0)
+\item 
+void \mbox{\hyperlink{uigfx_8c_a53b33fc4014e382d1e513d04219824ce}{uigfx\+\_\+draw\+\_\+widget}} (uint8\+\_\+t $\ast$buf, \mbox{\hyperlink{structuigfx__widget__t}{uigfx\+\_\+widget\+\_\+t}} $\ast$widget)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structuigfx__widget__t}{uigfx\+\_\+widget\+\_\+t}} \mbox{\hyperlink{uigfx_8c_ad1abad374011ef838fc78722f0893356}{uigfx\+\_\+screen\+\_\+widget}} = \{ 0, 0, 128 , 64 \}
+\item 
+\mbox{\hyperlink{structuigfx__widget__t}{uigfx\+\_\+widget\+\_\+t}} $\ast$ \mbox{\hyperlink{uigfx_8c_a3e309849c2a449c507f264af54838d1a}{uigfx\+\_\+current\+\_\+widget}} = \&\mbox{\hyperlink{uigfx_8h_ad1abad374011ef838fc78722f0893356}{uigfx\+\_\+screen\+\_\+widget}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uigfx_8c_a0d9ea8947dcf6c3c53cd03dfc161961a}\label{uigfx_8c_a0d9ea8947dcf6c3c53cd03dfc161961a}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_clear@{uigfx\_clear}}
+\index{uigfx\_clear@{uigfx\_clear}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_clear()}{uigfx\_clear()}}
+{\footnotesize\ttfamily void uigfx\+\_\+clear (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 374 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{uigfx_8c_a0d9ea8947dcf6c3c53cd03dfc161961a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_a9848ef97cdadc5d6fccc38007f2c83ef}\label{uigfx_8c_a9848ef97cdadc5d6fccc38007f2c83ef}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_char@{uigfx\_draw\_char}}
+\index{uigfx\_draw\_char@{uigfx\_draw\_char}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_char()}{uigfx\_draw\_char()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+char (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{\mbox{\hyperlink{structuigfx__font__t}{uigfx\+\_\+font\+\_\+t}} $\ast$}]{font,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{char}]{ch,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 348 of file uigfx.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c_a9848ef97cdadc5d6fccc38007f2c83ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_adc0b91adf67ece6f9408e51313d81a55}\label{uigfx_8c_adc0b91adf67ece6f9408e51313d81a55}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_circle@{uigfx\_draw\_circle}}
+\index{uigfx\_draw\_circle@{uigfx\_draw\_circle}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_circle()}{uigfx\_draw\_circle()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+circle (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{r,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 212 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{uigfx_8c_adc0b91adf67ece6f9408e51313d81a55_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_a7b0aaf33769428cdd47cb261854d8a0b}\label{uigfx_8c_a7b0aaf33769428cdd47cb261854d8a0b}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_ellipse@{uigfx\_draw\_ellipse}}
+\index{uigfx\_draw\_ellipse@{uigfx\_draw\_ellipse}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_ellipse()}{uigfx\_draw\_ellipse()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+ellipse (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{a,  }\item[{int16\+\_\+t}]{b,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 275 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{uigfx_8c_a7b0aaf33769428cdd47cb261854d8a0b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_a82656e132df9d35505dc6c8c93cb980c}\label{uigfx_8c_a82656e132df9d35505dc6c8c93cb980c}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_filled\_circle@{uigfx\_draw\_filled\_circle}}
+\index{uigfx\_draw\_filled\_circle@{uigfx\_draw\_filled\_circle}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_filled\_circle()}{uigfx\_draw\_filled\_circle()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+filled\+\_\+circle (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{r,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 243 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c_a82656e132df9d35505dc6c8c93cb980c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_a5156bc3f11dfee66785784aa9c2b5aff}\label{uigfx_8c_a5156bc3f11dfee66785784aa9c2b5aff}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_filled\_ellipse@{uigfx\_draw\_filled\_ellipse}}
+\index{uigfx\_draw\_filled\_ellipse@{uigfx\_draw\_filled\_ellipse}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_filled\_ellipse()}{uigfx\_draw\_filled\_ellipse()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+filled\+\_\+ellipse (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{a,  }\item[{int16\+\_\+t}]{b,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 312 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c_a5156bc3f11dfee66785784aa9c2b5aff_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_aea45383377e946ba5ec6a4bca000af28}\label{uigfx_8c_aea45383377e946ba5ec6a4bca000af28}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_filled\_rectangle@{uigfx\_draw\_filled\_rectangle}}
+\index{uigfx\_draw\_filled\_rectangle@{uigfx\_draw\_filled\_rectangle}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_filled\_rectangle()}{uigfx\_draw\_filled\_rectangle()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+filled\+\_\+rectangle (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{l,  }\item[{int16\+\_\+t}]{h,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 187 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c_aea45383377e946ba5ec6a4bca000af28_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c_aea45383377e946ba5ec6a4bca000af28_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_a2000de2bc75aa70e92e3cd9a00698567}\label{uigfx_8c_a2000de2bc75aa70e92e3cd9a00698567}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_hline@{uigfx\_draw\_hline}}
+\index{uigfx\_draw\_hline@{uigfx\_draw\_hline}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_hline()}{uigfx\_draw\_hline()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+hline (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{w,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 93 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{uigfx_8c_a2000de2bc75aa70e92e3cd9a00698567_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c_a2000de2bc75aa70e92e3cd9a00698567_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_a7e2622399e75c06bfaf6f670833c7368}\label{uigfx_8c_a7e2622399e75c06bfaf6f670833c7368}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_image@{uigfx\_draw\_image}}
+\index{uigfx\_draw\_image@{uigfx\_draw\_image}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_image()}{uigfx\_draw\_image()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+image (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{\mbox{\hyperlink{structuigfx__image__t}{uigfx\+\_\+image\+\_\+t}} $\ast$}]{image,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 388 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{uigfx_8c_a7e2622399e75c06bfaf6f670833c7368_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{uigfx_8c_a7e2622399e75c06bfaf6f670833c7368_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_aa9a644292ebe5fbf78beffb52d690cbc}\label{uigfx_8c_aa9a644292ebe5fbf78beffb52d690cbc}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_line@{uigfx\_draw\_line}}
+\index{uigfx\_draw\_line@{uigfx\_draw\_line}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_line()}{uigfx\_draw\_line()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+line (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{x1,  }\item[{int16\+\_\+t}]{y1,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 139 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{uigfx_8c_aa9a644292ebe5fbf78beffb52d690cbc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_aff0b3b5448dd44813ca33808454b0e19}\label{uigfx_8c_aff0b3b5448dd44813ca33808454b0e19}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_pixel@{uigfx\_draw\_pixel}}
+\index{uigfx\_draw\_pixel@{uigfx\_draw\_pixel}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_pixel()}{uigfx\_draw\_pixel()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buff,  }\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file uigfx.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c_aff0b3b5448dd44813ca33808454b0e19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_a7df3357ab8ec3742c5b41532ca15f3f1}\label{uigfx_8c_a7df3357ab8ec3742c5b41532ca15f3f1}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_put\_char@{uigfx\_draw\_put\_char}}
+\index{uigfx\_draw\_put\_char@{uigfx\_draw\_put\_char}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_put\_char()}{uigfx\_draw\_put\_char()}}
+{\footnotesize\ttfamily int16\+\_\+t uigfx\+\_\+draw\+\_\+put\+\_\+char (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{\mbox{\hyperlink{structuigfx__font__t}{uigfx\+\_\+font\+\_\+t}} $\ast$}]{font,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{char}]{ch,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 353 of file uigfx.\+c.
+
+\mbox{\Hypertarget{uigfx_8c_a033c0afbfad48dd92120e16b13ef1302}\label{uigfx_8c_a033c0afbfad48dd92120e16b13ef1302}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_rectangle@{uigfx\_draw\_rectangle}}
+\index{uigfx\_draw\_rectangle@{uigfx\_draw\_rectangle}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_rectangle()}{uigfx\_draw\_rectangle()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+rectangle (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{l,  }\item[{int16\+\_\+t}]{h,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 158 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c_a033c0afbfad48dd92120e16b13ef1302_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c_a033c0afbfad48dd92120e16b13ef1302_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_af9cf97d698b4e2e48aa5b6e95f5302e9}\label{uigfx_8c_af9cf97d698b4e2e48aa5b6e95f5302e9}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_string@{uigfx\_draw\_string}}
+\index{uigfx\_draw\_string@{uigfx\_draw\_string}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_string()}{uigfx\_draw\_string()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+string (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{\mbox{\hyperlink{structuigfx__font__t}{uigfx\+\_\+font\+\_\+t}} $\ast$}]{font,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{char $\ast$}]{str,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 360 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{uigfx_8c_af9cf97d698b4e2e48aa5b6e95f5302e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{uigfx_8c_af9cf97d698b4e2e48aa5b6e95f5302e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_afa86a10e6405949fedcc682b77c3d18b}\label{uigfx_8c_afa86a10e6405949fedcc682b77c3d18b}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_vline@{uigfx\_draw\_vline}}
+\index{uigfx\_draw\_vline@{uigfx\_draw\_vline}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_vline()}{uigfx\_draw\_vline()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+vline (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{int16\+\_\+t}]{x0,  }\item[{int16\+\_\+t}]{y0,  }\item[{int16\+\_\+t}]{h,  }\item[{\mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\+\_\+color\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 117 of file uigfx.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{uigfx_8c_afa86a10e6405949fedcc682b77c3d18b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uigfx_8c_afa86a10e6405949fedcc682b77c3d18b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_a53b33fc4014e382d1e513d04219824ce}\label{uigfx_8c_a53b33fc4014e382d1e513d04219824ce}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_draw\_widget@{uigfx\_draw\_widget}}
+\index{uigfx\_draw\_widget@{uigfx\_draw\_widget}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_draw\_widget()}{uigfx\_draw\_widget()}}
+{\footnotesize\ttfamily void uigfx\+\_\+draw\+\_\+widget (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{\mbox{\hyperlink{structuigfx__widget__t}{uigfx\+\_\+widget\+\_\+t}} $\ast$}]{widget }\end{DoxyParamCaption})}
+
+
+
+Definition at line 412 of file uigfx.\+c.
+
+\mbox{\Hypertarget{uigfx_8c_a3a23e64f9c3dc354429c39256efef3e6}\label{uigfx_8c_a3a23e64f9c3dc354429c39256efef3e6}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_init\_widget@{uigfx\_init\_widget}}
+\index{uigfx\_init\_widget@{uigfx\_init\_widget}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_init\_widget()}{uigfx\_init\_widget()}}
+{\footnotesize\ttfamily void uigfx\+\_\+init\+\_\+widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuigfx__widget__t}{uigfx\+\_\+widget\+\_\+t}} $\ast$}]{widget,  }\item[{int16\+\_\+t}]{xpos,  }\item[{int16\+\_\+t}]{ypos,  }\item[{uint16\+\_\+t}]{xres,  }\item[{uint16\+\_\+t}]{yres }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file uigfx.\+c.
+
+\mbox{\Hypertarget{uigfx_8c_ab71aa41fa6081d89c22f45d6d514f233}\label{uigfx_8c_ab71aa41fa6081d89c22f45d6d514f233}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_select\_screen\_widget@{uigfx\_select\_screen\_widget}}
+\index{uigfx\_select\_screen\_widget@{uigfx\_select\_screen\_widget}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_select\_screen\_widget()}{uigfx\_select\_screen\_widget()}}
+{\footnotesize\ttfamily void uigfx\+\_\+select\+\_\+screen\+\_\+widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file uigfx.\+c.
+
+\mbox{\Hypertarget{uigfx_8c_aeed21ed83d3e5a3090e49f9dabea17f1}\label{uigfx_8c_aeed21ed83d3e5a3090e49f9dabea17f1}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_set\_widget@{uigfx\_set\_widget}}
+\index{uigfx\_set\_widget@{uigfx\_set\_widget}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_set\_widget()}{uigfx\_set\_widget()}}
+{\footnotesize\ttfamily void uigfx\+\_\+set\+\_\+widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuigfx__widget__t}{uigfx\+\_\+widget\+\_\+t}} $\ast$}]{widget }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file uigfx.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{uigfx_8c_aeed21ed83d3e5a3090e49f9dabea17f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uigfx_8c_a2ee707772e587810dd7c3dad8efc38f9}\label{uigfx_8c_a2ee707772e587810dd7c3dad8efc38f9}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_string\_newline@{uigfx\_string\_newline}}
+\index{uigfx\_string\_newline@{uigfx\_string\_newline}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_string\_newline()}{uigfx\_string\_newline()}}
+{\footnotesize\ttfamily int16\+\_\+t uigfx\+\_\+string\+\_\+newline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuigfx__font__t}{uigfx\+\_\+font\+\_\+t}} $\ast$}]{font,  }\item[{int16\+\_\+t}]{y0 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 369 of file uigfx.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{uigfx_8c_a3e309849c2a449c507f264af54838d1a}\label{uigfx_8c_a3e309849c2a449c507f264af54838d1a}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_current\_widget@{uigfx\_current\_widget}}
+\index{uigfx\_current\_widget@{uigfx\_current\_widget}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_current\_widget}{uigfx\_current\_widget}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structuigfx__widget__t}{uigfx\+\_\+widget\+\_\+t}}$\ast$ uigfx\+\_\+current\+\_\+widget = \&\mbox{\hyperlink{uigfx_8h_ad1abad374011ef838fc78722f0893356}{uigfx\+\_\+screen\+\_\+widget}}}
+
+
+
+Definition at line 40 of file uigfx.\+c.
+
+\mbox{\Hypertarget{uigfx_8c_ad1abad374011ef838fc78722f0893356}\label{uigfx_8c_ad1abad374011ef838fc78722f0893356}} 
+\index{uigfx.c@{uigfx.c}!uigfx\_screen\_widget@{uigfx\_screen\_widget}}
+\index{uigfx\_screen\_widget@{uigfx\_screen\_widget}!uigfx.c@{uigfx.c}}
+\doxysubsubsection{\texorpdfstring{uigfx\_screen\_widget}{uigfx\_screen\_widget}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structuigfx__widget__t}{uigfx\+\_\+widget\+\_\+t}} uigfx\+\_\+screen\+\_\+widget = \{ 0, 0, 128 , 64 \}}
+
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+Definition at line 39 of file uigfx.\+c.
+

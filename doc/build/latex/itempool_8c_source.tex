@@ -1,0 +1,81 @@
+\doxysection{itempool.\+c}
+\hypertarget{itempool_8c_source}{}\label{itempool_8c_source}\index{myos/lib/itempool.c@{myos/lib/itempool.c}}
+\mbox{\hyperlink{itempool_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00002}00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2004,\ Swedish\ Institute\ of\ Computer\ Science.}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00003}00003\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00005}00005\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00006}00006\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00007}00007\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00008}00008\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00009}00009\ \textcolor{comment}{\ *\ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00010}00010\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ \ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00013}00013\ \textcolor{comment}{\ *\ 3.\ Neither\ the\ name\ of\ the\ Institute\ nor\ the\ names\ of\ its\ contributors}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ \ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00016}00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00017}00017\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ INSTITUTE\ AND\ CONTRIBUTORS\ \`{}\`{}AS\ IS''\ AND}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00018}00018\ \textcolor{comment}{\ *\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00019}00019\ \textcolor{comment}{\ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00020}00020\ \textcolor{comment}{\ *\ ARE\ DISCLAIMED.\ \ IN\ NO\ EVENT\ SHALL\ THE\ INSTITUTE\ OR\ CONTRIBUTORS\ BE\ LIABLE}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00021}00021\ \textcolor{comment}{\ *\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00022}00022\ \textcolor{comment}{\ *\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00023}00023\ \textcolor{comment}{\ *\ OR\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00024}00024\ \textcolor{comment}{\ *\ HOWEVER\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00025}00025\ \textcolor{comment}{\ *\ LIABILITY,\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00026}00026\ \textcolor{comment}{\ *\ OUT\ OF\ THE\ USE\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00027}00027\ \textcolor{comment}{\ *\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00028}00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00029}00029\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Contiki\ operating\ system.}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00030}00030\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00031}00031\ \textcolor{comment}{\ *\ Author:\ Adam\ Dunkels\ <adam@sics.se>}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00032}00032\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00033}00033\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00044}00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{itempool_8h}{itempool.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00046}00046\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00047}00047\ \textcolor{comment}{\ tmp\ =\ (int*)ITEMPOOL\_ALLOC(pool);}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00048}00048\ \textcolor{comment}{\ 00442E\ \ \ \ 403F\ 0005\ \ \ \ \ \ \ \ \ \ mov.w\ \ \ \#0x5,R15\ \ \ \ \ \ \ \ \ \ !!!!\ pass\ param}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00049}00049\ \textcolor{comment}{\ 004432\ \ \ \ 432E\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mov.w\ \ \ \#0x2,R14\ \ \ \ \ \ \ \ \ \ !!!!\ pass\ param}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00050}00050\ \textcolor{comment}{\ 004434\ \ \ \ 403D\ 1C00\ \ \ \ \ \ \ \ \ \ mov.w\ \ \ \#0x1C00,R13\ \ \ \ \ \ \ !!!!\ pass\ param}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00051}00051\ \textcolor{comment}{\ 004438\ \ \ \ 403C\ 1C06\ \ \ \ \ \ \ \ \ \ mov.w\ \ \ \#0x1C06,R12\ \ \ \ \ \ \ !!!!\ pass\ param}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00052}00052\ \textcolor{comment}{\ 00443C\ \ \ \ 13B0\ 4482\ \ \ \ \ \ \ \ \ \ calla\ \ \ \#itempool\_alloc}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00053}00053\ \textcolor{comment}{\ 004440\ \ \ \ 4C0A\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mov.w\ \ \ R12,R10}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00054}00054\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00055}\mbox{\hyperlink{itempool_8c_a516a51ae963d266cb9fd755a45db84ae}{00055}}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{itempool_8c_a516a51ae963d266cb9fd755a45db84ae}{itempool\_alloc}}(uint8\_t*\ items,\ uint8\_t*\ status,\ \textcolor{keywordtype}{size\_t}\ itemsize,\ \textcolor{keywordtype}{size\_t}\ poolsize)}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00056}00056\ \{}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ tmp;}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00058}00058\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{for}\ (tmp=0;\ tmp\ <\ poolsize;\ tmp++)}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status[tmp]\ ==\ \mbox{\hyperlink{itempool_8h_a41d08d5bccde172fdb11bcebc8d88ad9}{ITEMPOOL\_ITEM\_FREE}})}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ status[tmp]\ =\ \ \mbox{\hyperlink{itempool_8h_ada489ff117851de4b331807ee07b5481}{ITEMPOOL\_ITEM\_USED}};}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ items;}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ items+=itemsize;}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00073}\mbox{\hyperlink{itempool_8c_aea5c6c5188d8ef500cb63e6f47c3ec2c}{00073}}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{itempool_8c_aea5c6c5188d8ef500cb63e6f47c3ec2c}{itempool\_calloc}}(uint8\_t*\ items,\ uint8\_t*\ status,\ \textcolor{keywordtype}{size\_t}\ itemsize,\ \textcolor{keywordtype}{size\_t}\ poolsize)}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00074}00074\ \{}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00075}00075\ \ \ \ \ items\ =\ \mbox{\hyperlink{itempool_8c_a516a51ae963d266cb9fd755a45db84ae}{itempool\_alloc}}(items,status,itemsize,poolsize);}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (items)}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ memset(items,0x00,itemsize);}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{return}\ items;}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{itempool_8c_source_l00084}00084\ }
+
+\end{DoxyCode}

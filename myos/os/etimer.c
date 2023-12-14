@@ -45,9 +45,7 @@ void etimer_timeout_handler(ptimer_t* ptimer)
 
    if( PROCESS_IS_RUNNING(etimer->evt.to) )
    {
-      PROCESS_CONTEXT_BEGIN(etimer->evt.to);
       process_deliver_event(&etimer->evt);
-      PROCESS_CONTEXT_END();
    }
 }
 

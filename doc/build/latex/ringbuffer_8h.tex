@@ -1,0 +1,338 @@
+\hypertarget{ringbuffer_8h}{}\doxysection{myos/lib/ringbuffer.h File Reference}
+\label{ringbuffer_8h}\index{myos/lib/ringbuffer.h@{myos/lib/ringbuffer.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for ringbuffer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{ringbuffer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ringbuffer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_ad5642d39f97605cf0dd773d5d4788d5b}{RINGBUFFER\+\_\+\+TYPEDEF}}(name,  type,  size)
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_af63b7b7476d24ec94078d18e9460dc29}{RINGBUFFER\+\_\+T}}(name)~    name\#\#\+\_\+ringbuffer\+\_\+t
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer)~    ((ringbuffer).items)
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a6b871592b08d34508ba098048b3553d0}{RINGBUFFER\+\_\+\+RAW}}(ringbuffer)~    ((uint8\+\_\+t$\ast$)\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer))
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a23efdb3a790c98c42f748c1349a0aa24}{RINGBUFFER\+\_\+\+SIZEOF}}(ringbuffer)~    (sizeof(\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer)))
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a2b33d9308feda0d03b5fab04f2241b0d}{RINGBUFFER\+\_\+\+SIZE}}(ringbuffer)~    (\mbox{\hyperlink{ringbuffer_8h_a23efdb3a790c98c42f748c1349a0aa24}{RINGBUFFER\+\_\+\+SIZEOF}}(ringbuffer)/sizeof(\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer)\mbox{[}0\mbox{]}))
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{RINGBUFFER\+\_\+\+COUNT}}(ringbuffer)~        ((ringbuffer).count)
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a51e61e6cc3ff2ed52ca838a5dced24f0}{RINGBUFFER\+\_\+\+HEAD}}(ringbuffer)~    ((ringbuffer).head)
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a003d60979c54ed26b12d52d69232cf29}{RINGBUFFER\+\_\+\+TAIL}}(ringbuffer)~    ((ringbuffer).tail)
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a1431543f2a604be6199c06e94515725e}{RINGBUFFER\+\_\+\+INIT}}(ringbuffer)
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a9c3b73462fa930ac0e95ee51e28d2546}{RINGBUFFER\+\_\+\+TAIL\+\_\+\+VAL}}(ringbuffer)~    (\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer)\mbox{[}\mbox{\hyperlink{ringbuffer_8h_a003d60979c54ed26b12d52d69232cf29}{RINGBUFFER\+\_\+\+TAIL}}(ringbuffer)\mbox{]})
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_ae0de1d8dbc061b40dafd6aadf6ee67ac}{RINGBUFFER\+\_\+\+TAIL\+\_\+\+PTR}}(ringbuffer)~    (\&\mbox{\hyperlink{ringbuffer_8h_a9c3b73462fa930ac0e95ee51e28d2546}{RINGBUFFER\+\_\+\+TAIL\+\_\+\+VAL}}(ringbuffer))
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_add57f7fa1a594bf8c8345cb7ad1cdf1e}{RINGBUFFER\+\_\+\+HEAD\+\_\+\+VAL}}(ringbuffer)~    (\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer)\mbox{[}\mbox{\hyperlink{ringbuffer_8h_a51e61e6cc3ff2ed52ca838a5dced24f0}{RINGBUFFER\+\_\+\+HEAD}}(ringbuffer)\mbox{]})
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a5e00e617a66806659364ed07ad253427}{RINGBUFFER\+\_\+\+HEAD\+\_\+\+PTR}}(ringbuffer)~    (\&\mbox{\hyperlink{ringbuffer_8h_add57f7fa1a594bf8c8345cb7ad1cdf1e}{RINGBUFFER\+\_\+\+HEAD\+\_\+\+VAL}}(ringbuffer))
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a4a4b77cdc32cc3c176177be95937bb5b}{RINGBUFFER\+\_\+\+PUSH}}(ringbuffer)
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_aa6b594fd28c6336ba579d8f7495b637b}{RINGBUFFER\+\_\+\+POP}}(ringbuffer)
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a3b1379ffc509d6d79b752add90e082e2}{RINGBUFFER\+\_\+\+FULL}}(ringbuffer)~    (\mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{RINGBUFFER\+\_\+\+COUNT}}(ringbuffer)$>$=\mbox{\hyperlink{ringbuffer_8h_a2b33d9308feda0d03b5fab04f2241b0d}{RINGBUFFER\+\_\+\+SIZE}}(ringbuffer))
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a33b9ce6ceda0b08ded0ae5506db6650e}{RINGBUFFER\+\_\+\+EMPTY}}(ringbuffer)~    (!\mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{RINGBUFFER\+\_\+\+COUNT}}(ringbuffer))
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_a31f0ca865e5ecc8866473733e71a77fe}{RINGBUFFER\+\_\+\+READ}}(ringbufferptr,  var)
+\item 
+\#define \mbox{\hyperlink{ringbuffer_8h_add6360c708625f28d126d16b75b881b0}{RINGBUFFER\+\_\+\+WRITE}}(ringbufferptr,  value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+First implementation was derived from \mbox{\hyperlink{buffer_8h}{buffer.\+h}} We decided to change it to a stand alone version to keep the memory model as flat as possible, also for weak compilers. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}\label{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_COUNT@{RINGBUFFER\_COUNT}}
+\index{RINGBUFFER\_COUNT@{RINGBUFFER\_COUNT}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_COUNT}{RINGBUFFER\_COUNT}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+COUNT(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~        ((ringbuffer).count)}
+
+Returns the current number of used items in the ringbuffer. 
+
+Definition at line 103 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a33b9ce6ceda0b08ded0ae5506db6650e}\label{ringbuffer_8h_a33b9ce6ceda0b08ded0ae5506db6650e}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_EMPTY@{RINGBUFFER\_EMPTY}}
+\index{RINGBUFFER\_EMPTY@{RINGBUFFER\_EMPTY}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_EMPTY}{RINGBUFFER\_EMPTY}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+EMPTY(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    (!\mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{RINGBUFFER\+\_\+\+COUNT}}(ringbuffer))}
+
+Checks if the ringbuffer has no items stored. Returns 1 if ringbuffer is empty, otherwise 0. 
+
+Definition at line 197 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a3b1379ffc509d6d79b752add90e082e2}\label{ringbuffer_8h_a3b1379ffc509d6d79b752add90e082e2}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_FULL@{RINGBUFFER\_FULL}}
+\index{RINGBUFFER\_FULL@{RINGBUFFER\_FULL}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_FULL}{RINGBUFFER\_FULL}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+FULL(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    (\mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{RINGBUFFER\+\_\+\+COUNT}}(ringbuffer)$>$=\mbox{\hyperlink{ringbuffer_8h_a2b33d9308feda0d03b5fab04f2241b0d}{RINGBUFFER\+\_\+\+SIZE}}(ringbuffer))}
+
+Checks if no further ringbuffer items are available. Returns 1 if ringbuffer is full, otherwise 0. 
+
+Definition at line 189 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a51e61e6cc3ff2ed52ca838a5dced24f0}\label{ringbuffer_8h_a51e61e6cc3ff2ed52ca838a5dced24f0}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_HEAD@{RINGBUFFER\_HEAD}}
+\index{RINGBUFFER\_HEAD@{RINGBUFFER\_HEAD}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_HEAD}{RINGBUFFER\_HEAD}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+HEAD(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    ((ringbuffer).head)}
+
+Returns the current head index. 
+
+Definition at line 109 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a5e00e617a66806659364ed07ad253427}\label{ringbuffer_8h_a5e00e617a66806659364ed07ad253427}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_HEAD\_PTR@{RINGBUFFER\_HEAD\_PTR}}
+\index{RINGBUFFER\_HEAD\_PTR@{RINGBUFFER\_HEAD\_PTR}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_HEAD\_PTR}{RINGBUFFER\_HEAD\_PTR}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+HEAD\+\_\+\+PTR(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    (\&\mbox{\hyperlink{ringbuffer_8h_add57f7fa1a594bf8c8345cb7ad1cdf1e}{RINGBUFFER\+\_\+\+HEAD\+\_\+\+VAL}}(ringbuffer))}
+
+Returns a pointer to the current head item. 
+
+Definition at line 149 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_add57f7fa1a594bf8c8345cb7ad1cdf1e}\label{ringbuffer_8h_add57f7fa1a594bf8c8345cb7ad1cdf1e}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_HEAD\_VAL@{RINGBUFFER\_HEAD\_VAL}}
+\index{RINGBUFFER\_HEAD\_VAL@{RINGBUFFER\_HEAD\_VAL}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_HEAD\_VAL}{RINGBUFFER\_HEAD\_VAL}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+HEAD\+\_\+\+VAL(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    (\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer)\mbox{[}\mbox{\hyperlink{ringbuffer_8h_a51e61e6cc3ff2ed52ca838a5dced24f0}{RINGBUFFER\+\_\+\+HEAD}}(ringbuffer)\mbox{]})}
+
+Returns a reference of the current head item. 
+
+Definition at line 143 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a1431543f2a604be6199c06e94515725e}\label{ringbuffer_8h_a1431543f2a604be6199c06e94515725e}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_INIT@{RINGBUFFER\_INIT}}
+\index{RINGBUFFER\_INIT@{RINGBUFFER\_INIT}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_INIT}{RINGBUFFER\_INIT}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+INIT(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do}\{                                 \(\backslash\)}
+\DoxyCodeLine{        RINGBUFFER\_COUNT(ringbuffer)=0; \(\backslash\)}
+\DoxyCodeLine{        RINGBUFFER\_HEAD(ringbuffer)=0;  \(\backslash\)}
+\DoxyCodeLine{        RINGBUFFER\_TAIL(ringbuffer)=0;  \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+Initializes the ringbuffer. 
+
+Definition at line 121 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}\label{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_ITEMS@{RINGBUFFER\_ITEMS}}
+\index{RINGBUFFER\_ITEMS@{RINGBUFFER\_ITEMS}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_ITEMS}{RINGBUFFER\_ITEMS}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+ITEMS(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    ((ringbuffer).items)}
+
+Returns a pointer to the ringbuffer items. Type of returned pointer is of ringbuffer item type. 
+
+Definition at line 72 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_aa6b594fd28c6336ba579d8f7495b637b}\label{ringbuffer_8h_aa6b594fd28c6336ba579d8f7495b637b}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_POP@{RINGBUFFER\_POP}}
+\index{RINGBUFFER\_POP@{RINGBUFFER\_POP}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_POP}{RINGBUFFER\_POP}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+POP(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{                                                                    \(\backslash\)}
+\DoxyCodeLine{        if(++\mbox{\hyperlink{ringbuffer_8h_a51e61e6cc3ff2ed52ca838a5dced24f0}{RINGBUFFER\_HEAD}}(ringbuffer) == \mbox{\hyperlink{ringbuffer_8h_a2b33d9308feda0d03b5fab04f2241b0d}{RINGBUFFER\_SIZE}}(ringbuffer))    \(\backslash\)}
+\DoxyCodeLine{        \{                                                                   \(\backslash\)}
+\DoxyCodeLine{             RINGBUFFER\_HEAD(ringbuffer) = 0;                               \(\backslash\)}
+\DoxyCodeLine{        \}                                                                   \mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{\(\backslash\)}}}
+\DoxyCodeLine{\mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{                                                                            \(\backslash\)}}}
+\DoxyCodeLine{\mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{        RINGBUFFER\_COUNT}}(ringbuffer)-\/-\/;                                     \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+Pops the current head item in the ringbuffer, or in other words\+: increases the head index to address the next item in the ringbuffer. Automatically wraps around the head index in case of index overflow. Also decreases the number of items in the ringbuffer by one. 
+
+Definition at line 175 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a4a4b77cdc32cc3c176177be95937bb5b}\label{ringbuffer_8h_a4a4b77cdc32cc3c176177be95937bb5b}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_PUSH@{RINGBUFFER\_PUSH}}
+\index{RINGBUFFER\_PUSH@{RINGBUFFER\_PUSH}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_PUSH}{RINGBUFFER\_PUSH}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+PUSH(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{                                                                    \(\backslash\)}
+\DoxyCodeLine{        if(++\mbox{\hyperlink{ringbuffer_8h_a003d60979c54ed26b12d52d69232cf29}{RINGBUFFER\_TAIL}}(ringbuffer) == \mbox{\hyperlink{ringbuffer_8h_a2b33d9308feda0d03b5fab04f2241b0d}{RINGBUFFER\_SIZE}}(ringbuffer))    \(\backslash\)}
+\DoxyCodeLine{        \{                                                                   \(\backslash\)}
+\DoxyCodeLine{             RINGBUFFER\_TAIL(ringbuffer) = 0;                               \(\backslash\)}
+\DoxyCodeLine{        \}                                                                   \mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{\(\backslash\)}}}
+\DoxyCodeLine{\mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{                                                                            \(\backslash\)}}}
+\DoxyCodeLine{\mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{        RINGBUFFER\_COUNT}}(ringbuffer)++;                                     \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+Pushes the current tail item in the ringbuffer, or in other words\+: increases the tail index to address the next item in the ringbuffer. Automatically wraps around the tail index in case of index overflow. Also increases the number of items in the ringbuffer by one. 
+
+Definition at line 158 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a6b871592b08d34508ba098048b3553d0}\label{ringbuffer_8h_a6b871592b08d34508ba098048b3553d0}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_RAW@{RINGBUFFER\_RAW}}
+\index{RINGBUFFER\_RAW@{RINGBUFFER\_RAW}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_RAW}{RINGBUFFER\_RAW}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+RAW(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    ((uint8\+\_\+t$\ast$)\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer))}
+
+Returns an pointer to the ringbuffer items. Type of pointer is uint8\+\_\+t (byte). 
+
+Definition at line 79 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a31f0ca865e5ecc8866473733e71a77fe}\label{ringbuffer_8h_a31f0ca865e5ecc8866473733e71a77fe}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_READ@{RINGBUFFER\_READ}}
+\index{RINGBUFFER\_READ@{RINGBUFFER\_READ}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_READ}{RINGBUFFER\_READ}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+READ(\begin{DoxyParamCaption}\item[{}]{ringbufferptr,  }\item[{}]{var }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{                                            \(\backslash\)}
+\DoxyCodeLine{        var = \mbox{\hyperlink{ringbuffer_8h_add57f7fa1a594bf8c8345cb7ad1cdf1e}{RINGBUFFER\_HEAD\_VAL}}(ringbufferptr);   \(\backslash\)}
+\DoxyCodeLine{        RINGBUFFER\_POP(ringbufferptr);              \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+Reads one item into /a var by value. Automatically pops the ringbuffer. Read oldest element. App must ensure !\+RINGBUFFER\+\_\+\+EMPTY() first. 
+
+Definition at line 206 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a2b33d9308feda0d03b5fab04f2241b0d}\label{ringbuffer_8h_a2b33d9308feda0d03b5fab04f2241b0d}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_SIZE@{RINGBUFFER\_SIZE}}
+\index{RINGBUFFER\_SIZE@{RINGBUFFER\_SIZE}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_SIZE}{RINGBUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    (\mbox{\hyperlink{ringbuffer_8h_a23efdb3a790c98c42f748c1349a0aa24}{RINGBUFFER\+\_\+\+SIZEOF}}(ringbuffer)/sizeof(\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer)\mbox{[}0\mbox{]}))}
+
+Returns the maximum number of items the ringbuffer can hold. 
+
+Definition at line 93 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a23efdb3a790c98c42f748c1349a0aa24}\label{ringbuffer_8h_a23efdb3a790c98c42f748c1349a0aa24}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_SIZEOF@{RINGBUFFER\_SIZEOF}}
+\index{RINGBUFFER\_SIZEOF@{RINGBUFFER\_SIZEOF}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_SIZEOF}{RINGBUFFER\_SIZEOF}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+SIZEOF(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    (sizeof(\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer)))}
+
+Returns the size of the ringbuffer in bytes. 
+
+Definition at line 86 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_af63b7b7476d24ec94078d18e9460dc29}\label{ringbuffer_8h_af63b7b7476d24ec94078d18e9460dc29}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_T@{RINGBUFFER\_T}}
+\index{RINGBUFFER\_T@{RINGBUFFER\_T}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_T}{RINGBUFFER\_T}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+T(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~    name\#\#\+\_\+ringbuffer\+\_\+t}
+
+Defines a ringbuffer of type {\itshape name}. Can also be used with different storage classifiers. (static, extern, volatile ...) 
+
+Definition at line 65 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a003d60979c54ed26b12d52d69232cf29}\label{ringbuffer_8h_a003d60979c54ed26b12d52d69232cf29}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_TAIL@{RINGBUFFER\_TAIL}}
+\index{RINGBUFFER\_TAIL@{RINGBUFFER\_TAIL}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_TAIL}{RINGBUFFER\_TAIL}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+TAIL(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    ((ringbuffer).tail)}
+
+Returns the current tail index. 
+
+Definition at line 115 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_ae0de1d8dbc061b40dafd6aadf6ee67ac}\label{ringbuffer_8h_ae0de1d8dbc061b40dafd6aadf6ee67ac}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_TAIL\_PTR@{RINGBUFFER\_TAIL\_PTR}}
+\index{RINGBUFFER\_TAIL\_PTR@{RINGBUFFER\_TAIL\_PTR}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_TAIL\_PTR}{RINGBUFFER\_TAIL\_PTR}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+TAIL\+\_\+\+PTR(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    (\&\mbox{\hyperlink{ringbuffer_8h_a9c3b73462fa930ac0e95ee51e28d2546}{RINGBUFFER\+\_\+\+TAIL\+\_\+\+VAL}}(ringbuffer))}
+
+Returns a pointer to the current tail item. 
+
+Definition at line 137 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_a9c3b73462fa930ac0e95ee51e28d2546}\label{ringbuffer_8h_a9c3b73462fa930ac0e95ee51e28d2546}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_TAIL\_VAL@{RINGBUFFER\_TAIL\_VAL}}
+\index{RINGBUFFER\_TAIL\_VAL@{RINGBUFFER\_TAIL\_VAL}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_TAIL\_VAL}{RINGBUFFER\_TAIL\_VAL}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+TAIL\+\_\+\+VAL(\begin{DoxyParamCaption}\item[{}]{ringbuffer }\end{DoxyParamCaption})~    (\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{RINGBUFFER\+\_\+\+ITEMS}}(ringbuffer)\mbox{[}\mbox{\hyperlink{ringbuffer_8h_a003d60979c54ed26b12d52d69232cf29}{RINGBUFFER\+\_\+\+TAIL}}(ringbuffer)\mbox{]})}
+
+Returns a reference of the current tail item. 
+
+Definition at line 131 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_ad5642d39f97605cf0dd773d5d4788d5b}\label{ringbuffer_8h_ad5642d39f97605cf0dd773d5d4788d5b}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_TYPEDEF@{RINGBUFFER\_TYPEDEF}}
+\index{RINGBUFFER\_TYPEDEF@{RINGBUFFER\_TYPEDEF}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_TYPEDEF}{RINGBUFFER\_TYPEDEF}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+TYPEDEF(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{type,  }\item[{}]{size }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{                        \(\backslash\)}
+\DoxyCodeLine{        size\_t head;                        \(\backslash\)}
+\DoxyCodeLine{        size\_t tail;                        \(\backslash\)}
+\DoxyCodeLine{        size\_t count;                       \(\backslash\)}
+\DoxyCodeLine{        type items [size];                  \(\backslash\)}
+\DoxyCodeLine{    \} name\#\#\_ringbuffer\_t}
+
+\end{DoxyCode}
+Declares a ringbuffer type. The argumnents are {\itshape name} for a unique identification of the ringbuffer type, the {\itshape type} of the items and the number of items of {\itshape type} the ringbuffer can hold ({\itshape size}). 
+
+Definition at line 52 of file ringbuffer.\+h.
+
+\mbox{\Hypertarget{ringbuffer_8h_add6360c708625f28d126d16b75b881b0}\label{ringbuffer_8h_add6360c708625f28d126d16b75b881b0}} 
+\index{ringbuffer.h@{ringbuffer.h}!RINGBUFFER\_WRITE@{RINGBUFFER\_WRITE}}
+\index{RINGBUFFER\_WRITE@{RINGBUFFER\_WRITE}!ringbuffer.h@{ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{RINGBUFFER\_WRITE}{RINGBUFFER\_WRITE}}
+{\footnotesize\ttfamily \#define RINGBUFFER\+\_\+\+WRITE(\begin{DoxyParamCaption}\item[{}]{ringbufferptr,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{                                                \(\backslash\)}
+\DoxyCodeLine{        RINGBUFFER\_TAIL\_VAL(ringbufferptr) = value;     \(\backslash\)}
+\DoxyCodeLine{        RINGBUFFER\_PUSH(ringbufferptr);                 \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+Writes one item into ringbuffer by value. Automatically pushes the ringbuffer. Overwrites the oldest element if ringbuffer is full. App can choose to avoid the overwrite by checking \mbox{\hyperlink{ringbuffer_8h_a3b1379ffc509d6d79b752add90e082e2}{RINGBUFFER\+\_\+\+FULL()}}. 
+
+Definition at line 218 of file ringbuffer.\+h.
+

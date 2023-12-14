@@ -1,7 +1,4 @@
-/*! \copyright
- 
-   https://opensource.org/license/mit/
-
+/*
    Copyright 2013-2023 Marco Bacchi <marco@bacchi.at>
    
    Permission is hereby granted, free of charge, to any person
@@ -27,27 +24,133 @@
 */
 
 
-/*!
-    \file       binary.h
 
-    \brief      Provides preprocessor macros to directly code binary integral representations
+/**
+ * @file
+ * @copyright  Copyright 2013-2023 Marco Bacchi <marco@bacchi.at>
+ * @license    This file is released under the MIT License.\n
+ *             https://opensource.org/licenses/MIT
+ *
+ * @brief   File containing macros for representing and manipulating binary numbers.
+ *
+ * @details This file includes a collection of macros designed for the representation
+ *          and manipulation of binary numbers in various bit lengths. It is part of
+ *          the `binary_representations` module, which defines convenient macros for binary
+ *          values ranging from 1-bit to 8-bit (byte) representations. These macros
+ *          are defined for clear and readable binary number representation in the code,
+ *          particularly useful in bit manipulation, bitwise operations, and low-level
+ *          programming tasks.
+ *
+ *          Additionally, the file provides function-like macros `BINARY8`, `BINARY16`,
+ *          and `BINARY32` for converting binary representations into their corresponding
+ *          8-bit, 16-bit, and 32-bit unsigned integer values. These conversion macros
+ *          enhance the usability of binary representations in various programming contexts.
+ *
+ *          The purpose of these macros is to improve code readability and reduce the
+ *          potential for errors when dealing with binary data. They provide a more
+ *          intuitive way of handling binary values compared to traditional hexadecimal
+ *          or decimal representations, especially in scenarios where the binary structure
+ *          of data is of paramount importance.
+ *
+ *          Usage:
+ *          Include this file in projects where binary number representation and
+ *          manipulation are required. Utilize the macros for defining, reading,
+ *          and manipulating binary data.
+ *
+ *          This file was documented in doxygen style format by using ChatGPT 4.
+ *
+ */
 
-    \details
-*/
 #ifndef BINARY_H_
 #define BINARY_H_
 
 #include <stdint.h>
 
+/**
+ * @brief Converts a binary representation into a 8-bit (byte) value.
+ * @details This macro converts a binary number representation defined in the
+ *          `binary_representations` group into an 8-bit unsigned integer (`uint8_t`).
+ *          It takes a binary value (without the preceding 'b') as input and
+ *          returns its equivalent 8-bit representation.
+ *
+ * Usage:
+ * @code
+ * uint8_t value = BINARY8(01010101); // Equivalent to 0x55
+ * @endcode
+ *
+ * @param val A binary value without the preceding 'b'.
+ * @return An 8-bit representation of the binary value.
+ */
 #define BINARY8(val) (((uint8_t)(b##val))&0xFF)
 
+/**
+ * @brief Converts two binary representations into a 16-bit value.
+ * @details This macro combines two binary number representations into a single
+ *          16-bit unsigned integer (`uint16_t`). It utilizes the `BINARY8` macro
+ *          to convert each 8-bit segment and then combines them into a 16-bit value.
+ *          The first value (`val1`) represents the high-order byte, and the second
+ *          value (`val2`) represents the low-order byte.
+ *
+ * Usage:
+ * @code
+ * uint16_t value = BINARY16(10101010, 01010101); // Equivalent to 0xAA55
+ * @endcode
+ *
+ * @param val1 The high-order 8-bit binary value.
+ * @param val2 The low-order 8-bit binary value.
+ * @return A 16-bit representation combining the two binary values.
+ */
 #define BINARY16(val1,val2) \
     ((((uint16_t)BINARY8(val1))<<8)|((uint16_t)BINARY8(val2)))
 
+/**
+ * @brief Converts four binary representations into a 32-bit value.
+ * @details This macro combines four binary number representations into a single
+ *          32-bit unsigned integer (`uint32_t`). It uses the `BINARY16` macro to
+ *          convert each pair of 8-bit segments into 16-bit values and then combines
+ *          them into a 32-bit value. The order of values is from most significant
+ *          to least significant (left to right).
+ *
+ * Usage:
+ * @code
+ * uint32_t value = BINARY32(11110000, 10101010, 01010101, 00001111); // Equivalent to 0xF0AA550F
+ * @endcode
+ *
+ * @param val1 The most significant 8-bit binary value.
+ * @param val2 The second most significant 8-bit binary value.
+ * @param val3 The third most significant 8-bit binary value.
+ * @param val4 The least significant 8-bit binary value.
+ * @return A 32-bit representation combining the four binary values.
+ */
 #define BINARY32(val1,val2,val3,val4) \
     ((((uint32_t)BINARY16(val1,val2))<<16)|((uint32_t)BINARY16(val3,val4)))
 
-
+/**
+ * @defgroup binary_representations Binary Number Representations
+ * @brief Defines macros for binary number representations with different bit lengths.
+ *
+ * This group includes definitions for binary number representations ranging from
+ * 1-bit to 8-bit (byte) binary numbers. These macros provide a convenient way to
+ * represent binary numbers in the code, enhancing readability and reducing the
+ * chance of errors in specifying binary values. Each macro represents a specific
+ * binary value in hexadecimal format.
+ *
+ * Definitions:
+ * - 1-bit representations range from b0 (0x0) to b1 (0x1).
+ * - 2-bit representations range from b00 (0x0) to b11 (0x3).
+ * - 3-bit representations range from b000 (0x0) to b111 (0x7).
+ * - 4-bit representations (nibble) range from b0000 (0x0) to b1111 (0xF).
+ * - 5-bit representations range from b00000 (0x0) to b11111 (0x1F).
+ * - 6-bit representations range from b000000 (0x0) to b111111 (0x3F).
+ * - 7-bit representations range from b0000000 (0x0) to b1111111 (0x7F).
+ * - 8-bit representations (byte) range from b00000000 (0x00) to b11111111 (0xFF).
+ *
+ * These macros facilitate the representation of binary values in a clear and
+ * concise manner, especially useful in contexts such as bit manipulation,
+ * bitwise operations, and low-level programming.
+ *
+ * @{
+ */
 /* 1 bit */
 #define b0  0x0
 #define b1  0x1
@@ -575,6 +678,6 @@
 #define b11111101 0xFD
 #define b11111110 0xFE
 #define b11111111 0xFF
-
+/** @} */
 
 #endif /* BINARY_H_ */

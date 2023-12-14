@@ -1,0 +1,129 @@
+\doxysection{pt.\+h}
+\hypertarget{pt_8h_source}{}\label{pt_8h_source}\index{myos/os/pt.h@{myos/os/pt.h}}
+\mbox{\hyperlink{pt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00002}00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2004-\/2005,\ Swedish\ Institute\ of\ Computer\ Science.}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00003}00003\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00005}00005\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00006}00006\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00007}00007\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00008}00008\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00010}00010\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ \ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00013}00013\ \textcolor{comment}{\ *\ 3.\ Neither\ the\ name\ of\ the\ Institute\ nor\ the\ names\ of\ its\ contributors}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ \ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00016}00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00017}00017\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ INSTITUTE\ AND\ CONTRIBUTORS\ \`{}\`{}AS\ IS''\ AND}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00018}00018\ \textcolor{comment}{\ *\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00019}00019\ \textcolor{comment}{\ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00020}00020\ \textcolor{comment}{\ *\ ARE\ DISCLAIMED.\ \ IN\ NO\ EVENT\ SHALL\ THE\ INSTITUTE\ OR\ CONTRIBUTORS\ BE\ LIABLE}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00021}00021\ \textcolor{comment}{\ *\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00022}00022\ \textcolor{comment}{\ *\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00023}00023\ \textcolor{comment}{\ *\ OR\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00024}00024\ \textcolor{comment}{\ *\ HOWEVER\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00025}00025\ \textcolor{comment}{\ *\ LIABILITY,\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00026}00026\ \textcolor{comment}{\ *\ OUT\ OF\ THE\ USE\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00027}00027\ \textcolor{comment}{\ *\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00028}00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00029}00029\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Contiki\ operating\ system.}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00030}00030\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00031}00031\ \textcolor{comment}{\ *\ Author:\ Adam\ Dunkels\ <adam@sics.se>}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00032}00032\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00033}00033\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00047}00047\ \textcolor{preprocessor}{\#ifndef\ PT\_H\_}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00048}00048\ \textcolor{preprocessor}{\#define\ PT\_H\_}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00050}00050\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00054}\mbox{\hyperlink{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}{00054}}\ \textcolor{keyword}{typedef}\ uint16\_t\ \mbox{\hyperlink{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}{lc\_t}};}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00055}\mbox{\hyperlink{pt_8h_a2c1bb4fa6d7a6ff951a41c73fc721109}{00055}}\ \textcolor{preprocessor}{\#define\ LC\_INIT(s)\ s\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00056}\mbox{\hyperlink{pt_8h_ab64bd2c3e3897a7cbef2207423ad2d8c}{00056}}\ \textcolor{preprocessor}{\#define\ LC\_DEFAULT\ ((lc\_t)(\string~((lc\_t)(0))))}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00057}\mbox{\hyperlink{pt_8h_ab5cc2dda29ad856d231320b831654f33}{00057}}\ \textcolor{preprocessor}{\#define\ LC\_SET\_DEFAULT(s)\ s\ =\ LC\_DEFAULT}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00058}\mbox{\hyperlink{pt_8h_a1ec8b8f4710dce1fa7fb87d3a31541ae}{00058}}\ \textcolor{preprocessor}{\#define\ LC\_RESUME(s)\ switch(s)\ \{\ case\ 0:}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00059}\mbox{\hyperlink{pt_8h_ad8eec328a4868d767f0c00c8d1c6cfc1}{00059}}\ \textcolor{preprocessor}{\#define\ LC\_SET(s)\ s\ =\ \_\_LINE\_\_;\ case\ \_\_LINE\_\_:}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00060}\mbox{\hyperlink{pt_8h_a68f74e3ddf51e34a906cdd47fd05d203}{00060}}\ \textcolor{preprocessor}{\#define\ LC\_SET\_YIELD(s,retval)\ s\ =\ \_\_LINE\_\_;\ return\ retval;\ case\ \_\_LINE\_\_:}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00061}\mbox{\hyperlink{pt_8h_aca51ceb2f5d855dfde55bcedf8d3b92d}{00061}}\ \textcolor{preprocessor}{\#define\ LC\_END(s)\ default:;\}}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00065}\mbox{\hyperlink{structpt__t}{00065}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00066}\mbox{\hyperlink{structpt__t_a810200c2e744018f88faae38003c9d01}{00066}}\ \ \ \mbox{\hyperlink{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}{lc\_t}}\ \mbox{\hyperlink{structpt__t_a810200c2e744018f88faae38003c9d01}{lc}};}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00067}00067\ \}\mbox{\hyperlink{structpt__t}{pt\_t}};}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00069}\mbox{\hyperlink{pt_8h_aa8420180df76b733e4248ebd61f286c9}{00069}}\ \textcolor{keyword}{typedef}\ uint8\_t\ \mbox{\hyperlink{pt_8h_aa8420180df76b733e4248ebd61f286c9}{ptstate\_t}};}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00072}\mbox{\hyperlink{pt_8h_a0616472afa5de1a24881899fb74803c6}{00072}}\ \textcolor{preprocessor}{\#define\ PT\_STATE\_WAITING\ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00073}\mbox{\hyperlink{pt_8h_a50fcdbe0264a6ac201108cd72fb47676}{00073}}\ \textcolor{preprocessor}{\#define\ PT\_STATE\_TERMINATED\ \ \ \ \ ((ptstate\_t)(\string~((ptstate\_t)(0))))}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00076}\mbox{\hyperlink{pt_8h_a43f309c7d8c427c5d926c9d09b40cdb2}{00076}}\ \textcolor{preprocessor}{\#define\ PT\_IS\_RUNNING(pt)\ (\ ((pt)-\/>lc\ >\ 0)\ \&\&\ ((pt)-\/>lc\ !=\ LC\_DEFAULT)\ )}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00092}\mbox{\hyperlink{pt_8h_ae6bae7dc0225468c8a5ac269df549892}{00092}}\ \textcolor{preprocessor}{\#define\ PT\_INIT(pt)\ \ \ LC\_INIT((pt)-\/>lc)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00105}\mbox{\hyperlink{pt_8h_a3d4c8bd4aada659eb34f5d2ffd3e7901}{00105}}\ \textcolor{preprocessor}{\#define\ PT\_THREAD(name\_args)\ ptstate\_t\ name\_args}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00120}\mbox{\hyperlink{pt_8h_a2ffbb9e554e08a343ae2f9de4bedfdfc}{00120}}\ \textcolor{preprocessor}{\#define\ PT\_BEGIN(pt)\ LC\_RESUME((pt)-\/>lc)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00132}\mbox{\hyperlink{pt_8h_a7b04a0035bef29d905496c23bae066d2}{00132}}\ \textcolor{preprocessor}{\#define\ PT\_END(pt)\ LC\_SET\_DEFAULT((pt)-\/>lc);\ LC\_END((pt)-\/>lc);\ return\ PT\_STATE\_TERMINATED}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00148}\mbox{\hyperlink{pt_8h_a99e43010ec61327164466aa2d902de45}{00148}}\ \textcolor{preprocessor}{\#define\ PT\_WAIT\_UNTIL(pt,\ condition)\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00149}00149\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00150}00150\ \textcolor{preprocessor}{\ \ \ \ LC\_SET((pt)-\/>lc);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00151}00151\ \textcolor{preprocessor}{\ \ \ \ if(!(condition))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00152}00152\ \textcolor{preprocessor}{\ \ \ \ \ \ return\ PT\_STATE\_WAITING;\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00153}00153\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00154}00154\ \textcolor{preprocessor}{\ \ \}\ while(0)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00167}\mbox{\hyperlink{pt_8h_aad14bbbf092b90aa0a5a4f9169504a8d}{00167}}\ \textcolor{preprocessor}{\#define\ PT\_WAIT\_WHILE(pt,\ cond)\ \ PT\_WAIT\_UNTIL((pt),!(cond))}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00186}\mbox{\hyperlink{pt_8h_a2f8f70c30b9ee08a103fbd69a4365c4c}{00186}}\ \textcolor{preprocessor}{\#define\ PT\_WAIT\_THREAD(pt,\ thread)\ PT\_WAIT\_WHILE((pt),\ PT\_SCHEDULE(thread)\ >\ PT\_STATE\_TERMINATED)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00200}\mbox{\hyperlink{pt_8h_a9e97a0b4d5cc7764d8e19758f5da53ae}{00200}}\ \textcolor{preprocessor}{\#define\ PT\_SPAWN(pt,\ child,\ thread)\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00201}00201\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00202}00202\ \textcolor{preprocessor}{\ \ \ \ PT\_INIT((child));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00203}00203\ \textcolor{preprocessor}{\ \ \ \ PT\_WAIT\_THREAD((pt),\ (thread));\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00204}00204\ \textcolor{preprocessor}{\ \ \}\ while(0)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00217}\mbox{\hyperlink{pt_8h_acd3ac045f0a4ae63412e3b3d8780e8ab}{00217}}\ \textcolor{preprocessor}{\#define\ PT\_RESTART(pt)\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00218}00218\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00219}00219\ \textcolor{preprocessor}{\ \ \ \ PT\_INIT(pt);\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00220}00220\ \textcolor{preprocessor}{\ \ \ \ return\ PT\_STATE\_WAITING;\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00221}00221\ \textcolor{preprocessor}{\ \ \}\ while(0)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00234}\mbox{\hyperlink{pt_8h_a905451249dca72ce0385bf2a9ff178ee}{00234}}\ \textcolor{preprocessor}{\#define\ PT\_EXIT(pt)\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00235}00235\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00236}00236\ \textcolor{preprocessor}{\ \ \ \ LC\_SET\_DEFAULT((pt)-\/>lc);\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00237}00237\ \textcolor{preprocessor}{\ \ \ \ return\ PT\_STATE\_TERMINATED;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00238}00238\ \textcolor{preprocessor}{\ \ \}\ while(0)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00252}\mbox{\hyperlink{pt_8h_afa82b860a64b67d25ab3abc21811896f}{00252}}\ \textcolor{preprocessor}{\#define\ PT\_SCHEDULE(f)\ (f)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00264}\mbox{\hyperlink{pt_8h_a155cba6121323726d02c00284428fed6}{00264}}\ \textcolor{preprocessor}{\#define\ PT\_YIELD(pt)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00265}00265\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00266}00266\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ LC\_SET\_YIELD((pt)-\/>lc,\ PT\_STATE\_WAITING);\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00267}00267\ \textcolor{preprocessor}{\ \ \ \ \}\ while(0)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00281}\mbox{\hyperlink{pt_8h_ae3c821e3a388615528efda9d23c7d115}{00281}}\ \textcolor{preprocessor}{\#define\ PT\_YIELD\_UNTIL(pt,\ cond)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00282}00282\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00283}00283\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ LC\_SET\_YIELD((pt)-\/>lc,\ PT\_STATE\_WAITING);\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00284}00284\ \textcolor{preprocessor}{\ \ \ \ \}\ while(!(cond))}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00288}00288\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PT\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{pt_8h_source_l00290}00290\ }
+
+\end{DoxyCode}

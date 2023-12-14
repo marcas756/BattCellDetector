@@ -45,9 +45,4 @@
 		if( istate ) __enable_irq(); \
 	}while(0)
 
-#define CRITICAL_ARCH_EXPRESSION(x) \
-   CRITICAL_SECTION_BEGIN(); \
-   x; \
-   CRITICAL_SECTION_END();
-
 #endif /* CRITICAL_ARCH_H_ */

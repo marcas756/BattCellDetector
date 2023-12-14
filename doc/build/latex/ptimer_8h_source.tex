@@ -1,0 +1,77 @@
+\doxysection{ptimer.\+h}
+\hypertarget{ptimer_8h_source}{}\label{ptimer_8h_source}\index{myos/os/ptimer.h@{myos/os/ptimer.h}}
+\mbox{\hyperlink{ptimer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00030}00030\ \textcolor{preprocessor}{\#ifndef\ PTIMER\_H\_}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00031}00031\ \textcolor{preprocessor}{\#define\ PTIMER\_H\_}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{myos_8h}{myos.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00038}00038\ \textcolor{preprocessor}{\#if\ (MYOSCONF\_PTIMER\_LIST\_TYPE\ ==\ MYOSCONF\_DLIST)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dlist_8h}{dlist.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00041}\mbox{\hyperlink{ptimer_8h_af2653885202e666169214731e0899756}{00041}}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structdlist__node__t}{dlist\_t}}\ \mbox{\hyperlink{ptimer_8h_af2653885202e666169214731e0899756}{ptlist\_t}};}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00042}\mbox{\hyperlink{ptimer_8h_a3754aad908c2abb00f236ab164cc2fa7}{00042}}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}\ \mbox{\hyperlink{ptimer_8h_a3754aad908c2abb00f236ab164cc2fa7}{ptlist\_node\_t}};}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00043}\mbox{\hyperlink{ptimer_8h_acf1624e65cf764883512cf1d2e07278f}{00043}}\ \textcolor{preprocessor}{\#define\ PTLIST\_NODE\_TYPE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DLIST\_NODE\_TYPE}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00044}\mbox{\hyperlink{ptimer_8h_a4090fd49cbbe1b247fa2805eab984f5a}{00044}}\ \textcolor{preprocessor}{\#define\ ptlist\_init(listptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dlist\_init(listptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00045}\mbox{\hyperlink{ptimer_8h_a03b48e92e3295ba156554a67a63d80ab}{00045}}\ \textcolor{preprocessor}{\#define\ ptlist\_erase(listptr,nodeptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dlist\_erase(listptr,nodeptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00046}\mbox{\hyperlink{ptimer_8h_a8a096a14c8cc9659d31b134ee8e3e17c}{00046}}\ \textcolor{preprocessor}{\#define\ ptlist\_next(listptr,nodeptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dlist\_next(listptr,nodeptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00047}\mbox{\hyperlink{ptimer_8h_aaf91605fceb5a95e3261ef0244a36c18}{00047}}\ \textcolor{preprocessor}{\#define\ ptlist\_push\_front(listptr,nodeptr)\ \ \ \ \ \ \ \ \ \ \ \ dlist\_push\_front(listptr,nodeptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00048}\mbox{\hyperlink{ptimer_8h_a45ed9db90fbad186712b9f7b2e66a134}{00048}}\ \textcolor{preprocessor}{\#define\ ptlist\_prev(listptr,nodeptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dlist\_prev(listptr,nodeptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00049}\mbox{\hyperlink{ptimer_8h_a16e2a5df666b16001f556d3ee90b0059}{00049}}\ \textcolor{preprocessor}{\#define\ ptlist\_foreach(listptr,iterator)\ \ \ \ \ \ \ \ \ \ \ \ \ \ dlist\_foreach(listptr,iterator)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00050}\mbox{\hyperlink{ptimer_8h_a56661f7260734efdc8c804446e6e8fc7}{00050}}\ \textcolor{preprocessor}{\#define\ ptlist\_find(listptr,nodeptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dlist\_findlistptr,nodeptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00051}\mbox{\hyperlink{ptimer_8h_a1a7f49306da4bdfac3937a1a81969ed7}{00051}}\ \textcolor{preprocessor}{\#define\ ptlist\_begin(listptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dlist\_begin(listptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00052}\mbox{\hyperlink{ptimer_8h_a4a970858bfb98939521681807376e13c}{00052}}\ \textcolor{preprocessor}{\#define\ ptlist\_end(listptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dlist\_end(listptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00053}\mbox{\hyperlink{ptimer_8h_ad83afbd52981d8e935e039bc6fab36ac}{00053}}\ \textcolor{preprocessor}{\#define\ ptlist\_empty(listptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dlist\_empty(listptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00055}00055\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00057}00057\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{slist_8h}{slist.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00058}00058\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structslist__node__t}{slist\_t}}\ \mbox{\hyperlink{ptimer_8h_af2653885202e666169214731e0899756}{ptlist\_t}};}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00059}00059\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structslist__node__t}{slist\_node\_t}}\ \mbox{\hyperlink{ptimer_8h_a3754aad908c2abb00f236ab164cc2fa7}{ptlist\_node\_t}};}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00060}00060\ \textcolor{preprocessor}{\#define\ PTLIST\_NODE\_TYPE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SLIST\_NODE\_TYPE}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00061}00061\ \textcolor{preprocessor}{\#define\ ptlist\_init(listptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slist\_init(listptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00062}00062\ \textcolor{preprocessor}{\#define\ ptlist\_erase(listptr,nodeptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slist\_erase(listptr,nodeptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00063}00063\ \textcolor{preprocessor}{\#define\ ptlist\_next(listptr,nodeptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slist\_next(listptr,nodeptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00064}00064\ \textcolor{preprocessor}{\#define\ ptlist\_push\_front(listptr,nodeptr)\ \ \ \ \ \ \ \ \ \ \ \ slist\_push\_front(listptr,nodeptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00065}00065\ \textcolor{preprocessor}{\#define\ ptlist\_prev(listptr,nodeptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slist\_prev(listptr,nodeptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00066}00066\ \textcolor{preprocessor}{\#define\ ptlist\_foreach(listptr,iterator)\ \ \ \ \ \ \ \ \ \ \ \ \ \ slist\_foreach(listptr,iterator)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00067}00067\ \textcolor{preprocessor}{\#define\ ptlist\_find(listptr,nodeptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slist\_findlistptr,nodeptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00068}00068\ \textcolor{preprocessor}{\#define\ ptlist\_begin(listptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slist\_begin(listptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00069}00069\ \textcolor{preprocessor}{\#define\ ptlist\_end(listptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slist\_end(listptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00070}00070\ \textcolor{preprocessor}{\#define\ ptlist\_empty(listptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ slist\_empty(listptr)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00071}00071\ \textcolor{preprocessor}{\#define\ ptlist\_foreach(listptr,iterator)\ \ \ \ \ \ \ \ \ \ \ \ \ \ slist\_foreach(listptr,iterator)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00073}00073\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00076}00076\ \mbox{\hyperlink{process_8h_a52fad8ae5a2cdc77dcf7588160668689}{PROCESS\_EXTERN}}(\mbox{\hyperlink{ptimer_8h_a0c6d680caa917f9e8538ac9b17f3cfea}{ptimer\_process}});}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00078}\mbox{\hyperlink{ptimer_8h_a0a2f27aa87859532c332350c9aa23331}{00078}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structptimer__t}{ptimer\_t}}\ \mbox{\hyperlink{structptimer__t}{ptimer\_t}};}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00080}\mbox{\hyperlink{ptimer_8h_af0691e005970a9a41c28fe249dae4486}{00080}}\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{ptimer_8h_af0691e005970a9a41c28fe249dae4486}{ptimer\_handler\_t}})\ (\mbox{\hyperlink{structptimer__t}{ptimer\_t}}\ *data);}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00082}\mbox{\hyperlink{structptimer__t}{00082}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structptimer__t}{ptimer\_t}}\{}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00083}\mbox{\hyperlink{structptimer__t_acc772ed0f59fabe01d32815de59fd4e6}{00083}}\ \ \ \ \mbox{\hyperlink{ptimer_8h_acf1624e65cf764883512cf1d2e07278f}{PTLIST\_NODE\_TYPE}};}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00084}\mbox{\hyperlink{structptimer__t_ac148455313aebefa515a6788eddf33cf}{00084}}\ \ \ \ \mbox{\hyperlink{timer_8h_aac51c869b5f227a200ccc73aa1d2c8c6}{timer\_t}}\ \mbox{\hyperlink{structptimer__t_ac148455313aebefa515a6788eddf33cf}{timer}};}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00085}\mbox{\hyperlink{structptimer__t_a278bd58fe84d9c65488474bb86f05b2f}{00085}}\ \ \ \ \mbox{\hyperlink{ptimer_8h_af0691e005970a9a41c28fe249dae4486}{ptimer\_handler\_t}}\ \mbox{\hyperlink{structptimer__t_a278bd58fe84d9c65488474bb86f05b2f}{handler}};}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00086}\mbox{\hyperlink{structptimer__t_a36f7b6be7108281af77939ceaec42fd6}{00086}}\ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structptimer__t_a36f7b6be7108281af77939ceaec42fd6}{running}};}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00087}00087\ \};}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00090}\mbox{\hyperlink{ptimer_8h_ae7a8871f02efe1b7e41efdf1fc0b72e5}{00090}}\ \textcolor{preprocessor}{\#define\ ptimer\_module\_init()\ process\_start(\&ptimer\_process,\ NULL);}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00091}00091\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ptimer_8h_a071e28611f1ded8f7a8312dc8989c46e}{ptimer\_processing}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00092}00092\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ptimer_8h_a30a59e9a36c9f33961cd627e09bc953b}{ptimer\_start}}(\mbox{\hyperlink{structptimer__t}{ptimer\_t}}*\ ptimer,\ \mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\_t}}\ span,\ \mbox{\hyperlink{ptimer_8h_af0691e005970a9a41c28fe249dae4486}{ptimer\_handler\_t}}\ handler);}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00093}00093\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ptimer_8h_a0a6b2385d6c2b3b7d9fb67dfaf354ede}{ptimer\_restart}}(\mbox{\hyperlink{structptimer__t}{ptimer\_t}}*\ ptimer);}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00094}00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ptimer_8h_aed9b22eaecdb0eeb8031ffdaa5edd68b}{ptimer\_reset}}(\mbox{\hyperlink{structptimer__t}{ptimer\_t}}*\ ptimer);}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00095}\mbox{\hyperlink{ptimer_8h_a906040f37907d7466f54f9d5a06f1af2}{00095}}\ \textcolor{preprocessor}{\#define\ ptimer\_stop(ptimerptr)\ ptimer\_remove\_from\_list(ptimerptr);}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00096}\mbox{\hyperlink{ptimer_8h_ab49316344f13f780decabfab54985ec0}{00096}}\ \textcolor{preprocessor}{\#define\ ptimer\_expired(ptimerptr)\ \ \ timer\_expired(\&(ptimerptr)-\/>timer)}}
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{ptimer_8h_source_l00099}00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PTIMER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,22 @@
+\doxysection{crc16.\+h}
+\hypertarget{crc16_8h_source}{}\label{crc16_8h_source}\index{myos/lib/crc16.h@{myos/lib/crc16.h}}
+\mbox{\hyperlink{crc16_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ CRC16\_H\_}}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ CRC16\_H\_}}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00005}00005\ \textcolor{comment}{//\ https://gist.github.com/hemonserrat/d6b1a9ceff6a3a4d01fc0c706a4be325}}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00007}\mbox{\hyperlink{crc16_8h_acce1571adf048cf11db6171f7260fa25}{00007}}\ \textcolor{preprocessor}{\#define\ CRC16\_DNP\ \ \ \ \ \ \ 0x3D65\ \ \ \ \ \ }\textcolor{comment}{//\ DNP,\ IEC\ 870,\ M-\/BUS,\ wM-\/BUS,\ ...}}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00008}\mbox{\hyperlink{crc16_8h_ac15ab02213b8ae86017d70caab0296eb}{00008}}\ \textcolor{preprocessor}{\#define\ CRC16\_CCITT\ \ \ \ \ 0x1021\ \ \ \ \ \ }\textcolor{comment}{//\ X.25,\ V.41,\ HDLC\ FCS,\ Bluetooth,\ ...}}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00009}\mbox{\hyperlink{crc16_8h_a13cb65ed12115a30d2ac27e8a8358d4c}{00009}}\ \textcolor{preprocessor}{\#define\ CRC16\_IBM\ \ \ \ \ \ \ 0x8005\ \ \ \ \ \ }\textcolor{comment}{//\ ModBus,\ USB,\ Bisync,\ CRC-\/16,\ CRC-\/16-\/ANSI,\ ...}}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00010}\mbox{\hyperlink{crc16_8h_a76266f02d80837b5893321c680d8497f}{00010}}\ \textcolor{preprocessor}{\#define\ CRC16\_T10\_DIF\ \ \ 0x8BB7\ \ \ \ \ \ }\textcolor{comment}{//\ SCSI\ DIF}}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00011}\mbox{\hyperlink{crc16_8h_a255ed232dc8a2739a957af29dd6ba0b5}{00011}}\ \textcolor{preprocessor}{\#define\ CRC16\_DECT\ \ \ \ \ \ 0x0589\ \ \ \ \ \ }\textcolor{comment}{//\ Cordeless\ Telephones}}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00012}\mbox{\hyperlink{crc16_8h_a2b2d252bd24289a1de1a0dc6de5167f1}{00012}}\ \textcolor{preprocessor}{\#define\ CRC16\_ARINC\ \ \ \ \ 0xA02B\ \ \ \ \ \ }\textcolor{comment}{//\ ACARS\ Aplications}}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00014}00014\ uint16\_t\ \mbox{\hyperlink{crc16_8h_aad5a592c83cdaf11e9d96e739de21ef0}{crc16\_acc}}(uint16\_t\ seed,\ uint16\_t\ polynom,\ uint8\_t\ \textcolor{keywordtype}{byte});}
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{crc16_8h_source_l00016}00016\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CRC16\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

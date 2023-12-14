@@ -1,0 +1,110 @@
+\hypertarget{dlist_8c}{}\doxysection{myos/lib/dlist.c File Reference}
+\label{dlist_8c}\index{myos/lib/dlist.c@{myos/lib/dlist.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}dlist.\+h\char`\"{}}\newline
+Include dependency graph for dlist.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{dlist_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}} $\ast$ \mbox{\hyperlink{dlist_8c_aba7d109449bb740a61d7e8558b1c9321}{dlist\+\_\+find}} (\mbox{\hyperlink{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}{dlist\+\_\+t}} $\ast$dlist, void $\ast$node)
+\begin{DoxyCompactList}\small\item\em Checks if a node is in the circular doubly linked list. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{dlist_8c_a643bd1eb05da6561fcf98ea81bf160c6}{dlist\+\_\+size}} (\mbox{\hyperlink{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}{dlist\+\_\+t}} $\ast$dlist)
+\begin{DoxyCompactList}\small\item\em Counts the number of nodes in a circular doubly linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dlist_8c_aba7d109449bb740a61d7e8558b1c9321}\label{dlist_8c_aba7d109449bb740a61d7e8558b1c9321}} 
+\index{dlist.c@{dlist.c}!dlist\_find@{dlist\_find}}
+\index{dlist\_find@{dlist\_find}!dlist.c@{dlist.c}}
+\doxysubsubsection{\texorpdfstring{dlist\_find()}{dlist\_find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}$\ast$ dlist\+\_\+find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}{dlist\+\_\+t}} $\ast$}]{dlist,  }\item[{void $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Checks if a node is in the circular doubly linked list. 
+
+This function iterates through the circular doubly linked list and checks if a specific node ({\ttfamily node}) is present in the list. It uses a linear search, comparing each node\textquotesingle{}s address with the address of the specified node. If the node is found, the function returns a pointer to that node; otherwise, it returns NULL.
+
+The search is performed using the {\ttfamily dlist\+\_\+foreach} macro, which iterates over each node in the list. This function is useful for verifying the presence of a node in the list before performing operations that depend on its existence in the list.
+
+\begin{DoxyNote}{Note}
+The function assumes that the list is properly initialized and the {\ttfamily node} pointer is valid. The function runs in linear time complexity, as it may need to traverse the entire list to find the node or determine its absence.
+\end{DoxyNote}
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *search\_node = create\_node(data); \textcolor{comment}{// Assume create\_node allocates and initializes a new node}}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_aab234e0b85f3f015ac0419939efb4987}{dlist\_push\_back}}(\&mylist, search\_node);}
+\DoxyCodeLine{\textcolor{comment}{// Now search for the node}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *found\_node = \mbox{\hyperlink{dlist_8c_aba7d109449bb740a61d7e8558b1c9321}{dlist\_find}}(\&mylist, search\_node);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (found\_node) \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Node found in the list\(\backslash\)n"{}});}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Node not found in the list\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+{\em node} & The node to search for in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the node if it exists in the list, NULL otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file dlist.\+c.
+
+\mbox{\Hypertarget{dlist_8c_a643bd1eb05da6561fcf98ea81bf160c6}\label{dlist_8c_a643bd1eb05da6561fcf98ea81bf160c6}} 
+\index{dlist.c@{dlist.c}!dlist\_size@{dlist\_size}}
+\index{dlist\_size@{dlist\_size}!dlist.c@{dlist.c}}
+\doxysubsubsection{\texorpdfstring{dlist\_size()}{dlist\_size()}}
+{\footnotesize\ttfamily size\+\_\+t dlist\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}{dlist\+\_\+t}} $\ast$}]{dlist }\end{DoxyParamCaption})}
+
+
+
+Counts the number of nodes in a circular doubly linked list. 
+
+This function calculates and returns the number of elements (nodes) present in a circular doubly linked list, excluding the list node itself. It traverses the list starting from the first element after the list node and counts each node until it reaches the list node again.
+
+This traversal makes use of the {\ttfamily dlist\+\_\+foreach} macro, which iterates over each node in the list. The function is useful for determining the size of the list for various operations such as allocation, serialization, or applying algorithms that depend on the number of elements.
+
+\begin{DoxyNote}{Note}
+The function assumes that the list is properly initialized. An uninitialized or improperly formed list might lead to undefined behavior. The function runs in linear time complexity, as it traverses each element of the list.
+\end{DoxyNote}
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t} list\_size = \mbox{\hyperlink{dlist_8c_a643bd1eb05da6561fcf98ea81bf160c6}{dlist\_size}}(\&mylist);}
+\DoxyCodeLine{printf(\textcolor{stringliteral}{"{}List contains \%zu elements\(\backslash\)n"{}}, list\_size);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements in the list, excluding the list node itself. 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file dlist.\+c.
+

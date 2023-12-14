@@ -1,7 +1,4 @@
-/*! \copyright
- 
-   https://opensource.org/license/mit/
-
+/*
    Copyright 2013-2023 Marco Bacchi <marco@bacchi.at>
    
    Permission is hereby granted, free of charge, to any person
@@ -27,7 +24,7 @@
 */
 
 /*!
-    \file       slist.h
+    \file       slist.c
 
     \brief      Circular singly linked list
 
@@ -85,16 +82,17 @@ slist_node_t* slist_back(slist_t* slist)
 
 
 
-void slist_pop_back(slist_t *slist)
+slist_node_t* slist_prev_prev(slist_t *slist, void* node)
 {
-    slist_node_t *iterator = slist_end(slist);
-
-    while( iterator->next->next != slist_end(slist) )
+    slist_node_t *iterator;
+    slist_foreach(slist,iterator)
     {
-        iterator = slist_next(slist,iterator);
+        if( slist_next(slist,slist_next(slist,iterator)) == node )
+        {
+            return iterator;
+        }
     }
-
-    iterator->next = slist_end(slist);
+    return iterator;
 }
 
 

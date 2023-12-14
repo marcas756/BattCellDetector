@@ -1,0 +1,33 @@
+\doxysection{hash.\+c}
+\hypertarget{hash_8c_source}{}\label{hash_8c_source}\index{myos/lib/hash.c@{myos/lib/hash.c}}
+\mbox{\hyperlink{hash_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00001}00001\ \textcolor{comment}{//\ http://www.cse.yorku.ca/\string~oz/hash.html}}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hash_8h}{hash.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00037}\mbox{\hyperlink{hash_8c_a4141f259cd5f1fb8e3311912aa680906}{00037}}\ uint32\_t\ \mbox{\hyperlink{hash_8c_a4141f259cd5f1fb8e3311912aa680906}{hash\_sdbm}}(uint32\_t\ seed,\ \textcolor{keywordtype}{void}\ *data,\ \textcolor{keywordtype}{size\_t}\ size)}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{int}\ idx;}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{for}(idx\ =\ 0;\ idx\ <\ size;\ idx++)}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ seed\ =\ \mbox{\hyperlink{hash_8h_a773b4fec79e80ede41fcabadc7115cfa}{hash\_sdbm\_acc}}(seed,((uint8\_t*)data)[idx]);\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ seed;}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{hash_8c_source_l00055}00055\ }
+
+\end{DoxyCode}

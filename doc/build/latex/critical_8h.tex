@@ -1,0 +1,115 @@
+\hypertarget{critical_8h}{}\doxysection{myos/os/critical.h File Reference}
+\label{critical_8h}\index{myos/os/critical.h@{myos/os/critical.h}}
+
+
+Critical section handling.  
+
+
+{\ttfamily \#include \char`\"{}critical\+\_\+arch.\+h\char`\"{}}\newline
+Include dependency graph for critical.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{critical_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{critical_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{critical_8h_a914de7ad34f57bba442e7c2db18aba3a}{CRITICAL\+\_\+\+SECTION\+\_\+\+BEGIN}}~CRITICAL\+\_\+\+ARCH\+\_\+\+SECTION\+\_\+\+BEGIN
+\begin{DoxyCompactList}\small\item\em Begin of a critical section in code. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{critical_8h_a55e2793e22121f326262963cdf9ecd79}{CRITICAL\+\_\+\+SECTION\+\_\+\+END}}~CRITICAL\+\_\+\+ARCH\+\_\+\+SECTION\+\_\+\+END
+\begin{DoxyCompactList}\small\item\em End of a critical section in code. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{critical_8h_ad3f1825392e3f5ba6661fed409283a77}{CRITICAL\+\_\+\+STATEMENT}}(x)
+\begin{DoxyCompactList}\small\item\em Critical section for one statement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Critical section handling. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}} 
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License\+:}
+This file is released under the MIT License.~\newline
+ \href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+\end{DoxyParagraph}
+In concurrent programming, concurrent accesses to shared resources can lead to unexpected or erroneous behavior, so parts of the program where the shared resource is accessed need to be protected in ways that avoid the concurrent access.
+
+One way to do so is known as a critical section or critical region. This protected section cannot be entered by more than one process or thread at a time; others are suspended until the first leaves the critical section. Typically, the critical section accesses a shared resource, such as a data structure, a peripheral device, or a network connection, that would not operate correctly in the context of multiple concurrent accesses.
+
+The simplest method to prevent any change of processor control inside the critical section is implementing a semaphore. In uniprocessor systems, this can be done by disabling interrupts on entry into the critical section, avoiding system calls that can cause a context switch while inside the section, and restoring interrupts to their previous state on exit.
+
+\href{https://en.wikipedia.org/wiki/Critical_section}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Critical\+\_\+section}}
+
+Critical sections should be kept as short as possible to minimize the time during which interrupts are disabled. This helps reduce the impact on the overall system responsiveness. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{critical_8h_a914de7ad34f57bba442e7c2db18aba3a}\label{critical_8h_a914de7ad34f57bba442e7c2db18aba3a}} 
+\index{critical.h@{critical.h}!CRITICAL\_SECTION\_BEGIN@{CRITICAL\_SECTION\_BEGIN}}
+\index{CRITICAL\_SECTION\_BEGIN@{CRITICAL\_SECTION\_BEGIN}!critical.h@{critical.h}}
+\doxysubsubsection{\texorpdfstring{CRITICAL\_SECTION\_BEGIN}{CRITICAL\_SECTION\_BEGIN}}
+{\footnotesize\ttfamily \#define CRITICAL\+\_\+\+SECTION\+\_\+\+BEGIN~CRITICAL\+\_\+\+ARCH\+\_\+\+SECTION\+\_\+\+BEGIN}
+
+
+
+Begin of a critical section in code. 
+
+Inside a critical section, it\textquotesingle{}s common to disable interrupts temporarily to prevent other interrupt sources from preempting the current ISR. This ensures that the critical section is executed atomically without interruption.
+
+This macro disables the interrupts before entering the critical section. 
+
+Definition at line 76 of file critical.\+h.
+
+\mbox{\Hypertarget{critical_8h_a55e2793e22121f326262963cdf9ecd79}\label{critical_8h_a55e2793e22121f326262963cdf9ecd79}} 
+\index{critical.h@{critical.h}!CRITICAL\_SECTION\_END@{CRITICAL\_SECTION\_END}}
+\index{CRITICAL\_SECTION\_END@{CRITICAL\_SECTION\_END}!critical.h@{critical.h}}
+\doxysubsubsection{\texorpdfstring{CRITICAL\_SECTION\_END}{CRITICAL\_SECTION\_END}}
+{\footnotesize\ttfamily \#define CRITICAL\+\_\+\+SECTION\+\_\+\+END~CRITICAL\+\_\+\+ARCH\+\_\+\+SECTION\+\_\+\+END}
+
+
+
+End of a critical section in code. 
+
+Once the critical section is completed, interrupts are re-\/enabled to allow the processor to respond to other interrupt sources.
+
+This macro enables the interrupts before leaving the critical section. 
+
+Definition at line 85 of file critical.\+h.
+
+\mbox{\Hypertarget{critical_8h_ad3f1825392e3f5ba6661fed409283a77}\label{critical_8h_ad3f1825392e3f5ba6661fed409283a77}} 
+\index{critical.h@{critical.h}!CRITICAL\_STATEMENT@{CRITICAL\_STATEMENT}}
+\index{CRITICAL\_STATEMENT@{CRITICAL\_STATEMENT}!critical.h@{critical.h}}
+\doxysubsubsection{\texorpdfstring{CRITICAL\_STATEMENT}{CRITICAL\_STATEMENT}}
+{\footnotesize\ttfamily \#define CRITICAL\+\_\+\+STATEMENT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{   \mbox{\hyperlink{critical_8h_a914de7ad34f57bba442e7c2db18aba3a}{CRITICAL\_SECTION\_BEGIN}}();  \(\backslash\)}
+\DoxyCodeLine{   x;                         \(\backslash\)}
+\DoxyCodeLine{   CRITICAL\_SECTION\_END();}
+
+\end{DoxyCode}
+
+
+Critical section for one statement. 
+
+In computer programming, a statement is a syntactic unit of an imperative programming language that expresses some action to be carried out.
+
+Simple statements are complete in themselves; these include assignments, subroutine calls, and a few statements which may significantly affect the program flow of control (e.\+g. goto, return, stop/halt).
+
+\href{https://en.wikipedia.org/wiki/Statement_(computer_science)}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Statement\+\_\+(computer\+\_\+science)}}
+
+This macro disables interrupts before entering the critical section, executes the statement provided and enables interrupts again before leaving the critical section.
+
+Usage example \+: CRITICAL\+\_\+\+STATEMENT( a = b ); 
+
+Definition at line 106 of file critical.\+h.
+

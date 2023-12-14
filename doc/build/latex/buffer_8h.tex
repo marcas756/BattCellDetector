@@ -1,0 +1,207 @@
+\hypertarget{buffer_8h}{}\doxysection{myos/lib/buffer.h File Reference}
+\label{buffer_8h}\index{myos/lib/buffer.h@{myos/lib/buffer.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for buffer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{buffer_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{buffer_8h_ae0985a6e4da09d654a62ef58b0fddf96}{BUFFER\+\_\+\+TYPEDEF}}(name,  type,  size)
+\item 
+\#define \mbox{\hyperlink{buffer_8h_aa259250388828ca8420c86e29e78fb51}{BUFFER\+\_\+T}}(name)~    name\#\#\+\_\+buffer\+\_\+t
+\item 
+\#define \mbox{\hyperlink{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}{BUFFER\+\_\+\+ITEMS}}(buffer)~    ((buffer).items)
+\item 
+\#define \mbox{\hyperlink{buffer_8h_a6568f0e1f747eea13f38f3e7641dfe79}{BUFFER\+\_\+\+RAW}}(buffer)~ ((uint8\+\_\+t$\ast$)\mbox{\hyperlink{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}{BUFFER\+\_\+\+ITEMS}}(buffer))
+\item 
+\#define \mbox{\hyperlink{buffer_8h_a68fdb1229372b46cd26febf086fea51d}{BUFFER\+\_\+\+SIZEOF}}(buffer)~    (sizeof(\mbox{\hyperlink{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}{BUFFER\+\_\+\+ITEMS}}(buffer)))
+\item 
+\#define \mbox{\hyperlink{buffer_8h_a810227511c92083861a7b2ee5ea20fec}{BUFFER\+\_\+\+SIZE}}(buffer)~    (\mbox{\hyperlink{buffer_8h_a68fdb1229372b46cd26febf086fea51d}{BUFFER\+\_\+\+SIZEOF}}(buffer)/sizeof(\mbox{\hyperlink{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}{BUFFER\+\_\+\+ITEMS}}(buffer)\mbox{[}0\mbox{]}))
+\item 
+\#define \mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer)~    ((buffer).count)
+\item 
+\#define \mbox{\hyperlink{buffer_8h_af0b1d34e68bf849ce66e4d0227c5152c}{BUFFER\+\_\+\+INIT}}(buffer)~    do\{\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer)=0;\}while(0)
+\item 
+\#define \mbox{\hyperlink{buffer_8h_ad89005fadfa7b7c7fcbb4e1bd1447bd5}{BUFFER\+\_\+\+FULL}}(buffer)~    (\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer)$>$=\mbox{\hyperlink{buffer_8h_a810227511c92083861a7b2ee5ea20fec}{BUFFER\+\_\+\+SIZE}}(buffer))
+\item 
+\#define \mbox{\hyperlink{buffer_8h_a2b5d2196112df1c9a8be7983615b5e6e}{BUFFER\+\_\+\+EMPTY}}(buffer)~    (!\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer))
+\item 
+\#define \mbox{\hyperlink{buffer_8h_a1e5fb1cf72e3f500dd55507497ddeb60}{BUFFER\+\_\+\+NEXT}}(buffer)~    (++\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer))
+\item 
+\#define \mbox{\hyperlink{buffer_8h_a37f9cf513bd9786bb01c8671e869b888}{BUFFER\+\_\+\+VAL}}(buffer)~    (\mbox{\hyperlink{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}{BUFFER\+\_\+\+ITEMS}}(buffer)\mbox{[}\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer)\mbox{]})
+\item 
+\#define \mbox{\hyperlink{buffer_8h_a2e4a4a97802a800c50d03ac1e058c001}{BUFFER\+\_\+\+PTR}}(buffer)~    (\&\mbox{\hyperlink{buffer_8h_a37f9cf513bd9786bb01c8671e869b888}{BUFFER\+\_\+\+VAL}}(buffer))
+\item 
+\#define \mbox{\hyperlink{buffer_8h_ae6d37bd10eaaf2a2eb094f18396444e4}{BUFFER\+\_\+\+APPEND}}(buffer,  item)~ do\{\mbox{\hyperlink{buffer_8h_a37f9cf513bd9786bb01c8671e869b888}{BUFFER\+\_\+\+VAL}}(buffer) = item; \mbox{\hyperlink{buffer_8h_a1e5fb1cf72e3f500dd55507497ddeb60}{BUFFER\+\_\+\+NEXT}}(buffer);\}while(0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{buffer_8h_ae6d37bd10eaaf2a2eb094f18396444e4}\label{buffer_8h_ae6d37bd10eaaf2a2eb094f18396444e4}} 
+\index{buffer.h@{buffer.h}!BUFFER\_APPEND@{BUFFER\_APPEND}}
+\index{BUFFER\_APPEND@{BUFFER\_APPEND}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_APPEND}{BUFFER\_APPEND}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+APPEND(\begin{DoxyParamCaption}\item[{}]{buffer,  }\item[{}]{item }\end{DoxyParamCaption})~ do\{\mbox{\hyperlink{buffer_8h_a37f9cf513bd9786bb01c8671e869b888}{BUFFER\+\_\+\+VAL}}(buffer) = item; \mbox{\hyperlink{buffer_8h_a1e5fb1cf72e3f500dd55507497ddeb60}{BUFFER\+\_\+\+NEXT}}(buffer);\}while(0)}
+
+Append an item to the buffer by value. Automatically increases the buffer count. It does not check for buffer overflow. In case of buffer overflow the behaviour is undefined. Use BUFFER\+\_\+\+FULL to check if buffer is full before using this macro. 
+
+Definition at line 146 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}\label{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}} 
+\index{buffer.h@{buffer.h}!BUFFER\_COUNT@{BUFFER\_COUNT}}
+\index{BUFFER\_COUNT@{BUFFER\_COUNT}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_COUNT}{BUFFER\_COUNT}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+COUNT(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~    ((buffer).count)}
+
+Returns the current number of items used in the buffer. 
+
+Definition at line 95 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_a2b5d2196112df1c9a8be7983615b5e6e}\label{buffer_8h_a2b5d2196112df1c9a8be7983615b5e6e}} 
+\index{buffer.h@{buffer.h}!BUFFER\_EMPTY@{BUFFER\_EMPTY}}
+\index{BUFFER\_EMPTY@{BUFFER\_EMPTY}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_EMPTY}{BUFFER\_EMPTY}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+EMPTY(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~    (!\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer))}
+
+Checks if the buffer has no items stored. Returns 1 if buffer is empty, otherwise 0. 
+
+Definition at line 116 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_ad89005fadfa7b7c7fcbb4e1bd1447bd5}\label{buffer_8h_ad89005fadfa7b7c7fcbb4e1bd1447bd5}} 
+\index{buffer.h@{buffer.h}!BUFFER\_FULL@{BUFFER\_FULL}}
+\index{BUFFER\_FULL@{BUFFER\_FULL}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_FULL}{BUFFER\_FULL}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+FULL(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~    (\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer)$>$=\mbox{\hyperlink{buffer_8h_a810227511c92083861a7b2ee5ea20fec}{BUFFER\+\_\+\+SIZE}}(buffer))}
+
+Checks if no further buffer items are available. Returns 1 if buffer is full, otherwise 0. 
+
+Definition at line 109 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_af0b1d34e68bf849ce66e4d0227c5152c}\label{buffer_8h_af0b1d34e68bf849ce66e4d0227c5152c}} 
+\index{buffer.h@{buffer.h}!BUFFER\_INIT@{BUFFER\_INIT}}
+\index{BUFFER\_INIT@{BUFFER\_INIT}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_INIT}{BUFFER\_INIT}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+INIT(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~    do\{\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer)=0;\}while(0)}
+
+Initializes the buffer. 
+
+Definition at line 101 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}\label{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}} 
+\index{buffer.h@{buffer.h}!BUFFER\_ITEMS@{BUFFER\_ITEMS}}
+\index{BUFFER\_ITEMS@{BUFFER\_ITEMS}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_ITEMS}{BUFFER\_ITEMS}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+ITEMS(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~    ((buffer).items)}
+
+Returns a pointer to the buffer items. Type of returned pointer is of buffer item type. 
+
+Definition at line 69 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_a1e5fb1cf72e3f500dd55507497ddeb60}\label{buffer_8h_a1e5fb1cf72e3f500dd55507497ddeb60}} 
+\index{buffer.h@{buffer.h}!BUFFER\_NEXT@{BUFFER\_NEXT}}
+\index{BUFFER\_NEXT@{BUFFER\_NEXT}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_NEXT}{BUFFER\_NEXT}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+NEXT(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~    (++\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer))}
+
+Moves to next free item in the buffer. It does not check for buffer overflow. In case of buffer overflow the behaviour is undefined. Use BUFFER\+\_\+\+FULL to check if buffer is full before using this macro. 
+
+Definition at line 124 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_a2e4a4a97802a800c50d03ac1e058c001}\label{buffer_8h_a2e4a4a97802a800c50d03ac1e058c001}} 
+\index{buffer.h@{buffer.h}!BUFFER\_PTR@{BUFFER\_PTR}}
+\index{BUFFER\_PTR@{BUFFER\_PTR}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_PTR}{BUFFER\_PTR}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+PTR(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~    (\&\mbox{\hyperlink{buffer_8h_a37f9cf513bd9786bb01c8671e869b888}{BUFFER\+\_\+\+VAL}}(buffer))}
+
+Returns a pointer to the current free item. 
+
+Definition at line 136 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_a6568f0e1f747eea13f38f3e7641dfe79}\label{buffer_8h_a6568f0e1f747eea13f38f3e7641dfe79}} 
+\index{buffer.h@{buffer.h}!BUFFER\_RAW@{BUFFER\_RAW}}
+\index{BUFFER\_RAW@{BUFFER\_RAW}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_RAW}{BUFFER\_RAW}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+RAW(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~ ((uint8\+\_\+t$\ast$)\mbox{\hyperlink{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}{BUFFER\+\_\+\+ITEMS}}(buffer))}
+
+Returns an pointer to the buffer items. Type of pointer is void. 
+
+Definition at line 76 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_a810227511c92083861a7b2ee5ea20fec}\label{buffer_8h_a810227511c92083861a7b2ee5ea20fec}} 
+\index{buffer.h@{buffer.h}!BUFFER\_SIZE@{BUFFER\_SIZE}}
+\index{BUFFER\_SIZE@{BUFFER\_SIZE}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_SIZE}{BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~    (\mbox{\hyperlink{buffer_8h_a68fdb1229372b46cd26febf086fea51d}{BUFFER\+\_\+\+SIZEOF}}(buffer)/sizeof(\mbox{\hyperlink{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}{BUFFER\+\_\+\+ITEMS}}(buffer)\mbox{[}0\mbox{]}))}
+
+Returns the maximum number of items the buffer can hold. 
+
+Definition at line 89 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_a68fdb1229372b46cd26febf086fea51d}\label{buffer_8h_a68fdb1229372b46cd26febf086fea51d}} 
+\index{buffer.h@{buffer.h}!BUFFER\_SIZEOF@{BUFFER\_SIZEOF}}
+\index{BUFFER\_SIZEOF@{BUFFER\_SIZEOF}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_SIZEOF}{BUFFER\_SIZEOF}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+SIZEOF(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~    (sizeof(\mbox{\hyperlink{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}{BUFFER\+\_\+\+ITEMS}}(buffer)))}
+
+Returns the size of the buffer in bytes. 
+
+Definition at line 82 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_aa259250388828ca8420c86e29e78fb51}\label{buffer_8h_aa259250388828ca8420c86e29e78fb51}} 
+\index{buffer.h@{buffer.h}!BUFFER\_T@{BUFFER\_T}}
+\index{BUFFER\_T@{BUFFER\_T}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_T}{BUFFER\_T}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+T(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~    name\#\#\+\_\+buffer\+\_\+t}
+
+Defines a buffer of type {\itshape name}. Can also be combined with different storage classifiers. (static, extern, volatile ...) 
+
+Definition at line 61 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_ae0985a6e4da09d654a62ef58b0fddf96}\label{buffer_8h_ae0985a6e4da09d654a62ef58b0fddf96}} 
+\index{buffer.h@{buffer.h}!BUFFER\_TYPEDEF@{BUFFER\_TYPEDEF}}
+\index{BUFFER\_TYPEDEF@{BUFFER\_TYPEDEF}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_TYPEDEF}{BUFFER\_TYPEDEF}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+TYPEDEF(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{type,  }\item[{}]{size }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{                    \(\backslash\)}
+\DoxyCodeLine{            size\_t count;               \(\backslash\)}
+\DoxyCodeLine{            type items [size];          \(\backslash\)}
+\DoxyCodeLine{    \} name\#\#\_buffer\_t}
+
+\end{DoxyCode}
+Declares a buffer type. The argumnents are {\itshape name} for a unique identification of the buffer type, the {\itshape type} of the items and the number of items of {\itshape type} the buffer can hold ({\itshape size}). 
+
+Definition at line 50 of file buffer.\+h.
+
+\mbox{\Hypertarget{buffer_8h_a37f9cf513bd9786bb01c8671e869b888}\label{buffer_8h_a37f9cf513bd9786bb01c8671e869b888}} 
+\index{buffer.h@{buffer.h}!BUFFER\_VAL@{BUFFER\_VAL}}
+\index{BUFFER\_VAL@{BUFFER\_VAL}!buffer.h@{buffer.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_VAL}{BUFFER\_VAL}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+VAL(\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})~    (\mbox{\hyperlink{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}{BUFFER\+\_\+\+ITEMS}}(buffer)\mbox{[}\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{BUFFER\+\_\+\+COUNT}}(buffer)\mbox{]})}
+
+Returns the current free item by value. 
+
+Definition at line 130 of file buffer.\+h.
+

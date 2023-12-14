@@ -1,0 +1,45 @@
+\doxysection{uibuttons\+\_\+process.\+c}
+\hypertarget{uibuttons__process_8c_source}{}\label{uibuttons__process_8c_source}\index{myos/ui/uibuttons\_process.c@{myos/ui/uibuttons\_process.c}}
+\mbox{\hyperlink{uibuttons__process_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{myos_8h}{myos.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uibuttons__process_8h}{uibuttons\_process.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00033}00033\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structuibutton__t}{uibutton\_t}}\ *\mbox{\hyperlink{uibuttons__process_8c_a2efe74c8a1d9a2236ba61fbc8db2db43}{uibuttons}}[];}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00034}00034\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{uibuttons__process_8c_a4e7d389387df197b4a3597e3f1cf83bf}{uibuttons\_count}};}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00036}\mbox{\hyperlink{uibuttons__process_8c_a647df9fe1fd0d42dd1c340ba344692a7}{00036}}\ \mbox{\hyperlink{process_8h_a75f11a49b16e9522d701da5900b58f84}{PROCESS}}(uibuttons\_process,uibuttons\_process);}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00037}\mbox{\hyperlink{uibuttons__process_8c_a6024dceb29bad9abc96d0b7f7982be33}{00037}}\ \mbox{\hyperlink{process_8h_a416f099b9ab74750b246a76ad1fab209}{PROCESS\_THREAD}}(uibuttons\_process)}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structetimer__t}{etimer\_t}}\ et;}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{process_8h_a8efc62947f2ca2c870f52896e0dc1a81}{PROCESS\_BEGIN}}();}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{uibuttons_8h_a179cfc4403509bbee857d69b4b75b482}{UIBUTTONS\_INIT\_ALL}}();}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{etimer_8c_a37c4c718c8252d6a5ea517e092213606}{etimer\_start}}(\&et,\ \mbox{\hyperlink{timestamp_8h_a8cc979d1d16232f2f831a0917c6f404d}{TIMESTAMP\_TICKS\_PER\_SEC}}/50,\ \mbox{\hyperlink{process_8h_a7176e97b72de41f5414ff7ed7f21c354}{PROCESS\_THIS}}(),\ \mbox{\hyperlink{process_8h_a78c78aa2263340eea0b3e6687f8e81e0}{PROCESS\_EVENT\_TIMEOUT}},\ NULL);}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{process_8h_ab4ac732a442c8c0c9a668ee270570ad2}{PROCESS\_WAIT\_EVENT\_UNTIL}}(\mbox{\hyperlink{etimer_8h_aaf390190f4c43e6e99fe3c2ffb399d91}{etimer\_expired}}(\&et));}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{uibuttons_8h_a3e235c9d20197fffb452436c28f7a682}{UIBUTTONS\_POLL\_ALL}}();}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{etimer_8h_a654bb419558e8cc99373f8a441dd34f5}{etimer\_reset}}(\&et);}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(\mbox{\hyperlink{etimer_8h_aaf390190f4c43e6e99fe3c2ffb399d91}{etimer\_expired}}(\&et));}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{process_8h_a9c2681a0070eba8a7c9fdf4dbb6db05e}{PROCESS\_END}}();}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00064}\mbox{\hyperlink{uibuttons__process_8c_a80c5be64efcc6aa1454e53054f3ec9ec}{00064}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uibuttons__process_8c_a80c5be64efcc6aa1454e53054f3ec9ec}{uibuttons\_process\_init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00065}00065\ \{}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{process_8c_a50f9247e4a3c47c13d832e1463a585c7}{process\_start}}(\&uibuttons\_process,NULL);}
+\DoxyCodeLine{\Hypertarget{uibuttons__process_8c_source_l00067}00067\ \}}
+
+\end{DoxyCode}

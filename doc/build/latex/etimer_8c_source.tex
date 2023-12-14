@@ -1,0 +1,71 @@
+\doxysection{etimer.\+c}
+\hypertarget{etimer_8c_source}{}\label{etimer_8c_source}\index{myos/os/etimer.c@{myos/os/etimer.c}}
+\mbox{\hyperlink{etimer_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00002}00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2004,\ Swedish\ Institute\ of\ Computer\ Science.}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00003}00003\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00005}00005\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00006}00006\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00007}00007\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00008}00008\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00009}00009\ \textcolor{comment}{\ *\ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00010}00010\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ \ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00013}00013\ \textcolor{comment}{\ *\ 3.\ Neither\ the\ name\ of\ the\ Institute\ nor\ the\ names\ of\ its\ contributors}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ \ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00016}00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00017}00017\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ INSTITUTE\ AND\ CONTRIBUTORS\ \`{}\`{}AS\ IS''\ AND}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00018}00018\ \textcolor{comment}{\ *\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00019}00019\ \textcolor{comment}{\ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00020}00020\ \textcolor{comment}{\ *\ ARE\ DISCLAIMED.\ \ IN\ NO\ EVENT\ SHALL\ THE\ INSTITUTE\ OR\ CONTRIBUTORS\ BE\ LIABLE}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00021}00021\ \textcolor{comment}{\ *\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00022}00022\ \textcolor{comment}{\ *\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00023}00023\ \textcolor{comment}{\ *\ OR\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00024}00024\ \textcolor{comment}{\ *\ HOWEVER\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00025}00025\ \textcolor{comment}{\ *\ LIABILITY,\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00026}00026\ \textcolor{comment}{\ *\ OUT\ OF\ THE\ USE\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00027}00027\ \textcolor{comment}{\ *\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00028}00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00029}00029\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Contiki\ operating\ system.}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00030}00030\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00031}00031\ \textcolor{comment}{\ *\ Author:\ Adam\ Dunkels\ <adam@sics.se>}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00032}00032\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00033}00033\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{etimer_8h}{etimer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00040}00040\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{etimer_8c_ab7764074cac76b87f9a33f101c65367d}{process\_deliver\_event}}(\mbox{\hyperlink{structprocess__event__t}{process\_event\_t}}\ *evt);}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00042}\mbox{\hyperlink{etimer_8c_a9ef455dfcf0940f07b1ff204fadcebe0}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{etimer_8c_a9ef455dfcf0940f07b1ff204fadcebe0}{etimer\_timeout\_handler}}(\mbox{\hyperlink{structptimer__t}{ptimer\_t}}*\ ptimer)}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00044}00044\ \ \ \ \mbox{\hyperlink{structetimer__t}{etimer\_t}}\ *etimer\ =\ (\mbox{\hyperlink{structetimer__t}{etimer\_t}}*)ptimer;}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00046}00046\ \ \ \ \textcolor{keywordflow}{if}(\ \mbox{\hyperlink{process_8h_a9898acaeb0da57395341f917585a476b}{PROCESS\_IS\_RUNNING}}(etimer-\/>\mbox{\hyperlink{structetimer__t_a69390e4cb22f77e93ae58c85e83d72d0}{evt}}.\mbox{\hyperlink{structprocess__event__t_a817b5fd892aee793aadbd8f846e204c5}{to}})\ )}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00047}00047\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00048}00048\ \ \ \ \ \ \ \mbox{\hyperlink{etimer_8c_ab7764074cac76b87f9a33f101c65367d}{process\_deliver\_event}}(\&etimer-\/>\mbox{\hyperlink{structetimer__t_a69390e4cb22f77e93ae58c85e83d72d0}{evt}});}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00049}00049\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00053}\mbox{\hyperlink{etimer_8c_a37c4c718c8252d6a5ea517e092213606}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{etimer_8c_a37c4c718c8252d6a5ea517e092213606}{etimer\_start}}(\mbox{\hyperlink{structetimer__t}{etimer\_t}}\ *etimer,\ \mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\_t}}\ span,\ \mbox{\hyperlink{structprocess__t}{process\_t}}\ *to,\ process\_event\_id\_t\ evtid,\ \textcolor{keywordtype}{void}\ *data)}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00055}00055\ \ \ \ etimer-\/>\mbox{\hyperlink{structetimer__t_a69390e4cb22f77e93ae58c85e83d72d0}{evt}}.\mbox{\hyperlink{structprocess__event__t_addb90ac303b6aee4c58f50c855384c6a}{id}}\ =\ evtid;}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00056}00056\ \ \ \ etimer-\/>\mbox{\hyperlink{structetimer__t_a69390e4cb22f77e93ae58c85e83d72d0}{evt}}.\mbox{\hyperlink{structprocess__event__t_a735984d41155bc1032e09bece8f8d66d}{data}}\ =\ data;}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00057}00057\ \textcolor{preprocessor}{\#if\ (PROCESS\_CONF\_EVENT\_FROM\ ==\ MYOSCONF\_YES)}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00058}00058\ \ \ \ etimer-\/>\mbox{\hyperlink{structetimer__t_a69390e4cb22f77e93ae58c85e83d72d0}{evt}}.\mbox{\hyperlink{structprocess__event__t_a34baa148a161d2d33d061125645821b9}{from}}\ =\ \mbox{\hyperlink{process_8h_a7176e97b72de41f5414ff7ed7f21c354}{PROCESS\_THIS}}();}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00059}00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00060}00060\ \ \ \ etimer-\/>\mbox{\hyperlink{structetimer__t_a69390e4cb22f77e93ae58c85e83d72d0}{evt}}.\mbox{\hyperlink{structprocess__event__t_a817b5fd892aee793aadbd8f846e204c5}{to}}\ =\ to;}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00062}00062\ \ \ \ \mbox{\hyperlink{ptimer_8c_a30a59e9a36c9f33961cd627e09bc953b}{ptimer\_start}}(\&(etimer-\/>\mbox{\hyperlink{structetimer__t_af7e2dede47f2bee237b7a12c13a38111}{ptimer}}),\ span,\ \mbox{\hyperlink{etimer_8c_a9ef455dfcf0940f07b1ff204fadcebe0}{etimer\_timeout\_handler}});}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{etimer_8c_source_l00065}00065\ }
+
+\end{DoxyCode}

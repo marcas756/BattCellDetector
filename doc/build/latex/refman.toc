@@ -1,0 +1,1296 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Data Structure Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Data Structures}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Data Structure Documentation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}ctimer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Field Documentation}{5}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}callback}{5}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}context}{6}{subsubsection.3.1.2.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.3}data}{6}{subsubsection.3.1.2.3}%
+\contentsline {subsubsection}{\numberline {3.1.2.4}ptimer}{6}{subsubsection.3.1.2.4}%
+\contentsline {section}{\numberline {3.2}dlist\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}node\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{6}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{6}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Field Documentation}{7}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}next}{7}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}prev}{7}{subsubsection.3.2.2.2}%
+\contentsline {section}{\numberline {3.3}etimer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{7}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{7}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Field Documentation}{7}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}evt}{8}{subsubsection.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.3.2.2}ptimer}{8}{subsubsection.3.3.2.2}%
+\contentsline {section}{\numberline {3.4}myos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}timer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{8}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{8}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Field Documentation}{8}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}span}{8}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}start}{9}{subsubsection.3.4.2.2}%
+\contentsline {section}{\numberline {3.5}process\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{9}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{9}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Field Documentation}{9}{subsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.1}data}{9}{subsubsection.3.5.2.1}%
+\contentsline {subsubsection}{\numberline {3.5.2.2}from}{9}{subsubsection.3.5.2.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.3}id}{10}{subsubsection.3.5.2.3}%
+\contentsline {subsubsection}{\numberline {3.5.2.4}to}{10}{subsubsection.3.5.2.4}%
+\contentsline {section}{\numberline {3.6}process\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{10}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{10}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Field Documentation}{10}{subsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.1}data}{10}{subsubsection.3.6.2.1}%
+\contentsline {subsubsection}{\numberline {3.6.2.2}PLIST\_NODE\_TYPE}{11}{subsubsection.3.6.2.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.3}pollreq}{11}{subsubsection.3.6.2.3}%
+\contentsline {subsubsection}{\numberline {3.6.2.4}pt}{11}{subsubsection.3.6.2.4}%
+\contentsline {subsubsection}{\numberline {3.6.2.5}thread}{11}{subsubsection.3.6.2.5}%
+\contentsline {section}{\numberline {3.7}pt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{11}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Detailed Description}{11}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Field Documentation}{12}{subsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.2.1}lc}{12}{subsubsection.3.7.2.1}%
+\contentsline {section}{\numberline {3.8}ptimer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{12}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Detailed Description}{12}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Field Documentation}{12}{subsection.3.8.2}%
+\contentsline {subsubsection}{\numberline {3.8.2.1}DLIST\_NODE\_TYPE}{12}{subsubsection.3.8.2.1}%
+\contentsline {subsubsection}{\numberline {3.8.2.2}handler}{13}{subsubsection.3.8.2.2}%
+\contentsline {subsubsection}{\numberline {3.8.2.3}running}{13}{subsubsection.3.8.2.3}%
+\contentsline {subsubsection}{\numberline {3.8.2.4}timer}{13}{subsubsection.3.8.2.4}%
+\contentsline {section}{\numberline {3.9}rtimer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{13}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Detailed Description}{13}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Field Documentation}{13}{subsection.3.9.2}%
+\contentsline {subsubsection}{\numberline {3.9.2.1}callback}{14}{subsubsection.3.9.2.1}%
+\contentsline {subsubsection}{\numberline {3.9.2.2}data}{14}{subsubsection.3.9.2.2}%
+\contentsline {subsubsection}{\numberline {3.9.2.3}span}{14}{subsubsection.3.9.2.3}%
+\contentsline {subsubsection}{\numberline {3.9.2.4}start}{14}{subsubsection.3.9.2.4}%
+\contentsline {section}{\numberline {3.10}slist\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}node\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{14}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}Detailed Description}{14}{subsection.3.10.1}%
+\contentsline {subsection}{\numberline {3.10.2}Field Documentation}{15}{subsection.3.10.2}%
+\contentsline {subsubsection}{\numberline {3.10.2.1}next}{15}{subsubsection.3.10.2.1}%
+\contentsline {section}{\numberline {3.11}uibutton\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{15}{section.3.11}%
+\contentsline {subsection}{\numberline {3.11.1}Detailed Description}{15}{subsection.3.11.1}%
+\contentsline {subsection}{\numberline {3.11.2}Field Documentation}{15}{subsection.3.11.2}%
+\contentsline {subsubsection}{\numberline {3.11.2.1}get}{15}{subsubsection.3.11.2.1}%
+\contentsline {subsubsection}{\numberline {3.11.2.2}prev\_state}{16}{subsubsection.3.11.2.2}%
+\contentsline {section}{\numberline {3.12}uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}font\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{16}{section.3.12}%
+\contentsline {subsection}{\numberline {3.12.1}Detailed Description}{16}{subsection.3.12.1}%
+\contentsline {subsection}{\numberline {3.12.2}Field Documentation}{16}{subsection.3.12.2}%
+\contentsline {subsubsection}{\numberline {3.12.2.1}data}{16}{subsubsection.3.12.2.1}%
+\contentsline {subsubsection}{\numberline {3.12.2.2}draw}{16}{subsubsection.3.12.2.2}%
+\contentsline {subsubsection}{\numberline {3.12.2.3}xsz}{17}{subsubsection.3.12.2.3}%
+\contentsline {subsubsection}{\numberline {3.12.2.4}ysz}{17}{subsubsection.3.12.2.4}%
+\contentsline {section}{\numberline {3.13}uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}image\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{17}{section.3.13}%
+\contentsline {subsection}{\numberline {3.13.1}Detailed Description}{17}{subsection.3.13.1}%
+\contentsline {subsection}{\numberline {3.13.2}Field Documentation}{17}{subsection.3.13.2}%
+\contentsline {subsubsection}{\numberline {3.13.2.1}bbp}{17}{subsubsection.3.13.2.1}%
+\contentsline {subsubsection}{\numberline {3.13.2.2}data}{18}{subsubsection.3.13.2.2}%
+\contentsline {subsubsection}{\numberline {3.13.2.3}xres}{18}{subsubsection.3.13.2.3}%
+\contentsline {subsubsection}{\numberline {3.13.2.4}yres}{18}{subsubsection.3.13.2.4}%
+\contentsline {section}{\numberline {3.14}uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}widget\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{18}{section.3.14}%
+\contentsline {subsection}{\numberline {3.14.1}Detailed Description}{18}{subsection.3.14.1}%
+\contentsline {subsection}{\numberline {3.14.2}Field Documentation}{18}{subsection.3.14.2}%
+\contentsline {subsubsection}{\numberline {3.14.2.1}xpos}{19}{subsubsection.3.14.2.1}%
+\contentsline {subsubsection}{\numberline {3.14.2.2}xres}{19}{subsubsection.3.14.2.2}%
+\contentsline {subsubsection}{\numberline {3.14.2.3}ypos}{19}{subsubsection.3.14.2.3}%
+\contentsline {subsubsection}{\numberline {3.14.2.4}yres}{19}{subsubsection.3.14.2.4}%
+\contentsline {section}{\numberline {3.15}uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}window\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{19}{section.3.15}%
+\contentsline {subsection}{\numberline {3.15.1}Detailed Description}{20}{subsection.3.15.1}%
+\contentsline {subsection}{\numberline {3.15.2}Field Documentation}{20}{subsection.3.15.2}%
+\contentsline {subsubsection}{\numberline {3.15.2.1}title}{20}{subsubsection.3.15.2.1}%
+\contentsline {subsubsection}{\numberline {3.15.2.2}title\_widget}{20}{subsubsection.3.15.2.2}%
+\contentsline {subsubsection}{\numberline {3.15.2.3}window\_widget}{21}{subsubsection.3.15.2.3}%
+\contentsline {section}{\numberline {3.16}uileds\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}state\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{21}{section.3.16}%
+\contentsline {subsection}{\numberline {3.16.1}Detailed Description}{21}{subsection.3.16.1}%
+\contentsline {subsection}{\numberline {3.16.2}Field Documentation}{21}{subsection.3.16.2}%
+\contentsline {subsubsection}{\numberline {3.16.2.1}duration}{21}{subsubsection.3.16.2.1}%
+\contentsline {subsubsection}{\numberline {3.16.2.2}lstate}{21}{subsubsection.3.16.2.2}%
+\contentsline {section}{\numberline {3.17}uileds\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{22}{section.3.17}%
+\contentsline {subsection}{\numberline {3.17.1}Detailed Description}{22}{subsection.3.17.1}%
+\contentsline {subsection}{\numberline {3.17.2}Field Documentation}{22}{subsection.3.17.2}%
+\contentsline {subsubsection}{\numberline {3.17.2.1}inverted}{22}{subsubsection.3.17.2.1}%
+\contentsline {subsubsection}{\numberline {3.17.2.2}pattern}{22}{subsubsection.3.17.2.2}%
+\contentsline {subsubsection}{\numberline {3.17.2.3}pstate}{22}{subsubsection.3.17.2.3}%
+\contentsline {subsubsection}{\numberline {3.17.2.4}set\_led}{23}{subsubsection.3.17.2.4}%
+\contentsline {subsubsection}{\numberline {3.17.2.5}timer}{23}{subsubsection.3.17.2.5}%
+\contentsline {chapter}{\numberline {4}File Documentation}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}myos/lib/binary.h File Reference}{25}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{35}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Macro Definition Documentation}{35}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}b0}{35}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}b00}{35}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}b000}{36}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}b0000}{36}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}b00000}{36}{subsubsection.4.1.2.5}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}b000000}{36}{subsubsection.4.1.2.6}%
+\contentsline {subsubsection}{\numberline {4.1.2.7}b0000000}{36}{subsubsection.4.1.2.7}%
+\contentsline {subsubsection}{\numberline {4.1.2.8}b00000000}{36}{subsubsection.4.1.2.8}%
+\contentsline {subsubsection}{\numberline {4.1.2.9}b00000001}{37}{subsubsection.4.1.2.9}%
+\contentsline {subsubsection}{\numberline {4.1.2.10}b0000001}{37}{subsubsection.4.1.2.10}%
+\contentsline {subsubsection}{\numberline {4.1.2.11}b00000010}{37}{subsubsection.4.1.2.11}%
+\contentsline {subsubsection}{\numberline {4.1.2.12}b00000011}{37}{subsubsection.4.1.2.12}%
+\contentsline {subsubsection}{\numberline {4.1.2.13}b000001}{37}{subsubsection.4.1.2.13}%
+\contentsline {subsubsection}{\numberline {4.1.2.14}b0000010}{37}{subsubsection.4.1.2.14}%
+\contentsline {subsubsection}{\numberline {4.1.2.15}b00000100}{38}{subsubsection.4.1.2.15}%
+\contentsline {subsubsection}{\numberline {4.1.2.16}b00000101}{38}{subsubsection.4.1.2.16}%
+\contentsline {subsubsection}{\numberline {4.1.2.17}b0000011}{38}{subsubsection.4.1.2.17}%
+\contentsline {subsubsection}{\numberline {4.1.2.18}b00000110}{38}{subsubsection.4.1.2.18}%
+\contentsline {subsubsection}{\numberline {4.1.2.19}b00000111}{38}{subsubsection.4.1.2.19}%
+\contentsline {subsubsection}{\numberline {4.1.2.20}b00001}{38}{subsubsection.4.1.2.20}%
+\contentsline {subsubsection}{\numberline {4.1.2.21}b000010}{39}{subsubsection.4.1.2.21}%
+\contentsline {subsubsection}{\numberline {4.1.2.22}b0000100}{39}{subsubsection.4.1.2.22}%
+\contentsline {subsubsection}{\numberline {4.1.2.23}b00001000}{39}{subsubsection.4.1.2.23}%
+\contentsline {subsubsection}{\numberline {4.1.2.24}b00001001}{39}{subsubsection.4.1.2.24}%
+\contentsline {subsubsection}{\numberline {4.1.2.25}b0000101}{39}{subsubsection.4.1.2.25}%
+\contentsline {subsubsection}{\numberline {4.1.2.26}b00001010}{39}{subsubsection.4.1.2.26}%
+\contentsline {subsubsection}{\numberline {4.1.2.27}b00001011}{40}{subsubsection.4.1.2.27}%
+\contentsline {subsubsection}{\numberline {4.1.2.28}b000011}{40}{subsubsection.4.1.2.28}%
+\contentsline {subsubsection}{\numberline {4.1.2.29}b0000110}{40}{subsubsection.4.1.2.29}%
+\contentsline {subsubsection}{\numberline {4.1.2.30}b00001100}{40}{subsubsection.4.1.2.30}%
+\contentsline {subsubsection}{\numberline {4.1.2.31}b00001101}{40}{subsubsection.4.1.2.31}%
+\contentsline {subsubsection}{\numberline {4.1.2.32}b0000111}{40}{subsubsection.4.1.2.32}%
+\contentsline {subsubsection}{\numberline {4.1.2.33}b00001110}{41}{subsubsection.4.1.2.33}%
+\contentsline {subsubsection}{\numberline {4.1.2.34}b00001111}{41}{subsubsection.4.1.2.34}%
+\contentsline {subsubsection}{\numberline {4.1.2.35}b0001}{41}{subsubsection.4.1.2.35}%
+\contentsline {subsubsection}{\numberline {4.1.2.36}b00010}{41}{subsubsection.4.1.2.36}%
+\contentsline {subsubsection}{\numberline {4.1.2.37}b000100}{41}{subsubsection.4.1.2.37}%
+\contentsline {subsubsection}{\numberline {4.1.2.38}b0001000}{41}{subsubsection.4.1.2.38}%
+\contentsline {subsubsection}{\numberline {4.1.2.39}b00010000}{42}{subsubsection.4.1.2.39}%
+\contentsline {subsubsection}{\numberline {4.1.2.40}b00010001}{42}{subsubsection.4.1.2.40}%
+\contentsline {subsubsection}{\numberline {4.1.2.41}b0001001}{42}{subsubsection.4.1.2.41}%
+\contentsline {subsubsection}{\numberline {4.1.2.42}b00010010}{42}{subsubsection.4.1.2.42}%
+\contentsline {subsubsection}{\numberline {4.1.2.43}b00010011}{42}{subsubsection.4.1.2.43}%
+\contentsline {subsubsection}{\numberline {4.1.2.44}b000101}{42}{subsubsection.4.1.2.44}%
+\contentsline {subsubsection}{\numberline {4.1.2.45}b0001010}{43}{subsubsection.4.1.2.45}%
+\contentsline {subsubsection}{\numberline {4.1.2.46}b00010100}{43}{subsubsection.4.1.2.46}%
+\contentsline {subsubsection}{\numberline {4.1.2.47}b00010101}{43}{subsubsection.4.1.2.47}%
+\contentsline {subsubsection}{\numberline {4.1.2.48}b0001011}{43}{subsubsection.4.1.2.48}%
+\contentsline {subsubsection}{\numberline {4.1.2.49}b00010110}{43}{subsubsection.4.1.2.49}%
+\contentsline {subsubsection}{\numberline {4.1.2.50}b00010111}{43}{subsubsection.4.1.2.50}%
+\contentsline {subsubsection}{\numberline {4.1.2.51}b00011}{44}{subsubsection.4.1.2.51}%
+\contentsline {subsubsection}{\numberline {4.1.2.52}b000110}{44}{subsubsection.4.1.2.52}%
+\contentsline {subsubsection}{\numberline {4.1.2.53}b0001100}{44}{subsubsection.4.1.2.53}%
+\contentsline {subsubsection}{\numberline {4.1.2.54}b00011000}{44}{subsubsection.4.1.2.54}%
+\contentsline {subsubsection}{\numberline {4.1.2.55}b00011001}{44}{subsubsection.4.1.2.55}%
+\contentsline {subsubsection}{\numberline {4.1.2.56}b0001101}{44}{subsubsection.4.1.2.56}%
+\contentsline {subsubsection}{\numberline {4.1.2.57}b00011010}{45}{subsubsection.4.1.2.57}%
+\contentsline {subsubsection}{\numberline {4.1.2.58}b00011011}{45}{subsubsection.4.1.2.58}%
+\contentsline {subsubsection}{\numberline {4.1.2.59}b000111}{45}{subsubsection.4.1.2.59}%
+\contentsline {subsubsection}{\numberline {4.1.2.60}b0001110}{45}{subsubsection.4.1.2.60}%
+\contentsline {subsubsection}{\numberline {4.1.2.61}b00011100}{45}{subsubsection.4.1.2.61}%
+\contentsline {subsubsection}{\numberline {4.1.2.62}b00011101}{45}{subsubsection.4.1.2.62}%
+\contentsline {subsubsection}{\numberline {4.1.2.63}b0001111}{46}{subsubsection.4.1.2.63}%
+\contentsline {subsubsection}{\numberline {4.1.2.64}b00011110}{46}{subsubsection.4.1.2.64}%
+\contentsline {subsubsection}{\numberline {4.1.2.65}b00011111}{46}{subsubsection.4.1.2.65}%
+\contentsline {subsubsection}{\numberline {4.1.2.66}b001}{46}{subsubsection.4.1.2.66}%
+\contentsline {subsubsection}{\numberline {4.1.2.67}b0010}{46}{subsubsection.4.1.2.67}%
+\contentsline {subsubsection}{\numberline {4.1.2.68}b00100}{46}{subsubsection.4.1.2.68}%
+\contentsline {subsubsection}{\numberline {4.1.2.69}b001000}{47}{subsubsection.4.1.2.69}%
+\contentsline {subsubsection}{\numberline {4.1.2.70}b0010000}{47}{subsubsection.4.1.2.70}%
+\contentsline {subsubsection}{\numberline {4.1.2.71}b00100000}{47}{subsubsection.4.1.2.71}%
+\contentsline {subsubsection}{\numberline {4.1.2.72}b00100001}{47}{subsubsection.4.1.2.72}%
+\contentsline {subsubsection}{\numberline {4.1.2.73}b0010001}{47}{subsubsection.4.1.2.73}%
+\contentsline {subsubsection}{\numberline {4.1.2.74}b00100010}{47}{subsubsection.4.1.2.74}%
+\contentsline {subsubsection}{\numberline {4.1.2.75}b00100011}{48}{subsubsection.4.1.2.75}%
+\contentsline {subsubsection}{\numberline {4.1.2.76}b001001}{48}{subsubsection.4.1.2.76}%
+\contentsline {subsubsection}{\numberline {4.1.2.77}b0010010}{48}{subsubsection.4.1.2.77}%
+\contentsline {subsubsection}{\numberline {4.1.2.78}b00100100}{48}{subsubsection.4.1.2.78}%
+\contentsline {subsubsection}{\numberline {4.1.2.79}b00100101}{48}{subsubsection.4.1.2.79}%
+\contentsline {subsubsection}{\numberline {4.1.2.80}b0010011}{48}{subsubsection.4.1.2.80}%
+\contentsline {subsubsection}{\numberline {4.1.2.81}b00100110}{49}{subsubsection.4.1.2.81}%
+\contentsline {subsubsection}{\numberline {4.1.2.82}b00100111}{49}{subsubsection.4.1.2.82}%
+\contentsline {subsubsection}{\numberline {4.1.2.83}b00101}{49}{subsubsection.4.1.2.83}%
+\contentsline {subsubsection}{\numberline {4.1.2.84}b001010}{49}{subsubsection.4.1.2.84}%
+\contentsline {subsubsection}{\numberline {4.1.2.85}b0010100}{49}{subsubsection.4.1.2.85}%
+\contentsline {subsubsection}{\numberline {4.1.2.86}b00101000}{49}{subsubsection.4.1.2.86}%
+\contentsline {subsubsection}{\numberline {4.1.2.87}b00101001}{50}{subsubsection.4.1.2.87}%
+\contentsline {subsubsection}{\numberline {4.1.2.88}b0010101}{50}{subsubsection.4.1.2.88}%
+\contentsline {subsubsection}{\numberline {4.1.2.89}b00101010}{50}{subsubsection.4.1.2.89}%
+\contentsline {subsubsection}{\numberline {4.1.2.90}b00101011}{50}{subsubsection.4.1.2.90}%
+\contentsline {subsubsection}{\numberline {4.1.2.91}b001011}{50}{subsubsection.4.1.2.91}%
+\contentsline {subsubsection}{\numberline {4.1.2.92}b0010110}{50}{subsubsection.4.1.2.92}%
+\contentsline {subsubsection}{\numberline {4.1.2.93}b00101100}{51}{subsubsection.4.1.2.93}%
+\contentsline {subsubsection}{\numberline {4.1.2.94}b00101101}{51}{subsubsection.4.1.2.94}%
+\contentsline {subsubsection}{\numberline {4.1.2.95}b0010111}{51}{subsubsection.4.1.2.95}%
+\contentsline {subsubsection}{\numberline {4.1.2.96}b00101110}{51}{subsubsection.4.1.2.96}%
+\contentsline {subsubsection}{\numberline {4.1.2.97}b00101111}{51}{subsubsection.4.1.2.97}%
+\contentsline {subsubsection}{\numberline {4.1.2.98}b0011}{51}{subsubsection.4.1.2.98}%
+\contentsline {subsubsection}{\numberline {4.1.2.99}b00110}{52}{subsubsection.4.1.2.99}%
+\contentsline {subsubsection}{\numberline {4.1.2.100}b001100}{52}{subsubsection.4.1.2.100}%
+\contentsline {subsubsection}{\numberline {4.1.2.101}b0011000}{52}{subsubsection.4.1.2.101}%
+\contentsline {subsubsection}{\numberline {4.1.2.102}b00110000}{52}{subsubsection.4.1.2.102}%
+\contentsline {subsubsection}{\numberline {4.1.2.103}b00110001}{52}{subsubsection.4.1.2.103}%
+\contentsline {subsubsection}{\numberline {4.1.2.104}b0011001}{52}{subsubsection.4.1.2.104}%
+\contentsline {subsubsection}{\numberline {4.1.2.105}b00110010}{53}{subsubsection.4.1.2.105}%
+\contentsline {subsubsection}{\numberline {4.1.2.106}b00110011}{53}{subsubsection.4.1.2.106}%
+\contentsline {subsubsection}{\numberline {4.1.2.107}b001101}{53}{subsubsection.4.1.2.107}%
+\contentsline {subsubsection}{\numberline {4.1.2.108}b0011010}{53}{subsubsection.4.1.2.108}%
+\contentsline {subsubsection}{\numberline {4.1.2.109}b00110100}{53}{subsubsection.4.1.2.109}%
+\contentsline {subsubsection}{\numberline {4.1.2.110}b00110101}{53}{subsubsection.4.1.2.110}%
+\contentsline {subsubsection}{\numberline {4.1.2.111}b0011011}{54}{subsubsection.4.1.2.111}%
+\contentsline {subsubsection}{\numberline {4.1.2.112}b00110110}{54}{subsubsection.4.1.2.112}%
+\contentsline {subsubsection}{\numberline {4.1.2.113}b00110111}{54}{subsubsection.4.1.2.113}%
+\contentsline {subsubsection}{\numberline {4.1.2.114}b00111}{54}{subsubsection.4.1.2.114}%
+\contentsline {subsubsection}{\numberline {4.1.2.115}b001110}{54}{subsubsection.4.1.2.115}%
+\contentsline {subsubsection}{\numberline {4.1.2.116}b0011100}{54}{subsubsection.4.1.2.116}%
+\contentsline {subsubsection}{\numberline {4.1.2.117}b00111000}{55}{subsubsection.4.1.2.117}%
+\contentsline {subsubsection}{\numberline {4.1.2.118}b00111001}{55}{subsubsection.4.1.2.118}%
+\contentsline {subsubsection}{\numberline {4.1.2.119}b0011101}{55}{subsubsection.4.1.2.119}%
+\contentsline {subsubsection}{\numberline {4.1.2.120}b00111010}{55}{subsubsection.4.1.2.120}%
+\contentsline {subsubsection}{\numberline {4.1.2.121}b00111011}{55}{subsubsection.4.1.2.121}%
+\contentsline {subsubsection}{\numberline {4.1.2.122}b001111}{55}{subsubsection.4.1.2.122}%
+\contentsline {subsubsection}{\numberline {4.1.2.123}b0011110}{56}{subsubsection.4.1.2.123}%
+\contentsline {subsubsection}{\numberline {4.1.2.124}b00111100}{56}{subsubsection.4.1.2.124}%
+\contentsline {subsubsection}{\numberline {4.1.2.125}b00111101}{56}{subsubsection.4.1.2.125}%
+\contentsline {subsubsection}{\numberline {4.1.2.126}b0011111}{56}{subsubsection.4.1.2.126}%
+\contentsline {subsubsection}{\numberline {4.1.2.127}b00111110}{56}{subsubsection.4.1.2.127}%
+\contentsline {subsubsection}{\numberline {4.1.2.128}b00111111}{56}{subsubsection.4.1.2.128}%
+\contentsline {subsubsection}{\numberline {4.1.2.129}b01}{57}{subsubsection.4.1.2.129}%
+\contentsline {subsubsection}{\numberline {4.1.2.130}b010}{57}{subsubsection.4.1.2.130}%
+\contentsline {subsubsection}{\numberline {4.1.2.131}b0100}{57}{subsubsection.4.1.2.131}%
+\contentsline {subsubsection}{\numberline {4.1.2.132}b01000}{57}{subsubsection.4.1.2.132}%
+\contentsline {subsubsection}{\numberline {4.1.2.133}b010000}{57}{subsubsection.4.1.2.133}%
+\contentsline {subsubsection}{\numberline {4.1.2.134}b0100000}{57}{subsubsection.4.1.2.134}%
+\contentsline {subsubsection}{\numberline {4.1.2.135}b01000000}{58}{subsubsection.4.1.2.135}%
+\contentsline {subsubsection}{\numberline {4.1.2.136}b01000001}{58}{subsubsection.4.1.2.136}%
+\contentsline {subsubsection}{\numberline {4.1.2.137}b0100001}{58}{subsubsection.4.1.2.137}%
+\contentsline {subsubsection}{\numberline {4.1.2.138}b01000010}{58}{subsubsection.4.1.2.138}%
+\contentsline {subsubsection}{\numberline {4.1.2.139}b01000011}{58}{subsubsection.4.1.2.139}%
+\contentsline {subsubsection}{\numberline {4.1.2.140}b010001}{58}{subsubsection.4.1.2.140}%
+\contentsline {subsubsection}{\numberline {4.1.2.141}b0100010}{59}{subsubsection.4.1.2.141}%
+\contentsline {subsubsection}{\numberline {4.1.2.142}b01000100}{59}{subsubsection.4.1.2.142}%
+\contentsline {subsubsection}{\numberline {4.1.2.143}b01000101}{59}{subsubsection.4.1.2.143}%
+\contentsline {subsubsection}{\numberline {4.1.2.144}b0100011}{59}{subsubsection.4.1.2.144}%
+\contentsline {subsubsection}{\numberline {4.1.2.145}b01000110}{59}{subsubsection.4.1.2.145}%
+\contentsline {subsubsection}{\numberline {4.1.2.146}b01000111}{59}{subsubsection.4.1.2.146}%
+\contentsline {subsubsection}{\numberline {4.1.2.147}b01001}{60}{subsubsection.4.1.2.147}%
+\contentsline {subsubsection}{\numberline {4.1.2.148}b010010}{60}{subsubsection.4.1.2.148}%
+\contentsline {subsubsection}{\numberline {4.1.2.149}b0100100}{60}{subsubsection.4.1.2.149}%
+\contentsline {subsubsection}{\numberline {4.1.2.150}b01001000}{60}{subsubsection.4.1.2.150}%
+\contentsline {subsubsection}{\numberline {4.1.2.151}b01001001}{60}{subsubsection.4.1.2.151}%
+\contentsline {subsubsection}{\numberline {4.1.2.152}b0100101}{60}{subsubsection.4.1.2.152}%
+\contentsline {subsubsection}{\numberline {4.1.2.153}b01001010}{61}{subsubsection.4.1.2.153}%
+\contentsline {subsubsection}{\numberline {4.1.2.154}b01001011}{61}{subsubsection.4.1.2.154}%
+\contentsline {subsubsection}{\numberline {4.1.2.155}b010011}{61}{subsubsection.4.1.2.155}%
+\contentsline {subsubsection}{\numberline {4.1.2.156}b0100110}{61}{subsubsection.4.1.2.156}%
+\contentsline {subsubsection}{\numberline {4.1.2.157}b01001100}{61}{subsubsection.4.1.2.157}%
+\contentsline {subsubsection}{\numberline {4.1.2.158}b01001101}{61}{subsubsection.4.1.2.158}%
+\contentsline {subsubsection}{\numberline {4.1.2.159}b0100111}{62}{subsubsection.4.1.2.159}%
+\contentsline {subsubsection}{\numberline {4.1.2.160}b01001110}{62}{subsubsection.4.1.2.160}%
+\contentsline {subsubsection}{\numberline {4.1.2.161}b01001111}{62}{subsubsection.4.1.2.161}%
+\contentsline {subsubsection}{\numberline {4.1.2.162}b0101}{62}{subsubsection.4.1.2.162}%
+\contentsline {subsubsection}{\numberline {4.1.2.163}b01010}{62}{subsubsection.4.1.2.163}%
+\contentsline {subsubsection}{\numberline {4.1.2.164}b010100}{62}{subsubsection.4.1.2.164}%
+\contentsline {subsubsection}{\numberline {4.1.2.165}b0101000}{63}{subsubsection.4.1.2.165}%
+\contentsline {subsubsection}{\numberline {4.1.2.166}b01010000}{63}{subsubsection.4.1.2.166}%
+\contentsline {subsubsection}{\numberline {4.1.2.167}b01010001}{63}{subsubsection.4.1.2.167}%
+\contentsline {subsubsection}{\numberline {4.1.2.168}b0101001}{63}{subsubsection.4.1.2.168}%
+\contentsline {subsubsection}{\numberline {4.1.2.169}b01010010}{63}{subsubsection.4.1.2.169}%
+\contentsline {subsubsection}{\numberline {4.1.2.170}b01010011}{63}{subsubsection.4.1.2.170}%
+\contentsline {subsubsection}{\numberline {4.1.2.171}b010101}{64}{subsubsection.4.1.2.171}%
+\contentsline {subsubsection}{\numberline {4.1.2.172}b0101010}{64}{subsubsection.4.1.2.172}%
+\contentsline {subsubsection}{\numberline {4.1.2.173}b01010100}{64}{subsubsection.4.1.2.173}%
+\contentsline {subsubsection}{\numberline {4.1.2.174}b01010101}{64}{subsubsection.4.1.2.174}%
+\contentsline {subsubsection}{\numberline {4.1.2.175}b0101011}{64}{subsubsection.4.1.2.175}%
+\contentsline {subsubsection}{\numberline {4.1.2.176}b01010110}{64}{subsubsection.4.1.2.176}%
+\contentsline {subsubsection}{\numberline {4.1.2.177}b01010111}{65}{subsubsection.4.1.2.177}%
+\contentsline {subsubsection}{\numberline {4.1.2.178}b01011}{65}{subsubsection.4.1.2.178}%
+\contentsline {subsubsection}{\numberline {4.1.2.179}b010110}{65}{subsubsection.4.1.2.179}%
+\contentsline {subsubsection}{\numberline {4.1.2.180}b0101100}{65}{subsubsection.4.1.2.180}%
+\contentsline {subsubsection}{\numberline {4.1.2.181}b01011000}{65}{subsubsection.4.1.2.181}%
+\contentsline {subsubsection}{\numberline {4.1.2.182}b01011001}{65}{subsubsection.4.1.2.182}%
+\contentsline {subsubsection}{\numberline {4.1.2.183}b0101101}{66}{subsubsection.4.1.2.183}%
+\contentsline {subsubsection}{\numberline {4.1.2.184}b01011010}{66}{subsubsection.4.1.2.184}%
+\contentsline {subsubsection}{\numberline {4.1.2.185}b01011011}{66}{subsubsection.4.1.2.185}%
+\contentsline {subsubsection}{\numberline {4.1.2.186}b010111}{66}{subsubsection.4.1.2.186}%
+\contentsline {subsubsection}{\numberline {4.1.2.187}b0101110}{66}{subsubsection.4.1.2.187}%
+\contentsline {subsubsection}{\numberline {4.1.2.188}b01011100}{66}{subsubsection.4.1.2.188}%
+\contentsline {subsubsection}{\numberline {4.1.2.189}b01011101}{67}{subsubsection.4.1.2.189}%
+\contentsline {subsubsection}{\numberline {4.1.2.190}b0101111}{67}{subsubsection.4.1.2.190}%
+\contentsline {subsubsection}{\numberline {4.1.2.191}b01011110}{67}{subsubsection.4.1.2.191}%
+\contentsline {subsubsection}{\numberline {4.1.2.192}b01011111}{67}{subsubsection.4.1.2.192}%
+\contentsline {subsubsection}{\numberline {4.1.2.193}b011}{67}{subsubsection.4.1.2.193}%
+\contentsline {subsubsection}{\numberline {4.1.2.194}b0110}{67}{subsubsection.4.1.2.194}%
+\contentsline {subsubsection}{\numberline {4.1.2.195}b01100}{68}{subsubsection.4.1.2.195}%
+\contentsline {subsubsection}{\numberline {4.1.2.196}b011000}{68}{subsubsection.4.1.2.196}%
+\contentsline {subsubsection}{\numberline {4.1.2.197}b0110000}{68}{subsubsection.4.1.2.197}%
+\contentsline {subsubsection}{\numberline {4.1.2.198}b01100000}{68}{subsubsection.4.1.2.198}%
+\contentsline {subsubsection}{\numberline {4.1.2.199}b01100001}{68}{subsubsection.4.1.2.199}%
+\contentsline {subsubsection}{\numberline {4.1.2.200}b0110001}{68}{subsubsection.4.1.2.200}%
+\contentsline {subsubsection}{\numberline {4.1.2.201}b01100010}{69}{subsubsection.4.1.2.201}%
+\contentsline {subsubsection}{\numberline {4.1.2.202}b01100011}{69}{subsubsection.4.1.2.202}%
+\contentsline {subsubsection}{\numberline {4.1.2.203}b011001}{69}{subsubsection.4.1.2.203}%
+\contentsline {subsubsection}{\numberline {4.1.2.204}b0110010}{69}{subsubsection.4.1.2.204}%
+\contentsline {subsubsection}{\numberline {4.1.2.205}b01100100}{69}{subsubsection.4.1.2.205}%
+\contentsline {subsubsection}{\numberline {4.1.2.206}b01100101}{69}{subsubsection.4.1.2.206}%
+\contentsline {subsubsection}{\numberline {4.1.2.207}b0110011}{70}{subsubsection.4.1.2.207}%
+\contentsline {subsubsection}{\numberline {4.1.2.208}b01100110}{70}{subsubsection.4.1.2.208}%
+\contentsline {subsubsection}{\numberline {4.1.2.209}b01100111}{70}{subsubsection.4.1.2.209}%
+\contentsline {subsubsection}{\numberline {4.1.2.210}b01101}{70}{subsubsection.4.1.2.210}%
+\contentsline {subsubsection}{\numberline {4.1.2.211}b011010}{70}{subsubsection.4.1.2.211}%
+\contentsline {subsubsection}{\numberline {4.1.2.212}b0110100}{70}{subsubsection.4.1.2.212}%
+\contentsline {subsubsection}{\numberline {4.1.2.213}b01101000}{71}{subsubsection.4.1.2.213}%
+\contentsline {subsubsection}{\numberline {4.1.2.214}b01101001}{71}{subsubsection.4.1.2.214}%
+\contentsline {subsubsection}{\numberline {4.1.2.215}b0110101}{71}{subsubsection.4.1.2.215}%
+\contentsline {subsubsection}{\numberline {4.1.2.216}b01101010}{71}{subsubsection.4.1.2.216}%
+\contentsline {subsubsection}{\numberline {4.1.2.217}b01101011}{71}{subsubsection.4.1.2.217}%
+\contentsline {subsubsection}{\numberline {4.1.2.218}b011011}{71}{subsubsection.4.1.2.218}%
+\contentsline {subsubsection}{\numberline {4.1.2.219}b0110110}{72}{subsubsection.4.1.2.219}%
+\contentsline {subsubsection}{\numberline {4.1.2.220}b01101100}{72}{subsubsection.4.1.2.220}%
+\contentsline {subsubsection}{\numberline {4.1.2.221}b01101101}{72}{subsubsection.4.1.2.221}%
+\contentsline {subsubsection}{\numberline {4.1.2.222}b0110111}{72}{subsubsection.4.1.2.222}%
+\contentsline {subsubsection}{\numberline {4.1.2.223}b01101110}{72}{subsubsection.4.1.2.223}%
+\contentsline {subsubsection}{\numberline {4.1.2.224}b01101111}{72}{subsubsection.4.1.2.224}%
+\contentsline {subsubsection}{\numberline {4.1.2.225}b0111}{73}{subsubsection.4.1.2.225}%
+\contentsline {subsubsection}{\numberline {4.1.2.226}b01110}{73}{subsubsection.4.1.2.226}%
+\contentsline {subsubsection}{\numberline {4.1.2.227}b011100}{73}{subsubsection.4.1.2.227}%
+\contentsline {subsubsection}{\numberline {4.1.2.228}b0111000}{73}{subsubsection.4.1.2.228}%
+\contentsline {subsubsection}{\numberline {4.1.2.229}b01110000}{73}{subsubsection.4.1.2.229}%
+\contentsline {subsubsection}{\numberline {4.1.2.230}b01110001}{73}{subsubsection.4.1.2.230}%
+\contentsline {subsubsection}{\numberline {4.1.2.231}b0111001}{74}{subsubsection.4.1.2.231}%
+\contentsline {subsubsection}{\numberline {4.1.2.232}b01110010}{74}{subsubsection.4.1.2.232}%
+\contentsline {subsubsection}{\numberline {4.1.2.233}b01110011}{74}{subsubsection.4.1.2.233}%
+\contentsline {subsubsection}{\numberline {4.1.2.234}b011101}{74}{subsubsection.4.1.2.234}%
+\contentsline {subsubsection}{\numberline {4.1.2.235}b0111010}{74}{subsubsection.4.1.2.235}%
+\contentsline {subsubsection}{\numberline {4.1.2.236}b01110100}{74}{subsubsection.4.1.2.236}%
+\contentsline {subsubsection}{\numberline {4.1.2.237}b01110101}{75}{subsubsection.4.1.2.237}%
+\contentsline {subsubsection}{\numberline {4.1.2.238}b0111011}{75}{subsubsection.4.1.2.238}%
+\contentsline {subsubsection}{\numberline {4.1.2.239}b01110110}{75}{subsubsection.4.1.2.239}%
+\contentsline {subsubsection}{\numberline {4.1.2.240}b01110111}{75}{subsubsection.4.1.2.240}%
+\contentsline {subsubsection}{\numberline {4.1.2.241}b01111}{75}{subsubsection.4.1.2.241}%
+\contentsline {subsubsection}{\numberline {4.1.2.242}b011110}{75}{subsubsection.4.1.2.242}%
+\contentsline {subsubsection}{\numberline {4.1.2.243}b0111100}{76}{subsubsection.4.1.2.243}%
+\contentsline {subsubsection}{\numberline {4.1.2.244}b01111000}{76}{subsubsection.4.1.2.244}%
+\contentsline {subsubsection}{\numberline {4.1.2.245}b01111001}{76}{subsubsection.4.1.2.245}%
+\contentsline {subsubsection}{\numberline {4.1.2.246}b0111101}{76}{subsubsection.4.1.2.246}%
+\contentsline {subsubsection}{\numberline {4.1.2.247}b01111010}{76}{subsubsection.4.1.2.247}%
+\contentsline {subsubsection}{\numberline {4.1.2.248}b01111011}{76}{subsubsection.4.1.2.248}%
+\contentsline {subsubsection}{\numberline {4.1.2.249}b011111}{77}{subsubsection.4.1.2.249}%
+\contentsline {subsubsection}{\numberline {4.1.2.250}b0111110}{77}{subsubsection.4.1.2.250}%
+\contentsline {subsubsection}{\numberline {4.1.2.251}b01111100}{77}{subsubsection.4.1.2.251}%
+\contentsline {subsubsection}{\numberline {4.1.2.252}b01111101}{77}{subsubsection.4.1.2.252}%
+\contentsline {subsubsection}{\numberline {4.1.2.253}b0111111}{77}{subsubsection.4.1.2.253}%
+\contentsline {subsubsection}{\numberline {4.1.2.254}b01111110}{77}{subsubsection.4.1.2.254}%
+\contentsline {subsubsection}{\numberline {4.1.2.255}b01111111}{78}{subsubsection.4.1.2.255}%
+\contentsline {subsubsection}{\numberline {4.1.2.256}b1}{78}{subsubsection.4.1.2.256}%
+\contentsline {subsubsection}{\numberline {4.1.2.257}b10}{78}{subsubsection.4.1.2.257}%
+\contentsline {subsubsection}{\numberline {4.1.2.258}b100}{78}{subsubsection.4.1.2.258}%
+\contentsline {subsubsection}{\numberline {4.1.2.259}b1000}{78}{subsubsection.4.1.2.259}%
+\contentsline {subsubsection}{\numberline {4.1.2.260}b10000}{78}{subsubsection.4.1.2.260}%
+\contentsline {subsubsection}{\numberline {4.1.2.261}b100000}{79}{subsubsection.4.1.2.261}%
+\contentsline {subsubsection}{\numberline {4.1.2.262}b1000000}{79}{subsubsection.4.1.2.262}%
+\contentsline {subsubsection}{\numberline {4.1.2.263}b10000000}{79}{subsubsection.4.1.2.263}%
+\contentsline {subsubsection}{\numberline {4.1.2.264}b10000001}{79}{subsubsection.4.1.2.264}%
+\contentsline {subsubsection}{\numberline {4.1.2.265}b1000001}{79}{subsubsection.4.1.2.265}%
+\contentsline {subsubsection}{\numberline {4.1.2.266}b10000010}{79}{subsubsection.4.1.2.266}%
+\contentsline {subsubsection}{\numberline {4.1.2.267}b10000011}{80}{subsubsection.4.1.2.267}%
+\contentsline {subsubsection}{\numberline {4.1.2.268}b100001}{80}{subsubsection.4.1.2.268}%
+\contentsline {subsubsection}{\numberline {4.1.2.269}b1000010}{80}{subsubsection.4.1.2.269}%
+\contentsline {subsubsection}{\numberline {4.1.2.270}b10000100}{80}{subsubsection.4.1.2.270}%
+\contentsline {subsubsection}{\numberline {4.1.2.271}b10000101}{80}{subsubsection.4.1.2.271}%
+\contentsline {subsubsection}{\numberline {4.1.2.272}b1000011}{80}{subsubsection.4.1.2.272}%
+\contentsline {subsubsection}{\numberline {4.1.2.273}b10000110}{81}{subsubsection.4.1.2.273}%
+\contentsline {subsubsection}{\numberline {4.1.2.274}b10000111}{81}{subsubsection.4.1.2.274}%
+\contentsline {subsubsection}{\numberline {4.1.2.275}b10001}{81}{subsubsection.4.1.2.275}%
+\contentsline {subsubsection}{\numberline {4.1.2.276}b100010}{81}{subsubsection.4.1.2.276}%
+\contentsline {subsubsection}{\numberline {4.1.2.277}b1000100}{81}{subsubsection.4.1.2.277}%
+\contentsline {subsubsection}{\numberline {4.1.2.278}b10001000}{81}{subsubsection.4.1.2.278}%
+\contentsline {subsubsection}{\numberline {4.1.2.279}b10001001}{82}{subsubsection.4.1.2.279}%
+\contentsline {subsubsection}{\numberline {4.1.2.280}b1000101}{82}{subsubsection.4.1.2.280}%
+\contentsline {subsubsection}{\numberline {4.1.2.281}b10001010}{82}{subsubsection.4.1.2.281}%
+\contentsline {subsubsection}{\numberline {4.1.2.282}b10001011}{82}{subsubsection.4.1.2.282}%
+\contentsline {subsubsection}{\numberline {4.1.2.283}b100011}{82}{subsubsection.4.1.2.283}%
+\contentsline {subsubsection}{\numberline {4.1.2.284}b1000110}{82}{subsubsection.4.1.2.284}%
+\contentsline {subsubsection}{\numberline {4.1.2.285}b10001100}{83}{subsubsection.4.1.2.285}%
+\contentsline {subsubsection}{\numberline {4.1.2.286}b10001101}{83}{subsubsection.4.1.2.286}%
+\contentsline {subsubsection}{\numberline {4.1.2.287}b1000111}{83}{subsubsection.4.1.2.287}%
+\contentsline {subsubsection}{\numberline {4.1.2.288}b10001110}{83}{subsubsection.4.1.2.288}%
+\contentsline {subsubsection}{\numberline {4.1.2.289}b10001111}{83}{subsubsection.4.1.2.289}%
+\contentsline {subsubsection}{\numberline {4.1.2.290}b1001}{83}{subsubsection.4.1.2.290}%
+\contentsline {subsubsection}{\numberline {4.1.2.291}b10010}{84}{subsubsection.4.1.2.291}%
+\contentsline {subsubsection}{\numberline {4.1.2.292}b100100}{84}{subsubsection.4.1.2.292}%
+\contentsline {subsubsection}{\numberline {4.1.2.293}b1001000}{84}{subsubsection.4.1.2.293}%
+\contentsline {subsubsection}{\numberline {4.1.2.294}b10010000}{84}{subsubsection.4.1.2.294}%
+\contentsline {subsubsection}{\numberline {4.1.2.295}b10010001}{84}{subsubsection.4.1.2.295}%
+\contentsline {subsubsection}{\numberline {4.1.2.296}b1001001}{84}{subsubsection.4.1.2.296}%
+\contentsline {subsubsection}{\numberline {4.1.2.297}b10010010}{85}{subsubsection.4.1.2.297}%
+\contentsline {subsubsection}{\numberline {4.1.2.298}b10010011}{85}{subsubsection.4.1.2.298}%
+\contentsline {subsubsection}{\numberline {4.1.2.299}b100101}{85}{subsubsection.4.1.2.299}%
+\contentsline {subsubsection}{\numberline {4.1.2.300}b1001010}{85}{subsubsection.4.1.2.300}%
+\contentsline {subsubsection}{\numberline {4.1.2.301}b10010100}{85}{subsubsection.4.1.2.301}%
+\contentsline {subsubsection}{\numberline {4.1.2.302}b10010101}{85}{subsubsection.4.1.2.302}%
+\contentsline {subsubsection}{\numberline {4.1.2.303}b1001011}{86}{subsubsection.4.1.2.303}%
+\contentsline {subsubsection}{\numberline {4.1.2.304}b10010110}{86}{subsubsection.4.1.2.304}%
+\contentsline {subsubsection}{\numberline {4.1.2.305}b10010111}{86}{subsubsection.4.1.2.305}%
+\contentsline {subsubsection}{\numberline {4.1.2.306}b10011}{86}{subsubsection.4.1.2.306}%
+\contentsline {subsubsection}{\numberline {4.1.2.307}b100110}{86}{subsubsection.4.1.2.307}%
+\contentsline {subsubsection}{\numberline {4.1.2.308}b1001100}{86}{subsubsection.4.1.2.308}%
+\contentsline {subsubsection}{\numberline {4.1.2.309}b10011000}{87}{subsubsection.4.1.2.309}%
+\contentsline {subsubsection}{\numberline {4.1.2.310}b10011001}{87}{subsubsection.4.1.2.310}%
+\contentsline {subsubsection}{\numberline {4.1.2.311}b1001101}{87}{subsubsection.4.1.2.311}%
+\contentsline {subsubsection}{\numberline {4.1.2.312}b10011010}{87}{subsubsection.4.1.2.312}%
+\contentsline {subsubsection}{\numberline {4.1.2.313}b10011011}{87}{subsubsection.4.1.2.313}%
+\contentsline {subsubsection}{\numberline {4.1.2.314}b100111}{87}{subsubsection.4.1.2.314}%
+\contentsline {subsubsection}{\numberline {4.1.2.315}b1001110}{88}{subsubsection.4.1.2.315}%
+\contentsline {subsubsection}{\numberline {4.1.2.316}b10011100}{88}{subsubsection.4.1.2.316}%
+\contentsline {subsubsection}{\numberline {4.1.2.317}b10011101}{88}{subsubsection.4.1.2.317}%
+\contentsline {subsubsection}{\numberline {4.1.2.318}b1001111}{88}{subsubsection.4.1.2.318}%
+\contentsline {subsubsection}{\numberline {4.1.2.319}b10011110}{88}{subsubsection.4.1.2.319}%
+\contentsline {subsubsection}{\numberline {4.1.2.320}b10011111}{88}{subsubsection.4.1.2.320}%
+\contentsline {subsubsection}{\numberline {4.1.2.321}b101}{89}{subsubsection.4.1.2.321}%
+\contentsline {subsubsection}{\numberline {4.1.2.322}b1010}{89}{subsubsection.4.1.2.322}%
+\contentsline {subsubsection}{\numberline {4.1.2.323}b10100}{89}{subsubsection.4.1.2.323}%
+\contentsline {subsubsection}{\numberline {4.1.2.324}b101000}{89}{subsubsection.4.1.2.324}%
+\contentsline {subsubsection}{\numberline {4.1.2.325}b1010000}{89}{subsubsection.4.1.2.325}%
+\contentsline {subsubsection}{\numberline {4.1.2.326}b10100000}{89}{subsubsection.4.1.2.326}%
+\contentsline {subsubsection}{\numberline {4.1.2.327}b10100001}{90}{subsubsection.4.1.2.327}%
+\contentsline {subsubsection}{\numberline {4.1.2.328}b1010001}{90}{subsubsection.4.1.2.328}%
+\contentsline {subsubsection}{\numberline {4.1.2.329}b10100010}{90}{subsubsection.4.1.2.329}%
+\contentsline {subsubsection}{\numberline {4.1.2.330}b10100011}{90}{subsubsection.4.1.2.330}%
+\contentsline {subsubsection}{\numberline {4.1.2.331}b101001}{90}{subsubsection.4.1.2.331}%
+\contentsline {subsubsection}{\numberline {4.1.2.332}b1010010}{90}{subsubsection.4.1.2.332}%
+\contentsline {subsubsection}{\numberline {4.1.2.333}b10100100}{91}{subsubsection.4.1.2.333}%
+\contentsline {subsubsection}{\numberline {4.1.2.334}b10100101}{91}{subsubsection.4.1.2.334}%
+\contentsline {subsubsection}{\numberline {4.1.2.335}b1010011}{91}{subsubsection.4.1.2.335}%
+\contentsline {subsubsection}{\numberline {4.1.2.336}b10100110}{91}{subsubsection.4.1.2.336}%
+\contentsline {subsubsection}{\numberline {4.1.2.337}b10100111}{91}{subsubsection.4.1.2.337}%
+\contentsline {subsubsection}{\numberline {4.1.2.338}b10101}{91}{subsubsection.4.1.2.338}%
+\contentsline {subsubsection}{\numberline {4.1.2.339}b101010}{92}{subsubsection.4.1.2.339}%
+\contentsline {subsubsection}{\numberline {4.1.2.340}b1010100}{92}{subsubsection.4.1.2.340}%
+\contentsline {subsubsection}{\numberline {4.1.2.341}b10101000}{92}{subsubsection.4.1.2.341}%
+\contentsline {subsubsection}{\numberline {4.1.2.342}b10101001}{92}{subsubsection.4.1.2.342}%
+\contentsline {subsubsection}{\numberline {4.1.2.343}b1010101}{92}{subsubsection.4.1.2.343}%
+\contentsline {subsubsection}{\numberline {4.1.2.344}b10101010}{92}{subsubsection.4.1.2.344}%
+\contentsline {subsubsection}{\numberline {4.1.2.345}b10101011}{93}{subsubsection.4.1.2.345}%
+\contentsline {subsubsection}{\numberline {4.1.2.346}b101011}{93}{subsubsection.4.1.2.346}%
+\contentsline {subsubsection}{\numberline {4.1.2.347}b1010110}{93}{subsubsection.4.1.2.347}%
+\contentsline {subsubsection}{\numberline {4.1.2.348}b10101100}{93}{subsubsection.4.1.2.348}%
+\contentsline {subsubsection}{\numberline {4.1.2.349}b10101101}{93}{subsubsection.4.1.2.349}%
+\contentsline {subsubsection}{\numberline {4.1.2.350}b1010111}{93}{subsubsection.4.1.2.350}%
+\contentsline {subsubsection}{\numberline {4.1.2.351}b10101110}{94}{subsubsection.4.1.2.351}%
+\contentsline {subsubsection}{\numberline {4.1.2.352}b10101111}{94}{subsubsection.4.1.2.352}%
+\contentsline {subsubsection}{\numberline {4.1.2.353}b1011}{94}{subsubsection.4.1.2.353}%
+\contentsline {subsubsection}{\numberline {4.1.2.354}b10110}{94}{subsubsection.4.1.2.354}%
+\contentsline {subsubsection}{\numberline {4.1.2.355}b101100}{94}{subsubsection.4.1.2.355}%
+\contentsline {subsubsection}{\numberline {4.1.2.356}b1011000}{94}{subsubsection.4.1.2.356}%
+\contentsline {subsubsection}{\numberline {4.1.2.357}b10110000}{95}{subsubsection.4.1.2.357}%
+\contentsline {subsubsection}{\numberline {4.1.2.358}b10110001}{95}{subsubsection.4.1.2.358}%
+\contentsline {subsubsection}{\numberline {4.1.2.359}b1011001}{95}{subsubsection.4.1.2.359}%
+\contentsline {subsubsection}{\numberline {4.1.2.360}b10110010}{95}{subsubsection.4.1.2.360}%
+\contentsline {subsubsection}{\numberline {4.1.2.361}b10110011}{95}{subsubsection.4.1.2.361}%
+\contentsline {subsubsection}{\numberline {4.1.2.362}b101101}{95}{subsubsection.4.1.2.362}%
+\contentsline {subsubsection}{\numberline {4.1.2.363}b1011010}{96}{subsubsection.4.1.2.363}%
+\contentsline {subsubsection}{\numberline {4.1.2.364}b10110100}{96}{subsubsection.4.1.2.364}%
+\contentsline {subsubsection}{\numberline {4.1.2.365}b10110101}{96}{subsubsection.4.1.2.365}%
+\contentsline {subsubsection}{\numberline {4.1.2.366}b1011011}{96}{subsubsection.4.1.2.366}%
+\contentsline {subsubsection}{\numberline {4.1.2.367}b10110110}{96}{subsubsection.4.1.2.367}%
+\contentsline {subsubsection}{\numberline {4.1.2.368}b10110111}{96}{subsubsection.4.1.2.368}%
+\contentsline {subsubsection}{\numberline {4.1.2.369}b10111}{97}{subsubsection.4.1.2.369}%
+\contentsline {subsubsection}{\numberline {4.1.2.370}b101110}{97}{subsubsection.4.1.2.370}%
+\contentsline {subsubsection}{\numberline {4.1.2.371}b1011100}{97}{subsubsection.4.1.2.371}%
+\contentsline {subsubsection}{\numberline {4.1.2.372}b10111000}{97}{subsubsection.4.1.2.372}%
+\contentsline {subsubsection}{\numberline {4.1.2.373}b10111001}{97}{subsubsection.4.1.2.373}%
+\contentsline {subsubsection}{\numberline {4.1.2.374}b1011101}{97}{subsubsection.4.1.2.374}%
+\contentsline {subsubsection}{\numberline {4.1.2.375}b10111010}{98}{subsubsection.4.1.2.375}%
+\contentsline {subsubsection}{\numberline {4.1.2.376}b10111011}{98}{subsubsection.4.1.2.376}%
+\contentsline {subsubsection}{\numberline {4.1.2.377}b101111}{98}{subsubsection.4.1.2.377}%
+\contentsline {subsubsection}{\numberline {4.1.2.378}b1011110}{98}{subsubsection.4.1.2.378}%
+\contentsline {subsubsection}{\numberline {4.1.2.379}b10111100}{98}{subsubsection.4.1.2.379}%
+\contentsline {subsubsection}{\numberline {4.1.2.380}b10111101}{98}{subsubsection.4.1.2.380}%
+\contentsline {subsubsection}{\numberline {4.1.2.381}b1011111}{99}{subsubsection.4.1.2.381}%
+\contentsline {subsubsection}{\numberline {4.1.2.382}b10111110}{99}{subsubsection.4.1.2.382}%
+\contentsline {subsubsection}{\numberline {4.1.2.383}b10111111}{99}{subsubsection.4.1.2.383}%
+\contentsline {subsubsection}{\numberline {4.1.2.384}b11}{99}{subsubsection.4.1.2.384}%
+\contentsline {subsubsection}{\numberline {4.1.2.385}b110}{99}{subsubsection.4.1.2.385}%
+\contentsline {subsubsection}{\numberline {4.1.2.386}b1100}{99}{subsubsection.4.1.2.386}%
+\contentsline {subsubsection}{\numberline {4.1.2.387}b11000}{100}{subsubsection.4.1.2.387}%
+\contentsline {subsubsection}{\numberline {4.1.2.388}b110000}{100}{subsubsection.4.1.2.388}%
+\contentsline {subsubsection}{\numberline {4.1.2.389}b1100000}{100}{subsubsection.4.1.2.389}%
+\contentsline {subsubsection}{\numberline {4.1.2.390}b11000000}{100}{subsubsection.4.1.2.390}%
+\contentsline {subsubsection}{\numberline {4.1.2.391}b11000001}{100}{subsubsection.4.1.2.391}%
+\contentsline {subsubsection}{\numberline {4.1.2.392}b1100001}{100}{subsubsection.4.1.2.392}%
+\contentsline {subsubsection}{\numberline {4.1.2.393}b11000010}{101}{subsubsection.4.1.2.393}%
+\contentsline {subsubsection}{\numberline {4.1.2.394}b11000011}{101}{subsubsection.4.1.2.394}%
+\contentsline {subsubsection}{\numberline {4.1.2.395}b110001}{101}{subsubsection.4.1.2.395}%
+\contentsline {subsubsection}{\numberline {4.1.2.396}b1100010}{101}{subsubsection.4.1.2.396}%
+\contentsline {subsubsection}{\numberline {4.1.2.397}b11000100}{101}{subsubsection.4.1.2.397}%
+\contentsline {subsubsection}{\numberline {4.1.2.398}b11000101}{101}{subsubsection.4.1.2.398}%
+\contentsline {subsubsection}{\numberline {4.1.2.399}b1100011}{102}{subsubsection.4.1.2.399}%
+\contentsline {subsubsection}{\numberline {4.1.2.400}b11000110}{102}{subsubsection.4.1.2.400}%
+\contentsline {subsubsection}{\numberline {4.1.2.401}b11000111}{102}{subsubsection.4.1.2.401}%
+\contentsline {subsubsection}{\numberline {4.1.2.402}b11001}{102}{subsubsection.4.1.2.402}%
+\contentsline {subsubsection}{\numberline {4.1.2.403}b110010}{102}{subsubsection.4.1.2.403}%
+\contentsline {subsubsection}{\numberline {4.1.2.404}b1100100}{102}{subsubsection.4.1.2.404}%
+\contentsline {subsubsection}{\numberline {4.1.2.405}b11001000}{103}{subsubsection.4.1.2.405}%
+\contentsline {subsubsection}{\numberline {4.1.2.406}b11001001}{103}{subsubsection.4.1.2.406}%
+\contentsline {subsubsection}{\numberline {4.1.2.407}b1100101}{103}{subsubsection.4.1.2.407}%
+\contentsline {subsubsection}{\numberline {4.1.2.408}b11001010}{103}{subsubsection.4.1.2.408}%
+\contentsline {subsubsection}{\numberline {4.1.2.409}b11001011}{103}{subsubsection.4.1.2.409}%
+\contentsline {subsubsection}{\numberline {4.1.2.410}b110011}{103}{subsubsection.4.1.2.410}%
+\contentsline {subsubsection}{\numberline {4.1.2.411}b1100110}{104}{subsubsection.4.1.2.411}%
+\contentsline {subsubsection}{\numberline {4.1.2.412}b11001100}{104}{subsubsection.4.1.2.412}%
+\contentsline {subsubsection}{\numberline {4.1.2.413}b11001101}{104}{subsubsection.4.1.2.413}%
+\contentsline {subsubsection}{\numberline {4.1.2.414}b1100111}{104}{subsubsection.4.1.2.414}%
+\contentsline {subsubsection}{\numberline {4.1.2.415}b11001110}{104}{subsubsection.4.1.2.415}%
+\contentsline {subsubsection}{\numberline {4.1.2.416}b11001111}{104}{subsubsection.4.1.2.416}%
+\contentsline {subsubsection}{\numberline {4.1.2.417}b1101}{105}{subsubsection.4.1.2.417}%
+\contentsline {subsubsection}{\numberline {4.1.2.418}b11010}{105}{subsubsection.4.1.2.418}%
+\contentsline {subsubsection}{\numberline {4.1.2.419}b110100}{105}{subsubsection.4.1.2.419}%
+\contentsline {subsubsection}{\numberline {4.1.2.420}b1101000}{105}{subsubsection.4.1.2.420}%
+\contentsline {subsubsection}{\numberline {4.1.2.421}b11010000}{105}{subsubsection.4.1.2.421}%
+\contentsline {subsubsection}{\numberline {4.1.2.422}b11010001}{105}{subsubsection.4.1.2.422}%
+\contentsline {subsubsection}{\numberline {4.1.2.423}b1101001}{106}{subsubsection.4.1.2.423}%
+\contentsline {subsubsection}{\numberline {4.1.2.424}b11010010}{106}{subsubsection.4.1.2.424}%
+\contentsline {subsubsection}{\numberline {4.1.2.425}b11010011}{106}{subsubsection.4.1.2.425}%
+\contentsline {subsubsection}{\numberline {4.1.2.426}b110101}{106}{subsubsection.4.1.2.426}%
+\contentsline {subsubsection}{\numberline {4.1.2.427}b1101010}{106}{subsubsection.4.1.2.427}%
+\contentsline {subsubsection}{\numberline {4.1.2.428}b11010100}{106}{subsubsection.4.1.2.428}%
+\contentsline {subsubsection}{\numberline {4.1.2.429}b11010101}{107}{subsubsection.4.1.2.429}%
+\contentsline {subsubsection}{\numberline {4.1.2.430}b1101011}{107}{subsubsection.4.1.2.430}%
+\contentsline {subsubsection}{\numberline {4.1.2.431}b11010110}{107}{subsubsection.4.1.2.431}%
+\contentsline {subsubsection}{\numberline {4.1.2.432}b11010111}{107}{subsubsection.4.1.2.432}%
+\contentsline {subsubsection}{\numberline {4.1.2.433}b11011}{107}{subsubsection.4.1.2.433}%
+\contentsline {subsubsection}{\numberline {4.1.2.434}b110110}{107}{subsubsection.4.1.2.434}%
+\contentsline {subsubsection}{\numberline {4.1.2.435}b1101100}{108}{subsubsection.4.1.2.435}%
+\contentsline {subsubsection}{\numberline {4.1.2.436}b11011000}{108}{subsubsection.4.1.2.436}%
+\contentsline {subsubsection}{\numberline {4.1.2.437}b11011001}{108}{subsubsection.4.1.2.437}%
+\contentsline {subsubsection}{\numberline {4.1.2.438}b1101101}{108}{subsubsection.4.1.2.438}%
+\contentsline {subsubsection}{\numberline {4.1.2.439}b11011010}{108}{subsubsection.4.1.2.439}%
+\contentsline {subsubsection}{\numberline {4.1.2.440}b11011011}{108}{subsubsection.4.1.2.440}%
+\contentsline {subsubsection}{\numberline {4.1.2.441}b110111}{109}{subsubsection.4.1.2.441}%
+\contentsline {subsubsection}{\numberline {4.1.2.442}b1101110}{109}{subsubsection.4.1.2.442}%
+\contentsline {subsubsection}{\numberline {4.1.2.443}b11011100}{109}{subsubsection.4.1.2.443}%
+\contentsline {subsubsection}{\numberline {4.1.2.444}b11011101}{109}{subsubsection.4.1.2.444}%
+\contentsline {subsubsection}{\numberline {4.1.2.445}b1101111}{109}{subsubsection.4.1.2.445}%
+\contentsline {subsubsection}{\numberline {4.1.2.446}b11011110}{109}{subsubsection.4.1.2.446}%
+\contentsline {subsubsection}{\numberline {4.1.2.447}b11011111}{110}{subsubsection.4.1.2.447}%
+\contentsline {subsubsection}{\numberline {4.1.2.448}b111}{110}{subsubsection.4.1.2.448}%
+\contentsline {subsubsection}{\numberline {4.1.2.449}b1110}{110}{subsubsection.4.1.2.449}%
+\contentsline {subsubsection}{\numberline {4.1.2.450}b11100}{110}{subsubsection.4.1.2.450}%
+\contentsline {subsubsection}{\numberline {4.1.2.451}b111000}{110}{subsubsection.4.1.2.451}%
+\contentsline {subsubsection}{\numberline {4.1.2.452}b1110000}{110}{subsubsection.4.1.2.452}%
+\contentsline {subsubsection}{\numberline {4.1.2.453}b11100000}{111}{subsubsection.4.1.2.453}%
+\contentsline {subsubsection}{\numberline {4.1.2.454}b11100001}{111}{subsubsection.4.1.2.454}%
+\contentsline {subsubsection}{\numberline {4.1.2.455}b1110001}{111}{subsubsection.4.1.2.455}%
+\contentsline {subsubsection}{\numberline {4.1.2.456}b11100010}{111}{subsubsection.4.1.2.456}%
+\contentsline {subsubsection}{\numberline {4.1.2.457}b11100011}{111}{subsubsection.4.1.2.457}%
+\contentsline {subsubsection}{\numberline {4.1.2.458}b111001}{111}{subsubsection.4.1.2.458}%
+\contentsline {subsubsection}{\numberline {4.1.2.459}b1110010}{112}{subsubsection.4.1.2.459}%
+\contentsline {subsubsection}{\numberline {4.1.2.460}b11100100}{112}{subsubsection.4.1.2.460}%
+\contentsline {subsubsection}{\numberline {4.1.2.461}b11100101}{112}{subsubsection.4.1.2.461}%
+\contentsline {subsubsection}{\numberline {4.1.2.462}b1110011}{112}{subsubsection.4.1.2.462}%
+\contentsline {subsubsection}{\numberline {4.1.2.463}b11100110}{112}{subsubsection.4.1.2.463}%
+\contentsline {subsubsection}{\numberline {4.1.2.464}b11100111}{112}{subsubsection.4.1.2.464}%
+\contentsline {subsubsection}{\numberline {4.1.2.465}b11101}{113}{subsubsection.4.1.2.465}%
+\contentsline {subsubsection}{\numberline {4.1.2.466}b111010}{113}{subsubsection.4.1.2.466}%
+\contentsline {subsubsection}{\numberline {4.1.2.467}b1110100}{113}{subsubsection.4.1.2.467}%
+\contentsline {subsubsection}{\numberline {4.1.2.468}b11101000}{113}{subsubsection.4.1.2.468}%
+\contentsline {subsubsection}{\numberline {4.1.2.469}b11101001}{113}{subsubsection.4.1.2.469}%
+\contentsline {subsubsection}{\numberline {4.1.2.470}b1110101}{113}{subsubsection.4.1.2.470}%
+\contentsline {subsubsection}{\numberline {4.1.2.471}b11101010}{114}{subsubsection.4.1.2.471}%
+\contentsline {subsubsection}{\numberline {4.1.2.472}b11101011}{114}{subsubsection.4.1.2.472}%
+\contentsline {subsubsection}{\numberline {4.1.2.473}b111011}{114}{subsubsection.4.1.2.473}%
+\contentsline {subsubsection}{\numberline {4.1.2.474}b1110110}{114}{subsubsection.4.1.2.474}%
+\contentsline {subsubsection}{\numberline {4.1.2.475}b11101100}{114}{subsubsection.4.1.2.475}%
+\contentsline {subsubsection}{\numberline {4.1.2.476}b11101101}{114}{subsubsection.4.1.2.476}%
+\contentsline {subsubsection}{\numberline {4.1.2.477}b1110111}{115}{subsubsection.4.1.2.477}%
+\contentsline {subsubsection}{\numberline {4.1.2.478}b11101110}{115}{subsubsection.4.1.2.478}%
+\contentsline {subsubsection}{\numberline {4.1.2.479}b11101111}{115}{subsubsection.4.1.2.479}%
+\contentsline {subsubsection}{\numberline {4.1.2.480}b1111}{115}{subsubsection.4.1.2.480}%
+\contentsline {subsubsection}{\numberline {4.1.2.481}b11110}{115}{subsubsection.4.1.2.481}%
+\contentsline {subsubsection}{\numberline {4.1.2.482}b111100}{115}{subsubsection.4.1.2.482}%
+\contentsline {subsubsection}{\numberline {4.1.2.483}b1111000}{116}{subsubsection.4.1.2.483}%
+\contentsline {subsubsection}{\numberline {4.1.2.484}b11110000}{116}{subsubsection.4.1.2.484}%
+\contentsline {subsubsection}{\numberline {4.1.2.485}b11110001}{116}{subsubsection.4.1.2.485}%
+\contentsline {subsubsection}{\numberline {4.1.2.486}b1111001}{116}{subsubsection.4.1.2.486}%
+\contentsline {subsubsection}{\numberline {4.1.2.487}b11110010}{116}{subsubsection.4.1.2.487}%
+\contentsline {subsubsection}{\numberline {4.1.2.488}b11110011}{116}{subsubsection.4.1.2.488}%
+\contentsline {subsubsection}{\numberline {4.1.2.489}b111101}{117}{subsubsection.4.1.2.489}%
+\contentsline {subsubsection}{\numberline {4.1.2.490}b1111010}{117}{subsubsection.4.1.2.490}%
+\contentsline {subsubsection}{\numberline {4.1.2.491}b11110100}{117}{subsubsection.4.1.2.491}%
+\contentsline {subsubsection}{\numberline {4.1.2.492}b11110101}{117}{subsubsection.4.1.2.492}%
+\contentsline {subsubsection}{\numberline {4.1.2.493}b1111011}{117}{subsubsection.4.1.2.493}%
+\contentsline {subsubsection}{\numberline {4.1.2.494}b11110110}{117}{subsubsection.4.1.2.494}%
+\contentsline {subsubsection}{\numberline {4.1.2.495}b11110111}{118}{subsubsection.4.1.2.495}%
+\contentsline {subsubsection}{\numberline {4.1.2.496}b11111}{118}{subsubsection.4.1.2.496}%
+\contentsline {subsubsection}{\numberline {4.1.2.497}b111110}{118}{subsubsection.4.1.2.497}%
+\contentsline {subsubsection}{\numberline {4.1.2.498}b1111100}{118}{subsubsection.4.1.2.498}%
+\contentsline {subsubsection}{\numberline {4.1.2.499}b11111000}{118}{subsubsection.4.1.2.499}%
+\contentsline {subsubsection}{\numberline {4.1.2.500}b11111001}{118}{subsubsection.4.1.2.500}%
+\contentsline {subsubsection}{\numberline {4.1.2.501}b1111101}{119}{subsubsection.4.1.2.501}%
+\contentsline {subsubsection}{\numberline {4.1.2.502}b11111010}{119}{subsubsection.4.1.2.502}%
+\contentsline {subsubsection}{\numberline {4.1.2.503}b11111011}{119}{subsubsection.4.1.2.503}%
+\contentsline {subsubsection}{\numberline {4.1.2.504}b111111}{119}{subsubsection.4.1.2.504}%
+\contentsline {subsubsection}{\numberline {4.1.2.505}b1111110}{119}{subsubsection.4.1.2.505}%
+\contentsline {subsubsection}{\numberline {4.1.2.506}b11111100}{119}{subsubsection.4.1.2.506}%
+\contentsline {subsubsection}{\numberline {4.1.2.507}b11111101}{120}{subsubsection.4.1.2.507}%
+\contentsline {subsubsection}{\numberline {4.1.2.508}b1111111}{120}{subsubsection.4.1.2.508}%
+\contentsline {subsubsection}{\numberline {4.1.2.509}b11111110}{120}{subsubsection.4.1.2.509}%
+\contentsline {subsubsection}{\numberline {4.1.2.510}b11111111}{120}{subsubsection.4.1.2.510}%
+\contentsline {subsubsection}{\numberline {4.1.2.511}BINARY16}{120}{subsubsection.4.1.2.511}%
+\contentsline {subsubsection}{\numberline {4.1.2.512}BINARY32}{120}{subsubsection.4.1.2.512}%
+\contentsline {subsubsection}{\numberline {4.1.2.513}BINARY8}{121}{subsubsection.4.1.2.513}%
+\contentsline {section}{\numberline {4.2}myos/lib/bitarray.h File Reference}{121}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{122}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Macro Definition Documentation}{122}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}BITARRAY}{122}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}BITARRAY\_GET}{122}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}BITARRAY\_INIT}{123}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}BITARRAY\_RESET}{123}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}BITARRAY\_RESET\_STATE}{123}{subsubsection.4.2.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.2.6}BITARRAY\_SET}{124}{subsubsection.4.2.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.2.7}BITARRAY\_SET\_STATE}{124}{subsubsection.4.2.2.7}%
+\contentsline {subsubsection}{\numberline {4.2.2.8}BITARRAY\_SET\_VALUE}{124}{subsubsection.4.2.2.8}%
+\contentsline {subsubsection}{\numberline {4.2.2.9}BITARRAY\_SIZE}{124}{subsubsection.4.2.2.9}%
+\contentsline {subsubsection}{\numberline {4.2.2.10}BITARRAY\_TOGGLE}{125}{subsubsection.4.2.2.10}%
+\contentsline {subsection}{\numberline {4.2.3}Typedef Documentation}{125}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}bitarray\_t}{125}{subsubsection.4.2.3.1}%
+\contentsline {section}{\numberline {4.3}myos/lib/bits.h File Reference}{125}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{126}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Macro Definition Documentation}{126}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}BITS}{127}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}BITS\_CLEAR}{127}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}NOT 00001000 bit mask}{127}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}AND 01001011 bit field}{127}{subsubsection.4.3.2.4}%
+\contentsline {subsubsection}{\numberline {4.3.2.5}BITS\_INVERT}{128}{subsubsection.4.3.2.5}%
+\contentsline {subsubsection}{\numberline {4.3.2.6}BITS\_SET}{128}{subsubsection.4.3.2.6}%
+\contentsline {subsubsection}{\numberline {4.3.2.7}OR 00000100 bit mask}{128}{subsubsection.4.3.2.7}%
+\contentsline {subsubsection}{\numberline {4.3.2.8}BITS\_TEST}{128}{subsubsection.4.3.2.8}%
+\contentsline {subsubsection}{\numberline {4.3.2.9}BITS\_TOGGLE}{129}{subsubsection.4.3.2.9}%
+\contentsline {subsubsection}{\numberline {4.3.2.10}XOR 00000110 bit mask}{129}{subsubsection.4.3.2.10}%
+\contentsline {section}{\numberline {4.4}myos/lib/buffer.h File Reference}{129}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{130}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Macro Definition Documentation}{130}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}BUFFER\_APPEND}{130}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}BUFFER\_COUNT}{130}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}BUFFER\_EMPTY}{131}{subsubsection.4.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.4.2.4}BUFFER\_FULL}{131}{subsubsection.4.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.4.2.5}BUFFER\_INIT}{131}{subsubsection.4.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.4.2.6}BUFFER\_ITEMS}{131}{subsubsection.4.4.2.6}%
+\contentsline {subsubsection}{\numberline {4.4.2.7}BUFFER\_NEXT}{131}{subsubsection.4.4.2.7}%
+\contentsline {subsubsection}{\numberline {4.4.2.8}BUFFER\_PTR}{132}{subsubsection.4.4.2.8}%
+\contentsline {subsubsection}{\numberline {4.4.2.9}BUFFER\_RAW}{132}{subsubsection.4.4.2.9}%
+\contentsline {subsubsection}{\numberline {4.4.2.10}BUFFER\_SIZE}{132}{subsubsection.4.4.2.10}%
+\contentsline {subsubsection}{\numberline {4.4.2.11}BUFFER\_SIZEOF}{132}{subsubsection.4.4.2.11}%
+\contentsline {subsubsection}{\numberline {4.4.2.12}BUFFER\_T}{132}{subsubsection.4.4.2.12}%
+\contentsline {subsubsection}{\numberline {4.4.2.13}BUFFER\_TYPEDEF}{133}{subsubsection.4.4.2.13}%
+\contentsline {subsubsection}{\numberline {4.4.2.14}BUFFER\_VAL}{133}{subsubsection.4.4.2.14}%
+\contentsline {section}{\numberline {4.5}myos/lib/crc16.c File Reference}{133}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Function Documentation}{134}{subsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.1.1}crc16\_acc()}{134}{subsubsection.4.5.1.1}%
+\contentsline {section}{\numberline {4.6}myos/lib/crc16.h File Reference}{134}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Macro Definition Documentation}{135}{subsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.1}CRC16\_ARINC}{135}{subsubsection.4.6.1.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.2}CRC16\_CCITT}{135}{subsubsection.4.6.1.2}%
+\contentsline {subsubsection}{\numberline {4.6.1.3}CRC16\_DECT}{135}{subsubsection.4.6.1.3}%
+\contentsline {subsubsection}{\numberline {4.6.1.4}CRC16\_DNP}{135}{subsubsection.4.6.1.4}%
+\contentsline {subsubsection}{\numberline {4.6.1.5}CRC16\_IBM}{136}{subsubsection.4.6.1.5}%
+\contentsline {subsubsection}{\numberline {4.6.1.6}CRC16\_T10\_DIF}{136}{subsubsection.4.6.1.6}%
+\contentsline {subsection}{\numberline {4.6.2}Function Documentation}{136}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}crc16\_acc()}{136}{subsubsection.4.6.2.1}%
+\contentsline {section}{\numberline {4.7}myos/lib/dlist.c File Reference}{136}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Function Documentation}{137}{subsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.1.1}dlist\_find()}{137}{subsubsection.4.7.1.1}%
+\contentsline {subsubsection}{\numberline {4.7.1.2}dlist\_size()}{137}{subsubsection.4.7.1.2}%
+\contentsline {section}{\numberline {4.8}myos/lib/dlist.h File Reference}{137}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{139}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Macro Definition Documentation}{140}{subsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.1}dlist\_back}{140}{subsubsection.4.8.2.1}%
+\contentsline {subsubsection}{\numberline {4.8.2.2}dlist\_begin}{140}{subsubsection.4.8.2.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.3}dlist\_empty}{140}{subsubsection.4.8.2.3}%
+\contentsline {subsubsection}{\numberline {4.8.2.4}dlist\_end}{141}{subsubsection.4.8.2.4}%
+\contentsline {subsubsection}{\numberline {4.8.2.5}dlist\_erase}{141}{subsubsection.4.8.2.5}%
+\contentsline {subsubsection}{\numberline {4.8.2.6}dlist\_foreach}{142}{subsubsection.4.8.2.6}%
+\contentsline {subsubsection}{\numberline {4.8.2.7}dlist\_front}{142}{subsubsection.4.8.2.7}%
+\contentsline {subsubsection}{\numberline {4.8.2.8}dlist\_init}{142}{subsubsection.4.8.2.8}%
+\contentsline {subsubsection}{\numberline {4.8.2.9}dlist\_insert\_after}{143}{subsubsection.4.8.2.9}%
+\contentsline {subsubsection}{\numberline {4.8.2.10}dlist\_insert\_before}{143}{subsubsection.4.8.2.10}%
+\contentsline {subsubsection}{\numberline {4.8.2.11}dlist\_next}{144}{subsubsection.4.8.2.11}%
+\contentsline {subsubsection}{\numberline {4.8.2.12}DLIST\_NODE\_TYPE}{144}{subsubsection.4.8.2.12}%
+\contentsline {subsubsection}{\numberline {4.8.2.13}dlist\_pop\_back}{144}{subsubsection.4.8.2.13}%
+\contentsline {subsubsection}{\numberline {4.8.2.14}dlist\_pop\_front}{145}{subsubsection.4.8.2.14}%
+\contentsline {subsubsection}{\numberline {4.8.2.15}dlist\_prev}{145}{subsubsection.4.8.2.15}%
+\contentsline {subsubsection}{\numberline {4.8.2.16}dlist\_push\_back}{145}{subsubsection.4.8.2.16}%
+\contentsline {subsubsection}{\numberline {4.8.2.17}dlist\_push\_front}{146}{subsubsection.4.8.2.17}%
+\contentsline {subsection}{\numberline {4.8.3}Typedef Documentation}{146}{subsection.4.8.3}%
+\contentsline {subsubsection}{\numberline {4.8.3.1}dlist\_node\_t}{146}{subsubsection.4.8.3.1}%
+\contentsline {subsubsection}{\numberline {4.8.3.2}dlist\_t}{146}{subsubsection.4.8.3.2}%
+\contentsline {subsection}{\numberline {4.8.4}Function Documentation}{147}{subsection.4.8.4}%
+\contentsline {subsubsection}{\numberline {4.8.4.1}dlist\_find()}{147}{subsubsection.4.8.4.1}%
+\contentsline {subsubsection}{\numberline {4.8.4.2}dlist\_size()}{147}{subsubsection.4.8.4.2}%
+\contentsline {section}{\numberline {4.9}myos/lib/hash.c File Reference}{147}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Function Documentation}{148}{subsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.1.1}hash\_sdbm()}{148}{subsubsection.4.9.1.1}%
+\contentsline {section}{\numberline {4.10}myos/lib/hash.h File Reference}{148}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Macro Definition Documentation}{149}{subsection.4.10.1}%
+\contentsline {subsubsection}{\numberline {4.10.1.1}hash\_sdbm\_acc}{149}{subsubsection.4.10.1.1}%
+\contentsline {subsection}{\numberline {4.10.2}Function Documentation}{149}{subsection.4.10.2}%
+\contentsline {subsubsection}{\numberline {4.10.2.1}hash\_sdbm()}{149}{subsubsection.4.10.2.1}%
+\contentsline {section}{\numberline {4.11}myos/lib/itempool.c File Reference}{150}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{150}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}Function Documentation}{150}{subsection.4.11.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.1}itempool\_alloc()}{150}{subsubsection.4.11.2.1}%
+\contentsline {section}{\numberline {4.12}myos/lib/itempool.h File Reference}{151}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{151}{subsection.4.12.1}%
+\contentsline {subsection}{\numberline {4.12.2}Macro Definition Documentation}{151}{subsection.4.12.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.1}ITEMPOOL\_ALLOC}{151}{subsubsection.4.12.2.1}%
+\contentsline {subsubsection}{\numberline {4.12.2.2}ITEMPOOL\_CALLOC}{152}{subsubsection.4.12.2.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.3}ITEMPOOL\_FREE}{152}{subsubsection.4.12.2.3}%
+\contentsline {subsubsection}{\numberline {4.12.2.4}ITEMPOOL\_INIT}{152}{subsubsection.4.12.2.4}%
+\contentsline {subsubsection}{\numberline {4.12.2.5}ITEMPOOL\_ITEM\_FREE}{152}{subsubsection.4.12.2.5}%
+\contentsline {subsubsection}{\numberline {4.12.2.6}ITEMPOOL\_ITEM\_SIZE}{153}{subsubsection.4.12.2.6}%
+\contentsline {subsubsection}{\numberline {4.12.2.7}ITEMPOOL\_ITEM\_USED}{153}{subsubsection.4.12.2.7}%
+\contentsline {subsubsection}{\numberline {4.12.2.8}ITEMPOOL\_ITEMS}{153}{subsubsection.4.12.2.8}%
+\contentsline {subsubsection}{\numberline {4.12.2.9}ITEMPOOL\_SIZE}{153}{subsubsection.4.12.2.9}%
+\contentsline {subsubsection}{\numberline {4.12.2.10}ITEMPOOL\_STATUS}{153}{subsubsection.4.12.2.10}%
+\contentsline {subsubsection}{\numberline {4.12.2.11}ITEMPOOL\_T}{154}{subsubsection.4.12.2.11}%
+\contentsline {subsubsection}{\numberline {4.12.2.12}ITEMPOOL\_TYPEDEF}{154}{subsubsection.4.12.2.12}%
+\contentsline {subsection}{\numberline {4.12.3}Function Documentation}{154}{subsection.4.12.3}%
+\contentsline {subsubsection}{\numberline {4.12.3.1}itempool\_alloc()}{154}{subsubsection.4.12.3.1}%
+\contentsline {subsubsection}{\numberline {4.12.3.2}itempool\_calloc()}{154}{subsubsection.4.12.3.2}%
+\contentsline {section}{\numberline {4.13}myos/lib/ringbuffer.h File Reference}{155}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Detailed Description}{155}{subsection.4.13.1}%
+\contentsline {subsection}{\numberline {4.13.2}Macro Definition Documentation}{156}{subsection.4.13.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.1}RINGBUFFER\_COUNT}{156}{subsubsection.4.13.2.1}%
+\contentsline {subsubsection}{\numberline {4.13.2.2}RINGBUFFER\_EMPTY}{156}{subsubsection.4.13.2.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.3}RINGBUFFER\_FULL}{156}{subsubsection.4.13.2.3}%
+\contentsline {subsubsection}{\numberline {4.13.2.4}RINGBUFFER\_HEAD}{156}{subsubsection.4.13.2.4}%
+\contentsline {subsubsection}{\numberline {4.13.2.5}RINGBUFFER\_HEAD\_PTR}{157}{subsubsection.4.13.2.5}%
+\contentsline {subsubsection}{\numberline {4.13.2.6}RINGBUFFER\_HEAD\_VAL}{157}{subsubsection.4.13.2.6}%
+\contentsline {subsubsection}{\numberline {4.13.2.7}RINGBUFFER\_INIT}{157}{subsubsection.4.13.2.7}%
+\contentsline {subsubsection}{\numberline {4.13.2.8}RINGBUFFER\_ITEMS}{157}{subsubsection.4.13.2.8}%
+\contentsline {subsubsection}{\numberline {4.13.2.9}RINGBUFFER\_POP}{158}{subsubsection.4.13.2.9}%
+\contentsline {subsubsection}{\numberline {4.13.2.10}RINGBUFFER\_PUSH}{158}{subsubsection.4.13.2.10}%
+\contentsline {subsubsection}{\numberline {4.13.2.11}RINGBUFFER\_RAW}{158}{subsubsection.4.13.2.11}%
+\contentsline {subsubsection}{\numberline {4.13.2.12}RINGBUFFER\_READ}{159}{subsubsection.4.13.2.12}%
+\contentsline {subsubsection}{\numberline {4.13.2.13}RINGBUFFER\_SIZE}{159}{subsubsection.4.13.2.13}%
+\contentsline {subsubsection}{\numberline {4.13.2.14}RINGBUFFER\_SIZEOF}{159}{subsubsection.4.13.2.14}%
+\contentsline {subsubsection}{\numberline {4.13.2.15}RINGBUFFER\_T}{159}{subsubsection.4.13.2.15}%
+\contentsline {subsubsection}{\numberline {4.13.2.16}RINGBUFFER\_TAIL}{160}{subsubsection.4.13.2.16}%
+\contentsline {subsubsection}{\numberline {4.13.2.17}RINGBUFFER\_TAIL\_PTR}{160}{subsubsection.4.13.2.17}%
+\contentsline {subsubsection}{\numberline {4.13.2.18}RINGBUFFER\_TAIL\_VAL}{160}{subsubsection.4.13.2.18}%
+\contentsline {subsubsection}{\numberline {4.13.2.19}RINGBUFFER\_TYPEDEF}{160}{subsubsection.4.13.2.19}%
+\contentsline {subsubsection}{\numberline {4.13.2.20}RINGBUFFER\_WRITE}{161}{subsubsection.4.13.2.20}%
+\contentsline {section}{\numberline {4.14}myos/lib/slist.c File Reference}{161}{section.4.14}%
+\contentsline {subsection}{\numberline {4.14.1}Detailed Description}{161}{subsection.4.14.1}%
+\contentsline {subsection}{\numberline {4.14.2}Function Documentation}{162}{subsection.4.14.2}%
+\contentsline {subsubsection}{\numberline {4.14.2.1}slist\_back()}{162}{subsubsection.4.14.2.1}%
+\contentsline {subsubsection}{\numberline {4.14.2.2}slist\_find()}{162}{subsubsection.4.14.2.2}%
+\contentsline {subsubsection}{\numberline {4.14.2.3}slist\_prev()}{163}{subsubsection.4.14.2.3}%
+\contentsline {subsubsection}{\numberline {4.14.2.4}slist\_prev\_prev()}{163}{subsubsection.4.14.2.4}%
+\contentsline {subsubsection}{\numberline {4.14.2.5}slist\_size()}{163}{subsubsection.4.14.2.5}%
+\contentsline {section}{\numberline {4.15}myos/lib/slist.h File Reference}{164}{section.4.15}%
+\contentsline {subsection}{\numberline {4.15.1}Detailed Description}{165}{subsection.4.15.1}%
+\contentsline {subsection}{\numberline {4.15.2}Macro Definition Documentation}{166}{subsection.4.15.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.1}slist\_begin}{166}{subsubsection.4.15.2.1}%
+\contentsline {subsubsection}{\numberline {4.15.2.2}slist\_clear}{166}{subsubsection.4.15.2.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.3}slist\_empty}{167}{subsubsection.4.15.2.3}%
+\contentsline {subsubsection}{\numberline {4.15.2.4}slist\_end}{167}{subsubsection.4.15.2.4}%
+\contentsline {subsubsection}{\numberline {4.15.2.5}slist\_erase}{168}{subsubsection.4.15.2.5}%
+\contentsline {subsubsection}{\numberline {4.15.2.6}slist\_foreach}{168}{subsubsection.4.15.2.6}%
+\contentsline {subsubsection}{\numberline {4.15.2.7}slist\_front}{169}{subsubsection.4.15.2.7}%
+\contentsline {subsubsection}{\numberline {4.15.2.8}slist\_init}{169}{subsubsection.4.15.2.8}%
+\contentsline {subsubsection}{\numberline {4.15.2.9}slist\_insert\_after}{170}{subsubsection.4.15.2.9}%
+\contentsline {subsubsection}{\numberline {4.15.2.10}slist\_insert\_before}{171}{subsubsection.4.15.2.10}%
+\contentsline {subsubsection}{\numberline {4.15.2.11}slist\_next}{172}{subsubsection.4.15.2.11}%
+\contentsline {subsubsection}{\numberline {4.15.2.12}SLIST\_NODE\_TYPE}{173}{subsubsection.4.15.2.12}%
+\contentsline {subsubsection}{\numberline {4.15.2.13}slist\_pop\_back}{173}{subsubsection.4.15.2.13}%
+\contentsline {subsubsection}{\numberline {4.15.2.14}slist\_pop\_front}{174}{subsubsection.4.15.2.14}%
+\contentsline {subsubsection}{\numberline {4.15.2.15}slist\_push\_back}{174}{subsubsection.4.15.2.15}%
+\contentsline {subsubsection}{\numberline {4.15.2.16}slist\_push\_front}{175}{subsubsection.4.15.2.16}%
+\contentsline {subsection}{\numberline {4.15.3}Typedef Documentation}{176}{subsection.4.15.3}%
+\contentsline {subsubsection}{\numberline {4.15.3.1}slist\_node\_t}{176}{subsubsection.4.15.3.1}%
+\contentsline {subsubsection}{\numberline {4.15.3.2}slist\_t}{177}{subsubsection.4.15.3.2}%
+\contentsline {subsection}{\numberline {4.15.4}Function Documentation}{177}{subsection.4.15.4}%
+\contentsline {subsubsection}{\numberline {4.15.4.1}slist\_back()}{177}{subsubsection.4.15.4.1}%
+\contentsline {subsubsection}{\numberline {4.15.4.2}slist\_find()}{178}{subsubsection.4.15.4.2}%
+\contentsline {subsubsection}{\numberline {4.15.4.3}slist\_prev()}{179}{subsubsection.4.15.4.3}%
+\contentsline {subsubsection}{\numberline {4.15.4.4}slist\_prev\_prev()}{179}{subsubsection.4.15.4.4}%
+\contentsline {subsubsection}{\numberline {4.15.4.5}slist\_size()}{179}{subsubsection.4.15.4.5}%
+\contentsline {section}{\numberline {4.16}myos/os/critical.h File Reference}{180}{section.4.16}%
+\contentsline {subsection}{\numberline {4.16.1}Detailed Description}{180}{subsection.4.16.1}%
+\contentsline {subsection}{\numberline {4.16.2}Macro Definition Documentation}{181}{subsection.4.16.2}%
+\contentsline {subsubsection}{\numberline {4.16.2.1}CRITICAL\_SECTION\_BEGIN}{181}{subsubsection.4.16.2.1}%
+\contentsline {subsubsection}{\numberline {4.16.2.2}CRITICAL\_SECTION\_END}{181}{subsubsection.4.16.2.2}%
+\contentsline {subsubsection}{\numberline {4.16.2.3}CRITICAL\_STATEMENT}{182}{subsubsection.4.16.2.3}%
+\contentsline {section}{\numberline {4.17}myos/os/ctimer.c File Reference}{182}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Function Documentation}{183}{subsection.4.17.1}%
+\contentsline {subsubsection}{\numberline {4.17.1.1}ctimer\_start()}{183}{subsubsection.4.17.1.1}%
+\contentsline {section}{\numberline {4.18}myos/os/ctimer.h File Reference}{183}{section.4.18}%
+\contentsline {subsection}{\numberline {4.18.1}Detailed Description}{184}{subsection.4.18.1}%
+\contentsline {subsection}{\numberline {4.18.2}Macro Definition Documentation}{185}{subsection.4.18.2}%
+\contentsline {subsubsection}{\numberline {4.18.2.1}ctimer\_expired}{185}{subsubsection.4.18.2.1}%
+\contentsline {subsubsection}{\numberline {4.18.2.2}ctimer\_module\_init}{185}{subsubsection.4.18.2.2}%
+\contentsline {subsubsection}{\numberline {4.18.2.3}ctimer\_reset}{185}{subsubsection.4.18.2.3}%
+\contentsline {subsubsection}{\numberline {4.18.2.4}ctimer\_restart}{185}{subsubsection.4.18.2.4}%
+\contentsline {subsubsection}{\numberline {4.18.2.5}ctimer\_stop}{185}{subsubsection.4.18.2.5}%
+\contentsline {subsection}{\numberline {4.18.3}Typedef Documentation}{186}{subsection.4.18.3}%
+\contentsline {subsubsection}{\numberline {4.18.3.1}ctimer\_callback\_t}{186}{subsubsection.4.18.3.1}%
+\contentsline {subsubsection}{\numberline {4.18.3.2}ctimer\_t}{186}{subsubsection.4.18.3.2}%
+\contentsline {subsection}{\numberline {4.18.4}Function Documentation}{186}{subsection.4.18.4}%
+\contentsline {subsubsection}{\numberline {4.18.4.1}ctimer\_start()}{186}{subsubsection.4.18.4.1}%
+\contentsline {section}{\numberline {4.19}myos/os/etimer.c File Reference}{187}{section.4.19}%
+\contentsline {subsection}{\numberline {4.19.1}Function Documentation}{187}{subsection.4.19.1}%
+\contentsline {subsubsection}{\numberline {4.19.1.1}etimer\_start()}{187}{subsubsection.4.19.1.1}%
+\contentsline {subsubsection}{\numberline {4.19.1.2}etimer\_timeout\_handler()}{188}{subsubsection.4.19.1.2}%
+\contentsline {subsubsection}{\numberline {4.19.1.3}process\_deliver\_event()}{189}{subsubsection.4.19.1.3}%
+\contentsline {section}{\numberline {4.20}myos/os/etimer.h File Reference}{189}{section.4.20}%
+\contentsline {subsection}{\numberline {4.20.1}Macro Definition Documentation}{190}{subsection.4.20.1}%
+\contentsline {subsubsection}{\numberline {4.20.1.1}etimer\_expired}{190}{subsubsection.4.20.1.1}%
+\contentsline {subsubsection}{\numberline {4.20.1.2}etimer\_module\_init}{190}{subsubsection.4.20.1.2}%
+\contentsline {subsubsection}{\numberline {4.20.1.3}etimer\_reset}{190}{subsubsection.4.20.1.3}%
+\contentsline {subsubsection}{\numberline {4.20.1.4}etimer\_restart}{191}{subsubsection.4.20.1.4}%
+\contentsline {subsubsection}{\numberline {4.20.1.5}etimer\_stop}{191}{subsubsection.4.20.1.5}%
+\contentsline {subsubsection}{\numberline {4.20.1.6}PROCESS\_SLEEP}{191}{subsubsection.4.20.1.6}%
+\contentsline {subsection}{\numberline {4.20.2}Function Documentation}{191}{subsection.4.20.2}%
+\contentsline {subsubsection}{\numberline {4.20.2.1}etimer\_start()}{191}{subsubsection.4.20.2.1}%
+\contentsline {section}{\numberline {4.21}myos/os/myos.c File Reference}{192}{section.4.21}%
+\contentsline {subsection}{\numberline {4.21.1}Function Documentation}{192}{subsection.4.21.1}%
+\contentsline {subsubsection}{\numberline {4.21.1.1}myos\_init()}{193}{subsubsection.4.21.1.1}%
+\contentsline {section}{\numberline {4.22}myos/os/myos.h File Reference}{193}{section.4.22}%
+\contentsline {subsection}{\numberline {4.22.1}Function Documentation}{193}{subsection.4.22.1}%
+\contentsline {subsubsection}{\numberline {4.22.1.1}myos\_init()}{194}{subsubsection.4.22.1.1}%
+\contentsline {section}{\numberline {4.23}myos/os/process.c File Reference}{194}{section.4.23}%
+\contentsline {subsection}{\numberline {4.23.1}Macro Definition Documentation}{195}{subsection.4.23.1}%
+\contentsline {subsubsection}{\numberline {4.23.1.1}DBG}{195}{subsubsection.4.23.1.1}%
+\contentsline {subsubsection}{\numberline {4.23.1.2}DBG\_PROCESS}{195}{subsubsection.4.23.1.2}%
+\contentsline {subsection}{\numberline {4.23.2}Function Documentation}{195}{subsection.4.23.2}%
+\contentsline {subsubsection}{\numberline {4.23.2.1}process\_deliver\_event()}{195}{subsubsection.4.23.2.1}%
+\contentsline {subsubsection}{\numberline {4.23.2.2}process\_exit()}{195}{subsubsection.4.23.2.2}%
+\contentsline {subsubsection}{\numberline {4.23.2.3}process\_poll()}{196}{subsubsection.4.23.2.3}%
+\contentsline {subsubsection}{\numberline {4.23.2.4}process\_post()}{196}{subsubsection.4.23.2.4}%
+\contentsline {subsubsection}{\numberline {4.23.2.5}process\_post\_sync()}{196}{subsubsection.4.23.2.5}%
+\contentsline {subsubsection}{\numberline {4.23.2.6}process\_run()}{196}{subsubsection.4.23.2.6}%
+\contentsline {subsubsection}{\numberline {4.23.2.7}process\_start()}{196}{subsubsection.4.23.2.7}%
+\contentsline {subsubsection}{\numberline {4.23.2.8}RINGBUFFER\_TYPEDEF()}{197}{subsubsection.4.23.2.8}%
+\contentsline {subsection}{\numberline {4.23.3}Variable Documentation}{197}{subsection.4.23.3}%
+\contentsline {subsubsection}{\numberline {4.23.3.1}process\_current}{197}{subsubsection.4.23.3.1}%
+\contentsline {section}{\numberline {4.24}myos/os/process.h File Reference}{197}{section.4.24}%
+\contentsline {subsection}{\numberline {4.24.1}Macro Definition Documentation}{198}{subsection.4.24.1}%
+\contentsline {subsubsection}{\numberline {4.24.1.1}EXTERN\_PROCESS}{198}{subsubsection.4.24.1.1}%
+\contentsline {subsubsection}{\numberline {4.24.1.2}PROCESS}{199}{subsubsection.4.24.1.2}%
+\contentsline {subsubsection}{\numberline {4.24.1.3}PROCESS\_BEGIN}{199}{subsubsection.4.24.1.3}%
+\contentsline {subsubsection}{\numberline {4.24.1.4}PROCESS\_BROADCAST}{199}{subsubsection.4.24.1.4}%
+\contentsline {subsubsection}{\numberline {4.24.1.5}PROCESS\_CONTEXT\_BEGIN}{199}{subsubsection.4.24.1.5}%
+\contentsline {subsubsection}{\numberline {4.24.1.6}PROCESS\_CONTEXT\_END}{200}{subsubsection.4.24.1.6}%
+\contentsline {subsubsection}{\numberline {4.24.1.7}PROCESS\_DATA}{200}{subsubsection.4.24.1.7}%
+\contentsline {subsubsection}{\numberline {4.24.1.8}PROCESS\_END}{200}{subsubsection.4.24.1.8}%
+\contentsline {subsubsection}{\numberline {4.24.1.9}PROCESS\_EVENT\_CONTINUE}{200}{subsubsection.4.24.1.9}%
+\contentsline {subsubsection}{\numberline {4.24.1.10}PROCESS\_EVENT\_DATA}{200}{subsubsection.4.24.1.10}%
+\contentsline {subsubsection}{\numberline {4.24.1.11}PROCESS\_EVENT\_EXIT}{200}{subsubsection.4.24.1.11}%
+\contentsline {subsubsection}{\numberline {4.24.1.12}PROCESS\_EVENT\_ID}{201}{subsubsection.4.24.1.12}%
+\contentsline {subsubsection}{\numberline {4.24.1.13}PROCESS\_EVENT\_POLL}{201}{subsubsection.4.24.1.13}%
+\contentsline {subsubsection}{\numberline {4.24.1.14}PROCESS\_EVENT\_QUEUE\_SIZE}{201}{subsubsection.4.24.1.14}%
+\contentsline {subsubsection}{\numberline {4.24.1.15}PROCESS\_EVENT\_START}{201}{subsubsection.4.24.1.15}%
+\contentsline {subsubsection}{\numberline {4.24.1.16}PROCESS\_EVENT\_TIMEOUT}{201}{subsubsection.4.24.1.16}%
+\contentsline {subsubsection}{\numberline {4.24.1.17}PROCESS\_EXITHANDLER}{201}{subsubsection.4.24.1.17}%
+\contentsline {subsubsection}{\numberline {4.24.1.18}PROCESS\_EXTERN}{202}{subsubsection.4.24.1.18}%
+\contentsline {subsubsection}{\numberline {4.24.1.19}PROCESS\_INIT}{202}{subsubsection.4.24.1.19}%
+\contentsline {subsubsection}{\numberline {4.24.1.20}PROCESS\_IS\_RUNNING}{202}{subsubsection.4.24.1.20}%
+\contentsline {subsubsection}{\numberline {4.24.1.21}PROCESS\_PT}{202}{subsubsection.4.24.1.21}%
+\contentsline {subsubsection}{\numberline {4.24.1.22}PROCESS\_RESPOND}{203}{subsubsection.4.24.1.22}%
+\contentsline {subsubsection}{\numberline {4.24.1.23}PROCESS\_SUSPEND}{203}{subsubsection.4.24.1.23}%
+\contentsline {subsubsection}{\numberline {4.24.1.24}PROCESS\_THIS}{203}{subsubsection.4.24.1.24}%
+\contentsline {subsubsection}{\numberline {4.24.1.25}PROCESS\_THREAD}{203}{subsubsection.4.24.1.25}%
+\contentsline {subsubsection}{\numberline {4.24.1.26}PROCESS\_WAIT\_ANY\_EVENT}{203}{subsubsection.4.24.1.26}%
+\contentsline {subsubsection}{\numberline {4.24.1.27}PROCESS\_WAIT\_EVENT}{204}{subsubsection.4.24.1.27}%
+\contentsline {subsubsection}{\numberline {4.24.1.28}PROCESS\_WAIT\_EVENT\_UNTIL}{204}{subsubsection.4.24.1.28}%
+\contentsline {subsection}{\numberline {4.24.2}Typedef Documentation}{204}{subsection.4.24.2}%
+\contentsline {subsubsection}{\numberline {4.24.2.1}process\_event\_t}{204}{subsubsection.4.24.2.1}%
+\contentsline {subsubsection}{\numberline {4.24.2.2}process\_t}{204}{subsubsection.4.24.2.2}%
+\contentsline {subsubsection}{\numberline {4.24.2.3}process\_thread\_t}{204}{subsubsection.4.24.2.3}%
+\contentsline {subsection}{\numberline {4.24.3}Function Documentation}{204}{subsection.4.24.3}%
+\contentsline {subsubsection}{\numberline {4.24.3.1}process\_exit()}{205}{subsubsection.4.24.3.1}%
+\contentsline {subsubsection}{\numberline {4.24.3.2}process\_init()}{205}{subsubsection.4.24.3.2}%
+\contentsline {subsubsection}{\numberline {4.24.3.3}process\_init\_process()}{205}{subsubsection.4.24.3.3}%
+\contentsline {subsubsection}{\numberline {4.24.3.4}process\_poll()}{205}{subsubsection.4.24.3.4}%
+\contentsline {subsubsection}{\numberline {4.24.3.5}process\_post()}{205}{subsubsection.4.24.3.5}%
+\contentsline {subsubsection}{\numberline {4.24.3.6}process\_post\_sync()}{205}{subsubsection.4.24.3.6}%
+\contentsline {subsubsection}{\numberline {4.24.3.7}process\_run()}{206}{subsubsection.4.24.3.7}%
+\contentsline {subsubsection}{\numberline {4.24.3.8}process\_start()}{206}{subsubsection.4.24.3.8}%
+\contentsline {subsection}{\numberline {4.24.4}Variable Documentation}{206}{subsection.4.24.4}%
+\contentsline {subsubsection}{\numberline {4.24.4.1}process\_current}{206}{subsubsection.4.24.4.1}%
+\contentsline {section}{\numberline {4.25}myos/os/pt.h File Reference}{206}{section.4.25}%
+\contentsline {subsection}{\numberline {4.25.1}Detailed Description}{207}{subsection.4.25.1}%
+\contentsline {subsection}{\numberline {4.25.2}Macro Definition Documentation}{207}{subsection.4.25.2}%
+\contentsline {subsubsection}{\numberline {4.25.2.1}LC\_DEFAULT}{207}{subsubsection.4.25.2.1}%
+\contentsline {subsubsection}{\numberline {4.25.2.2}LC\_END}{208}{subsubsection.4.25.2.2}%
+\contentsline {subsubsection}{\numberline {4.25.2.3}LC\_INIT}{208}{subsubsection.4.25.2.3}%
+\contentsline {subsubsection}{\numberline {4.25.2.4}LC\_RESUME}{208}{subsubsection.4.25.2.4}%
+\contentsline {subsubsection}{\numberline {4.25.2.5}LC\_SET}{208}{subsubsection.4.25.2.5}%
+\contentsline {subsubsection}{\numberline {4.25.2.6}LC\_SET\_DEFAULT}{208}{subsubsection.4.25.2.6}%
+\contentsline {subsubsection}{\numberline {4.25.2.7}LC\_SET\_YIELD}{209}{subsubsection.4.25.2.7}%
+\contentsline {subsubsection}{\numberline {4.25.2.8}PT\_BEGIN}{209}{subsubsection.4.25.2.8}%
+\contentsline {subsubsection}{\numberline {4.25.2.9}PT\_END}{209}{subsubsection.4.25.2.9}%
+\contentsline {subsubsection}{\numberline {4.25.2.10}PT\_EXIT}{209}{subsubsection.4.25.2.10}%
+\contentsline {subsubsection}{\numberline {4.25.2.11}PT\_INIT}{210}{subsubsection.4.25.2.11}%
+\contentsline {subsubsection}{\numberline {4.25.2.12}PT\_IS\_RUNNING}{210}{subsubsection.4.25.2.12}%
+\contentsline {subsubsection}{\numberline {4.25.2.13}PT\_RESTART}{210}{subsubsection.4.25.2.13}%
+\contentsline {subsubsection}{\numberline {4.25.2.14}PT\_SCHEDULE}{211}{subsubsection.4.25.2.14}%
+\contentsline {subsubsection}{\numberline {4.25.2.15}PT\_SPAWN}{211}{subsubsection.4.25.2.15}%
+\contentsline {subsubsection}{\numberline {4.25.2.16}PT\_STATE\_TERMINATED}{211}{subsubsection.4.25.2.16}%
+\contentsline {subsubsection}{\numberline {4.25.2.17}PT\_STATE\_WAITING}{212}{subsubsection.4.25.2.17}%
+\contentsline {subsubsection}{\numberline {4.25.2.18}PT\_THREAD}{212}{subsubsection.4.25.2.18}%
+\contentsline {subsubsection}{\numberline {4.25.2.19}PT\_WAIT\_THREAD}{212}{subsubsection.4.25.2.19}%
+\contentsline {subsubsection}{\numberline {4.25.2.20}PT\_WAIT\_UNTIL}{213}{subsubsection.4.25.2.20}%
+\contentsline {subsubsection}{\numberline {4.25.2.21}PT\_WAIT\_WHILE}{213}{subsubsection.4.25.2.21}%
+\contentsline {subsubsection}{\numberline {4.25.2.22}PT\_YIELD}{213}{subsubsection.4.25.2.22}%
+\contentsline {subsubsection}{\numberline {4.25.2.23}PT\_YIELD\_UNTIL}{214}{subsubsection.4.25.2.23}%
+\contentsline {subsection}{\numberline {4.25.3}Typedef Documentation}{214}{subsection.4.25.3}%
+\contentsline {subsubsection}{\numberline {4.25.3.1}lc\_t}{214}{subsubsection.4.25.3.1}%
+\contentsline {subsubsection}{\numberline {4.25.3.2}ptstate\_t}{214}{subsubsection.4.25.3.2}%
+\contentsline {section}{\numberline {4.26}myos/os/ptimer.c File Reference}{215}{section.4.26}%
+\contentsline {subsection}{\numberline {4.26.1}Function Documentation}{215}{subsection.4.26.1}%
+\contentsline {subsubsection}{\numberline {4.26.1.1}process\_deliver\_event()}{215}{subsubsection.4.26.1.1}%
+\contentsline {subsubsection}{\numberline {4.26.1.2}process\_thread\_ptimer\_process()}{215}{subsubsection.4.26.1.2}%
+\contentsline {subsubsection}{\numberline {4.26.1.3}ptimer\_add\_to\_list()}{216}{subsubsection.4.26.1.3}%
+\contentsline {subsubsection}{\numberline {4.26.1.4}ptimer\_processing()}{216}{subsubsection.4.26.1.4}%
+\contentsline {subsubsection}{\numberline {4.26.1.5}ptimer\_remove\_from\_list()}{216}{subsubsection.4.26.1.5}%
+\contentsline {subsubsection}{\numberline {4.26.1.6}ptimer\_reset()}{216}{subsubsection.4.26.1.6}%
+\contentsline {subsubsection}{\numberline {4.26.1.7}ptimer\_restart()}{216}{subsubsection.4.26.1.7}%
+\contentsline {subsubsection}{\numberline {4.26.1.8}ptimer\_start()}{217}{subsubsection.4.26.1.8}%
+\contentsline {subsection}{\numberline {4.26.2}Variable Documentation}{217}{subsection.4.26.2}%
+\contentsline {subsubsection}{\numberline {4.26.2.1}ptimer\_next\_stop}{217}{subsubsection.4.26.2.1}%
+\contentsline {subsubsection}{\numberline {4.26.2.2}ptimer\_pending}{217}{subsubsection.4.26.2.2}%
+\contentsline {subsubsection}{\numberline {4.26.2.3}ptimer\_poll\_evt}{217}{subsubsection.4.26.2.3}%
+\contentsline {subsubsection}{\numberline {4.26.2.4}ptimer\_process}{217}{subsubsection.4.26.2.4}%
+\contentsline {section}{\numberline {4.27}myos/os/ptimer.h File Reference}{218}{section.4.27}%
+\contentsline {subsection}{\numberline {4.27.1}Macro Definition Documentation}{219}{subsection.4.27.1}%
+\contentsline {subsubsection}{\numberline {4.27.1.1}ptimer\_expired}{219}{subsubsection.4.27.1.1}%
+\contentsline {subsubsection}{\numberline {4.27.1.2}ptimer\_module\_init}{219}{subsubsection.4.27.1.2}%
+\contentsline {subsubsection}{\numberline {4.27.1.3}ptimer\_stop}{219}{subsubsection.4.27.1.3}%
+\contentsline {subsubsection}{\numberline {4.27.1.4}ptlist\_begin}{219}{subsubsection.4.27.1.4}%
+\contentsline {subsubsection}{\numberline {4.27.1.5}ptlist\_empty}{219}{subsubsection.4.27.1.5}%
+\contentsline {subsubsection}{\numberline {4.27.1.6}ptlist\_end}{220}{subsubsection.4.27.1.6}%
+\contentsline {subsubsection}{\numberline {4.27.1.7}ptlist\_erase}{220}{subsubsection.4.27.1.7}%
+\contentsline {subsubsection}{\numberline {4.27.1.8}ptlist\_find}{220}{subsubsection.4.27.1.8}%
+\contentsline {subsubsection}{\numberline {4.27.1.9}ptlist\_foreach}{220}{subsubsection.4.27.1.9}%
+\contentsline {subsubsection}{\numberline {4.27.1.10}ptlist\_init}{220}{subsubsection.4.27.1.10}%
+\contentsline {subsubsection}{\numberline {4.27.1.11}ptlist\_next}{221}{subsubsection.4.27.1.11}%
+\contentsline {subsubsection}{\numberline {4.27.1.12}PTLIST\_NODE\_TYPE}{221}{subsubsection.4.27.1.12}%
+\contentsline {subsubsection}{\numberline {4.27.1.13}ptlist\_prev}{221}{subsubsection.4.27.1.13}%
+\contentsline {subsubsection}{\numberline {4.27.1.14}ptlist\_push\_front}{221}{subsubsection.4.27.1.14}%
+\contentsline {subsection}{\numberline {4.27.2}Typedef Documentation}{221}{subsection.4.27.2}%
+\contentsline {subsubsection}{\numberline {4.27.2.1}ptimer\_handler\_t}{221}{subsubsection.4.27.2.1}%
+\contentsline {subsubsection}{\numberline {4.27.2.2}ptimer\_t}{222}{subsubsection.4.27.2.2}%
+\contentsline {subsubsection}{\numberline {4.27.2.3}ptlist\_node\_t}{222}{subsubsection.4.27.2.3}%
+\contentsline {subsubsection}{\numberline {4.27.2.4}ptlist\_t}{222}{subsubsection.4.27.2.4}%
+\contentsline {subsection}{\numberline {4.27.3}Function Documentation}{222}{subsection.4.27.3}%
+\contentsline {subsubsection}{\numberline {4.27.3.1}ptimer\_processing()}{223}{subsubsection.4.27.3.1}%
+\contentsline {subsubsection}{\numberline {4.27.3.2}ptimer\_reset()}{223}{subsubsection.4.27.3.2}%
+\contentsline {subsubsection}{\numberline {4.27.3.3}ptimer\_restart()}{223}{subsubsection.4.27.3.3}%
+\contentsline {subsubsection}{\numberline {4.27.3.4}ptimer\_start()}{223}{subsubsection.4.27.3.4}%
+\contentsline {subsection}{\numberline {4.27.4}Variable Documentation}{223}{subsection.4.27.4}%
+\contentsline {subsubsection}{\numberline {4.27.4.1}ptimer\_process}{223}{subsubsection.4.27.4.1}%
+\contentsline {section}{\numberline {4.28}myos/os/rtimer.c File Reference}{224}{section.4.28}%
+\contentsline {subsection}{\numberline {4.28.1}Function Documentation}{224}{subsection.4.28.1}%
+\contentsline {subsubsection}{\numberline {4.28.1.1}rtimer\_left()}{224}{subsubsection.4.28.1.1}%
+\contentsline {subsubsection}{\numberline {4.28.1.2}rtimer\_lock()}{224}{subsubsection.4.28.1.2}%
+\contentsline {subsubsection}{\numberline {4.28.1.3}rtimer\_release()}{225}{subsubsection.4.28.1.3}%
+\contentsline {subsubsection}{\numberline {4.28.1.4}rtimer\_reset()}{225}{subsubsection.4.28.1.4}%
+\contentsline {subsubsection}{\numberline {4.28.1.5}rtimer\_restart()}{225}{subsubsection.4.28.1.5}%
+\contentsline {subsubsection}{\numberline {4.28.1.6}rtimer\_scheduler()}{225}{subsubsection.4.28.1.6}%
+\contentsline {subsubsection}{\numberline {4.28.1.7}rtimer\_start()}{225}{subsubsection.4.28.1.7}%
+\contentsline {subsection}{\numberline {4.28.2}Variable Documentation}{225}{subsection.4.28.2}%
+\contentsline {subsubsection}{\numberline {4.28.2.1}rtimer\_mutex}{226}{subsubsection.4.28.2.1}%
+\contentsline {subsubsection}{\numberline {4.28.2.2}rtimer\_next}{226}{subsubsection.4.28.2.2}%
+\contentsline {section}{\numberline {4.29}myos/os/rtimer.h File Reference}{226}{section.4.29}%
+\contentsline {subsection}{\numberline {4.29.1}Macro Definition Documentation}{227}{subsection.4.29.1}%
+\contentsline {subsubsection}{\numberline {4.29.1.1}PROCESS\_RTIMER\_OBTAIN}{227}{subsubsection.4.29.1.1}%
+\contentsline {subsubsection}{\numberline {4.29.1.2}rtimer\_expired}{227}{subsubsection.4.29.1.2}%
+\contentsline {subsubsection}{\numberline {4.29.1.3}rtimer\_init}{227}{subsubsection.4.29.1.3}%
+\contentsline {subsubsection}{\numberline {4.29.1.4}rtimer\_module\_init}{227}{subsubsection.4.29.1.4}%
+\contentsline {subsubsection}{\numberline {4.29.1.5}rtimer\_now}{227}{subsubsection.4.29.1.5}%
+\contentsline {subsubsection}{\numberline {4.29.1.6}RTIMER\_TICKS\_PER\_SEC}{228}{subsubsection.4.29.1.6}%
+\contentsline {subsubsection}{\numberline {4.29.1.7}RTIMER\_TIMESTAMP\_DIFF}{228}{subsubsection.4.29.1.7}%
+\contentsline {subsubsection}{\numberline {4.29.1.8}rtimer\_timestamp\_less\_than}{228}{subsubsection.4.29.1.8}%
+\contentsline {subsubsection}{\numberline {4.29.1.9}rtimer\_timestamp\_stop}{228}{subsubsection.4.29.1.9}%
+\contentsline {subsection}{\numberline {4.29.2}Typedef Documentation}{228}{subsection.4.29.2}%
+\contentsline {subsubsection}{\numberline {4.29.2.1}rtimer\_callback\_t}{228}{subsubsection.4.29.2.1}%
+\contentsline {subsubsection}{\numberline {4.29.2.2}rtimer\_timespan\_t}{229}{subsubsection.4.29.2.2}%
+\contentsline {subsubsection}{\numberline {4.29.2.3}rtimer\_timestamp\_t}{229}{subsubsection.4.29.2.3}%
+\contentsline {subsection}{\numberline {4.29.3}Function Documentation}{229}{subsection.4.29.3}%
+\contentsline {subsubsection}{\numberline {4.29.3.1}rtimer\_left()}{229}{subsubsection.4.29.3.1}%
+\contentsline {subsubsection}{\numberline {4.29.3.2}rtimer\_lock()}{229}{subsubsection.4.29.3.2}%
+\contentsline {subsubsection}{\numberline {4.29.3.3}rtimer\_reset()}{229}{subsubsection.4.29.3.3}%
+\contentsline {subsubsection}{\numberline {4.29.3.4}rtimer\_start()}{230}{subsubsection.4.29.3.4}%
+\contentsline {section}{\numberline {4.30}myos/os/timer.c File Reference}{230}{section.4.30}%
+\contentsline {subsection}{\numberline {4.30.1}Function Documentation}{230}{subsection.4.30.1}%
+\contentsline {subsubsection}{\numberline {4.30.1.1}timer\_reset()}{230}{subsubsection.4.30.1.1}%
+\contentsline {subsubsection}{\numberline {4.30.1.2}timer\_restart()}{231}{subsubsection.4.30.1.2}%
+\contentsline {subsubsection}{\numberline {4.30.1.3}timer\_start()}{231}{subsubsection.4.30.1.3}%
+\contentsline {section}{\numberline {4.31}myos/os/timer.h File Reference}{231}{section.4.31}%
+\contentsline {subsection}{\numberline {4.31.1}Macro Definition Documentation}{232}{subsection.4.31.1}%
+\contentsline {subsubsection}{\numberline {4.31.1.1}timer\_expired}{232}{subsubsection.4.31.1.1}%
+\contentsline {subsubsection}{\numberline {4.31.1.2}timer\_module\_init}{232}{subsubsection.4.31.1.2}%
+\contentsline {subsubsection}{\numberline {4.31.1.3}timer\_t}{233}{subsubsection.4.31.1.3}%
+\contentsline {subsubsection}{\numberline {4.31.1.4}timer\_timestamp\_stop}{233}{subsubsection.4.31.1.4}%
+\contentsline {subsection}{\numberline {4.31.2}Function Documentation}{233}{subsection.4.31.2}%
+\contentsline {subsubsection}{\numberline {4.31.2.1}timer\_reset()}{233}{subsubsection.4.31.2.1}%
+\contentsline {subsubsection}{\numberline {4.31.2.2}timer\_restart()}{233}{subsubsection.4.31.2.2}%
+\contentsline {subsubsection}{\numberline {4.31.2.3}timer\_start()}{234}{subsubsection.4.31.2.3}%
+\contentsline {section}{\numberline {4.32}myos/os/timestamp.h File Reference}{234}{section.4.32}%
+\contentsline {subsection}{\numberline {4.32.1}Detailed Description}{235}{subsection.4.32.1}%
+\contentsline {subsection}{\numberline {4.32.2}Macro Definition Documentation}{235}{subsection.4.32.2}%
+\contentsline {subsubsection}{\numberline {4.32.2.1}timestamp\_block\_for}{235}{subsubsection.4.32.2.1}%
+\contentsline {subsubsection}{\numberline {4.32.2.2}timestamp\_block\_until}{235}{subsubsection.4.32.2.2}%
+\contentsline {subsubsection}{\numberline {4.32.2.3}TIMESTAMP\_DIFF}{236}{subsubsection.4.32.2.3}%
+\contentsline {subsubsection}{\numberline {4.32.2.4}timestamp\_less\_than}{236}{subsubsection.4.32.2.4}%
+\contentsline {subsubsection}{\numberline {4.32.2.5}timestamp\_lessequal\_than}{236}{subsubsection.4.32.2.5}%
+\contentsline {subsubsection}{\numberline {4.32.2.6}timestamp\_module\_init}{236}{subsubsection.4.32.2.6}%
+\contentsline {subsubsection}{\numberline {4.32.2.7}timestamp\_now}{236}{subsubsection.4.32.2.7}%
+\contentsline {subsubsection}{\numberline {4.32.2.8}timestamp\_passed}{236}{subsubsection.4.32.2.8}%
+\contentsline {subsubsection}{\numberline {4.32.2.9}TIMESTAMP\_TICKS\_PER\_SEC}{237}{subsubsection.4.32.2.9}%
+\contentsline {subsection}{\numberline {4.32.3}Typedef Documentation}{237}{subsection.4.32.3}%
+\contentsline {subsubsection}{\numberline {4.32.3.1}timespan\_t}{237}{subsubsection.4.32.3.1}%
+\contentsline {subsubsection}{\numberline {4.32.3.2}timestamp\_t}{237}{subsubsection.4.32.3.2}%
+\contentsline {section}{\numberline {4.33}myos/ui/uibuttons.c File Reference}{237}{section.4.33}%
+\contentsline {subsection}{\numberline {4.33.1}Macro Definition Documentation}{238}{subsection.4.33.1}%
+\contentsline {subsubsection}{\numberline {4.33.1.1}debounce\_timer}{238}{subsubsection.4.33.1.1}%
+\contentsline {subsubsection}{\numberline {4.33.1.2}UIBUTTONS\_DEBOUNCING}{239}{subsubsection.4.33.1.2}%
+\contentsline {subsubsection}{\numberline {4.33.1.3}UIBUTTONS\_TRANSITION\_HELD}{239}{subsubsection.4.33.1.3}%
+\contentsline {subsubsection}{\numberline {4.33.1.4}UIBUTTONS\_TRANSITION\_PRESSED}{239}{subsubsection.4.33.1.4}%
+\contentsline {subsubsection}{\numberline {4.33.1.5}UIBUTTONS\_TRANSITION\_RELEASED}{239}{subsubsection.4.33.1.5}%
+\contentsline {subsection}{\numberline {4.33.2}Function Documentation}{239}{subsection.4.33.2}%
+\contentsline {subsubsection}{\numberline {4.33.2.1}uibuttons\_poll()}{239}{subsubsection.4.33.2.1}%
+\contentsline {section}{\numberline {4.34}myos/ui/uibuttons.h File Reference}{240}{section.4.34}%
+\contentsline {subsection}{\numberline {4.34.1}Macro Definition Documentation}{240}{subsection.4.34.1}%
+\contentsline {subsubsection}{\numberline {4.34.1.1}EXTERN\_UIBUTTON}{241}{subsubsection.4.34.1.1}%
+\contentsline {subsubsection}{\numberline {4.34.1.2}UIBUTTON}{241}{subsubsection.4.34.1.2}%
+\contentsline {subsubsection}{\numberline {4.34.1.3}UIBUTTONS}{241}{subsubsection.4.34.1.3}%
+\contentsline {subsubsection}{\numberline {4.34.1.4}UIBUTTONS\_COUNT}{241}{subsubsection.4.34.1.4}%
+\contentsline {subsubsection}{\numberline {4.34.1.5}UIBUTTONS\_EVENT\_BASE}{241}{subsubsection.4.34.1.5}%
+\contentsline {subsubsection}{\numberline {4.34.1.6}UIBUTTONS\_GET\_ID}{242}{subsubsection.4.34.1.6}%
+\contentsline {subsubsection}{\numberline {4.34.1.7}UIBUTTONS\_INIT\_ALL}{242}{subsubsection.4.34.1.7}%
+\contentsline {subsubsection}{\numberline {4.34.1.8}UIBUTTONS\_POLL\_ALL}{242}{subsubsection.4.34.1.8}%
+\contentsline {subsubsection}{\numberline {4.34.1.9}UIBUTTONS\_POLL\_SINGLE}{242}{subsubsection.4.34.1.9}%
+\contentsline {subsubsection}{\numberline {4.34.1.10}UIBUTTONS\_STATE\_PRESSED}{242}{subsubsection.4.34.1.10}%
+\contentsline {subsubsection}{\numberline {4.34.1.11}UIBUTTONS\_STATE\_PRESSED\_DEBOUNCE}{242}{subsubsection.4.34.1.11}%
+\contentsline {subsubsection}{\numberline {4.34.1.12}UIBUTTONS\_STATE\_RELEASED}{243}{subsubsection.4.34.1.12}%
+\contentsline {subsubsection}{\numberline {4.34.1.13}UIBUTTONS\_STATE\_RELEASED\_DEBOUNCE}{243}{subsubsection.4.34.1.13}%
+\contentsline {subsection}{\numberline {4.34.2}Typedef Documentation}{243}{subsection.4.34.2}%
+\contentsline {subsubsection}{\numberline {4.34.2.1}uibuttons\_get\_t}{243}{subsubsection.4.34.2.1}%
+\contentsline {subsection}{\numberline {4.34.3}Enumeration Type Documentation}{243}{subsection.4.34.3}%
+\contentsline {subsubsection}{\numberline {4.34.3.1}anonymous enum}{243}{subsubsection.4.34.3.1}%
+\contentsline {subsection}{\numberline {4.34.4}Function Documentation}{244}{subsection.4.34.4}%
+\contentsline {subsubsection}{\numberline {4.34.4.1}uibuttons\_poll()}{244}{subsubsection.4.34.4.1}%
+\contentsline {section}{\numberline {4.35}myos/ui/uibuttons\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}conf\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}template.h File Reference}{244}{section.4.35}%
+\contentsline {subsection}{\numberline {4.35.1}Macro Definition Documentation}{244}{subsection.4.35.1}%
+\contentsline {subsubsection}{\numberline {4.35.1.1}UIBUTTONS\_CLICK\_TIMEOUT}{245}{subsubsection.4.35.1.1}%
+\contentsline {subsubsection}{\numberline {4.35.1.2}UIBUTTONS\_DEBOUNCE\_COUNT}{245}{subsubsection.4.35.1.2}%
+\contentsline {subsubsection}{\numberline {4.35.1.3}UIBUTTONS\_ENABLE\_DEBOUNCING}{245}{subsubsection.4.35.1.3}%
+\contentsline {subsubsection}{\numberline {4.35.1.4}UIBUTTONS\_ENABLE\_EDGES}{245}{subsubsection.4.35.1.4}%
+\contentsline {subsubsection}{\numberline {4.35.1.5}UIBUTTONS\_ENABLE\_LONG\_PRESS}{246}{subsubsection.4.35.1.5}%
+\contentsline {subsubsection}{\numberline {4.35.1.6}UIBUTTONS\_ENABLE\_MULTI\_CLICK}{246}{subsubsection.4.35.1.6}%
+\contentsline {subsubsection}{\numberline {4.35.1.7}UIBUTTONS\_ENABLE\_REPEAT\_PRESS}{246}{subsubsection.4.35.1.7}%
+\contentsline {subsubsection}{\numberline {4.35.1.8}UIBUTTONS\_ENABLE\_SINGLE\_PRESS}{246}{subsubsection.4.35.1.8}%
+\contentsline {subsubsection}{\numberline {4.35.1.9}UIBUTTONS\_LONG\_PRESS\_TIMEOUT}{246}{subsubsection.4.35.1.9}%
+\contentsline {subsubsection}{\numberline {4.35.1.10}UIBUTTONS\_LONGER\_PRESS\_TIMEOUT}{246}{subsubsection.4.35.1.10}%
+\contentsline {subsubsection}{\numberline {4.35.1.11}UIBUTTONS\_LONGEST\_PRESS\_TIMEOUT}{247}{subsubsection.4.35.1.11}%
+\contentsline {subsubsection}{\numberline {4.35.1.12}UIBUTTONS\_REPEAT\_DELAY}{247}{subsubsection.4.35.1.12}%
+\contentsline {subsubsection}{\numberline {4.35.1.13}UIBUTTONS\_REPEAT\_RATE}{247}{subsubsection.4.35.1.13}%
+\contentsline {section}{\numberline {4.36}myos/ui/uibuttons\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}process.c File Reference}{247}{section.4.36}%
+\contentsline {subsection}{\numberline {4.36.1}Function Documentation}{247}{subsection.4.36.1}%
+\contentsline {subsubsection}{\numberline {4.36.1.1}PROCESS()}{248}{subsubsection.4.36.1.1}%
+\contentsline {subsubsection}{\numberline {4.36.1.2}PROCESS\_THREAD()}{248}{subsubsection.4.36.1.2}%
+\contentsline {subsubsection}{\numberline {4.36.1.3}uibuttons\_process\_init()}{248}{subsubsection.4.36.1.3}%
+\contentsline {subsection}{\numberline {4.36.2}Variable Documentation}{248}{subsection.4.36.2}%
+\contentsline {subsubsection}{\numberline {4.36.2.1}uibuttons}{248}{subsubsection.4.36.2.1}%
+\contentsline {subsubsection}{\numberline {4.36.2.2}uibuttons\_count}{249}{subsubsection.4.36.2.2}%
+\contentsline {section}{\numberline {4.37}myos/ui/uibuttons\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}process.h File Reference}{249}{section.4.37}%
+\contentsline {subsection}{\numberline {4.37.1}Function Documentation}{249}{subsection.4.37.1}%
+\contentsline {subsubsection}{\numberline {4.37.1.1}PROCESS\_EXTERN()}{249}{subsubsection.4.37.1.1}%
+\contentsline {section}{\numberline {4.38}myos/ui/uigfx/img\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}duck.c File Reference}{250}{section.4.38}%
+\contentsline {subsection}{\numberline {4.38.1}Variable Documentation}{250}{subsection.4.38.1}%
+\contentsline {subsubsection}{\numberline {4.38.1.1}img\_duck}{250}{subsubsection.4.38.1.1}%
+\contentsline {section}{\numberline {4.39}myos/ui/uigfx/img\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}duck.h File Reference}{251}{section.4.39}%
+\contentsline {subsection}{\numberline {4.39.1}Variable Documentation}{252}{subsection.4.39.1}%
+\contentsline {subsubsection}{\numberline {4.39.1.1}img\_duck}{252}{subsubsection.4.39.1.1}%
+\contentsline {section}{\numberline {4.40}myos/ui/uigfx/img\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}julie.c File Reference}{253}{section.4.40}%
+\contentsline {subsection}{\numberline {4.40.1}Variable Documentation}{253}{subsection.4.40.1}%
+\contentsline {subsubsection}{\numberline {4.40.1.1}img\_julie}{253}{subsubsection.4.40.1.1}%
+\contentsline {section}{\numberline {4.41}myos/ui/uigfx/img\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}julie.h File Reference}{254}{section.4.41}%
+\contentsline {subsection}{\numberline {4.41.1}Variable Documentation}{255}{subsection.4.41.1}%
+\contentsline {subsubsection}{\numberline {4.41.1.1}img\_julie}{255}{subsubsection.4.41.1.1}%
+\contentsline {section}{\numberline {4.42}myos/ui/uigfx/img\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}julie2.c File Reference}{256}{section.4.42}%
+\contentsline {subsection}{\numberline {4.42.1}Variable Documentation}{256}{subsection.4.42.1}%
+\contentsline {subsubsection}{\numberline {4.42.1.1}img\_julie2}{256}{subsubsection.4.42.1.1}%
+\contentsline {section}{\numberline {4.43}myos/ui/uigfx/img\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}julie2.h File Reference}{257}{section.4.43}%
+\contentsline {subsection}{\numberline {4.43.1}Variable Documentation}{258}{subsection.4.43.1}%
+\contentsline {subsubsection}{\numberline {4.43.1.1}img\_julie2}{258}{subsubsection.4.43.1.1}%
+\contentsline {section}{\numberline {4.44}myos/ui/uigfx/pat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}chess\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}large.c File Reference}{258}{section.4.44}%
+\contentsline {subsection}{\numberline {4.44.1}Variable Documentation}{258}{subsection.4.44.1}%
+\contentsline {subsubsection}{\numberline {4.44.1.1}pat\_chess\_large}{259}{subsubsection.4.44.1.1}%
+\contentsline {section}{\numberline {4.45}myos/ui/uigfx/pat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}chess\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}large.h File Reference}{259}{section.4.45}%
+\contentsline {subsection}{\numberline {4.45.1}Variable Documentation}{259}{subsection.4.45.1}%
+\contentsline {subsubsection}{\numberline {4.45.1.1}pat\_chess\_large}{260}{subsubsection.4.45.1.1}%
+\contentsline {section}{\numberline {4.46}myos/ui/uigfx/pat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}chess\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}medium.c File Reference}{260}{section.4.46}%
+\contentsline {subsection}{\numberline {4.46.1}Variable Documentation}{260}{subsection.4.46.1}%
+\contentsline {subsubsection}{\numberline {4.46.1.1}pat\_chess\_medium}{261}{subsubsection.4.46.1.1}%
+\contentsline {section}{\numberline {4.47}myos/ui/uigfx/pat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}chess\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}medium.h File Reference}{261}{section.4.47}%
+\contentsline {subsection}{\numberline {4.47.1}Variable Documentation}{261}{subsection.4.47.1}%
+\contentsline {subsubsection}{\numberline {4.47.1.1}pat\_chess\_medium}{262}{subsubsection.4.47.1.1}%
+\contentsline {section}{\numberline {4.48}myos/ui/uigfx/pat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}chess\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}small.c File Reference}{262}{section.4.48}%
+\contentsline {subsection}{\numberline {4.48.1}Variable Documentation}{262}{subsection.4.48.1}%
+\contentsline {subsubsection}{\numberline {4.48.1.1}pat\_chess\_small}{263}{subsubsection.4.48.1.1}%
+\contentsline {section}{\numberline {4.49}myos/ui/uigfx/pat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}chess\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}small.h File Reference}{263}{section.4.49}%
+\contentsline {subsection}{\numberline {4.49.1}Variable Documentation}{263}{subsection.4.49.1}%
+\contentsline {subsubsection}{\numberline {4.49.1.1}pat\_chess\_small}{264}{subsubsection.4.49.1.1}%
+\contentsline {section}{\numberline {4.50}myos/ui/uigfx/pat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}egypt.c File Reference}{264}{section.4.50}%
+\contentsline {subsection}{\numberline {4.50.1}Variable Documentation}{264}{subsection.4.50.1}%
+\contentsline {subsubsection}{\numberline {4.50.1.1}pat\_egypt}{265}{subsubsection.4.50.1.1}%
+\contentsline {section}{\numberline {4.51}myos/ui/uigfx/pat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}egypt.h File Reference}{265}{section.4.51}%
+\contentsline {subsection}{\numberline {4.51.1}Variable Documentation}{265}{subsection.4.51.1}%
+\contentsline {subsubsection}{\numberline {4.51.1.1}pat\_egypt}{266}{subsubsection.4.51.1.1}%
+\contentsline {section}{\numberline {4.52}myos/ui/uigfx/uigfx.c File Reference}{266}{section.4.52}%
+\contentsline {subsection}{\numberline {4.52.1}Function Documentation}{267}{subsection.4.52.1}%
+\contentsline {subsubsection}{\numberline {4.52.1.1}uigfx\_clear()}{267}{subsubsection.4.52.1.1}%
+\contentsline {subsubsection}{\numberline {4.52.1.2}uigfx\_draw\_char()}{267}{subsubsection.4.52.1.2}%
+\contentsline {subsubsection}{\numberline {4.52.1.3}uigfx\_draw\_circle()}{267}{subsubsection.4.52.1.3}%
+\contentsline {subsubsection}{\numberline {4.52.1.4}uigfx\_draw\_ellipse()}{268}{subsubsection.4.52.1.4}%
+\contentsline {subsubsection}{\numberline {4.52.1.5}uigfx\_draw\_filled\_circle()}{268}{subsubsection.4.52.1.5}%
+\contentsline {subsubsection}{\numberline {4.52.1.6}uigfx\_draw\_filled\_ellipse()}{268}{subsubsection.4.52.1.6}%
+\contentsline {subsubsection}{\numberline {4.52.1.7}uigfx\_draw\_filled\_rectangle()}{268}{subsubsection.4.52.1.7}%
+\contentsline {subsubsection}{\numberline {4.52.1.8}uigfx\_draw\_hline()}{269}{subsubsection.4.52.1.8}%
+\contentsline {subsubsection}{\numberline {4.52.1.9}uigfx\_draw\_image()}{269}{subsubsection.4.52.1.9}%
+\contentsline {subsubsection}{\numberline {4.52.1.10}uigfx\_draw\_line()}{269}{subsubsection.4.52.1.10}%
+\contentsline {subsubsection}{\numberline {4.52.1.11}uigfx\_draw\_pixel()}{269}{subsubsection.4.52.1.11}%
+\contentsline {subsubsection}{\numberline {4.52.1.12}uigfx\_draw\_put\_char()}{270}{subsubsection.4.52.1.12}%
+\contentsline {subsubsection}{\numberline {4.52.1.13}uigfx\_draw\_rectangle()}{270}{subsubsection.4.52.1.13}%
+\contentsline {subsubsection}{\numberline {4.52.1.14}uigfx\_draw\_string()}{270}{subsubsection.4.52.1.14}%
+\contentsline {subsubsection}{\numberline {4.52.1.15}uigfx\_draw\_vline()}{270}{subsubsection.4.52.1.15}%
+\contentsline {subsubsection}{\numberline {4.52.1.16}uigfx\_draw\_widget()}{271}{subsubsection.4.52.1.16}%
+\contentsline {subsubsection}{\numberline {4.52.1.17}uigfx\_init\_widget()}{271}{subsubsection.4.52.1.17}%
+\contentsline {subsubsection}{\numberline {4.52.1.18}uigfx\_select\_screen\_widget()}{271}{subsubsection.4.52.1.18}%
+\contentsline {subsubsection}{\numberline {4.52.1.19}uigfx\_set\_widget()}{271}{subsubsection.4.52.1.19}%
+\contentsline {subsubsection}{\numberline {4.52.1.20}uigfx\_string\_newline()}{271}{subsubsection.4.52.1.20}%
+\contentsline {subsection}{\numberline {4.52.2}Variable Documentation}{272}{subsection.4.52.2}%
+\contentsline {subsubsection}{\numberline {4.52.2.1}uigfx\_current\_widget}{272}{subsubsection.4.52.2.1}%
+\contentsline {subsubsection}{\numberline {4.52.2.2}uigfx\_screen\_widget}{272}{subsubsection.4.52.2.2}%
+\contentsline {section}{\numberline {4.53}myos/ui/uigfx/uigfx.h File Reference}{272}{section.4.53}%
+\contentsline {subsection}{\numberline {4.53.1}Macro Definition Documentation}{273}{subsection.4.53.1}%
+\contentsline {subsubsection}{\numberline {4.53.1.1}UIGFX\_BPP}{274}{subsubsection.4.53.1.1}%
+\contentsline {subsubsection}{\numberline {4.53.1.2}UIGFX\_XRES}{274}{subsubsection.4.53.1.2}%
+\contentsline {subsubsection}{\numberline {4.53.1.3}UIGFX\_YRES}{274}{subsubsection.4.53.1.3}%
+\contentsline {subsection}{\numberline {4.53.2}Typedef Documentation}{274}{subsection.4.53.2}%
+\contentsline {subsubsection}{\numberline {4.53.2.1}uigfx\_color\_t}{275}{subsubsection.4.53.2.1}%
+\contentsline {subsection}{\numberline {4.53.3}Function Documentation}{275}{subsection.4.53.3}%
+\contentsline {subsubsection}{\numberline {4.53.3.1}uigfx\_draw\_char()}{275}{subsubsection.4.53.3.1}%
+\contentsline {subsubsection}{\numberline {4.53.3.2}uigfx\_draw\_circle()}{275}{subsubsection.4.53.3.2}%
+\contentsline {subsubsection}{\numberline {4.53.3.3}uigfx\_draw\_ellipse()}{275}{subsubsection.4.53.3.3}%
+\contentsline {subsubsection}{\numberline {4.53.3.4}uigfx\_draw\_filled\_circle()}{276}{subsubsection.4.53.3.4}%
+\contentsline {subsubsection}{\numberline {4.53.3.5}uigfx\_draw\_filled\_ellipse()}{276}{subsubsection.4.53.3.5}%
+\contentsline {subsubsection}{\numberline {4.53.3.6}uigfx\_draw\_filled\_rectangle()}{276}{subsubsection.4.53.3.6}%
+\contentsline {subsubsection}{\numberline {4.53.3.7}uigfx\_draw\_hline()}{276}{subsubsection.4.53.3.7}%
+\contentsline {subsubsection}{\numberline {4.53.3.8}uigfx\_draw\_image()}{277}{subsubsection.4.53.3.8}%
+\contentsline {subsubsection}{\numberline {4.53.3.9}uigfx\_draw\_line()}{277}{subsubsection.4.53.3.9}%
+\contentsline {subsubsection}{\numberline {4.53.3.10}uigfx\_draw\_pixel()}{277}{subsubsection.4.53.3.10}%
+\contentsline {subsubsection}{\numberline {4.53.3.11}uigfx\_draw\_put\_char()}{277}{subsubsection.4.53.3.11}%
+\contentsline {subsubsection}{\numberline {4.53.3.12}uigfx\_draw\_rectangle()}{278}{subsubsection.4.53.3.12}%
+\contentsline {subsubsection}{\numberline {4.53.3.13}uigfx\_draw\_string()}{278}{subsubsection.4.53.3.13}%
+\contentsline {subsubsection}{\numberline {4.53.3.14}uigfx\_draw\_vline()}{278}{subsubsection.4.53.3.14}%
+\contentsline {subsubsection}{\numberline {4.53.3.15}uigfx\_init\_widget()}{278}{subsubsection.4.53.3.15}%
+\contentsline {subsubsection}{\numberline {4.53.3.16}uigfx\_select\_screen\_widget()}{279}{subsubsection.4.53.3.16}%
+\contentsline {subsubsection}{\numberline {4.53.3.17}uigfx\_set\_widget()}{279}{subsubsection.4.53.3.17}%
+\contentsline {subsubsection}{\numberline {4.53.3.18}uigfx\_string\_newline()}{279}{subsubsection.4.53.3.18}%
+\contentsline {subsection}{\numberline {4.53.4}Variable Documentation}{279}{subsection.4.53.4}%
+\contentsline {subsubsection}{\numberline {4.53.4.1}uigfx\_current\_widget}{279}{subsubsection.4.53.4.1}%
+\contentsline {subsubsection}{\numberline {4.53.4.2}uigfx\_screen\_widget}{279}{subsubsection.4.53.4.2}%
+\contentsline {section}{\numberline {4.54}myos/ui/uigfx/uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}font4x6.c File Reference}{279}{section.4.54}%
+\contentsline {subsection}{\numberline {4.54.1}Variable Documentation}{280}{subsection.4.54.1}%
+\contentsline {subsubsection}{\numberline {4.54.1.1}uigfx\_font4x6}{280}{subsubsection.4.54.1.1}%
+\contentsline {section}{\numberline {4.55}myos/ui/uigfx/uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}font4x6.h File Reference}{280}{section.4.55}%
+\contentsline {subsection}{\numberline {4.55.1}Variable Documentation}{280}{subsection.4.55.1}%
+\contentsline {subsubsection}{\numberline {4.55.1.1}uigfx\_font4x6}{281}{subsubsection.4.55.1.1}%
+\contentsline {section}{\numberline {4.56}myos/ui/uigfx/uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}font8x8\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c64.c File Reference}{281}{section.4.56}%
+\contentsline {subsection}{\numberline {4.56.1}Variable Documentation}{281}{subsection.4.56.1}%
+\contentsline {subsubsection}{\numberline {4.56.1.1}uigfx\_font8x8\_c64}{282}{subsubsection.4.56.1.1}%
+\contentsline {section}{\numberline {4.57}myos/ui/uigfx/uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}font8x8\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c64.h File Reference}{282}{section.4.57}%
+\contentsline {subsection}{\numberline {4.57.1}Variable Documentation}{282}{subsection.4.57.1}%
+\contentsline {subsubsection}{\numberline {4.57.1.1}uigfx\_font8x8\_c64}{283}{subsubsection.4.57.1.1}%
+\contentsline {section}{\numberline {4.58}myos/ui/uigfx/uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}font8x8\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vic.c File Reference}{283}{section.4.58}%
+\contentsline {subsection}{\numberline {4.58.1}Variable Documentation}{283}{subsection.4.58.1}%
+\contentsline {subsubsection}{\numberline {4.58.1.1}uigfx\_font8x8\_vic}{284}{subsubsection.4.58.1.1}%
+\contentsline {section}{\numberline {4.59}myos/ui/uigfx/uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}font8x8\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vic.h File Reference}{284}{section.4.59}%
+\contentsline {subsection}{\numberline {4.59.1}Variable Documentation}{284}{subsection.4.59.1}%
+\contentsline {subsubsection}{\numberline {4.59.1.1}uigfx\_font8x8\_vic}{285}{subsubsection.4.59.1.1}%
+\contentsline {section}{\numberline {4.60}myos/ui/uigfx/uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}win.c File Reference}{285}{section.4.60}%
+\contentsline {subsection}{\numberline {4.60.1}Function Documentation}{285}{subsection.4.60.1}%
+\contentsline {subsubsection}{\numberline {4.60.1.1}uigfx\_draw\_desktop\_wallpaper()}{286}{subsubsection.4.60.1.1}%
+\contentsline {subsubsection}{\numberline {4.60.1.2}uigfx\_draw\_window()}{286}{subsubsection.4.60.1.2}%
+\contentsline {subsubsection}{\numberline {4.60.1.3}uigfx\_init\_window()}{286}{subsubsection.4.60.1.3}%
+\contentsline {subsubsection}{\numberline {4.60.1.4}uigfx\_select\_window\_widget()}{287}{subsubsection.4.60.1.4}%
+\contentsline {section}{\numberline {4.61}myos/ui/uigfx/uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}win.h File Reference}{287}{section.4.61}%
+\contentsline {subsection}{\numberline {4.61.1}Function Documentation}{287}{subsection.4.61.1}%
+\contentsline {subsubsection}{\numberline {4.61.1.1}uigfx\_draw\_desktop\_wallpaper()}{287}{subsubsection.4.61.1.1}%
+\contentsline {subsubsection}{\numberline {4.61.1.2}uigfx\_draw\_window()}{288}{subsubsection.4.61.1.2}%
+\contentsline {subsubsection}{\numberline {4.61.1.3}uigfx\_get\_window\_widget()}{288}{subsubsection.4.61.1.3}%
+\contentsline {subsubsection}{\numberline {4.61.1.4}uigfx\_init\_window()}{288}{subsubsection.4.61.1.4}%
+\contentsline {section}{\numberline {4.62}myos/ui/uigfx/uigfx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}win\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}conf.h File Reference}{288}{section.4.62}%
+\contentsline {subsection}{\numberline {4.62.1}Macro Definition Documentation}{289}{subsection.4.62.1}%
+\contentsline {subsubsection}{\numberline {4.62.1.1}UIGFX\_COLOR\_BLACK}{289}{subsubsection.4.62.1.1}%
+\contentsline {subsubsection}{\numberline {4.62.1.2}UIGFX\_COLOR\_WHITE}{289}{subsubsection.4.62.1.2}%
+\contentsline {subsubsection}{\numberline {4.62.1.3}UIGFX\_WIN\_BORDER\_COLOR}{289}{subsubsection.4.62.1.3}%
+\contentsline {subsubsection}{\numberline {4.62.1.4}UIGFX\_WIN\_TITLE\_BG\_COLOR}{290}{subsubsection.4.62.1.4}%
+\contentsline {subsubsection}{\numberline {4.62.1.5}UIGFX\_WIN\_TITLE\_BORDER}{290}{subsubsection.4.62.1.5}%
+\contentsline {subsubsection}{\numberline {4.62.1.6}UIGFX\_WIN\_TITLE\_FONT}{290}{subsubsection.4.62.1.6}%
+\contentsline {subsubsection}{\numberline {4.62.1.7}UIGFX\_WIN\_TITLE\_FONT\_COLOR}{290}{subsubsection.4.62.1.7}%
+\contentsline {subsubsection}{\numberline {4.62.1.8}UIGFX\_WIN\_WIDGET\_BG\_COLOR}{290}{subsubsection.4.62.1.8}%
+\contentsline {section}{\numberline {4.63}myos/ui/uileds.c File Reference}{290}{section.4.63}%
+\contentsline {subsection}{\numberline {4.63.1}Function Documentation}{291}{subsection.4.63.1}%
+\contentsline {subsubsection}{\numberline {4.63.1.1}uileds\_handler()}{291}{subsubsection.4.63.1.1}%
+\contentsline {subsubsection}{\numberline {4.63.1.2}uileds\_set\_pattern()}{291}{subsubsection.4.63.1.2}%
+\contentsline {subsubsection}{\numberline {4.63.1.3}uileds\_sync()}{291}{subsubsection.4.63.1.3}%
+\contentsline {section}{\numberline {4.64}myos/ui/uileds.h File Reference}{292}{section.4.64}%
+\contentsline {subsection}{\numberline {4.64.1}Macro Definition Documentation}{293}{subsection.4.64.1}%
+\contentsline {subsubsection}{\numberline {4.64.1.1}EXTERN\_UILEDS\_LED}{293}{subsubsection.4.64.1.1}%
+\contentsline {subsubsection}{\numberline {4.64.1.2}EXTERN\_UILEDS\_PATTERN}{293}{subsubsection.4.64.1.2}%
+\contentsline {subsubsection}{\numberline {4.64.1.3}UILEDS\_COUNT}{293}{subsubsection.4.64.1.3}%
+\contentsline {subsubsection}{\numberline {4.64.1.4}UILEDS\_INV}{293}{subsubsection.4.64.1.4}%
+\contentsline {subsubsection}{\numberline {4.64.1.5}UILEDS\_LED}{293}{subsubsection.4.64.1.5}%
+\contentsline {subsubsection}{\numberline {4.64.1.6}UILEDS\_LEDS}{294}{subsubsection.4.64.1.6}%
+\contentsline {subsubsection}{\numberline {4.64.1.7}UILEDS\_ORIG}{294}{subsubsection.4.64.1.7}%
+\contentsline {subsubsection}{\numberline {4.64.1.8}UILEDS\_PATTERN}{294}{subsubsection.4.64.1.8}%
+\contentsline {subsubsection}{\numberline {4.64.1.9}UILEDS\_PATTERN\_BEGIN}{294}{subsubsection.4.64.1.9}%
+\contentsline {subsubsection}{\numberline {4.64.1.10}UILEDS\_PATTERN\_END}{294}{subsubsection.4.64.1.10}%
+\contentsline {subsubsection}{\numberline {4.64.1.11}UILEDS\_SET\_PATTERN}{295}{subsubsection.4.64.1.11}%
+\contentsline {subsubsection}{\numberline {4.64.1.12}UILEDS\_STATE}{295}{subsubsection.4.64.1.12}%
+\contentsline {subsubsection}{\numberline {4.64.1.13}UILEDS\_STATE\_OFF}{295}{subsubsection.4.64.1.13}%
+\contentsline {subsubsection}{\numberline {4.64.1.14}UILEDS\_STATE\_ON}{296}{subsubsection.4.64.1.14}%
+\contentsline {subsubsection}{\numberline {4.64.1.15}UILEDS\_SYNC}{296}{subsubsection.4.64.1.15}%
+\contentsline {subsubsection}{\numberline {4.64.1.16}ULEDS\_DISABLE\_LED}{296}{subsubsection.4.64.1.16}%
+\contentsline {subsection}{\numberline {4.64.2}Typedef Documentation}{296}{subsection.4.64.2}%
+\contentsline {subsubsection}{\numberline {4.64.2.1}uileds\_set\_t}{296}{subsubsection.4.64.2.1}%
+\contentsline {subsubsection}{\numberline {4.64.2.2}uileds\_t}{296}{subsubsection.4.64.2.2}%
+\contentsline {subsection}{\numberline {4.64.3}Function Documentation}{296}{subsection.4.64.3}%
+\contentsline {subsubsection}{\numberline {4.64.3.1}uileds\_handler()}{297}{subsubsection.4.64.3.1}%
+\contentsline {subsubsection}{\numberline {4.64.3.2}uileds\_set\_pattern()}{297}{subsubsection.4.64.3.2}%
+\contentsline {subsubsection}{\numberline {4.64.3.3}uileds\_sync()}{297}{subsubsection.4.64.3.3}%
+\contentsline {subsection}{\numberline {4.64.4}Variable Documentation}{298}{subsection.4.64.4}%
+\contentsline {subsubsection}{\numberline {4.64.4.1}uileds\_all\_leds}{298}{subsubsection.4.64.4.1}%
+\contentsline {subsubsection}{\numberline {4.64.4.2}uileds\_count}{298}{subsubsection.4.64.4.2}%
+\contentsline {section}{\numberline {4.65}myos/ui/uileds\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}patterns.c File Reference}{298}{section.4.65}%
+\contentsline {subsection}{\numberline {4.65.1}Variable Documentation}{298}{subsection.4.65.1}%
+\contentsline {subsubsection}{\numberline {4.65.1.1}uileds\_pattern\_double\_flash}{298}{subsubsection.4.65.1.1}%
+\contentsline {subsubsection}{\numberline {4.65.1.2}uileds\_pattern\_fast\_flashing}{299}{subsubsection.4.65.1.2}%
+\contentsline {subsubsection}{\numberline {4.65.1.3}uileds\_pattern\_heart\_beat}{299}{subsubsection.4.65.1.3}%
+\contentsline {subsubsection}{\numberline {4.65.1.4}uileds\_pattern\_medium\_flashing}{299}{subsubsection.4.65.1.4}%
+\contentsline {subsubsection}{\numberline {4.65.1.5}uileds\_pattern\_off}{299}{subsubsection.4.65.1.5}%
+\contentsline {subsubsection}{\numberline {4.65.1.6}uileds\_pattern\_on}{300}{subsubsection.4.65.1.6}%
+\contentsline {subsubsection}{\numberline {4.65.1.7}uileds\_pattern\_single\_flash}{300}{subsubsection.4.65.1.7}%
+\contentsline {subsubsection}{\numberline {4.65.1.8}uileds\_pattern\_slow\_flashing}{300}{subsubsection.4.65.1.8}%
+\contentsline {subsubsection}{\numberline {4.65.1.9}uileds\_pattern\_triple\_flash}{301}{subsubsection.4.65.1.9}%
+\contentsline {section}{\numberline {4.66}myos/ui/uileds\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}patterns.h File Reference}{301}{section.4.66}%
+\contentsline {subsection}{\numberline {4.66.1}Variable Documentation}{301}{subsection.4.66.1}%
+\contentsline {subsubsection}{\numberline {4.66.1.1}uileds\_pattern\_double\_flash}{301}{subsubsection.4.66.1.1}%
+\contentsline {subsubsection}{\numberline {4.66.1.2}uileds\_pattern\_fast\_flashing}{301}{subsubsection.4.66.1.2}%
+\contentsline {subsubsection}{\numberline {4.66.1.3}uileds\_pattern\_heart\_beat}{302}{subsubsection.4.66.1.3}%
+\contentsline {subsubsection}{\numberline {4.66.1.4}uileds\_pattern\_medium\_flashing}{302}{subsubsection.4.66.1.4}%
+\contentsline {subsubsection}{\numberline {4.66.1.5}uileds\_pattern\_off}{302}{subsubsection.4.66.1.5}%
+\contentsline {subsubsection}{\numberline {4.66.1.6}uileds\_pattern\_on}{302}{subsubsection.4.66.1.6}%
+\contentsline {subsubsection}{\numberline {4.66.1.7}uileds\_pattern\_single\_flash}{303}{subsubsection.4.66.1.7}%
+\contentsline {subsubsection}{\numberline {4.66.1.8}uileds\_pattern\_slow\_flashing}{303}{subsubsection.4.66.1.8}%
+\contentsline {subsubsection}{\numberline {4.66.1.9}uileds\_pattern\_triple\_flash}{303}{subsubsection.4.66.1.9}%
+\contentsline {section}{\numberline {4.67}myos/ui/uileds\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}process.c File Reference}{303}{section.4.67}%
+\contentsline {subsection}{\numberline {4.67.1}Function Documentation}{303}{subsection.4.67.1}%
+\contentsline {subsubsection}{\numberline {4.67.1.1}PROCESS()}{304}{subsubsection.4.67.1.1}%
+\contentsline {subsubsection}{\numberline {4.67.1.2}PROCESS\_THREAD()}{304}{subsubsection.4.67.1.2}%
+\contentsline {section}{\numberline {4.68}myos/ui/uileds\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}process.h File Reference}{304}{section.4.68}%
+\contentsline {subsection}{\numberline {4.68.1}Function Documentation}{305}{subsection.4.68.1}%
+\contentsline {subsubsection}{\numberline {4.68.1.1}PROCESS\_EXTERN()}{305}{subsubsection.4.68.1.1}%
+\contentsline {chapter}{Index}{307}{section*.189}%

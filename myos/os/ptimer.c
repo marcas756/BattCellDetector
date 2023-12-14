@@ -68,10 +68,9 @@ static void ptimer_next_stop_update(ptimer_t *ptimer)
 
 void ptimer_add_to_list(ptimer_t *ptimer)
 {
-   if ( !ptimer->running)
+   if ( !ptimer->running )
    {
       ptlist_push_front(&ptimer_running_list,ptimer);
-      ptimer->running = true;
 
 #if MYOSCONF_STATS
       if(++ptimer_list_size > myos_stats.ptlist_size_max)
@@ -79,9 +78,9 @@ void ptimer_add_to_list(ptimer_t *ptimer)
           myos_stats.ptlist_size_max = ptimer_list_size;
       }
 #endif
-
    }
 
+   ptimer->running = true;
    ptimer_next_stop_update(ptimer);
 }
 
@@ -89,12 +88,15 @@ void ptimer_remove_from_list(ptimer_t *ptimer)
 {
    if( ptimer->running )
    {
-      ptlist_erase(&ptimer_running_list,ptimer);
       ptimer->running = false;
+      ptlist_erase(&ptimer_running_list,ptimer);
+
 #if MYOSCONF_STATS
       ptimer_list_size--;
 #endif
    }
+
+
 }
 
 
@@ -141,6 +143,56 @@ PROCESS_THREAD(ptimer_process)
 
    PROCESS_END();
 }
+
+PROCESS(ptimer_process,ptimer_process);
+PROCESS_THREAD(ptimer_process)
+{
+   PROCESS_BEGIN();
+
+   ptlist_init(&ptimer_running_list);
+
+   while(1)
+   {
+      PROCESS_WAIT_EVENT(PROCESS_EVENT_POLL);
+      ptimer_pending = false;
+
+      ptimer_t *curr;
+
+      ptlist_foreach(&ptimer_running_list,curr)
+      {
+         if( ptimer_expired(curr) )
+         {
+
+#if MYOSCONF_STATS
+            ptimer_list_size--;
+#endif
+
+            if( curr->handler )
+            {
+              curr->handler((void*)(curr));
+            }
+
+            ptimer_remove_from_list(curr)
+
+
+            /* remove ptimer from list */
+            ptlist_erase(&ptimer_running_list,curr);
+            curr->running = false;
+
+
+
+
+         }
+         else
+         {
+            ptimer_next_stop_update(curr);
+         }
+      }
+   }
+
+   PROCESS_END();
+}
+
 
 
 void ptimer_start(ptimer_t* ptimer, timespan_t span, ptimer_handler_t handler)

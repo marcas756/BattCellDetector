@@ -1,0 +1,145 @@
+\doxysection{uigfx\+\_\+font4x6.\+c}
+\hypertarget{uigfx__font4x6_8c_source}{}\label{uigfx__font4x6_8c_source}\index{myos/ui/uigfx/uigfx\_font4x6.c@{myos/ui/uigfx/uigfx\_font4x6.c}}
+\mbox{\hyperlink{uigfx__font4x6_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uigfx__font4x6_8h}{uigfx\_font4x6.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00032}00032\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ uigfx\_font4x6\_data\ [96]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00033}00033\ \ 0x0000\ ,\ \textcolor{comment}{/*\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00034}00034\ \ 0x4124\ ,\ \textcolor{comment}{/*\ !\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00035}00035\ \ 0x005a\ ,\ \textcolor{comment}{/*\ "{}\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00036}00036\ \ 0xbefa\ ,\ \textcolor{comment}{/*\ \#\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00037}00037\ \ 0x7bbc\ ,\ \textcolor{comment}{/*\ \$\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00038}00038\ \ 0xa54a\ ,\ \textcolor{comment}{/*\ \%\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00039}00039\ \ 0x7554\ ,\ \textcolor{comment}{/*\ \&\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00040}00040\ \ 0x0024\ ,\ \textcolor{comment}{/*\ '\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00041}00041\ \ 0x8928\ ,\ \textcolor{comment}{/*\ (\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00042}00042\ \ 0x5244\ ,\ \textcolor{comment}{/*\ )\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00043}00043\ \ 0x1550\ ,\ \textcolor{comment}{/*\ *\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00044}00044\ \ 0x0ba0\ ,\ \textcolor{comment}{/*\ +\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00045}00045\ \ 0x2800\ ,\ \textcolor{comment}{/*\ ,\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00046}00046\ \ 0x0380\ ,\ \textcolor{comment}{/*\ -\/\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00047}00047\ \ 0x4000\ ,\ \textcolor{comment}{/*\ .\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00048}00048\ \ 0x2548\ ,\ \textcolor{comment}{/*\ /\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00049}00049\ \ 0x76dc\ ,\ \textcolor{comment}{/*\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00050}00050\ \ 0xe934\ ,\ \textcolor{comment}{/*\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00051}00051\ \ 0xe746\ ,\ \textcolor{comment}{/*\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00052}00052\ \ 0x7146\ ,\ \textcolor{comment}{/*\ 3\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00053}00053\ \ 0x9e92\ ,\ \textcolor{comment}{/*\ 4\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00054}00054\ \ 0x739e\ ,\ \textcolor{comment}{/*\ 5\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00055}00055\ \ 0x779c\ ,\ \textcolor{comment}{/*\ 6\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00056}00056\ \ 0x254e\ ,\ \textcolor{comment}{/*\ 7\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00057}00057\ \ 0x77dc\ ,\ \textcolor{comment}{/*\ 8\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00058}00058\ \ 0x73dc\ ,\ \textcolor{comment}{/*\ 9\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00059}00059\ \ 0x0820\ ,\ \textcolor{comment}{/*\ :\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00060}00060\ \ 0x2820\ ,\ \textcolor{comment}{/*\ ;\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00061}00061\ \ 0x88a8\ ,\ \textcolor{comment}{/*\ <\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00062}00062\ \ 0x1c70\ ,\ \textcolor{comment}{/*\ =\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00063}00063\ \ 0x2a22\ ,\ \textcolor{comment}{/*\ >\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00064}00064\ \ 0x414e\ ,\ \textcolor{comment}{/*\ ?\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00065}00065\ \ 0xc6d4\ ,\ \textcolor{comment}{/*\ @\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00066}00066\ \ 0xb7dc\ ,\ \textcolor{comment}{/*\ A\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00067}00067\ \ 0x75dc\ ,\ \textcolor{comment}{/*\ B\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00068}00068\ \ 0xc49c\ ,\ \textcolor{comment}{/*\ C\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00069}00069\ \ 0x76d6\ ,\ \textcolor{comment}{/*\ D\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00070}00070\ \ 0xe79c\ ,\ \textcolor{comment}{/*\ E\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00071}00071\ \ 0x279c\ ,\ \textcolor{comment}{/*\ F\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00072}00072\ \ 0xd69c\ ,\ \textcolor{comment}{/*\ G\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00073}00073\ \ 0xb7da\ ,\ \textcolor{comment}{/*\ H\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00074}00074\ \ 0xe92e\ ,\ \textcolor{comment}{/*\ I\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00075}00075\ \ 0x564c\ ,\ \textcolor{comment}{/*\ J\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00076}00076\ \ 0xb5da\ ,\ \textcolor{comment}{/*\ K\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00077}00077\ \ 0xe492\ ,\ \textcolor{comment}{/*\ L\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00078}00078\ \ 0xb6fa\ ,\ \textcolor{comment}{/*\ M\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00079}00079\ \ 0xb6d6\ ,\ \textcolor{comment}{/*\ N\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00080}00080\ \ 0x56d4\ ,\ \textcolor{comment}{/*\ O\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00081}00081\ \ 0x27d6\ ,\ \textcolor{comment}{/*\ P\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00082}00082\ \ 0xdedc\ ,\ \textcolor{comment}{/*\ Q\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00083}00083\ \ 0xb5dc\ ,\ \textcolor{comment}{/*\ R\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00084}00084\ \ 0x711c\ ,\ \textcolor{comment}{/*\ S\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00085}00085\ \ 0x492e\ ,\ \textcolor{comment}{/*\ T\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00086}00086\ \ 0xd6da\ ,\ \textcolor{comment}{/*\ U\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00087}00087\ \ 0x56da\ ,\ \textcolor{comment}{/*\ V\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00088}00088\ \ 0xbeda\ ,\ \textcolor{comment}{/*\ W\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00089}00089\ \ 0xb55a\ ,\ \textcolor{comment}{/*\ X\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00090}00090\ \ 0x495a\ ,\ \textcolor{comment}{/*\ Y\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00091}00091\ \ 0xe54e\ ,\ \textcolor{comment}{/*\ Z\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00092}00092\ \ 0xc92c\ ,\ \textcolor{comment}{/*\ [\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00093}00093\ \ 0x9112\ ,\ \textcolor{comment}{/*\ \(\backslash\)\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00094}00094\ \ 0xd24c\ ,\ \textcolor{comment}{/*\ ]\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00095}00095\ \ 0x0054\ ,\ \textcolor{comment}{/*\ \string^\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00096}00096\ \ 0xe000\ ,\ \textcolor{comment}{/*\ \_\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00097}00097\ \ 0x0044\ ,\ \textcolor{comment}{/*\ \`{}\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00098}00098\ \ 0xd6e0\ ,\ \textcolor{comment}{/*\ a\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00099}00099\ \ 0x76b2\ ,\ \textcolor{comment}{/*\ b\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00100}00100\ \ 0xc4e0\ ,\ \textcolor{comment}{/*\ c\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00101}00101\ \ 0xd6e8\ ,\ \textcolor{comment}{/*\ d\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00102}00102\ \ 0xcee0\ ,\ \textcolor{comment}{/*\ e\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00103}00103\ \ 0x2cd4\ ,\ \textcolor{comment}{/*\ f\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00104}00104\ \ 0x7355\ ,\ \textcolor{comment}{/*\ g\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00105}00105\ \ 0xb592\ ,\ \textcolor{comment}{/*\ h\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00106}00106\ \ 0x8904\ ,\ \textcolor{comment}{/*\ i\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00107}00107\ \ 0x2905\ ,\ \textcolor{comment}{/*\ j\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00108}00108\ \ 0xb5d2\ ,\ \textcolor{comment}{/*\ k\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00109}00109\ \ 0x8924\ ,\ \textcolor{comment}{/*\ l\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00110}00110\ \ 0xb7d0\ ,\ \textcolor{comment}{/*\ m\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00111}00111\ \ 0xb6b0\ ,\ \textcolor{comment}{/*\ n\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00112}00112\ \ 0x56a0\ ,\ \textcolor{comment}{/*\ o\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00113}00113\ \ 0x2ed7\ ,\ \textcolor{comment}{/*\ p\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00114}00114\ \ 0x9add\ ,\ \textcolor{comment}{/*\ q\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00115}00115\ \ 0x25d0\ ,\ \textcolor{comment}{/*\ r\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00116}00116\ \ 0x71e0\ ,\ \textcolor{comment}{/*\ s\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00117}00117\ \ 0xc4b2\ ,\ \textcolor{comment}{/*\ t\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00118}00118\ \ 0xd6d0\ ,\ \textcolor{comment}{/*\ u\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00119}00119\ \ 0x76d0\ ,\ \textcolor{comment}{/*\ v\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00120}00120\ \ 0xbed0\ ,\ \textcolor{comment}{/*\ w\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00121}00121\ \ 0xb550\ ,\ \textcolor{comment}{/*\ x\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00122}00122\ \ 0x535b\ ,\ \textcolor{comment}{/*\ y\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00123}00123\ \ 0xea70\ ,\ \textcolor{comment}{/*\ z\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00124}00124\ \ 0xc9ac\ ,\ \textcolor{comment}{/*\ \{\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00125}00125\ \ 0x4924\ ,\ \textcolor{comment}{/*\ |\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00126}00126\ \ 0x6b26\ ,\ \textcolor{comment}{/*\ \}\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00127}00127\ \ 0x0054\ ,\ \textcolor{comment}{/*\ \string~\ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00128}00128\ \ 0x1ed4\ ,\ \textcolor{comment}{/*\ \ */}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00129}00129\ \};}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00132}00132\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ uigfx\_draw\_char\_font4x6(uint8\_t*\ buf,\ int16\_t\ x0,\ int16\_t\ y0,\ \textcolor{keywordtype}{char}\ ch,\ \mbox{\hyperlink{uigfx_8h_a047ba55b7133e503366f7c4c04f125a9}{uigfx\_color\_t}}\ c)}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00133}00133\ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00134}00134\ \ \ \ \ uint8\_t\ x,y;}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00135}00135\ \ \ \ \ uint16\_t\ chdat\ =\ uigfx\_font4x6\_data[ch-\/32];}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{if}(chdat\&1)}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00139}00139\ \ \ \ \ \ \ \ \ y0++;}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00142}00142\ \ \ \ \ chdat>>=1;}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{for}(y=0;\ y\ <\ 5;\ y++)}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00145}00145\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(x=0;\ x\ <\ 3;\ x++)}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00147}00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(chdat\&1)}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{uigfx_8c_aff0b3b5448dd44813ca33808454b0e19}{uigfx\_draw\_pixel}}(buf,x0+x,y0+y,c);}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ chdat>>=1;}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00155}00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00156}00156\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00157}00157\ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00161}\mbox{\hyperlink{uigfx__font4x6_8c_a500cc06a3b23e28deaf16d7bf71602f7}{00161}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structuigfx__font__t}{uigfx\_font\_t}}\ \mbox{\hyperlink{uigfx__font4x6_8c_a500cc06a3b23e28deaf16d7bf71602f7}{uigfx\_font4x6}}\ =\ \{4,6,uigfx\_font4x6\_data,uigfx\_draw\_char\_font4x6\};}
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{uigfx__font4x6_8c_source_l00167}00167\ }
+
+\end{DoxyCode}

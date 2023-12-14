@@ -1,0 +1,108 @@
+\hypertarget{timer_8c}{}\doxysection{myos/os/timer.c File Reference}
+\label{timer_8c}\index{myos/os/timer.c@{myos/os/timer.c}}
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\newline
+Include dependency graph for timer.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{timer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{timer_8c_afbd21475c9c43c3bb3ce0f65ac815d05}{timer\+\_\+start}} (\mbox{\hyperlink{structmyos__timer__t}{myos\+\_\+timer\+\_\+t}} $\ast$timer, \mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\+\_\+t}} span)
+\begin{DoxyCompactList}\small\item\em Starts a timer using a time span. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{timer_8c_a6f7dd672c7186013db41aedeeae07e38}{timer\+\_\+restart}} (\mbox{\hyperlink{structmyos__timer__t}{myos\+\_\+timer\+\_\+t}} $\ast$timer)
+\begin{DoxyCompactList}\small\item\em Restarts a previously set timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{timer_8c_a19f3e0fc01952c4f082a7f5c65dd1574}{timer\+\_\+reset}} (\mbox{\hyperlink{structmyos__timer__t}{myos\+\_\+timer\+\_\+t}} $\ast$timer)
+\begin{DoxyCompactList}\small\item\em Resets a previously set timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{timer_8c_a19f3e0fc01952c4f082a7f5c65dd1574}\label{timer_8c_a19f3e0fc01952c4f082a7f5c65dd1574}} 
+\index{timer.c@{timer.c}!timer\_reset@{timer\_reset}}
+\index{timer\_reset@{timer\_reset}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{timer\_reset()}{timer\_reset()}}
+{\footnotesize\ttfamily void timer\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmyos__timer__t}{myos\+\_\+timer\+\_\+t}} $\ast$}]{timer }\end{DoxyParamCaption})}
+
+
+
+Resets a previously set timer. 
+
+Adds the currently set timespan to the timers start time.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em timer} & Timer instance to reset \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 72 of file timer.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{timer_8c_a19f3e0fc01952c4f082a7f5c65dd1574_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{timer_8c_a6f7dd672c7186013db41aedeeae07e38}\label{timer_8c_a6f7dd672c7186013db41aedeeae07e38}} 
+\index{timer.c@{timer.c}!timer\_restart@{timer\_restart}}
+\index{timer\_restart@{timer\_restart}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{timer\_restart()}{timer\_restart()}}
+{\footnotesize\ttfamily void timer\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmyos__timer__t}{myos\+\_\+timer\+\_\+t}} $\ast$}]{timer }\end{DoxyParamCaption})}
+
+
+
+Restarts a previously set timer. 
+
+Restarts a previously set timer. Be aware of that the timer must have been set properly before, otherwise behaviour is undefined.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em timer} & Timer instance to restart \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file timer.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{timer_8c_a6f7dd672c7186013db41aedeeae07e38_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{timer_8c_afbd21475c9c43c3bb3ce0f65ac815d05}\label{timer_8c_afbd21475c9c43c3bb3ce0f65ac815d05}} 
+\index{timer.c@{timer.c}!timer\_start@{timer\_start}}
+\index{timer\_start@{timer\_start}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{timer\_start()}{timer\_start()}}
+{\footnotesize\ttfamily void timer\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmyos__timer__t}{myos\+\_\+timer\+\_\+t}} $\ast$}]{timer,  }\item[{\mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\+\_\+t}}}]{span }\end{DoxyParamCaption})}
+
+
+
+Starts a timer using a time span. 
+
+Timer will expire as soon as the time span elapsed. If the timer is running yet, the timer gets reinitialized with the new parameters provided. Any information about the previous timer setting gets lost.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em timer} & Timer instance to set \\
+\hline
+\mbox{\texttt{ in}}  & {\em span} & Time span to wait to elapse \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file timer.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timer_8c_afbd21475c9c43c3bb3ce0f65ac815d05_icgraph}
+\end{center}
+\end{figure}

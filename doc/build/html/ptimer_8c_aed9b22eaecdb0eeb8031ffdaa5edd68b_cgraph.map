@@ -1,0 +1,5 @@
+<map id="ptimer_reset" name="ptimer_reset">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,111,57"/>
+<area shape="rect" id="node2" href="$ptimer_8c.html#af769ed90fe1ce08e49b0c7061fb0e1c5" title=" " alt="" coords="159,5,301,32"/>
+<area shape="rect" id="node3" href="$timer_8c.html#a19f3e0fc01952c4f082a7f5c65dd1574" title="Resets a previously set timer." alt="" coords="181,56,279,83"/>
+</map>

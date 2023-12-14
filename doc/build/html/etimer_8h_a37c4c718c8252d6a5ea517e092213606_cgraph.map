@@ -1,0 +1,8 @@
+<map id="etimer_start" name="etimer_start">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,108,57"/>
+<area shape="rect" id="node2" href="$etimer_8c.html#a9ef455dfcf0940f07b1ff204fadcebe0" title=" " alt="" coords="156,5,335,32"/>
+<area shape="rect" id="node4" href="$ptimer_8c.html#a30a59e9a36c9f33961cd627e09bc953b" title=" " alt="" coords="194,56,297,83"/>
+<area shape="rect" id="node3" href="$etimer_8c.html#ab7764074cac76b87f9a33f101c65367d" title=" " alt="" coords="383,5,551,32"/>
+<area shape="rect" id="node5" href="$ptimer_8c.html#af769ed90fe1ce08e49b0c7061fb0e1c5" title=" " alt="" coords="395,56,538,83"/>
+<area shape="rect" id="node6" href="$timer_8c.html#afbd21475c9c43c3bb3ce0f65ac815d05" title="Starts a timer using a time span." alt="" coords="419,107,514,133"/>
+</map>

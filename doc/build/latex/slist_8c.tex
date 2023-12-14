@@ -1,0 +1,260 @@
+\hypertarget{slist_8c}{}\doxysection{myos/lib/slist.c File Reference}
+\label{slist_8c}\index{myos/lib/slist.c@{myos/lib/slist.c}}
+
+
+Circular singly linked list.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}slist.\+h\char`\"{}}\newline
+Include dependency graph for slist.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{slist_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structslist__node__t}{slist\+\_\+node\+\_\+t}} $\ast$ \mbox{\hyperlink{slist_8c_a50bb2ab18efd8562fbc4882346d74f2c}{slist\+\_\+find}} (\mbox{\hyperlink{slist_8h_ac626c3ba7de6d820620343dfc50fd279}{slist\+\_\+t}} $\ast$slist, void $\ast$node)
+\begin{DoxyCompactList}\small\item\em Searches for a specific node in a circular singly linked list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structslist__node__t}{slist\+\_\+node\+\_\+t}} $\ast$ \mbox{\hyperlink{slist_8c_a41421643834ad4e06e0d41811c105221}{slist\+\_\+back}} (\mbox{\hyperlink{slist_8h_ac626c3ba7de6d820620343dfc50fd279}{slist\+\_\+t}} $\ast$slist)
+\begin{DoxyCompactList}\small\item\em Returns the last node in a circular singly linked list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structslist__node__t}{slist\+\_\+node\+\_\+t}} $\ast$ \mbox{\hyperlink{slist_8c_ab2b4d20ae442d1ad98748fafae052c32}{slist\+\_\+prev\+\_\+prev}} (\mbox{\hyperlink{slist_8h_ac626c3ba7de6d820620343dfc50fd279}{slist\+\_\+t}} $\ast$slist, void $\ast$node)
+\begin{DoxyCompactList}\small\item\em Finds the node two steps behind a specified node in a circular singly linked list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structslist__node__t}{slist\+\_\+node\+\_\+t}} $\ast$ \mbox{\hyperlink{slist_8c_ac3af93396add2d021f0d46add5282a5c}{slist\+\_\+prev}} (\mbox{\hyperlink{slist_8h_ac626c3ba7de6d820620343dfc50fd279}{slist\+\_\+t}} $\ast$slist, void $\ast$node)
+\begin{DoxyCompactList}\small\item\em Finds the previous node in a circular singly linked list. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{slist_8c_a382fcc84d290b85188e910d4d65b3e13}{slist\+\_\+size}} (\mbox{\hyperlink{slist_8h_ac626c3ba7de6d820620343dfc50fd279}{slist\+\_\+t}} $\ast$slist)
+\begin{DoxyCompactList}\small\item\em Counts the number of nodes in a circular singly linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Circular singly linked list. 
+
+In computer science, a linked list is a linear collection of data elements, whose order is not given by their physical placement in memory. Instead, each element points to the next. It is a data structure consisting of a collection of nodes which together represent a sequence. In its most basic form, each node contains\+: data, and a reference (in other words, a link) to the next node in the sequence. This structure allows for efficient insertion or removal of elements from any position in the sequence during iteration. \mbox{[}\href{https://en.wikipedia.org/wiki/Linked_list}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Linked\+\_\+list}}\mbox{]}
+
+Singly linked lists contain nodes which have a data field as well as \textquotesingle{}next\textquotesingle{} field, which points to the next node in line of nodes. Operations that can be performed on singly linked lists include insertion, deletion and traversal. \mbox{[}\href{https://en.wikipedia.org/wiki/Linked_list\#Singly_linked_list}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Linked\+\_\+list\#\+Singly\+\_\+linked\+\_\+list}}\mbox{]}
+
+In the last node of a list, the link field often contains a null reference, a special value is used to indicate the lack of further nodes. A less common convention is to make it point to the first node of the list; in that case, the list is said to be \textquotesingle{}circular\textquotesingle{} or \textquotesingle{}circularly linked\textquotesingle{}; otherwise, it is said to be \textquotesingle{}open\textquotesingle{} or \textquotesingle{}linear\textquotesingle{}. It is a list where the last pointer points to the first node. \mbox{[}\href{https://en.wikipedia.org/wiki/Linked_list\#Circular_linked_list}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Linked\+\_\+list\#\+Circular\+\_\+linked\+\_\+list}}\mbox{]} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{slist_8c_a41421643834ad4e06e0d41811c105221}\label{slist_8c_a41421643834ad4e06e0d41811c105221}} 
+\index{slist.c@{slist.c}!slist\_back@{slist\_back}}
+\index{slist\_back@{slist\_back}!slist.c@{slist.c}}
+\doxysubsubsection{\texorpdfstring{slist\_back()}{slist\_back()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structslist__node__t}{slist\+\_\+node\+\_\+t}}$\ast$ slist\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{slist_8h_ac626c3ba7de6d820620343dfc50fd279}{slist\+\_\+t}} $\ast$}]{slist }\end{DoxyParamCaption})}
+
+
+
+Returns the last node in a circular singly linked list. 
+
+This function searches for the last node in a circular singly linked list. It starts from the end of the list, which is the head node itself (represented by {\ttfamily \mbox{\hyperlink{slist_8h_a4a55ae00593db3acc4726b9cf6bdfe98}{slist\+\_\+end(slist)}}}), and iterates through the list until it finds a node whose \textquotesingle{}next\textquotesingle{} pointer points back to the head node. This node is identified as the last node in the list.
+
+This approach is necessary because the list is singly linked and does not have direct pointers to previous nodes. The function is useful for operations that require access to the last element of the list, such as appending elements or performing certain modifications.
+
+\begin{DoxyNote}{Note}
+The function assumes that the list is properly initialized. If the list is empty, the function will return the head node itself. The function has linear time complexity, as it may need to traverse the entire list to find the last node.
+\end{DoxyNote}
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{slist_8h_aeadaebf6d4d904d4b7244643352f4850}{slist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_node\_t}} *last\_node = \mbox{\hyperlink{slist_8c_a41421643834ad4e06e0d41811c105221}{slist\_back}}(\&mylist);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (last\_node != \&mylist) \{}
+\DoxyCodeLine{    \textcolor{comment}{// The list is not empty, and 'last\_node' is the last node in the list}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em slist} & A pointer to the head of the circular singly linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the last node in the list, or the head node itself if the list is empty. 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file slist.\+c.
+
+\mbox{\Hypertarget{slist_8c_a50bb2ab18efd8562fbc4882346d74f2c}\label{slist_8c_a50bb2ab18efd8562fbc4882346d74f2c}} 
+\index{slist.c@{slist.c}!slist\_find@{slist\_find}}
+\index{slist\_find@{slist\_find}!slist.c@{slist.c}}
+\doxysubsubsection{\texorpdfstring{slist\_find()}{slist\_find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structslist__node__t}{slist\+\_\+node\+\_\+t}}$\ast$ slist\+\_\+find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{slist_8h_ac626c3ba7de6d820620343dfc50fd279}{slist\+\_\+t}} $\ast$}]{slist,  }\item[{void $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Searches for a specific node in a circular singly linked list. 
+
+This function iterates through the circular singly linked list to find a specified node ({\ttfamily node}). The search is conducted by comparing each node\textquotesingle{}s address in the list with the address of {\ttfamily node}. If the specified node is found in the list, the function returns a pointer to that node; otherwise, it returns NULL.
+
+The search uses the {\ttfamily slist\+\_\+foreach} macro to traverse each node in the list. This function is useful for verifying whether a specific node is present in the list and for operations that depend on locating a particular node within the list.
+
+\begin{DoxyNote}{Note}
+The function runs in linear time complexity with respect to the number of elements in the list. It is important to ensure that the list is properly initialized before using this function.
+\end{DoxyNote}
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{slist_8h_aeadaebf6d4d904d4b7244643352f4850}{slist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_node\_t}} *search\_node = create\_node(data); \textcolor{comment}{// Assume create\_node allocates and initializes a new node}}
+\DoxyCodeLine{\mbox{\hyperlink{slist_8h_a08aa73f25c13159c8f4774d2c5d77262}{slist\_push\_back}}(\&mylist, search\_node);}
+\DoxyCodeLine{\textcolor{comment}{// Now search for the node}}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_node\_t}} *found\_node = \mbox{\hyperlink{slist_8c_a50bb2ab18efd8562fbc4882346d74f2c}{slist\_find}}(\&mylist, search\_node);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (found\_node) \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Node found in the list\(\backslash\)n"{}});}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Node not found in the list\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em slist} & A pointer to the head of the circular singly linked list. \\
+\hline
+{\em node} & The node to search for in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the node if it exists in the list, NULL otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file slist.\+c.
+
+\mbox{\Hypertarget{slist_8c_ac3af93396add2d021f0d46add5282a5c}\label{slist_8c_ac3af93396add2d021f0d46add5282a5c}} 
+\index{slist.c@{slist.c}!slist\_prev@{slist\_prev}}
+\index{slist\_prev@{slist\_prev}!slist.c@{slist.c}}
+\doxysubsubsection{\texorpdfstring{slist\_prev()}{slist\_prev()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structslist__node__t}{slist\+\_\+node\+\_\+t}}$\ast$ slist\+\_\+prev (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{slist_8h_ac626c3ba7de6d820620343dfc50fd279}{slist\+\_\+t}} $\ast$}]{slist,  }\item[{void $\ast$}]{existing\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Finds the previous node in a circular singly linked list. 
+
+This function searches for the node that precedes a specified node ({\ttfamily node}) in a circular singly linked list. Since the list is singly linked, the function traverses the list starting from the specified node and continues until it loops back to the same node. The node immediately before this loop-\/back is the predecessor of the given node.
+
+This traversal is necessary due to the singly linked nature of the list, as there are no direct pointers to previous nodes. The function is useful for operations that require knowledge of a node\textquotesingle{}s predecessor, such as certain insertion or deletion operations.
+
+\begin{DoxyNote}{Note}
+The function assumes that both the list and the node are properly initialized. If the node is not part of the list, the behavior is undefined. This function has a linear time complexity with respect to the number of elements in the list.
+\end{DoxyNote}
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{slist_8h_aeadaebf6d4d904d4b7244643352f4850}{slist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_node\_t}} *node = find\_node(mylist, some\_criteria); \textcolor{comment}{// Assume find\_node returns a valid node}}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_node\_t}} *prev\_node = \mbox{\hyperlink{slist_8c_ac3af93396add2d021f0d46add5282a5c}{slist\_prev}}(\&mylist, node);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (prev\_node) \{}
+\DoxyCodeLine{    \textcolor{comment}{// 'prev\_node' is the predecessor of 'node'}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em slist} & A pointer to the head of the circular singly linked list. \\
+\hline
+{\em node} & A pointer to the node whose predecessor is to be found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the predecessor of the specified node, or NULL if the node is the head of the list. 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file slist.\+c.
+
+\mbox{\Hypertarget{slist_8c_ab2b4d20ae442d1ad98748fafae052c32}\label{slist_8c_ab2b4d20ae442d1ad98748fafae052c32}} 
+\index{slist.c@{slist.c}!slist\_prev\_prev@{slist\_prev\_prev}}
+\index{slist\_prev\_prev@{slist\_prev\_prev}!slist.c@{slist.c}}
+\doxysubsubsection{\texorpdfstring{slist\_prev\_prev()}{slist\_prev\_prev()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structslist__node__t}{slist\+\_\+node\+\_\+t}}$\ast$ slist\+\_\+prev\+\_\+prev (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{slist_8h_ac626c3ba7de6d820620343dfc50fd279}{slist\+\_\+t}} $\ast$}]{slist,  }\item[{void $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Finds the node two steps behind a specified node in a circular singly linked list. 
+
+This function searches for the node that is two positions before a specified node ({\ttfamily node}) in a circular singly linked list. It traverses the list, checking for the node whose \textquotesingle{}next\textquotesingle{} node\textquotesingle{}s \textquotesingle{}next\textquotesingle{} pointer equals the specified node. If the specified node is at the beginning of the list, or the list does not contain enough elements, the function returns the list node itself, which is a well-\/defined behavior for this list structure.
+
+This function is useful in operations where the node two steps behind a given node needs to be identified, such as certain deletion operations. Due to the singly linked nature of the list, the function iterates through the list to find the appropriate node.
+
+\begin{DoxyNote}{Note}
+This function has a linear time complexity with respect to the number of elements in the list. It is important to ensure that the list is properly initialized and the node is a part of the list.
+\end{DoxyNote}
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{slist_8h_aeadaebf6d4d904d4b7244643352f4850}{slist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_node\_t}} *node = find\_node(mylist, some\_criteria); \textcolor{comment}{// Assume find\_node returns a valid node}}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_node\_t}} *prev\_prev\_node = \mbox{\hyperlink{slist_8c_ab2b4d20ae442d1ad98748fafae052c32}{slist\_prev\_prev}}(\&mylist, node);}
+\DoxyCodeLine{\textcolor{comment}{// 'prev\_prev\_node' is two nodes behind 'node', or the list node itself if not enough elements}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em slist} & A pointer to the head of the circular singly linked list. \\
+\hline
+{\em node} & A pointer to the node whose two-\/step predecessor is to be found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the node two positions before the specified node, or the list node itself if such a node does not exist. 
+\end{DoxyReturn}
+
+
+Definition at line 85 of file slist.\+c.
+
+\mbox{\Hypertarget{slist_8c_a382fcc84d290b85188e910d4d65b3e13}\label{slist_8c_a382fcc84d290b85188e910d4d65b3e13}} 
+\index{slist.c@{slist.c}!slist\_size@{slist\_size}}
+\index{slist\_size@{slist\_size}!slist.c@{slist.c}}
+\doxysubsubsection{\texorpdfstring{slist\_size()}{slist\_size()}}
+{\footnotesize\ttfamily size\+\_\+t slist\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{slist_8h_ac626c3ba7de6d820620343dfc50fd279}{slist\+\_\+t}} $\ast$}]{slist }\end{DoxyParamCaption})}
+
+
+
+Counts the number of nodes in a circular singly linked list. 
+
+This function calculates and returns the number of elements (nodes) present in a circular singly linked list, excluding the head node itself. It traverses the list starting from the first element after the head node and counts each node until it reaches the head node again.
+
+The traversal makes use of the {\ttfamily slist\+\_\+foreach} macro, which iterates over each node in the list. The function is useful for determining the size of the list for various operations such as allocation, serialization, or applying algorithms that depend on the number of elements.
+
+\begin{DoxyNote}{Note}
+The function assumes that the list is properly initialized. An uninitialized or improperly formed list might lead to undefined behavior. The function runs in linear time complexity, as it traverses each element of the list.
+\end{DoxyNote}
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structslist__node__t}{slist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{slist_8h_aeadaebf6d4d904d4b7244643352f4850}{slist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t} list\_size = \mbox{\hyperlink{slist_8c_a382fcc84d290b85188e910d4d65b3e13}{slist\_size}}(\&mylist);}
+\DoxyCodeLine{printf(\textcolor{stringliteral}{"{}List contains \%zu elements\(\backslash\)n"{}}, list\_size);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em slist} & A pointer to the head of the circular singly linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements in the list, excluding the head node itself. 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file slist.\+c.
+

@@ -1,7 +1,4 @@
-/*! \copyright
- 
-   https://opensource.org/license/mit/
-
+/*
    Copyright 2013-2023 Marco Bacchi <marco@bacchi.at>
    
    Permission is hereby granted, free of charge, to any person

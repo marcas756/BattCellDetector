@@ -1,0 +1,54 @@
+\hypertarget{hash_8h}{}\doxysection{myos/lib/hash.h File Reference}
+\label{hash_8h}\index{myos/lib/hash.h@{myos/lib/hash.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for hash.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{hash_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{hash_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{hash_8h_a773b4fec79e80ede41fcabadc7115cfa}{hash\+\_\+sdbm\+\_\+acc}}(hash,  byte)~ (byte + (hash $<$$<$ 6) + (hash $<$$<$ 16) -\/ hash)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{hash_8h_a4141f259cd5f1fb8e3311912aa680906}{hash\+\_\+sdbm}} (uint32\+\_\+t seed, void $\ast$data, size\+\_\+t size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{hash_8h_a773b4fec79e80ede41fcabadc7115cfa}\label{hash_8h_a773b4fec79e80ede41fcabadc7115cfa}} 
+\index{hash.h@{hash.h}!hash\_sdbm\_acc@{hash\_sdbm\_acc}}
+\index{hash\_sdbm\_acc@{hash\_sdbm\_acc}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{hash\_sdbm\_acc}{hash\_sdbm\_acc}}
+{\footnotesize\ttfamily \#define hash\+\_\+sdbm\+\_\+acc(\begin{DoxyParamCaption}\item[{}]{hash,  }\item[{}]{byte }\end{DoxyParamCaption})~ (byte + (hash $<$$<$ 6) + (hash $<$$<$ 16) -\/ hash)}
+
+
+
+Definition at line 18 of file hash.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hash_8h_a4141f259cd5f1fb8e3311912aa680906}\label{hash_8h_a4141f259cd5f1fb8e3311912aa680906}} 
+\index{hash.h@{hash.h}!hash\_sdbm@{hash\_sdbm}}
+\index{hash\_sdbm@{hash\_sdbm}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{hash\_sdbm()}{hash\_sdbm()}}
+{\footnotesize\ttfamily uint32\+\_\+t hash\+\_\+sdbm (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed,  }\item[{void $\ast$}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file hash.\+c.
+

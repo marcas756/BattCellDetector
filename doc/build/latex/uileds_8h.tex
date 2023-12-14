@@ -1,0 +1,360 @@
+\hypertarget{uileds_8h}{}\doxysection{myos/ui/uileds.h File Reference}
+\label{uileds_8h}\index{myos/ui/uileds.h@{myos/ui/uileds.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for uileds.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{uileds_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{uileds_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{uileds_8h_a5097464f1cbca301fe9b011643890812}{UILEDS\+\_\+\+STATE\+\_\+\+OFF}}~0
+\item 
+\#define \mbox{\hyperlink{uileds_8h_ad6e57384a29e434f33121c3ecfbcc4c9}{UILEDS\+\_\+\+STATE\+\_\+\+ON}}~1
+\item 
+\#define \mbox{\hyperlink{uileds_8h_a8f39165b7a1540dfd68b2d61565eccc9}{UILEDS\+\_\+\+INV}}~1
+\item 
+\#define \mbox{\hyperlink{uileds_8h_a425bbac14e9cd8b910f2a7c61d446195}{UILEDS\+\_\+\+ORIG}}~0
+\item 
+\#define \mbox{\hyperlink{uileds_8h_afa3a2de511d531b99157251d64d7a5a2}{UILEDS\+\_\+\+PATTERN}}(name,  size)~      \mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}} uileds\+\_\+pattern\+\_\+\#\#name \mbox{[}size\mbox{]}
+\item 
+\#define \mbox{\hyperlink{uileds_8h_aec8a4845ea6fb4191e76b1a63c2835b4}{UILEDS\+\_\+\+PATTERN\+\_\+\+BEGIN}}(name)~        const \mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}} uileds\+\_\+pattern\+\_\+\#\#name \mbox{[}$\,$\mbox{]} = \{
+\item 
+\#define \mbox{\hyperlink{uileds_8h_a8d5a2dae90a1b31a31d0ee7056b4c880}{EXTERN\+\_\+\+UILEDS\+\_\+\+PATTERN}}(name)~        extern const \mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}} uileds\+\_\+pattern\+\_\+\#\#name \mbox{[}$\,$\mbox{]}
+\item 
+\#define \mbox{\hyperlink{uileds_8h_a32e988ac7a5055d17e325dde8d98fa23}{UILEDS\+\_\+\+STATE}}(state,  duration)~        \{state,duration\},
+\item 
+\#define \mbox{\hyperlink{uileds_8h_acb24a40d8b7860395f66ed42b6de8523}{UILEDS\+\_\+\+PATTERN\+\_\+\+END}}()~\{0,0\} \};
+\item 
+\#define \mbox{\hyperlink{uileds_8h_a0e26580a2843ee49eae2bad5cae88861}{UILEDS\+\_\+\+LED}}(name)
+\item 
+\#define \mbox{\hyperlink{uileds_8h_a7f45c1636e8fb7e2a72f9252f3425b2a}{EXTERN\+\_\+\+UILEDS\+\_\+\+LED}}(name)~        extern \mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} name
+\item 
+\#define \mbox{\hyperlink{uileds_8h_ac535b886ef7a12ab969e39c8485c4f96}{UILEDS\+\_\+\+SET\+\_\+\+PATTERN}}(led\+\_\+name,  pattern\+\_\+name,  invert)~        \mbox{\hyperlink{uileds_8h_a2e542458e465d35bd6b01ab78105af29}{uileds\+\_\+set\+\_\+pattern}}(\&led\+\_\+name,(\mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}}$\ast$)\&uileds\+\_\+pattern\+\_\+\#\#pattern\+\_\+name,invert)
+\item 
+\#define \mbox{\hyperlink{uileds_8h_a138fb00b38e3371b09f060af601336c9}{UILEDS\+\_\+\+LEDS}}(...)
+\item 
+\#define \mbox{\hyperlink{uileds_8h_a75bb2cec76245599cd00faedb1090687}{UILEDS\+\_\+\+COUNT}}~(\mbox{\hyperlink{uileds_8h_a1040ce42036859bed7a6e88454b5c093}{uileds\+\_\+count}})
+\item 
+\#define \mbox{\hyperlink{uileds_8h_ad5ff1e6557b2e0f6d5c9a343acecc534}{UILEDS\+\_\+\+SYNC}}(which,  with,  inverted)~\mbox{\hyperlink{uileds_8h_a6162cb6ea1557773ec02f9982d81201e}{uileds\+\_\+sync}} (\&which,\&with,inverted)
+\item 
+\#define \mbox{\hyperlink{uileds_8h_a51d98e8e88081b15a3ffbc6e3726e8ca}{ULEDS\+\_\+\+DISABLE\+\_\+\+LED}}(led\+\_\+name)~do \{ led\+\_\+name.\+pattern = NULL; led\+\_\+name.\+set\+\_\+led(\mbox{\hyperlink{uileds_8h_a5097464f1cbca301fe9b011643890812}{UILEDS\+\_\+\+STATE\+\_\+\+OFF}});\}while(0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{uileds_8h_aa21a83e41238b23119701dbf9af209a7}{uileds\+\_\+set\+\_\+t}}) (bool)
+\item 
+typedef struct \mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} \mbox{\hyperlink{uileds_8h_a82ba559638e78ffe32f608a6d5d29fc9}{uileds\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uileds_8h_a2e542458e465d35bd6b01ab78105af29}{uileds\+\_\+set\+\_\+pattern}} (\mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} $\ast$led, \mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}} $\ast$pattern, bool inverted)
+\item 
+void \mbox{\hyperlink{uileds_8h_a72e781176facccd920c0dc89ed97684c}{uileds\+\_\+handler}} (void)
+\item 
+void \mbox{\hyperlink{uileds_8h_a6162cb6ea1557773ec02f9982d81201e}{uileds\+\_\+sync}} (\mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} $\ast$which, \mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} $\ast$with, bool inverted)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} $\ast$const \mbox{\hyperlink{uileds_8h_aa6a5d4daf980776421248712c732b5c1}{uileds\+\_\+all\+\_\+leds}} \mbox{[}$\,$\mbox{]}
+\item 
+const unsigned \mbox{\hyperlink{uileds_8h_a1040ce42036859bed7a6e88454b5c093}{uileds\+\_\+count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{uileds_8h_a7f45c1636e8fb7e2a72f9252f3425b2a}\label{uileds_8h_a7f45c1636e8fb7e2a72f9252f3425b2a}} 
+\index{uileds.h@{uileds.h}!EXTERN\_UILEDS\_LED@{EXTERN\_UILEDS\_LED}}
+\index{EXTERN\_UILEDS\_LED@{EXTERN\_UILEDS\_LED}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{EXTERN\_UILEDS\_LED}{EXTERN\_UILEDS\_LED}}
+{\footnotesize\ttfamily \#define EXTERN\+\_\+\+UILEDS\+\_\+\+LED(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~        extern \mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} name}
+
+
+
+Definition at line 83 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_a8d5a2dae90a1b31a31d0ee7056b4c880}\label{uileds_8h_a8d5a2dae90a1b31a31d0ee7056b4c880}} 
+\index{uileds.h@{uileds.h}!EXTERN\_UILEDS\_PATTERN@{EXTERN\_UILEDS\_PATTERN}}
+\index{EXTERN\_UILEDS\_PATTERN@{EXTERN\_UILEDS\_PATTERN}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{EXTERN\_UILEDS\_PATTERN}{EXTERN\_UILEDS\_PATTERN}}
+{\footnotesize\ttfamily \#define EXTERN\+\_\+\+UILEDS\+\_\+\+PATTERN(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~        extern const \mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}} uileds\+\_\+pattern\+\_\+\#\#name \mbox{[}$\,$\mbox{]}}
+
+
+
+Definition at line 70 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_a75bb2cec76245599cd00faedb1090687}\label{uileds_8h_a75bb2cec76245599cd00faedb1090687}} 
+\index{uileds.h@{uileds.h}!UILEDS\_COUNT@{UILEDS\_COUNT}}
+\index{UILEDS\_COUNT@{UILEDS\_COUNT}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_COUNT}{UILEDS\_COUNT}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+COUNT~(\mbox{\hyperlink{uileds_8h_a1040ce42036859bed7a6e88454b5c093}{uileds\+\_\+count}})}
+
+
+
+Definition at line 93 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_a8f39165b7a1540dfd68b2d61565eccc9}\label{uileds_8h_a8f39165b7a1540dfd68b2d61565eccc9}} 
+\index{uileds.h@{uileds.h}!UILEDS\_INV@{UILEDS\_INV}}
+\index{UILEDS\_INV@{UILEDS\_INV}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_INV}{UILEDS\_INV}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+INV~1}
+
+
+
+Definition at line 41 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_a0e26580a2843ee49eae2bad5cae88861}\label{uileds_8h_a0e26580a2843ee49eae2bad5cae88861}} 
+\index{uileds.h@{uileds.h}!UILEDS\_LED@{UILEDS\_LED}}
+\index{UILEDS\_LED@{UILEDS\_LED}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_LED}{UILEDS\_LED}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+LED(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        \textcolor{keywordtype}{void} uileds\_set\_\#\#name(\textcolor{keywordtype}{bool} state); \(\backslash\)}
+\DoxyCodeLine{        uileds\_t name = \{uileds\_set\_\#\#name\}; \(\backslash\)}
+\DoxyCodeLine{        void uileds\_set\_\#\#name(\textcolor{keywordtype}{bool} state)}
+
+\end{DoxyCode}
+
+
+Definition at line 78 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_a138fb00b38e3371b09f060af601336c9}\label{uileds_8h_a138fb00b38e3371b09f060af601336c9}} 
+\index{uileds.h@{uileds.h}!UILEDS\_LEDS@{UILEDS\_LEDS}}
+\index{UILEDS\_LEDS@{UILEDS\_LEDS}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_LEDS}{UILEDS\_LEDS}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+LEDS(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{const} \mbox{\hyperlink{structuileds__t}{uileds\_t}}* \textcolor{keyword}{const} \mbox{\hyperlink{uileds_8h_aa6a5d4daf980776421248712c732b5c1}{uileds\_all\_leds}} [] = \{ \_\_VA\_ARGS\_\_ \}; \(\backslash\)}
+\DoxyCodeLine{    const \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{uileds_8h_a1040ce42036859bed7a6e88454b5c093}{uileds\_count}} = (\textcolor{keyword}{sizeof}(\mbox{\hyperlink{uileds_8h_aa6a5d4daf980776421248712c732b5c1}{uileds\_all\_leds}})/\textcolor{keyword}{sizeof}(*\mbox{\hyperlink{uileds_8h_aa6a5d4daf980776421248712c732b5c1}{uileds\_all\_leds}}));}
+
+\end{DoxyCode}
+
+
+Definition at line 89 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_a425bbac14e9cd8b910f2a7c61d446195}\label{uileds_8h_a425bbac14e9cd8b910f2a7c61d446195}} 
+\index{uileds.h@{uileds.h}!UILEDS\_ORIG@{UILEDS\_ORIG}}
+\index{UILEDS\_ORIG@{UILEDS\_ORIG}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_ORIG}{UILEDS\_ORIG}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+ORIG~0}
+
+
+
+Definition at line 42 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_afa3a2de511d531b99157251d64d7a5a2}\label{uileds_8h_afa3a2de511d531b99157251d64d7a5a2}} 
+\index{uileds.h@{uileds.h}!UILEDS\_PATTERN@{UILEDS\_PATTERN}}
+\index{UILEDS\_PATTERN@{UILEDS\_PATTERN}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_PATTERN}{UILEDS\_PATTERN}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+PATTERN(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{size }\end{DoxyParamCaption})~      \mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}} uileds\+\_\+pattern\+\_\+\#\#name \mbox{[}size\mbox{]}}
+
+
+
+Definition at line 63 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_aec8a4845ea6fb4191e76b1a63c2835b4}\label{uileds_8h_aec8a4845ea6fb4191e76b1a63c2835b4}} 
+\index{uileds.h@{uileds.h}!UILEDS\_PATTERN\_BEGIN@{UILEDS\_PATTERN\_BEGIN}}
+\index{UILEDS\_PATTERN\_BEGIN@{UILEDS\_PATTERN\_BEGIN}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_PATTERN\_BEGIN}{UILEDS\_PATTERN\_BEGIN}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+PATTERN\+\_\+\+BEGIN(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~        const \mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}} uileds\+\_\+pattern\+\_\+\#\#name \mbox{[}$\,$\mbox{]} = \{}
+
+
+
+Definition at line 67 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_acb24a40d8b7860395f66ed42b6de8523}\label{uileds_8h_acb24a40d8b7860395f66ed42b6de8523}} 
+\index{uileds.h@{uileds.h}!UILEDS\_PATTERN\_END@{UILEDS\_PATTERN\_END}}
+\index{UILEDS\_PATTERN\_END@{UILEDS\_PATTERN\_END}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_PATTERN\_END}{UILEDS\_PATTERN\_END}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+PATTERN\+\_\+\+END(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\{0,0\} \};}
+
+
+
+Definition at line 76 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_ac535b886ef7a12ab969e39c8485c4f96}\label{uileds_8h_ac535b886ef7a12ab969e39c8485c4f96}} 
+\index{uileds.h@{uileds.h}!UILEDS\_SET\_PATTERN@{UILEDS\_SET\_PATTERN}}
+\index{UILEDS\_SET\_PATTERN@{UILEDS\_SET\_PATTERN}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_SET\_PATTERN}{UILEDS\_SET\_PATTERN}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+SET\+\_\+\+PATTERN(\begin{DoxyParamCaption}\item[{}]{led\+\_\+name,  }\item[{}]{pattern\+\_\+name,  }\item[{}]{invert }\end{DoxyParamCaption})~        \mbox{\hyperlink{uileds_8h_a2e542458e465d35bd6b01ab78105af29}{uileds\+\_\+set\+\_\+pattern}}(\&led\+\_\+name,(\mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}}$\ast$)\&uileds\+\_\+pattern\+\_\+\#\#pattern\+\_\+name,invert)}
+
+
+
+Definition at line 86 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_a32e988ac7a5055d17e325dde8d98fa23}\label{uileds_8h_a32e988ac7a5055d17e325dde8d98fa23}} 
+\index{uileds.h@{uileds.h}!UILEDS\_STATE@{UILEDS\_STATE}}
+\index{UILEDS\_STATE@{UILEDS\_STATE}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_STATE}{UILEDS\_STATE}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{state,  }\item[{}]{duration }\end{DoxyParamCaption})~        \{state,duration\},}
+
+
+
+Definition at line 73 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_a5097464f1cbca301fe9b011643890812}\label{uileds_8h_a5097464f1cbca301fe9b011643890812}} 
+\index{uileds.h@{uileds.h}!UILEDS\_STATE\_OFF@{UILEDS\_STATE\_OFF}}
+\index{UILEDS\_STATE\_OFF@{UILEDS\_STATE\_OFF}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_STATE\_OFF}{UILEDS\_STATE\_OFF}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+STATE\+\_\+\+OFF~0}
+
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+Definition at line 38 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_ad6e57384a29e434f33121c3ecfbcc4c9}\label{uileds_8h_ad6e57384a29e434f33121c3ecfbcc4c9}} 
+\index{uileds.h@{uileds.h}!UILEDS\_STATE\_ON@{UILEDS\_STATE\_ON}}
+\index{UILEDS\_STATE\_ON@{UILEDS\_STATE\_ON}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_STATE\_ON}{UILEDS\_STATE\_ON}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+STATE\+\_\+\+ON~1}
+
+
+
+Definition at line 39 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_ad5ff1e6557b2e0f6d5c9a343acecc534}\label{uileds_8h_ad5ff1e6557b2e0f6d5c9a343acecc534}} 
+\index{uileds.h@{uileds.h}!UILEDS\_SYNC@{UILEDS\_SYNC}}
+\index{UILEDS\_SYNC@{UILEDS\_SYNC}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{UILEDS\_SYNC}{UILEDS\_SYNC}}
+{\footnotesize\ttfamily \#define UILEDS\+\_\+\+SYNC(\begin{DoxyParamCaption}\item[{}]{which,  }\item[{}]{with,  }\item[{}]{inverted }\end{DoxyParamCaption})~\mbox{\hyperlink{uileds_8h_a6162cb6ea1557773ec02f9982d81201e}{uileds\+\_\+sync}} (\&which,\&with,inverted)}
+
+
+
+Definition at line 95 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_a51d98e8e88081b15a3ffbc6e3726e8ca}\label{uileds_8h_a51d98e8e88081b15a3ffbc6e3726e8ca}} 
+\index{uileds.h@{uileds.h}!ULEDS\_DISABLE\_LED@{ULEDS\_DISABLE\_LED}}
+\index{ULEDS\_DISABLE\_LED@{ULEDS\_DISABLE\_LED}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{ULEDS\_DISABLE\_LED}{ULEDS\_DISABLE\_LED}}
+{\footnotesize\ttfamily \#define ULEDS\+\_\+\+DISABLE\+\_\+\+LED(\begin{DoxyParamCaption}\item[{}]{led\+\_\+name }\end{DoxyParamCaption})~do \{ led\+\_\+name.\+pattern = NULL; led\+\_\+name.\+set\+\_\+led(\mbox{\hyperlink{uileds_8h_a5097464f1cbca301fe9b011643890812}{UILEDS\+\_\+\+STATE\+\_\+\+OFF}});\}while(0)}
+
+
+
+Definition at line 97 of file uileds.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{uileds_8h_aa21a83e41238b23119701dbf9af209a7}\label{uileds_8h_aa21a83e41238b23119701dbf9af209a7}} 
+\index{uileds.h@{uileds.h}!uileds\_set\_t@{uileds\_set\_t}}
+\index{uileds\_set\_t@{uileds\_set\_t}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{uileds\_set\_t}{uileds\_set\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ uileds\+\_\+set\+\_\+t) (bool)}
+
+
+
+Definition at line 44 of file uileds.\+h.
+
+\mbox{\Hypertarget{uileds_8h_a82ba559638e78ffe32f608a6d5d29fc9}\label{uileds_8h_a82ba559638e78ffe32f608a6d5d29fc9}} 
+\index{uileds.h@{uileds.h}!uileds\_t@{uileds\_t}}
+\index{uileds\_t@{uileds\_t}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{uileds\_t}{uileds\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} \mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}}}
+
+
+
+Definition at line 44 of file uileds.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uileds_8h_a72e781176facccd920c0dc89ed97684c}\label{uileds_8h_a72e781176facccd920c0dc89ed97684c}} 
+\index{uileds.h@{uileds.h}!uileds\_handler@{uileds\_handler}}
+\index{uileds\_handler@{uileds\_handler}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{uileds\_handler()}{uileds\_handler()}}
+{\footnotesize\ttfamily void uileds\+\_\+handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file uileds.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{uileds_8h_a72e781176facccd920c0dc89ed97684c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{uileds_8h_a2e542458e465d35bd6b01ab78105af29}\label{uileds_8h_a2e542458e465d35bd6b01ab78105af29}} 
+\index{uileds.h@{uileds.h}!uileds\_set\_pattern@{uileds\_set\_pattern}}
+\index{uileds\_set\_pattern@{uileds\_set\_pattern}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{uileds\_set\_pattern()}{uileds\_set\_pattern()}}
+{\footnotesize\ttfamily void uileds\+\_\+set\+\_\+pattern (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} $\ast$}]{led,  }\item[{\mbox{\hyperlink{structuileds__state__t}{uileds\+\_\+state\+\_\+t}} $\ast$}]{pattern,  }\item[{bool}]{inverted }\end{DoxyParamCaption})}
+
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+Definition at line 34 of file uileds.\+c.
+
+\mbox{\Hypertarget{uileds_8h_a6162cb6ea1557773ec02f9982d81201e}\label{uileds_8h_a6162cb6ea1557773ec02f9982d81201e}} 
+\index{uileds.h@{uileds.h}!uileds\_sync@{uileds\_sync}}
+\index{uileds\_sync@{uileds\_sync}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{uileds\_sync()}{uileds\_sync()}}
+{\footnotesize\ttfamily void uileds\+\_\+sync (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} $\ast$}]{which,  }\item[{\mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}} $\ast$}]{with,  }\item[{bool}]{inverted }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file uileds.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{uileds_8h_aa6a5d4daf980776421248712c732b5c1}\label{uileds_8h_aa6a5d4daf980776421248712c732b5c1}} 
+\index{uileds.h@{uileds.h}!uileds\_all\_leds@{uileds\_all\_leds}}
+\index{uileds\_all\_leds@{uileds\_all\_leds}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{uileds\_all\_leds}{uileds\_all\_leds}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structuileds__t}{uileds\+\_\+t}}$\ast$ const uileds\+\_\+all\+\_\+leds\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{uileds_8h_a1040ce42036859bed7a6e88454b5c093}\label{uileds_8h_a1040ce42036859bed7a6e88454b5c093}} 
+\index{uileds.h@{uileds.h}!uileds\_count@{uileds\_count}}
+\index{uileds\_count@{uileds\_count}!uileds.h@{uileds.h}}
+\doxysubsubsection{\texorpdfstring{uileds\_count}{uileds\_count}}
+{\footnotesize\ttfamily const unsigned uileds\+\_\+count\hspace{0.3cm}{\ttfamily [extern]}}
+

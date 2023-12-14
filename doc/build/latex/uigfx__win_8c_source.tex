@@ -1,0 +1,76 @@
+\doxysection{uigfx\+\_\+win.\+c}
+\hypertarget{uigfx__win_8c_source}{}\label{uigfx__win_8c_source}\index{myos/ui/uigfx/uigfx\_win.c@{myos/ui/uigfx/uigfx\_win.c}}
+\mbox{\hyperlink{uigfx__win_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uigfx__win_8h}{uigfx\_win.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uigfx__win__conf_8h}{uigfx\_win\_conf.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}string.h"{}}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uigfx_8h}{uigfx.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00037}\mbox{\hyperlink{uigfx__win_8c_a55d23585d35714c4f73b5c066452f047}{00037}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uigfx__win_8c_a55d23585d35714c4f73b5c066452f047}{uigfx\_draw\_desktop\_wallpaper}}(uint8\_t*\ buff,\ \mbox{\hyperlink{structuigfx__image__t}{uigfx\_image\_t}}\ *wallpaper)}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{structuigfx__widget__t}{uigfx\_widget\_t}}\ *tmp\ =\ \mbox{\hyperlink{uigfx_8c_a3e309849c2a449c507f264af54838d1a}{uigfx\_current\_widget}};}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{uigfx_8c_aeed21ed83d3e5a3090e49f9dabea17f1}{uigfx\_set\_widget}}((\mbox{\hyperlink{structuigfx__widget__t}{uigfx\_widget\_t}}*)\&\mbox{\hyperlink{uigfx_8c_ad1abad374011ef838fc78722f0893356}{uigfx\_screen\_widget}});}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{for}(uint16\_t\ y\ =\ 0;\ y\ <\ \mbox{\hyperlink{uigfx_8c_a3e309849c2a449c507f264af54838d1a}{uigfx\_current\_widget}}-\/>\mbox{\hyperlink{structuigfx__widget__t_a5af1ba1195048c402c5c6fc1ed785478}{yres}};\ y+=wallpaper-\/>\mbox{\hyperlink{structuigfx__image__t_a5af1ba1195048c402c5c6fc1ed785478}{yres}})}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(uint16\_t\ x\ =\ 0;\ x\ <\ \mbox{\hyperlink{uigfx_8c_a3e309849c2a449c507f264af54838d1a}{uigfx\_current\_widget}}-\/>\mbox{\hyperlink{structuigfx__widget__t_a66d0750903a46c38a2661ac3c5add4f4}{xres}};\ x+=wallpaper-\/>\mbox{\hyperlink{structuigfx__image__t_a66d0750903a46c38a2661ac3c5add4f4}{xres}})}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{uigfx_8c_a7e2622399e75c06bfaf6f670833c7368}{uigfx\_draw\_image}}(buff,wallpaper,x,y);}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{uigfx_8c_aeed21ed83d3e5a3090e49f9dabea17f1}{uigfx\_set\_widget}}(tmp);}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00055}\mbox{\hyperlink{uigfx__win_8c_aee3b17e2ad617be499267017f47c93a2}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uigfx__win_8c_aee3b17e2ad617be499267017f47c93a2}{uigfx\_draw\_window}}(uint8\_t*\ buff,\ \mbox{\hyperlink{structuigfx__window__t}{uigfx\_window\_t}}\ *win)}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00056}00056\ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{structuigfx__widget__t}{uigfx\_widget\_t}}\ *tmp\ =\ \mbox{\hyperlink{uigfx_8c_a3e309849c2a449c507f264af54838d1a}{uigfx\_current\_widget}};}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{uigfx_8c_aeed21ed83d3e5a3090e49f9dabea17f1}{uigfx\_set\_widget}}(\&win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}});}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{uigfx_8c_aea45383377e946ba5ec6a4bca000af28}{uigfx\_draw\_filled\_rectangle}}(buff,0,0,win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a66d0750903a46c38a2661ac3c5add4f4}{xres}},\ win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a5af1ba1195048c402c5c6fc1ed785478}{yres}},\ \mbox{\hyperlink{uigfx__win__conf_8h_acd020400a5f3e8a2fe9f60b4f21a04d4}{UIGFX\_WIN\_TITLE\_BG\_COLOR}});}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{uigfx_8c_af9cf97d698b4e2e48aa5b6e95f5302e9}{uigfx\_draw\_string}}(buff,(\mbox{\hyperlink{structuigfx__font__t}{uigfx\_font\_t}}*)\&\mbox{\hyperlink{uigfx__win__conf_8h_a7726db9418a6c2d4303074750088575e}{UIGFX\_WIN\_TITLE\_FONT}},\mbox{\hyperlink{uigfx__win__conf_8h_a1197f90a93e5439a883fa287a0c216cd}{UIGFX\_WIN\_TITLE\_BORDER}},\mbox{\hyperlink{uigfx__win__conf_8h_a1197f90a93e5439a883fa287a0c216cd}{UIGFX\_WIN\_TITLE\_BORDER}},win-\/>\mbox{\hyperlink{structuigfx__window__t_af06d911bb9e05f491ef3da520d03796c}{title}},\mbox{\hyperlink{uigfx__win__conf_8h_ac008118807737ddd2dd8fa0ce280968f}{UIGFX\_WIN\_TITLE\_FONT\_COLOR}});}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{uigfx_8c_aeed21ed83d3e5a3090e49f9dabea17f1}{uigfx\_set\_widget}}(\&win-\/>\mbox{\hyperlink{structuigfx__window__t_afc829cf754470190a40c00d677388bc4}{window\_widget}});}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{uigfx_8c_aea45383377e946ba5ec6a4bca000af28}{uigfx\_draw\_filled\_rectangle}}(buff,0,0,win-\/>\mbox{\hyperlink{structuigfx__window__t_afc829cf754470190a40c00d677388bc4}{window\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a66d0750903a46c38a2661ac3c5add4f4}{xres}},\ win-\/>\mbox{\hyperlink{structuigfx__window__t_afc829cf754470190a40c00d677388bc4}{window\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a5af1ba1195048c402c5c6fc1ed785478}{yres}},\ \mbox{\hyperlink{uigfx__win__conf_8h_a5fee81f0544a2a0b61f2209fccb9f0a8}{UIGFX\_WIN\_WIDGET\_BG\_COLOR}});}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{uigfx_8c_aeed21ed83d3e5a3090e49f9dabea17f1}{uigfx\_set\_widget}}(tmp);}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{uigfx_8c_a033c0afbfad48dd92120e16b13ef1302}{uigfx\_draw\_rectangle}}(buff,win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a63c29917affdd3f9245e88324643e961}{xpos}}-\/1,win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a1f3dca5f78953126e573fa7188addfaf}{ypos}}-\/1,win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a66d0750903a46c38a2661ac3c5add4f4}{xres}}+2,\ win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a5af1ba1195048c402c5c6fc1ed785478}{yres}}+win-\/>\mbox{\hyperlink{structuigfx__window__t_afc829cf754470190a40c00d677388bc4}{window\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a5af1ba1195048c402c5c6fc1ed785478}{yres}}+2,\ \mbox{\hyperlink{uigfx__win__conf_8h_a520209ec272c77e13ccd6bf6a9a72e3b}{UIGFX\_WIN\_BORDER\_COLOR}});}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00067}\mbox{\hyperlink{uigfx__win_8c_a7b627105b98d208b527fca90d27667c7}{00067}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uigfx__win_8c_a7b627105b98d208b527fca90d27667c7}{uigfx\_init\_window}}(\mbox{\hyperlink{structuigfx__window__t}{uigfx\_window\_t}}\ *win,\ \textcolor{keywordtype}{char}*\ title,\ int16\_t\ xpos,\ int16\_t\ ypos,\ uint16\_t\ xres,\ uint16\_t\ yres)}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00068}00068\ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00069}00069\ \ \ \ \ win-\/>\mbox{\hyperlink{structuigfx__window__t_af06d911bb9e05f491ef3da520d03796c}{title}}\ =\ title;}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00070}00070\ \ \ \ \ win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a63c29917affdd3f9245e88324643e961}{xpos}}\ =\ xpos;}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00071}00071\ \ \ \ \ win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a1f3dca5f78953126e573fa7188addfaf}{ypos}}\ =\ ypos;}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00073}00073\ \ \ \ \ win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a66d0750903a46c38a2661ac3c5add4f4}{xres}}\ =\ strlen(title)*\mbox{\hyperlink{uigfx__win__conf_8h_a7726db9418a6c2d4303074750088575e}{UIGFX\_WIN\_TITLE\_FONT}}.xsz+\ 2*\mbox{\hyperlink{uigfx__win__conf_8h_a1197f90a93e5439a883fa287a0c216cd}{UIGFX\_WIN\_TITLE\_BORDER}};}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{if}(xres\ >\ win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a66d0750903a46c38a2661ac3c5add4f4}{xres}})}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00076}00076\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a66d0750903a46c38a2661ac3c5add4f4}{xres}}\ =\ xres;}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00080}00080\ \ \ \ \ win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a5af1ba1195048c402c5c6fc1ed785478}{yres}}\ =\ \mbox{\hyperlink{uigfx__win__conf_8h_a7726db9418a6c2d4303074750088575e}{UIGFX\_WIN\_TITLE\_FONT}}.ysz\ +\ 2*\mbox{\hyperlink{uigfx__win__conf_8h_a1197f90a93e5439a883fa287a0c216cd}{UIGFX\_WIN\_TITLE\_BORDER}};}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00082}00082\ \ \ \ \ win-\/>\mbox{\hyperlink{structuigfx__window__t_afc829cf754470190a40c00d677388bc4}{window\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a63c29917affdd3f9245e88324643e961}{xpos}}\ =\ xpos;}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00083}00083\ \ \ \ \ win-\/>\mbox{\hyperlink{structuigfx__window__t_afc829cf754470190a40c00d677388bc4}{window\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a1f3dca5f78953126e573fa7188addfaf}{ypos}}\ =\ ypos+win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a5af1ba1195048c402c5c6fc1ed785478}{yres}};}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00084}00084\ \ \ \ \ win-\/>\mbox{\hyperlink{structuigfx__window__t_afc829cf754470190a40c00d677388bc4}{window\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a66d0750903a46c38a2661ac3c5add4f4}{xres}}\ =\ win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a66d0750903a46c38a2661ac3c5add4f4}{xres}};}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00085}00085\ \ \ \ \ win-\/>\mbox{\hyperlink{structuigfx__window__t_afc829cf754470190a40c00d677388bc4}{window\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a5af1ba1195048c402c5c6fc1ed785478}{yres}}\ =\ yres-\/win-\/>\mbox{\hyperlink{structuigfx__window__t_ae3631485f202fde7e118a7df9fa7b437}{title\_widget}}.\mbox{\hyperlink{structuigfx__widget__t_a5af1ba1195048c402c5c6fc1ed785478}{yres}};}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00091}\mbox{\hyperlink{uigfx__win_8c_ac4e064c52b369cb5847af0b5b139d4b3}{00091}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uigfx__win_8c_ac4e064c52b369cb5847af0b5b139d4b3}{uigfx\_select\_window\_widget}}(\mbox{\hyperlink{structuigfx__window__t}{uigfx\_window\_t}}\ *win)}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00092}00092\ \{}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{uigfx_8c_a3e309849c2a449c507f264af54838d1a}{uigfx\_current\_widget}}\ =\ \ \&win-\/>\mbox{\hyperlink{structuigfx__window__t_afc829cf754470190a40c00d677388bc4}{window\_widget}};}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{uigfx__win_8c_source_l00098}00098\ }
+
+\end{DoxyCode}

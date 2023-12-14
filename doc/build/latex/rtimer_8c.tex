@@ -1,0 +1,146 @@
+\hypertarget{rtimer_8c}{}\doxysection{myos/os/rtimer.c File Reference}
+\label{rtimer_8c}\index{myos/os/rtimer.c@{myos/os/rtimer.c}}
+{\ttfamily \#include \char`\"{}rtimer.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}critical.\+h\char`\"{}}\newline
+Include dependency graph for rtimer.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtimer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{rtimer_8c_a0d05dbfdc854200a60b93a3a37c839b5}{rtimer\+\_\+lock}} (void)
+\item 
+void \mbox{\hyperlink{rtimer_8c_aca08f5ff9f0b986543b16d7b9aaa79b8}{rtimer\+\_\+release}} ()
+\item 
+void \mbox{\hyperlink{rtimer_8c_afd8a1400a0a771a9af2b4145f1ef3d94}{rtimer\+\_\+scheduler}} (void)
+\item 
+\mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\+\_\+timespan\+\_\+t}} \mbox{\hyperlink{rtimer_8c_a13bd725f41860541876537794b14f1e8}{rtimer\+\_\+left}} (\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$rtimer)
+\item 
+void \mbox{\hyperlink{rtimer_8c_af04c19e5a026792236fb2c048d38e7d6}{rtimer\+\_\+start}} (\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$rtimer, \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\+\_\+timespan\+\_\+t}} span, \mbox{\hyperlink{rtimer_8h_a54dda60624530e5db25116d848efbf17}{rtimer\+\_\+callback\+\_\+t}} callback, void $\ast$data)
+\item 
+void \mbox{\hyperlink{rtimer_8c_a8b3994213e158ab4eb97610416a76f35}{rtimer\+\_\+restart}} (\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$rtimer)
+\item 
+void \mbox{\hyperlink{rtimer_8c_a772f00253fefe7197ab2031f8b63989a}{rtimer\+\_\+reset}} (\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$rtimer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$ \mbox{\hyperlink{rtimer_8c_a05c32ce1e339ea0af46937775a5916b0}{rtimer\+\_\+next}} = NULL
+\item 
+bool \mbox{\hyperlink{rtimer_8c_a577fd17eff73eeac6bdb74fecd00d9dc}{rtimer\+\_\+mutex}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rtimer_8c_a13bd725f41860541876537794b14f1e8}\label{rtimer_8c_a13bd725f41860541876537794b14f1e8}} 
+\index{rtimer.c@{rtimer.c}!rtimer\_left@{rtimer\_left}}
+\index{rtimer\_left@{rtimer\_left}!rtimer.c@{rtimer.c}}
+\doxysubsubsection{\texorpdfstring{rtimer\_left()}{rtimer\_left()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\+\_\+timespan\+\_\+t}} rtimer\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$}]{rtimer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file rtimer.\+c.
+
+\mbox{\Hypertarget{rtimer_8c_a0d05dbfdc854200a60b93a3a37c839b5}\label{rtimer_8c_a0d05dbfdc854200a60b93a3a37c839b5}} 
+\index{rtimer.c@{rtimer.c}!rtimer\_lock@{rtimer\_lock}}
+\index{rtimer\_lock@{rtimer\_lock}!rtimer.c@{rtimer.c}}
+\doxysubsubsection{\texorpdfstring{rtimer\_lock()}{rtimer\_lock()}}
+{\footnotesize\ttfamily bool rtimer\+\_\+lock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file rtimer.\+c.
+
+\mbox{\Hypertarget{rtimer_8c_aca08f5ff9f0b986543b16d7b9aaa79b8}\label{rtimer_8c_aca08f5ff9f0b986543b16d7b9aaa79b8}} 
+\index{rtimer.c@{rtimer.c}!rtimer\_release@{rtimer\_release}}
+\index{rtimer\_release@{rtimer\_release}!rtimer.c@{rtimer.c}}
+\doxysubsubsection{\texorpdfstring{rtimer\_release()}{rtimer\_release()}}
+{\footnotesize\ttfamily void rtimer\+\_\+release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file rtimer.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{rtimer_8c_aca08f5ff9f0b986543b16d7b9aaa79b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{rtimer_8c_a772f00253fefe7197ab2031f8b63989a}\label{rtimer_8c_a772f00253fefe7197ab2031f8b63989a}} 
+\index{rtimer.c@{rtimer.c}!rtimer\_reset@{rtimer\_reset}}
+\index{rtimer\_reset@{rtimer\_reset}!rtimer.c@{rtimer.c}}
+\doxysubsubsection{\texorpdfstring{rtimer\_reset()}{rtimer\_reset()}}
+{\footnotesize\ttfamily void rtimer\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$}]{rtimer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 107 of file rtimer.\+c.
+
+\mbox{\Hypertarget{rtimer_8c_a8b3994213e158ab4eb97610416a76f35}\label{rtimer_8c_a8b3994213e158ab4eb97610416a76f35}} 
+\index{rtimer.c@{rtimer.c}!rtimer\_restart@{rtimer\_restart}}
+\index{rtimer\_restart@{rtimer\_restart}!rtimer.c@{rtimer.c}}
+\doxysubsubsection{\texorpdfstring{rtimer\_restart()}{rtimer\_restart()}}
+{\footnotesize\ttfamily void rtimer\+\_\+restart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$}]{rtimer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 100 of file rtimer.\+c.
+
+\mbox{\Hypertarget{rtimer_8c_afd8a1400a0a771a9af2b4145f1ef3d94}\label{rtimer_8c_afd8a1400a0a771a9af2b4145f1ef3d94}} 
+\index{rtimer.c@{rtimer.c}!rtimer\_scheduler@{rtimer\_scheduler}}
+\index{rtimer\_scheduler@{rtimer\_scheduler}!rtimer.c@{rtimer.c}}
+\doxysubsubsection{\texorpdfstring{rtimer\_scheduler()}{rtimer\_scheduler()}}
+{\footnotesize\ttfamily void rtimer\+\_\+scheduler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 66 of file rtimer.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{rtimer_8c_afd8a1400a0a771a9af2b4145f1ef3d94_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{rtimer_8c_af04c19e5a026792236fb2c048d38e7d6}\label{rtimer_8c_af04c19e5a026792236fb2c048d38e7d6}} 
+\index{rtimer.c@{rtimer.c}!rtimer\_start@{rtimer\_start}}
+\index{rtimer\_start@{rtimer\_start}!rtimer.c@{rtimer.c}}
+\doxysubsubsection{\texorpdfstring{rtimer\_start()}{rtimer\_start()}}
+{\footnotesize\ttfamily void rtimer\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$}]{rtimer,  }\item[{\mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\+\_\+timespan\+\_\+t}}}]{span,  }\item[{\mbox{\hyperlink{rtimer_8h_a54dda60624530e5db25116d848efbf17}{rtimer\+\_\+callback\+\_\+t}}}]{callback,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 90 of file rtimer.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{rtimer_8c_a577fd17eff73eeac6bdb74fecd00d9dc}\label{rtimer_8c_a577fd17eff73eeac6bdb74fecd00d9dc}} 
+\index{rtimer.c@{rtimer.c}!rtimer\_mutex@{rtimer\_mutex}}
+\index{rtimer\_mutex@{rtimer\_mutex}!rtimer.c@{rtimer.c}}
+\doxysubsubsection{\texorpdfstring{rtimer\_mutex}{rtimer\_mutex}}
+{\footnotesize\ttfamily bool rtimer\+\_\+mutex = false}
+
+
+
+Definition at line 40 of file rtimer.\+c.
+
+\mbox{\Hypertarget{rtimer_8c_a05c32ce1e339ea0af46937775a5916b0}\label{rtimer_8c_a05c32ce1e339ea0af46937775a5916b0}} 
+\index{rtimer.c@{rtimer.c}!rtimer\_next@{rtimer\_next}}
+\index{rtimer\_next@{rtimer\_next}!rtimer.c@{rtimer.c}}
+\doxysubsubsection{\texorpdfstring{rtimer\_next}{rtimer\_next}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}}$\ast$ rtimer\+\_\+next = NULL}
+
+
+
+Definition at line 39 of file rtimer.\+c.
+

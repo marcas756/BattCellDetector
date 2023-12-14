@@ -1,0 +1,113 @@
+\doxysection{ringbuffer.\+h}
+\hypertarget{ringbuffer_8h_source}{}\label{ringbuffer_8h_source}\index{myos/lib/ringbuffer.h@{myos/lib/ringbuffer.h}}
+\mbox{\hyperlink{ringbuffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00042}00042\ \textcolor{preprocessor}{\#ifndef\ RINGBUFFER\_H\_}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00043}00043\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_H\_}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00044}00044\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00052}\mbox{\hyperlink{ringbuffer_8h_ad5642d39f97605cf0dd773d5d4788d5b}{00052}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_TYPEDEF(name,type,size)\ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00053}00053\ \textcolor{preprocessor}{\ \ \ \ typedef\ struct\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00054}00054\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ size\_t\ head;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00055}00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ size\_t\ tail;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00056}00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ size\_t\ count;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00057}00057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ type\ items\ [size];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00058}00058\ \textcolor{preprocessor}{\ \ \ \ \}\ name\#\#\_ringbuffer\_t}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00065}\mbox{\hyperlink{ringbuffer_8h_af63b7b7476d24ec94078d18e9460dc29}{00065}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_T(name)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00066}00066\ \textcolor{preprocessor}{\ \ \ \ name\#\#\_ringbuffer\_t}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00072}\mbox{\hyperlink{ringbuffer_8h_a88def00e5ac65711d18654a7b55d66ae}{00072}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_ITEMS(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00073}00073\ \textcolor{preprocessor}{\ \ \ \ ((ringbuffer).items)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00079}\mbox{\hyperlink{ringbuffer_8h_a6b871592b08d34508ba098048b3553d0}{00079}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_RAW(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00080}00080\ \textcolor{preprocessor}{\ \ \ \ ((uint8\_t*)RINGBUFFER\_ITEMS(ringbuffer))}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00086}\mbox{\hyperlink{ringbuffer_8h_a23efdb3a790c98c42f748c1349a0aa24}{00086}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_SIZEOF(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00087}00087\ \textcolor{preprocessor}{\ \ \ \ (sizeof(RINGBUFFER\_ITEMS(ringbuffer)))}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00093}\mbox{\hyperlink{ringbuffer_8h_a2b33d9308feda0d03b5fab04f2241b0d}{00093}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_SIZE(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00094}00094\ \textcolor{preprocessor}{\ \ \ \ (RINGBUFFER\_SIZEOF(ringbuffer)/sizeof(RINGBUFFER\_ITEMS(ringbuffer)[0]))}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00103}\mbox{\hyperlink{ringbuffer_8h_a54eaa07ad24db43f07cb6c437ef80dea}{00103}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_COUNT(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00104}00104\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((ringbuffer).count)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00109}\mbox{\hyperlink{ringbuffer_8h_a51e61e6cc3ff2ed52ca838a5dced24f0}{00109}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_HEAD(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00110}00110\ \textcolor{preprocessor}{\ \ \ \ ((ringbuffer).head)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00115}\mbox{\hyperlink{ringbuffer_8h_a003d60979c54ed26b12d52d69232cf29}{00115}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_TAIL(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00116}00116\ \textcolor{preprocessor}{\ \ \ \ ((ringbuffer).tail)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00121}\mbox{\hyperlink{ringbuffer_8h_a1431543f2a604be6199c06e94515725e}{00121}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_INIT(ringbuffer)\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00122}00122\ \textcolor{preprocessor}{\ \ \ \ do\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00123}00123\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RINGBUFFER\_COUNT(ringbuffer)=0;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00124}00124\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RINGBUFFER\_HEAD(ringbuffer)=0;\ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00125}00125\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RINGBUFFER\_TAIL(ringbuffer)=0;\ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00126}00126\ \textcolor{preprocessor}{\ \ \ \ \}while(0)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00131}\mbox{\hyperlink{ringbuffer_8h_a9c3b73462fa930ac0e95ee51e28d2546}{00131}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_TAIL\_VAL(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00132}00132\ \textcolor{preprocessor}{\ \ \ \ (RINGBUFFER\_ITEMS(ringbuffer)[RINGBUFFER\_TAIL(ringbuffer)])}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00137}\mbox{\hyperlink{ringbuffer_8h_ae0de1d8dbc061b40dafd6aadf6ee67ac}{00137}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_TAIL\_PTR(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00138}00138\ \textcolor{preprocessor}{\ \ \ \ (\&RINGBUFFER\_TAIL\_VAL(ringbuffer))}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00143}\mbox{\hyperlink{ringbuffer_8h_add57f7fa1a594bf8c8345cb7ad1cdf1e}{00143}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_HEAD\_VAL(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00144}00144\ \textcolor{preprocessor}{\ \ \ \ (RINGBUFFER\_ITEMS(ringbuffer)[RINGBUFFER\_HEAD(ringbuffer)])}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00149}\mbox{\hyperlink{ringbuffer_8h_a5e00e617a66806659364ed07ad253427}{00149}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_HEAD\_PTR(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00150}00150\ \textcolor{preprocessor}{\ \ \ \ (\&RINGBUFFER\_HEAD\_VAL(ringbuffer))}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00158}\mbox{\hyperlink{ringbuffer_8h_a4a4b77cdc32cc3c176177be95937bb5b}{00158}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_PUSH(ringbuffer)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00159}00159\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00160}00160\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(++RINGBUFFER\_TAIL(ringbuffer)\ ==\ RINGBUFFER\_SIZE(ringbuffer))\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00161}00161\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00162}00162\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ RINGBUFFER\_TAIL(ringbuffer)\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00163}00163\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00164}00164\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00165}00165\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RINGBUFFER\_COUNT(ringbuffer)++;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00166}00166\ \textcolor{preprocessor}{\ \ \ \ \}while\ (0)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00175}\mbox{\hyperlink{ringbuffer_8h_aa6b594fd28c6336ba579d8f7495b637b}{00175}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_POP(ringbuffer)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00176}00176\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00177}00177\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(++RINGBUFFER\_HEAD(ringbuffer)\ ==\ RINGBUFFER\_SIZE(ringbuffer))\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00178}00178\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00179}00179\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ RINGBUFFER\_HEAD(ringbuffer)\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00180}00180\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00181}00181\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00182}00182\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RINGBUFFER\_COUNT(ringbuffer)-\/-\/;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00183}00183\ \textcolor{preprocessor}{\ \ \ \ \}while\ (0)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00189}\mbox{\hyperlink{ringbuffer_8h_a3b1379ffc509d6d79b752add90e082e2}{00189}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_FULL(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00190}00190\ \textcolor{preprocessor}{\ \ \ \ (RINGBUFFER\_COUNT(ringbuffer)>=RINGBUFFER\_SIZE(ringbuffer))}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00197}\mbox{\hyperlink{ringbuffer_8h_a33b9ce6ceda0b08ded0ae5506db6650e}{00197}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_EMPTY(ringbuffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00198}00198\ \textcolor{preprocessor}{\ \ \ \ (!RINGBUFFER\_COUNT(ringbuffer))}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00206}\mbox{\hyperlink{ringbuffer_8h_a31f0ca865e5ecc8866473733e71a77fe}{00206}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_READ(ringbufferptr,var)\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00207}00207\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00208}00208\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ var\ =\ RINGBUFFER\_HEAD\_VAL(ringbufferptr);\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00209}00209\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RINGBUFFER\_POP(ringbufferptr);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00210}00210\ \textcolor{preprocessor}{\ \ \ \ \}while(0)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00218}\mbox{\hyperlink{ringbuffer_8h_add6360c708625f28d126d16b75b881b0}{00218}}\ \textcolor{preprocessor}{\#define\ RINGBUFFER\_WRITE(ringbufferptr,value)\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00219}00219\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00220}00220\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RINGBUFFER\_TAIL\_VAL(ringbufferptr)\ =\ value;\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00221}00221\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ RINGBUFFER\_PUSH(ringbufferptr);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00222}00222\ \textcolor{preprocessor}{\ \ \ \ \}while(0)}}
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{ringbuffer_8h_source_l00225}00225\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ RINGBUFFER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

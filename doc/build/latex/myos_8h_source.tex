@@ -1,0 +1,46 @@
+\doxysection{myos.\+h}
+\hypertarget{myos_8h_source}{}\label{myos_8h_source}\index{myos/os/myos.h@{myos/os/myos.h}}
+\mbox{\hyperlink{myos_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00029}00029\ \textcolor{preprocessor}{\#ifndef\ MYOS\_H\_}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00030}00030\ \textcolor{preprocessor}{\#define\ MYOS\_H\_}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}myosconf.h"{}}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{critical_8h}{critical.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pt_8h}{pt.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{process_8h}{process.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{timestamp_8h}{timestamp.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{timer_8h}{timer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ptimer_8h}{ptimer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00042}00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ctimer_8h}{ctimer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00043}00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{etimer_8h}{etimer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00044}00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rtimer_8h}{rtimer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00046}00046\ \textcolor{preprocessor}{\#if\ (MYOSCONF\_STATS)}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00048}00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00049}00049\ \ \ \ \textcolor{keywordtype}{unsigned}\ realtime\ :\ 1;}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00050}00050\ \ \ \ \textcolor{keywordtype}{unsigned}\ eventqueue\ :\ 1;}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00051}00051\ \}myos\_errflags\_t;}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00053}00053\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00054}00054\ \ \ \ myos\_errflags\_t\ errflags;}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00055}00055\ \ \ \ \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\_timespan\_t}}\ maxlaptime;}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00056}00056\ \ \ \ \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\_timespan\_t}}\ maxproctime;}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00057}00057\ \ \ \ uint8\_t\ maxqueuecount;}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00058}00058\ \ \ \ uint8\_t\ ptlist\_size\_max;}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00059}00059\ \}myos\_stats\_t;}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00061}00061\ \textcolor{keyword}{extern}\ myos\_stats\_t\ myos\_stats;}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00063}00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00065}00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{myos_8h_acd0ff1b3870c8c42baa5f3364634d09c}{myos\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{myos_8h_source_l00067}00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ MYOS\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

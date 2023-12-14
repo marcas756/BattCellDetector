@@ -1,0 +1,183 @@
+\hypertarget{bits_8h}{}\doxysection{myos/lib/bits.h File Reference}
+\label{bits_8h}\index{myos/lib/bits.h@{myos/lib/bits.h}}
+
+
+Provides preprocessor macros for bit manipulations.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bits_8h_a474ad26567ae2f27077925b1721737ee}{BITS}}(x,  m)~((x)\&(m))
+\begin{DoxyCompactList}\small\item\em Read out bits from bit field by using a bit mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bits_8h_ac54646f282423ff51fe84f5375de355b}{BITS\+\_\+\+INVERT}}(x)~($\sim$x)
+\begin{DoxyCompactList}\small\item\em Toggle all bits of integer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bits_8h_a1049a0b3acd872c28914b4ccc49c69f1}{BITS\+\_\+\+TEST}}(x,  m)~(((x)\&(m))==(m)))
+\begin{DoxyCompactList}\small\item\em Test if all of the bits defined by bit mask are set in the bit field. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bits_8h_ae713c82afc20dc5f9a268e2967800302}{BITS\+\_\+\+SET}}(x,  m)~((x)$\vert$=(m))
+\begin{DoxyCompactList}\small\item\em Set bits defined by bit mask to logical 1 in bit field. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bits_8h_a0fe72ae41a75a19f9c09c24afb0d7c05}{BITS\+\_\+\+CLEAR}}(x,  m)~((x)\&=$\sim$(m))
+\begin{DoxyCompactList}\small\item\em Set bits defined by bit mask to logical 0 in bit field. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bits_8h_abb47501bcab4a40e715287fdc61d4ffa}{BITS\+\_\+\+TOGGLE}}(x,  m)~((x)$^\wedge$=(m))
+\begin{DoxyCompactList}\small\item\em Toggle bits in bit field as defined by bit mask. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides preprocessor macros for bit manipulations. 
+
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Bit field \begin{DoxyVerb}        A bit field is termed an unsigned integer in which single bits or
+        group of bits are stringed together. It represents a kind of compound
+        data type on bit level, in contrast to primitive data types, where the
+        value is build by interpreting all positions of the primitive data type together.
+
+        A bit field is always embedded in the data type of the binary number (in contrast to bit arrays).
+
+
+        Bit mask
+
+        Accessing a single bit, either in reading or writing manner,
+        is supported by hardware in a similar way like accessing a
+        byte or word - it will do with only one command for most machines.
+
+        But support through compiler is often similar to an access on several
+        bits, where a bit group has to be "removed" from the variable word before
+        comparison or manipulation. This is done by using a a so called bit mask
+        and some elementary boolean bit operations.
+
+        Bit masks are called bit fields that do not represent any information themselves,
+        but are used to read out or manipulate bit fields.
+
+
+        Source: https://de.wikipedia.org/wiki/Bitfeld
+        Source: https://de.wikipedia.org/wiki/Bitkette
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{bits_8h_a474ad26567ae2f27077925b1721737ee}\label{bits_8h_a474ad26567ae2f27077925b1721737ee}} 
+\index{bits.h@{bits.h}!BITS@{BITS}}
+\index{BITS@{BITS}!bits.h@{bits.h}}
+\doxysubsubsection{\texorpdfstring{BITS}{BITS}}
+{\footnotesize\ttfamily \#define BITS(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{m }\end{DoxyParamCaption})~((x)\&(m))}
+
+
+
+Read out bits from bit field by using a bit mask. 
+
+To read out one or more specific bits of a bit field, it is logically AND-\/ed with a bit mask. \begin{DoxyVerb}       Example
+
+       1-Bit:
+
+           01001011 bit field
+       AND 00001000 bit mask
+       -------------
+       =   00001000 result
+
+       0-Bit:
+
+           01001011 bit field
+       AND 00000100 bit mask
+       -------------
+       =   00000000 result
+\end{DoxyVerb}
+ 
+
+Definition at line 89 of file bits.\+h.
+
+\mbox{\Hypertarget{bits_8h_a0fe72ae41a75a19f9c09c24afb0d7c05}\label{bits_8h_a0fe72ae41a75a19f9c09c24afb0d7c05}} 
+\index{bits.h@{bits.h}!BITS\_CLEAR@{BITS\_CLEAR}}
+\index{BITS\_CLEAR@{BITS\_CLEAR}!bits.h@{bits.h}}
+\doxysubsubsection{\texorpdfstring{BITS\_CLEAR}{BITS\_CLEAR}}
+{\footnotesize\ttfamily \#define BITS\+\_\+\+CLEAR(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{m }\end{DoxyParamCaption})~((x)\&=$\sim$(m))}
+
+
+
+Set bits defined by bit mask to logical 0 in bit field. 
+
+To clear one or more specific bits of a bit field, it is logically NAND-\/ed with a bit mask defining the bits to be cleared.
+
+Set bits to „0“\+:\hypertarget{bits_8h_autotoc_md1}{}\doxysubsubsection{NOT 00001000 bit mask}\label{bits_8h_autotoc_md1}
+= 11110111 inverted bit mask \hypertarget{bits_8h_autotoc_md2}{}\doxysubsubsection{AND 01001011 bit field}\label{bits_8h_autotoc_md2}
+= 01000011 result 
+
+Definition at line 132 of file bits.\+h.
+
+\mbox{\Hypertarget{bits_8h_ac54646f282423ff51fe84f5375de355b}\label{bits_8h_ac54646f282423ff51fe84f5375de355b}} 
+\index{bits.h@{bits.h}!BITS\_INVERT@{BITS\_INVERT}}
+\index{BITS\_INVERT@{BITS\_INVERT}!bits.h@{bits.h}}
+\doxysubsubsection{\texorpdfstring{BITS\_INVERT}{BITS\_INVERT}}
+{\footnotesize\ttfamily \#define BITS\+\_\+\+INVERT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~($\sim$x)}
+
+
+
+Toggle all bits of integer. 
+
+
+
+Definition at line 94 of file bits.\+h.
+
+\mbox{\Hypertarget{bits_8h_ae713c82afc20dc5f9a268e2967800302}\label{bits_8h_ae713c82afc20dc5f9a268e2967800302}} 
+\index{bits.h@{bits.h}!BITS\_SET@{BITS\_SET}}
+\index{BITS\_SET@{BITS\_SET}!bits.h@{bits.h}}
+\doxysubsubsection{\texorpdfstring{BITS\_SET}{BITS\_SET}}
+{\footnotesize\ttfamily \#define BITS\+\_\+\+SET(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{m }\end{DoxyParamCaption})~((x)$\vert$=(m))}
+
+
+
+Set bits defined by bit mask to logical 1 in bit field. 
+
+To set one or more specific bits of a bit field, it is logically OR-\/ed with a bit mask defining the bits to be set.
+
+Example
+
+Set bits to „1“\+: \begin{DoxyVerb}01001011 bit field
+\end{DoxyVerb}
+ \hypertarget{bits_8h_autotoc_md0}{}\doxysubsubsection{OR  00000100 bit mask}\label{bits_8h_autotoc_md0}
+= 01001111 result 
+
+Definition at line 116 of file bits.\+h.
+
+\mbox{\Hypertarget{bits_8h_a1049a0b3acd872c28914b4ccc49c69f1}\label{bits_8h_a1049a0b3acd872c28914b4ccc49c69f1}} 
+\index{bits.h@{bits.h}!BITS\_TEST@{BITS\_TEST}}
+\index{BITS\_TEST@{BITS\_TEST}!bits.h@{bits.h}}
+\doxysubsubsection{\texorpdfstring{BITS\_TEST}{BITS\_TEST}}
+{\footnotesize\ttfamily \#define BITS\+\_\+\+TEST(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{m }\end{DoxyParamCaption})~(((x)\&(m))==(m)))}
+
+
+
+Test if all of the bits defined by bit mask are set in the bit field. 
+
+
+
+Definition at line 99 of file bits.\+h.
+
+\mbox{\Hypertarget{bits_8h_abb47501bcab4a40e715287fdc61d4ffa}\label{bits_8h_abb47501bcab4a40e715287fdc61d4ffa}} 
+\index{bits.h@{bits.h}!BITS\_TOGGLE@{BITS\_TOGGLE}}
+\index{BITS\_TOGGLE@{BITS\_TOGGLE}!bits.h@{bits.h}}
+\doxysubsubsection{\texorpdfstring{BITS\_TOGGLE}{BITS\_TOGGLE}}
+{\footnotesize\ttfamily \#define BITS\+\_\+\+TOGGLE(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{m }\end{DoxyParamCaption})~((x)$^\wedge$=(m))}
+
+
+
+Toggle bits in bit field as defined by bit mask. 
+
+To toggle one or more specific bits of a bit field, it is logically XOR-\/ed with a bit mask defining the bits to be toggled. \begin{DoxyVerb}01001011 bit field
+\end{DoxyVerb}
+ \hypertarget{bits_8h_autotoc_md3}{}\doxysubsubsection{XOR 00000110 bit mask}\label{bits_8h_autotoc_md3}
+= 01001101 result 
+
+Definition at line 144 of file bits.\+h.
+

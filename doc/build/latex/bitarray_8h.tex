@@ -1,0 +1,247 @@
+\hypertarget{bitarray_8h}{}\doxysection{myos/lib/bitarray.h File Reference}
+\label{bitarray_8h}\index{myos/lib/bitarray.h@{myos/lib/bitarray.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for bitarray.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{bitarray_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bitarray_8h_a599c08bb1ed8a62215002598e680e6f5}{BITARRAY\+\_\+\+RESET\+\_\+\+STATE}}~0
+\item 
+\#define \mbox{\hyperlink{bitarray_8h_ae7bbd9b99bd36dba050cabc234a0d993}{BITARRAY\+\_\+\+SET\+\_\+\+STATE}}~1
+\item 
+\#define \mbox{\hyperlink{bitarray_8h_a7c2aac079d863e90e7c6f7633e7fc844}{BITARRAY}}(name,  size)~    \mbox{\hyperlink{bitarray_8h_a6ffe868b72ad346b7793faa70c2db9f3}{bitarray\+\_\+t}} name\#\#\+\_\+bitarray\mbox{[}((size)+7)$>$$>$3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Defines an bit array. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bitarray_8h_aa6a42e888a0d34516115061619e01477}{BITARRAY\+\_\+\+INIT}}(name)~    memset(name\#\#\+\_\+bitarray,0x00,sizeof(name\#\#\+\_\+bitarray))
+\item 
+\#define \mbox{\hyperlink{bitarray_8h_a657c0d40945a4102631717a6a422f81e}{BITARRAY\+\_\+\+SIZE}}(name)~    ((sizeof(name\#\#\+\_\+bitarray)/sizeof(name\#\#\+\_\+bitarray\mbox{[}0\mbox{]}))$<$$<$3)
+\begin{DoxyCompactList}\small\item\em Size of array in bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bitarray_8h_a7fa8ab67e5940fd40df9b586e728f93b}{BITARRAY\+\_\+\+GET}}(name,  bit)~    ((unsigned)((name\#\#\+\_\+bitarray\mbox{[}((unsigned)(bit))$>$$>$3\mbox{]} \& ((1$<$$<$(((unsigned)(bit))\&0x07)))) $>$ 0))
+\begin{DoxyCompactList}\small\item\em Get a specific bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bitarray_8h_aaf36732a59798b9288145b1ba594a4af}{BITARRAY\+\_\+\+SET}}(name,  bit)~    name\#\#\+\_\+bitarray\mbox{[}((unsigned)(bit))$>$$>$3\mbox{]} $\vert$= (1$<$$<$(((unsigned)(bit))\&0x07))
+\begin{DoxyCompactList}\small\item\em Set a specific bit to 1. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bitarray_8h_a395826bf9dee68c6655400a0bd4c5f4c}{BITARRAY\+\_\+\+RESET}}(name,  bit)~    name\#\#\+\_\+bitarray\mbox{[}((unsigned)(bit))$>$$>$3\mbox{]} \&= $\sim$(1$<$$<$(((unsigned)(bit))\&0x07))
+\begin{DoxyCompactList}\small\item\em Reset a specific bit to 0. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bitarray_8h_ac12af94c99933b24b1811bb1e0835f1e}{BITARRAY\+\_\+\+TOGGLE}}(name,  bit)~     name\#\#\+\_\+bitarray\mbox{[}((unsigned)(bit))$>$$>$3\mbox{]} $^\wedge$= (1$<$$<$(((unsigned)(bit))\&0x07))
+\begin{DoxyCompactList}\small\item\em Toggle a specific bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bitarray_8h_a924a0852a7655bd5290aa271e1a724d7}{BITARRAY\+\_\+\+SET\+\_\+\+VALUE}}(name,  bit,  value)~    do\{if((value) == 0)\{\mbox{\hyperlink{bitarray_8h_a395826bf9dee68c6655400a0bd4c5f4c}{BITARRAY\+\_\+\+RESET}}(name,bit);\}else\{\mbox{\hyperlink{bitarray_8h_aaf36732a59798b9288145b1ba594a4af}{BITARRAY\+\_\+\+SET}}(name,bit);\}\}while(0)
+\begin{DoxyCompactList}\small\item\em Toggle a specific bit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{bitarray_8h_a6ffe868b72ad346b7793faa70c2db9f3}{bitarray\+\_\+t}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{bitarray_8h_a7c2aac079d863e90e7c6f7633e7fc844}\label{bitarray_8h_a7c2aac079d863e90e7c6f7633e7fc844}} 
+\index{bitarray.h@{bitarray.h}!BITARRAY@{BITARRAY}}
+\index{BITARRAY@{BITARRAY}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{BITARRAY}{BITARRAY}}
+{\footnotesize\ttfamily \#define BITARRAY(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{size }\end{DoxyParamCaption})~    \mbox{\hyperlink{bitarray_8h_a6ffe868b72ad346b7793faa70c2db9f3}{bitarray\+\_\+t}} name\#\#\+\_\+bitarray\mbox{[}((size)+7)$>$$>$3\mbox{]}}
+
+
+
+Defines an bit array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the bit array \\
+\hline
+{\em size} & Minimum number of bits required \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file bitarray.\+h.
+
+\mbox{\Hypertarget{bitarray_8h_a7fa8ab67e5940fd40df9b586e728f93b}\label{bitarray_8h_a7fa8ab67e5940fd40df9b586e728f93b}} 
+\index{bitarray.h@{bitarray.h}!BITARRAY\_GET@{BITARRAY\_GET}}
+\index{BITARRAY\_GET@{BITARRAY\_GET}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{BITARRAY\_GET}{BITARRAY\_GET}}
+{\footnotesize\ttfamily \#define BITARRAY\+\_\+\+GET(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{bit }\end{DoxyParamCaption})~    ((unsigned)((name\#\#\+\_\+bitarray\mbox{[}((unsigned)(bit))$>$$>$3\mbox{]} \& ((1$<$$<$(((unsigned)(bit))\&0x07)))) $>$ 0))}
+
+
+
+Get a specific bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the bit array \\
+\hline
+{\em bit} & Specific bit index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the specific bit. Either 0 or 1. 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file bitarray.\+h.
+
+\mbox{\Hypertarget{bitarray_8h_aa6a42e888a0d34516115061619e01477}\label{bitarray_8h_aa6a42e888a0d34516115061619e01477}} 
+\index{bitarray.h@{bitarray.h}!BITARRAY\_INIT@{BITARRAY\_INIT}}
+\index{BITARRAY\_INIT@{BITARRAY\_INIT}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{BITARRAY\_INIT}{BITARRAY\_INIT}}
+{\footnotesize\ttfamily \#define BITARRAY\+\_\+\+INIT(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~    memset(name\#\#\+\_\+bitarray,0x00,sizeof(name\#\#\+\_\+bitarray))}
+
+
+
+Definition at line 58 of file bitarray.\+h.
+
+\mbox{\Hypertarget{bitarray_8h_a395826bf9dee68c6655400a0bd4c5f4c}\label{bitarray_8h_a395826bf9dee68c6655400a0bd4c5f4c}} 
+\index{bitarray.h@{bitarray.h}!BITARRAY\_RESET@{BITARRAY\_RESET}}
+\index{BITARRAY\_RESET@{BITARRAY\_RESET}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{BITARRAY\_RESET}{BITARRAY\_RESET}}
+{\footnotesize\ttfamily \#define BITARRAY\+\_\+\+RESET(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{bit }\end{DoxyParamCaption})~    name\#\#\+\_\+bitarray\mbox{[}((unsigned)(bit))$>$$>$3\mbox{]} \&= $\sim$(1$<$$<$(((unsigned)(bit))\&0x07))}
+
+
+
+Reset a specific bit to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the bit array \\
+\hline
+{\em bit} & Specific bit index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file bitarray.\+h.
+
+\mbox{\Hypertarget{bitarray_8h_a599c08bb1ed8a62215002598e680e6f5}\label{bitarray_8h_a599c08bb1ed8a62215002598e680e6f5}} 
+\index{bitarray.h@{bitarray.h}!BITARRAY\_RESET\_STATE@{BITARRAY\_RESET\_STATE}}
+\index{BITARRAY\_RESET\_STATE@{BITARRAY\_RESET\_STATE}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{BITARRAY\_RESET\_STATE}{BITARRAY\_RESET\_STATE}}
+{\footnotesize\ttfamily \#define BITARRAY\+\_\+\+RESET\+\_\+\+STATE~0}
+
+
+
+Definition at line 43 of file bitarray.\+h.
+
+\mbox{\Hypertarget{bitarray_8h_aaf36732a59798b9288145b1ba594a4af}\label{bitarray_8h_aaf36732a59798b9288145b1ba594a4af}} 
+\index{bitarray.h@{bitarray.h}!BITARRAY\_SET@{BITARRAY\_SET}}
+\index{BITARRAY\_SET@{BITARRAY\_SET}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{BITARRAY\_SET}{BITARRAY\_SET}}
+{\footnotesize\ttfamily \#define BITARRAY\+\_\+\+SET(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{bit }\end{DoxyParamCaption})~    name\#\#\+\_\+bitarray\mbox{[}((unsigned)(bit))$>$$>$3\mbox{]} $\vert$= (1$<$$<$(((unsigned)(bit))\&0x07))}
+
+
+
+Set a specific bit to 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the bit array \\
+\hline
+{\em bit} & Specific bit index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 93 of file bitarray.\+h.
+
+\mbox{\Hypertarget{bitarray_8h_ae7bbd9b99bd36dba050cabc234a0d993}\label{bitarray_8h_ae7bbd9b99bd36dba050cabc234a0d993}} 
+\index{bitarray.h@{bitarray.h}!BITARRAY\_SET\_STATE@{BITARRAY\_SET\_STATE}}
+\index{BITARRAY\_SET\_STATE@{BITARRAY\_SET\_STATE}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{BITARRAY\_SET\_STATE}{BITARRAY\_SET\_STATE}}
+{\footnotesize\ttfamily \#define BITARRAY\+\_\+\+SET\+\_\+\+STATE~1}
+
+
+
+Definition at line 44 of file bitarray.\+h.
+
+\mbox{\Hypertarget{bitarray_8h_a924a0852a7655bd5290aa271e1a724d7}\label{bitarray_8h_a924a0852a7655bd5290aa271e1a724d7}} 
+\index{bitarray.h@{bitarray.h}!BITARRAY\_SET\_VALUE@{BITARRAY\_SET\_VALUE}}
+\index{BITARRAY\_SET\_VALUE@{BITARRAY\_SET\_VALUE}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{BITARRAY\_SET\_VALUE}{BITARRAY\_SET\_VALUE}}
+{\footnotesize\ttfamily \#define BITARRAY\+\_\+\+SET\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{bit,  }\item[{}]{value }\end{DoxyParamCaption})~    do\{if((value) == 0)\{\mbox{\hyperlink{bitarray_8h_a395826bf9dee68c6655400a0bd4c5f4c}{BITARRAY\+\_\+\+RESET}}(name,bit);\}else\{\mbox{\hyperlink{bitarray_8h_aaf36732a59798b9288145b1ba594a4af}{BITARRAY\+\_\+\+SET}}(name,bit);\}\}while(0)}
+
+
+
+Toggle a specific bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the bit array \\
+\hline
+{\em bit} & Specific bit index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file bitarray.\+h.
+
+\mbox{\Hypertarget{bitarray_8h_a657c0d40945a4102631717a6a422f81e}\label{bitarray_8h_a657c0d40945a4102631717a6a422f81e}} 
+\index{bitarray.h@{bitarray.h}!BITARRAY\_SIZE@{BITARRAY\_SIZE}}
+\index{BITARRAY\_SIZE@{BITARRAY\_SIZE}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{BITARRAY\_SIZE}{BITARRAY\_SIZE}}
+{\footnotesize\ttfamily \#define BITARRAY\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~    ((sizeof(name\#\#\+\_\+bitarray)/sizeof(name\#\#\+\_\+bitarray\mbox{[}0\mbox{]}))$<$$<$3)}
+
+
+
+Size of array in bits. 
+
+Returns the size of a bit array in bits. The size is expressed as a multiple of 8. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the bit array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file bitarray.\+h.
+
+\mbox{\Hypertarget{bitarray_8h_ac12af94c99933b24b1811bb1e0835f1e}\label{bitarray_8h_ac12af94c99933b24b1811bb1e0835f1e}} 
+\index{bitarray.h@{bitarray.h}!BITARRAY\_TOGGLE@{BITARRAY\_TOGGLE}}
+\index{BITARRAY\_TOGGLE@{BITARRAY\_TOGGLE}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{BITARRAY\_TOGGLE}{BITARRAY\_TOGGLE}}
+{\footnotesize\ttfamily \#define BITARRAY\+\_\+\+TOGGLE(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{bit }\end{DoxyParamCaption})~     name\#\#\+\_\+bitarray\mbox{[}((unsigned)(bit))$>$$>$3\mbox{]} $^\wedge$= (1$<$$<$(((unsigned)(bit))\&0x07))}
+
+
+
+Toggle a specific bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the bit array \\
+\hline
+{\em bit} & Specific bit index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file bitarray.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{bitarray_8h_a6ffe868b72ad346b7793faa70c2db9f3}\label{bitarray_8h_a6ffe868b72ad346b7793faa70c2db9f3}} 
+\index{bitarray.h@{bitarray.h}!bitarray\_t@{bitarray\_t}}
+\index{bitarray\_t@{bitarray\_t}!bitarray.h@{bitarray.h}}
+\doxysubsubsection{\texorpdfstring{bitarray\_t}{bitarray\_t}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{bitarray_8h_a6ffe868b72ad346b7793faa70c2db9f3}{bitarray\+\_\+t}}}
+
+
+
+Definition at line 46 of file bitarray.\+h.
+

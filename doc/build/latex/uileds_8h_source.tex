@@ -1,0 +1,82 @@
+\doxysection{uileds.\+h}
+\hypertarget{uileds_8h_source}{}\label{uileds_8h_source}\index{myos/ui/uileds.h@{myos/ui/uileds.h}}
+\mbox{\hyperlink{uileds_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00030}00030\ \textcolor{preprocessor}{\#ifndef\ UILEDS\_H\_}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00031}00031\ \textcolor{preprocessor}{\#define\ UILEDS\_H\_}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00038}\mbox{\hyperlink{uileds_8h_a5097464f1cbca301fe9b011643890812}{00038}}\ \textcolor{preprocessor}{\#define\ UILEDS\_STATE\_OFF\ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00039}\mbox{\hyperlink{uileds_8h_ad6e57384a29e434f33121c3ecfbcc4c9}{00039}}\ \textcolor{preprocessor}{\#define\ UILEDS\_STATE\_ON\ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00041}\mbox{\hyperlink{uileds_8h_a8f39165b7a1540dfd68b2d61565eccc9}{00041}}\ \textcolor{preprocessor}{\#define\ UILEDS\_INV\ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00042}\mbox{\hyperlink{uileds_8h_a425bbac14e9cd8b910f2a7c61d446195}{00042}}\ \textcolor{preprocessor}{\#define\ UILEDS\_ORIG\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00044}\mbox{\hyperlink{uileds_8h_aa21a83e41238b23119701dbf9af209a7}{00044}}\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{uileds_8h_aa21a83e41238b23119701dbf9af209a7}{uileds\_set\_t}})\ (bool);}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00046}\mbox{\hyperlink{structuileds__state__t}{00046}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00047}\mbox{\hyperlink{structuileds__state__t_ae48d4a22e764261e8345b8d6811502d5}{00047}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structuileds__state__t_ae48d4a22e764261e8345b8d6811502d5}{lstate}}\ \ \ \ \ \ :1;}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00048}\mbox{\hyperlink{structuileds__state__t_ac3fd2150854671dc31b7e43a49da6a60}{00048}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structuileds__state__t_ac3fd2150854671dc31b7e43a49da6a60}{duration}}\ \ \ :7;}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00049}00049\ \}\ \mbox{\hyperlink{structuileds__state__t}{uileds\_state\_t}};}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00051}\mbox{\hyperlink{uileds_8h_a82ba559638e78ffe32f608a6d5d29fc9}{00051}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structuileds__t}{uileds\_t}}\ \mbox{\hyperlink{structuileds__t}{uileds\_t}};}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00053}\mbox{\hyperlink{structuileds__t}{00053}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structuileds__t}{uileds\_t}}\{}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00054}\mbox{\hyperlink{structuileds__t_ab86bd28235d77a55b87295733f9712f8}{00054}}\ \ \ \ \ \mbox{\hyperlink{uileds_8h_aa21a83e41238b23119701dbf9af209a7}{uileds\_set\_t}}\ \mbox{\hyperlink{structuileds__t_ab86bd28235d77a55b87295733f9712f8}{set\_led}};}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00055}\mbox{\hyperlink{structuileds__t_ac4aaadf5e2ceddde5d921100bb7d06f9}{00055}}\ \ \ \ \ \mbox{\hyperlink{structuileds__state__t}{uileds\_state\_t}}\ *\mbox{\hyperlink{structuileds__t_ac4aaadf5e2ceddde5d921100bb7d06f9}{pattern}};}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00056}\mbox{\hyperlink{structuileds__t_a8c46dcad3455d7dbf0d02ef48dc485e9}{00056}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structuileds__t_a8c46dcad3455d7dbf0d02ef48dc485e9}{pstate}}\ \ \ \ \ :7;}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00057}\mbox{\hyperlink{structuileds__t_af4f7060d448d6b93e76fc4521c065386}{00057}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structuileds__t_af4f7060d448d6b93e76fc4521c065386}{inverted}}\ \ \ :1;}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00058}\mbox{\hyperlink{structuileds__t_acf19a264d5ae3e68d17d2dc98c434332}{00058}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structuileds__t_acf19a264d5ae3e68d17d2dc98c434332}{timer}}\ \ \ \ \ \ :8;}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00059}00059\ \};}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00061}00061\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structuileds__t}{uileds\_t}}*\ \textcolor{keyword}{const}\ \mbox{\hyperlink{uileds_8h_aa6a5d4daf980776421248712c732b5c1}{uileds\_all\_leds}}\ [];}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00063}\mbox{\hyperlink{uileds_8h_afa3a2de511d531b99157251d64d7a5a2}{00063}}\ \textcolor{preprocessor}{\#define\ UILEDS\_PATTERN(name,size)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00064}00064\ \textcolor{preprocessor}{\ \ \ \ \ \ uileds\_state\_t\ uileds\_pattern\_\#\#name\ [size]}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00067}\mbox{\hyperlink{uileds_8h_aec8a4845ea6fb4191e76b1a63c2835b4}{00067}}\ \textcolor{preprocessor}{\#define\ UILEDS\_PATTERN\_BEGIN(name)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00068}00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ const\ uileds\_state\_t\ uileds\_pattern\_\#\#name\ []\ =\ \{}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00070}\mbox{\hyperlink{uileds_8h_a8d5a2dae90a1b31a31d0ee7056b4c880}{00070}}\ \textcolor{preprocessor}{\#define\ EXTERN\_UILEDS\_PATTERN(name)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00071}00071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ extern\ const\ uileds\_state\_t\ uileds\_pattern\_\#\#name\ []}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00073}\mbox{\hyperlink{uileds_8h_a32e988ac7a5055d17e325dde8d98fa23}{00073}}\ \textcolor{preprocessor}{\#define\ UILEDS\_STATE(state,duration)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00074}00074\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{state,duration\},}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00076}\mbox{\hyperlink{uileds_8h_acb24a40d8b7860395f66ed42b6de8523}{00076}}\ \textcolor{preprocessor}{\#define\ UILEDS\_PATTERN\_END()\ \{0,0\}\ \};}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00078}\mbox{\hyperlink{uileds_8h_a0e26580a2843ee49eae2bad5cae88861}{00078}}\ \textcolor{preprocessor}{\#define\ UILEDS\_LED(name)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00079}00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ void\ uileds\_set\_\#\#name(bool\ state);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00080}00080\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ uileds\_t\ name\ =\ \{uileds\_set\_\#\#name\};\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00081}00081\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ void\ uileds\_set\_\#\#name(bool\ state)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00083}\mbox{\hyperlink{uileds_8h_a7f45c1636e8fb7e2a72f9252f3425b2a}{00083}}\ \textcolor{preprocessor}{\#define\ EXTERN\_UILEDS\_LED(name)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00084}00084\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ extern\ uileds\_t\ name}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00086}\mbox{\hyperlink{uileds_8h_ac535b886ef7a12ab969e39c8485c4f96}{00086}}\ \textcolor{preprocessor}{\#define\ UILEDS\_SET\_PATTERN(led\_name,pattern\_name,invert)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00087}00087\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ uileds\_set\_pattern(\&led\_name,(uileds\_state\_t*)\&uileds\_pattern\_\#\#pattern\_name,invert)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00089}\mbox{\hyperlink{uileds_8h_a138fb00b38e3371b09f060af601336c9}{00089}}\ \textcolor{preprocessor}{\#define\ UILEDS\_LEDS(...)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00090}00090\ \textcolor{preprocessor}{\ \ \ \ const\ uileds\_t*\ const\ uileds\_all\_leds\ []\ =\ \{\ \_\_VA\_ARGS\_\_\ \};\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00091}00091\ \textcolor{preprocessor}{\ \ \ \ const\ unsigned\ uileds\_count\ =\ (sizeof(uileds\_all\_leds)/sizeof(*uileds\_all\_leds));}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00093}\mbox{\hyperlink{uileds_8h_a75bb2cec76245599cd00faedb1090687}{00093}}\ \textcolor{preprocessor}{\#define\ UILEDS\_COUNT\ (uileds\_count)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00095}\mbox{\hyperlink{uileds_8h_ad5ff1e6557b2e0f6d5c9a343acecc534}{00095}}\ \textcolor{preprocessor}{\#define\ UILEDS\_SYNC(which,with,inverted)\ uileds\_sync\ (\&which,\&with,inverted)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00097}\mbox{\hyperlink{uileds_8h_a51d98e8e88081b15a3ffbc6e3726e8ca}{00097}}\ \textcolor{preprocessor}{\#define\ ULEDS\_DISABLE\_LED(led\_name)\ do\ \{\ led\_name.pattern\ =\ NULL;\ led\_name.set\_led(UILEDS\_STATE\_OFF);\}while(0)}}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00099}00099\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uileds_8h_a2e542458e465d35bd6b01ab78105af29}{uileds\_set\_pattern}}\ (\mbox{\hyperlink{structuileds__t}{uileds\_t}}*\ led,\ \mbox{\hyperlink{structuileds__state__t}{uileds\_state\_t}}*\ pattern,\ \textcolor{keywordtype}{bool}\ inverted);}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00100}00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uileds_8h_a72e781176facccd920c0dc89ed97684c}{uileds\_handler}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00101}00101\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{uileds_8h_a1040ce42036859bed7a6e88454b5c093}{uileds\_count}};}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00102}00102\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uileds_8h_a6162cb6ea1557773ec02f9982d81201e}{uileds\_sync}}\ (\mbox{\hyperlink{structuileds__t}{uileds\_t}}*\ which,\ \mbox{\hyperlink{structuileds__t}{uileds\_t}}*\ with,\ \textcolor{keywordtype}{bool}\ inverted);}
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{uileds_8h_source_l00104}00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ UILEDS\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,243 @@
+\hypertarget{rtimer_8h}{}\doxysection{myos/os/rtimer.h File Reference}
+\label{rtimer_8h}\index{myos/os/rtimer.h@{myos/os/rtimer.h}}
+{\ttfamily \#include \char`\"{}rtimer\+\_\+arch.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdbool.\+h\char`\"{}}\newline
+Include dependency graph for rtimer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{rtimer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtimer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{rtimer_8h_a4c015dfcc989f59c0e8c9c69d142228d}{RTIMER\+\_\+\+TICKS\+\_\+\+PER\+\_\+\+SEC}}~RTIMER\+\_\+\+ARCH\+\_\+\+TICKS\+\_\+\+PER\+\_\+\+SEC
+\item 
+\#define \mbox{\hyperlink{rtimer_8h_af7af14704da752973f7a1107076b0f87}{rtimer\+\_\+now}}()~rtimer\+\_\+arch\+\_\+now()
+\item 
+\#define \mbox{\hyperlink{rtimer_8h_a6bffd6257754849655158d5873e3cf3a}{rtimer\+\_\+init}}()~rtimer\+\_\+arch\+\_\+init()
+\item 
+\#define \mbox{\hyperlink{rtimer_8h_a65d386cf514c24cd91a7d45743e8b9d2}{RTIMER\+\_\+\+TIMESTAMP\+\_\+\+DIFF}}~RTIMER\+\_\+\+TIMESTAMP\+\_\+\+ARCH\+\_\+\+DIFF
+\item 
+\#define \mbox{\hyperlink{rtimer_8h_a94d8996134ebb2ba8f57a139b774436a}{rtimer\+\_\+timestamp\+\_\+less\+\_\+than}}(a,  b)~(\mbox{\hyperlink{rtimer_8h_a65d386cf514c24cd91a7d45743e8b9d2}{RTIMER\+\_\+\+TIMESTAMP\+\_\+\+DIFF}}((a),(b)) $<$ 0)
+\item 
+\#define \mbox{\hyperlink{rtimer_8h_aa871bcb41445122d3fb86fb8231d8936}{PROCESS\+\_\+\+RTIMER\+\_\+\+OBTAIN}}()
+\item 
+\#define \mbox{\hyperlink{rtimer_8h_a8c8b81bc9f837e9ae91d0a395f4b36a9}{rtimer\+\_\+expired}}(rtimerptr)~(\mbox{\hyperlink{rtimer_8h_a13bd725f41860541876537794b14f1e8}{rtimer\+\_\+left}}(rtimerptr) == 0)
+\item 
+\#define \mbox{\hyperlink{rtimer_8h_aa1ff7c0003bd8020aaaf49ced303d4b8}{rtimer\+\_\+timestamp\+\_\+stop}}(rtimerptr)~((rtimerptr)-\/$>$start+(rtimerptr)-\/$>$span)
+\item 
+\#define \mbox{\hyperlink{rtimer_8h_a50167cbeb702deac02ec6fbf36f6e497}{rtimer\+\_\+module\+\_\+init}}~rtimer\+\_\+arch\+\_\+module\+\_\+init
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef rtimer\+\_\+arch\+\_\+timestamp\+\_\+t \mbox{\hyperlink{rtimer_8h_a57663675f5be5acf96aaf3207058a882}{rtimer\+\_\+timestamp\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{rtimer_8h_a57663675f5be5acf96aaf3207058a882}{rtimer\+\_\+timestamp\+\_\+t}} \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\+\_\+timespan\+\_\+t}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{rtimer_8h_a54dda60624530e5db25116d848efbf17}{rtimer\+\_\+callback\+\_\+t}}) (void $\ast$data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{rtimer_8h_af04c19e5a026792236fb2c048d38e7d6}{rtimer\+\_\+start}} (\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$rtimer, \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\+\_\+timespan\+\_\+t}} span, \mbox{\hyperlink{rtimer_8h_a54dda60624530e5db25116d848efbf17}{rtimer\+\_\+callback\+\_\+t}} callback, void $\ast$data)
+\item 
+void \mbox{\hyperlink{rtimer_8h_a772f00253fefe7197ab2031f8b63989a}{rtimer\+\_\+reset}} (\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$rtimer)
+\item 
+\mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\+\_\+timespan\+\_\+t}} \mbox{\hyperlink{rtimer_8h_a13bd725f41860541876537794b14f1e8}{rtimer\+\_\+left}} (\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$rtimer)
+\item 
+bool \mbox{\hyperlink{rtimer_8h_a0d05dbfdc854200a60b93a3a37c839b5}{rtimer\+\_\+lock}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{rtimer_8h_aa871bcb41445122d3fb86fb8231d8936}\label{rtimer_8h_aa871bcb41445122d3fb86fb8231d8936}} 
+\index{rtimer.h@{rtimer.h}!PROCESS\_RTIMER\_OBTAIN@{PROCESS\_RTIMER\_OBTAIN}}
+\index{PROCESS\_RTIMER\_OBTAIN@{PROCESS\_RTIMER\_OBTAIN}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_RTIMER\_OBTAIN}{PROCESS\_RTIMER\_OBTAIN}}
+{\footnotesize\ttfamily \#define PROCESS\+\_\+\+RTIMER\+\_\+\+OBTAIN(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{   \textcolor{keywordflow}{do}\{ \(\backslash\)}
+\DoxyCodeLine{      while(!\mbox{\hyperlink{rtimer_8h_a0d05dbfdc854200a60b93a3a37c839b5}{rtimer\_lock}}()) \(\backslash\)}
+\DoxyCodeLine{      \{ \(\backslash\)}
+\DoxyCodeLine{         PROCESS\_SUSPEND(); \(\backslash\)}
+\DoxyCodeLine{      \} \(\backslash\)}
+\DoxyCodeLine{   \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line 62 of file rtimer.\+h.
+
+\mbox{\Hypertarget{rtimer_8h_a8c8b81bc9f837e9ae91d0a395f4b36a9}\label{rtimer_8h_a8c8b81bc9f837e9ae91d0a395f4b36a9}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_expired@{rtimer\_expired}}
+\index{rtimer\_expired@{rtimer\_expired}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_expired}{rtimer\_expired}}
+{\footnotesize\ttfamily \#define rtimer\+\_\+expired(\begin{DoxyParamCaption}\item[{}]{rtimerptr }\end{DoxyParamCaption})~(\mbox{\hyperlink{rtimer_8h_a13bd725f41860541876537794b14f1e8}{rtimer\+\_\+left}}(rtimerptr) == 0)}
+
+
+
+Definition at line 76 of file rtimer.\+h.
+
+\mbox{\Hypertarget{rtimer_8h_a6bffd6257754849655158d5873e3cf3a}\label{rtimer_8h_a6bffd6257754849655158d5873e3cf3a}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_init@{rtimer\_init}}
+\index{rtimer\_init@{rtimer\_init}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_init}{rtimer\_init}}
+{\footnotesize\ttfamily \#define rtimer\+\_\+init(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~rtimer\+\_\+arch\+\_\+init()}
+
+
+
+Definition at line 48 of file rtimer.\+h.
+
+\mbox{\Hypertarget{rtimer_8h_a50167cbeb702deac02ec6fbf36f6e497}\label{rtimer_8h_a50167cbeb702deac02ec6fbf36f6e497}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_module\_init@{rtimer\_module\_init}}
+\index{rtimer\_module\_init@{rtimer\_module\_init}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_module\_init}{rtimer\_module\_init}}
+{\footnotesize\ttfamily \#define rtimer\+\_\+module\+\_\+init~rtimer\+\_\+arch\+\_\+module\+\_\+init}
+
+
+
+Definition at line 80 of file rtimer.\+h.
+
+\mbox{\Hypertarget{rtimer_8h_af7af14704da752973f7a1107076b0f87}\label{rtimer_8h_af7af14704da752973f7a1107076b0f87}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_now@{rtimer\_now}}
+\index{rtimer\_now@{rtimer\_now}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_now}{rtimer\_now}}
+{\footnotesize\ttfamily \#define rtimer\+\_\+now(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~rtimer\+\_\+arch\+\_\+now()}
+
+
+
+Definition at line 47 of file rtimer.\+h.
+
+\mbox{\Hypertarget{rtimer_8h_a4c015dfcc989f59c0e8c9c69d142228d}\label{rtimer_8h_a4c015dfcc989f59c0e8c9c69d142228d}} 
+\index{rtimer.h@{rtimer.h}!RTIMER\_TICKS\_PER\_SEC@{RTIMER\_TICKS\_PER\_SEC}}
+\index{RTIMER\_TICKS\_PER\_SEC@{RTIMER\_TICKS\_PER\_SEC}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{RTIMER\_TICKS\_PER\_SEC}{RTIMER\_TICKS\_PER\_SEC}}
+{\footnotesize\ttfamily \#define RTIMER\+\_\+\+TICKS\+\_\+\+PER\+\_\+\+SEC~RTIMER\+\_\+\+ARCH\+\_\+\+TICKS\+\_\+\+PER\+\_\+\+SEC}
+
+
+
+Definition at line 46 of file rtimer.\+h.
+
+\mbox{\Hypertarget{rtimer_8h_a65d386cf514c24cd91a7d45743e8b9d2}\label{rtimer_8h_a65d386cf514c24cd91a7d45743e8b9d2}} 
+\index{rtimer.h@{rtimer.h}!RTIMER\_TIMESTAMP\_DIFF@{RTIMER\_TIMESTAMP\_DIFF}}
+\index{RTIMER\_TIMESTAMP\_DIFF@{RTIMER\_TIMESTAMP\_DIFF}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{RTIMER\_TIMESTAMP\_DIFF}{RTIMER\_TIMESTAMP\_DIFF}}
+{\footnotesize\ttfamily \#define RTIMER\+\_\+\+TIMESTAMP\+\_\+\+DIFF~RTIMER\+\_\+\+TIMESTAMP\+\_\+\+ARCH\+\_\+\+DIFF}
+
+
+
+Definition at line 49 of file rtimer.\+h.
+
+\mbox{\Hypertarget{rtimer_8h_a94d8996134ebb2ba8f57a139b774436a}\label{rtimer_8h_a94d8996134ebb2ba8f57a139b774436a}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_timestamp\_less\_than@{rtimer\_timestamp\_less\_than}}
+\index{rtimer\_timestamp\_less\_than@{rtimer\_timestamp\_less\_than}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_timestamp\_less\_than}{rtimer\_timestamp\_less\_than}}
+{\footnotesize\ttfamily \#define rtimer\+\_\+timestamp\+\_\+less\+\_\+than(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(\mbox{\hyperlink{rtimer_8h_a65d386cf514c24cd91a7d45743e8b9d2}{RTIMER\+\_\+\+TIMESTAMP\+\_\+\+DIFF}}((a),(b)) $<$ 0)}
+
+
+
+Definition at line 50 of file rtimer.\+h.
+
+\mbox{\Hypertarget{rtimer_8h_aa1ff7c0003bd8020aaaf49ced303d4b8}\label{rtimer_8h_aa1ff7c0003bd8020aaaf49ced303d4b8}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_timestamp\_stop@{rtimer\_timestamp\_stop}}
+\index{rtimer\_timestamp\_stop@{rtimer\_timestamp\_stop}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_timestamp\_stop}{rtimer\_timestamp\_stop}}
+{\footnotesize\ttfamily \#define rtimer\+\_\+timestamp\+\_\+stop(\begin{DoxyParamCaption}\item[{}]{rtimerptr }\end{DoxyParamCaption})~((rtimerptr)-\/$>$start+(rtimerptr)-\/$>$span)}
+
+
+
+Definition at line 77 of file rtimer.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{rtimer_8h_a54dda60624530e5db25116d848efbf17}\label{rtimer_8h_a54dda60624530e5db25116d848efbf17}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_callback\_t@{rtimer\_callback\_t}}
+\index{rtimer\_callback\_t@{rtimer\_callback\_t}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_callback\_t}{rtimer\_callback\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ rtimer\+\_\+callback\+\_\+t) (void $\ast$data)}
+
+
+
+Definition at line 51 of file rtimer.\+h.
+
+\mbox{\Hypertarget{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}\label{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_timespan\_t@{rtimer\_timespan\_t}}
+\index{rtimer\_timespan\_t@{rtimer\_timespan\_t}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_timespan\_t}{rtimer\_timespan\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{rtimer_8h_a57663675f5be5acf96aaf3207058a882}{rtimer\+\_\+timestamp\+\_\+t}} \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\+\_\+timespan\+\_\+t}}}
+
+
+
+Definition at line 44 of file rtimer.\+h.
+
+\mbox{\Hypertarget{rtimer_8h_a57663675f5be5acf96aaf3207058a882}\label{rtimer_8h_a57663675f5be5acf96aaf3207058a882}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_timestamp\_t@{rtimer\_timestamp\_t}}
+\index{rtimer\_timestamp\_t@{rtimer\_timestamp\_t}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_timestamp\_t}{rtimer\_timestamp\_t}}
+{\footnotesize\ttfamily typedef rtimer\+\_\+arch\+\_\+timestamp\+\_\+t \mbox{\hyperlink{rtimer_8h_a57663675f5be5acf96aaf3207058a882}{rtimer\+\_\+timestamp\+\_\+t}}}
+
+
+
+Definition at line 43 of file rtimer.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rtimer_8h_a13bd725f41860541876537794b14f1e8}\label{rtimer_8h_a13bd725f41860541876537794b14f1e8}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_left@{rtimer\_left}}
+\index{rtimer\_left@{rtimer\_left}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_left()}{rtimer\_left()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\+\_\+timespan\+\_\+t}} rtimer\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$}]{rtimer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file rtimer.\+c.
+
+\mbox{\Hypertarget{rtimer_8h_a0d05dbfdc854200a60b93a3a37c839b5}\label{rtimer_8h_a0d05dbfdc854200a60b93a3a37c839b5}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_lock@{rtimer\_lock}}
+\index{rtimer\_lock@{rtimer\_lock}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_lock()}{rtimer\_lock()}}
+{\footnotesize\ttfamily bool rtimer\+\_\+lock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file rtimer.\+c.
+
+\mbox{\Hypertarget{rtimer_8h_a772f00253fefe7197ab2031f8b63989a}\label{rtimer_8h_a772f00253fefe7197ab2031f8b63989a}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_reset@{rtimer\_reset}}
+\index{rtimer\_reset@{rtimer\_reset}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_reset()}{rtimer\_reset()}}
+{\footnotesize\ttfamily void rtimer\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$}]{rtimer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 107 of file rtimer.\+c.
+
+\mbox{\Hypertarget{rtimer_8h_af04c19e5a026792236fb2c048d38e7d6}\label{rtimer_8h_af04c19e5a026792236fb2c048d38e7d6}} 
+\index{rtimer.h@{rtimer.h}!rtimer\_start@{rtimer\_start}}
+\index{rtimer\_start@{rtimer\_start}!rtimer.h@{rtimer.h}}
+\doxysubsubsection{\texorpdfstring{rtimer\_start()}{rtimer\_start()}}
+{\footnotesize\ttfamily void rtimer\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrtimer__t}{rtimer\+\_\+t}} $\ast$}]{rtimer,  }\item[{\mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\+\_\+timespan\+\_\+t}}}]{span,  }\item[{\mbox{\hyperlink{rtimer_8h_a54dda60624530e5db25116d848efbf17}{rtimer\+\_\+callback\+\_\+t}}}]{callback,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 90 of file rtimer.\+c.
+

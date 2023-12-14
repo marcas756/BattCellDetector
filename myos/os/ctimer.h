@@ -32,36 +32,52 @@
 
 
 /*!
-    \brief      Callback timer implementation (ctimer)
+   \file       ctimer.h
+   \copyright  Copyright (c) 2006, Swedish Institute of Computer Science.
+   \license    This file is released under the 3-Clause BSD License.\n
+               https://opensource.org/license/bsd-3-clause/
 
-    \details
+   \brief   Callback timer implementation (ctimer)
+
+   \details In computer programming, a callback or callback function is any
+            reference to executable code that is passed as an argument to
+            another piece of code; that code is expected to call back
+            (execute) the callback function as part of its job. This
+            execution may be immediate as in a synchronous callback, or it
+            might happen at a later point in time as in an asynchronous
+            callback. They are also called blocking and non-blocking.
+
+            https://en.wikipedia.org/wiki/Callback_(computer_programming)
+
+            Callback timer callbacks are asynchronous callbacks.
+
+            The callback function gets invoked in the context of the process
+            that started the callback timer.
+
 */
 
 
 #ifndef CTIMER_H_
 #define CTIMER_H_
 
-
 #include "myos.h"
 
 typedef struct ctimer_t ctimer_t;
-
 typedef void (*ctimer_callback_t)(ctimer_t *ctimer);
 
 struct ctimer_t {
-   ptimer_t ptimer;
-   process_t *context;
-   ctimer_callback_t callback;
+   ptimer_t ptimer;     /*!< Instance of process timer control structure */
+   process_t *context;  /*!< Context in which to invoke the callback function */
+   ctimer_callback_t callback; /*!< Callback function to be called when process timer expires */
    void* data;
 };
 
-
-#define ctimer_module_init() ptimer_module_init()
 void ctimer_start(ctimer_t *ctimer, timespan_t span, ctimer_callback_t callback, void *data);
-#define ctimer_restart(ctimerptr)                       ptimer_restart((ptimer_t*)ctimerptr)
-#define ctimer_reset(ctimerptr)                         ptimer_rreset((ptimer_t*)ctimerptr)
-#define ctimer_stop(ctimerptr)                          ptimer_stop((ptimer_t*)ctimerptr)
-#define ctimer_expired(ctimerptr)                       ptimer_expired((ptimer_t*)ctimerptr)
+#define ctimer_module_init()        ptimer_module_init()
+#define ctimer_restart(ctimerptr)   ptimer_restart((ptimer_t*)ctimerptr)
+#define ctimer_reset(ctimerptr)     ptimer_rreset((ptimer_t*)ctimerptr)
+#define ctimer_stop(ctimerptr)      ptimer_stop((ptimer_t*)ctimerptr)
+#define ctimer_expired(ctimerptr)   ptimer_expired((ptimer_t*)ctimerptr)
 
 
 #endif /* CTIMER_H_ */

@@ -1,0 +1,48 @@
+\doxysection{bitarray.\+h}
+\hypertarget{bitarray_8h_source}{}\label{bitarray_8h_source}\index{myos/lib/bitarray.h@{myos/lib/bitarray.h}}
+\mbox{\hyperlink{bitarray_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00037}00037\ \textcolor{preprocessor}{\#ifndef\ BITARRAY\_H\_}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00038}00038\ \textcolor{preprocessor}{\#define\ BITARRAY\_H\_}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ <stdint.h>}\ \textcolor{comment}{/*\ uint8\_t\ */}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ <string.h>}\ \textcolor{comment}{/*\ memset\ */}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00043}\mbox{\hyperlink{bitarray_8h_a599c08bb1ed8a62215002598e680e6f5}{00043}}\ \textcolor{preprocessor}{\#define\ BITARRAY\_RESET\_STATE\ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00044}\mbox{\hyperlink{bitarray_8h_ae7bbd9b99bd36dba050cabc234a0d993}{00044}}\ \textcolor{preprocessor}{\#define\ BITARRAY\_SET\_STATE\ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00046}\mbox{\hyperlink{bitarray_8h_a6ffe868b72ad346b7793faa70c2db9f3}{00046}}\ \textcolor{keyword}{typedef}\ uint8\_t\ \mbox{\hyperlink{bitarray_8h_a6ffe868b72ad346b7793faa70c2db9f3}{bitarray\_t}};}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00055}\mbox{\hyperlink{bitarray_8h_a7c2aac079d863e90e7c6f7633e7fc844}{00055}}\ \textcolor{preprocessor}{\#define\ BITARRAY(name,size)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00056}00056\ \textcolor{preprocessor}{\ \ \ \ bitarray\_t\ name\#\#\_bitarray[((size)+7)>>3]}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00058}\mbox{\hyperlink{bitarray_8h_aa6a42e888a0d34516115061619e01477}{00058}}\ \textcolor{preprocessor}{\#define\ BITARRAY\_INIT(name)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00059}00059\ \textcolor{preprocessor}{\ \ \ \ memset(name\#\#\_bitarray,0x00,sizeof(name\#\#\_bitarray))}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00071}\mbox{\hyperlink{bitarray_8h_a657c0d40945a4102631717a6a422f81e}{00071}}\ \textcolor{preprocessor}{\#define\ BITARRAY\_SIZE(name)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00072}00072\ \textcolor{preprocessor}{\ \ \ \ ((sizeof(name\#\#\_bitarray)/sizeof(name\#\#\_bitarray[0]))<<3)}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00081}\mbox{\hyperlink{bitarray_8h_a7fa8ab67e5940fd40df9b586e728f93b}{00081}}\ \textcolor{preprocessor}{\#define\ BITARRAY\_GET(name,bit)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00082}00082\ \textcolor{preprocessor}{\ \ \ \ ((unsigned)((name\#\#\_bitarray[((unsigned)(bit))>>3]\ \&\ ((1<<(((unsigned)(bit))\&0x07))))\ >\ 0))}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00093}\mbox{\hyperlink{bitarray_8h_aaf36732a59798b9288145b1ba594a4af}{00093}}\ \textcolor{preprocessor}{\#define\ BITARRAY\_SET(name,bit)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00094}00094\ \textcolor{preprocessor}{\ \ \ \ name\#\#\_bitarray[((unsigned)(bit))>>3]\ |=\ (1<<(((unsigned)(bit))\&0x07))}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00102}\mbox{\hyperlink{bitarray_8h_a395826bf9dee68c6655400a0bd4c5f4c}{00102}}\ \textcolor{preprocessor}{\#define\ BITARRAY\_RESET(name,bit)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00103}00103\ \textcolor{preprocessor}{\ \ \ \ name\#\#\_bitarray[((unsigned)(bit))>>3]\ \&=\ \string~(1<<(((unsigned)(bit))\&0x07))}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00111}\mbox{\hyperlink{bitarray_8h_ac12af94c99933b24b1811bb1e0835f1e}{00111}}\ \textcolor{preprocessor}{\#define\ BITARRAY\_TOGGLE(name,bit)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00112}00112\ \textcolor{preprocessor}{\ \ \ \ \ name\#\#\_bitarray[((unsigned)(bit))>>3]\ \string^=\ (1<<(((unsigned)(bit))\&0x07))}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00120}\mbox{\hyperlink{bitarray_8h_a924a0852a7655bd5290aa271e1a724d7}{00120}}\ \textcolor{preprocessor}{\#define\ BITARRAY\_SET\_VALUE(name,bit,value)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00121}00121\ \textcolor{preprocessor}{\ \ \ \ do\{if((value)\ ==\ 0)\{BITARRAY\_RESET(name,bit);\}else\{BITARRAY\_SET(name,bit);\}\}while(0)}}
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{bitarray_8h_source_l00124}00124\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ BITARRAY\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

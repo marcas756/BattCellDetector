@@ -1,0 +1,487 @@
+\hypertarget{pt_8h}{}\doxysection{myos/os/pt.h File Reference}
+\label{pt_8h}\index{myos/os/pt.h@{myos/os/pt.h}}
+
+
+Protothread definitions for myos.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for pt.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{pt_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pt_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpt__t}{pt\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pt_8h_a0616472afa5de1a24881899fb74803c6}{PT\+\_\+\+STATE\+\_\+\+WAITING}}~1
+\item 
+\#define \mbox{\hyperlink{pt_8h_a50fcdbe0264a6ac201108cd72fb47676}{PT\+\_\+\+STATE\+\_\+\+TERMINATED}}~((\mbox{\hyperlink{pt_8h_aa8420180df76b733e4248ebd61f286c9}{ptstate\+\_\+t}})($\sim$((\mbox{\hyperlink{pt_8h_aa8420180df76b733e4248ebd61f286c9}{ptstate\+\_\+t}})(0))))
+\item 
+\#define \mbox{\hyperlink{pt_8h_a43f309c7d8c427c5d926c9d09b40cdb2}{PT\+\_\+\+IS\+\_\+\+RUNNING}}(pt)~( ((pt)-\/$>$lc $>$ 0) \&\& ((pt)-\/$>$lc != \mbox{\hyperlink{pt_8h_ab64bd2c3e3897a7cbef2207423ad2d8c}{LC\+\_\+\+DEFAULT}}) )
+\item 
+\#define \mbox{\hyperlink{pt_8h_ae6bae7dc0225468c8a5ac269df549892}{PT\+\_\+\+INIT}}(pt)
+\item 
+\#define \mbox{\hyperlink{pt_8h_a3d4c8bd4aada659eb34f5d2ffd3e7901}{PT\+\_\+\+THREAD}}(name\+\_\+args)
+\item 
+\#define \mbox{\hyperlink{pt_8h_a2ffbb9e554e08a343ae2f9de4bedfdfc}{PT\+\_\+\+BEGIN}}(pt)
+\item 
+\#define \mbox{\hyperlink{pt_8h_a7b04a0035bef29d905496c23bae066d2}{PT\+\_\+\+END}}(pt)
+\item 
+\#define \mbox{\hyperlink{pt_8h_a99e43010ec61327164466aa2d902de45}{PT\+\_\+\+WAIT\+\_\+\+UNTIL}}(pt,  condition)
+\item 
+\#define \mbox{\hyperlink{pt_8h_aad14bbbf092b90aa0a5a4f9169504a8d}{PT\+\_\+\+WAIT\+\_\+\+WHILE}}(pt,  cond)
+\item 
+\#define \mbox{\hyperlink{pt_8h_a2f8f70c30b9ee08a103fbd69a4365c4c}{PT\+\_\+\+WAIT\+\_\+\+THREAD}}(pt,  thread)
+\item 
+\#define \mbox{\hyperlink{pt_8h_a9e97a0b4d5cc7764d8e19758f5da53ae}{PT\+\_\+\+SPAWN}}(pt,  child,  thread)
+\item 
+\#define \mbox{\hyperlink{pt_8h_acd3ac045f0a4ae63412e3b3d8780e8ab}{PT\+\_\+\+RESTART}}(pt)
+\item 
+\#define \mbox{\hyperlink{pt_8h_a905451249dca72ce0385bf2a9ff178ee}{PT\+\_\+\+EXIT}}(pt)
+\item 
+\#define \mbox{\hyperlink{pt_8h_afa82b860a64b67d25ab3abc21811896f}{PT\+\_\+\+SCHEDULE}}(f)
+\item 
+\#define \mbox{\hyperlink{pt_8h_a155cba6121323726d02c00284428fed6}{PT\+\_\+\+YIELD}}(pt)
+\item 
+\#define \mbox{\hyperlink{pt_8h_ae3c821e3a388615528efda9d23c7d115}{PT\+\_\+\+YIELD\+\_\+\+UNTIL}}(pt,  cond)
+\begin{DoxyCompactList}\small\item\em Yield from the protothread until a condition occurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{pt_8h_aa8420180df76b733e4248ebd61f286c9}{ptstate\+\_\+t}}
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pt_8h_a2c1bb4fa6d7a6ff951a41c73fc721109}{LC\+\_\+\+INIT}}(s)~s = 0;
+\item 
+\#define \mbox{\hyperlink{pt_8h_ab64bd2c3e3897a7cbef2207423ad2d8c}{LC\+\_\+\+DEFAULT}}~((\mbox{\hyperlink{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}{lc\+\_\+t}})($\sim$((\mbox{\hyperlink{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}{lc\+\_\+t}})(0))))
+\item 
+\#define \mbox{\hyperlink{pt_8h_ab5cc2dda29ad856d231320b831654f33}{LC\+\_\+\+SET\+\_\+\+DEFAULT}}(s)~s = \mbox{\hyperlink{pt_8h_ab64bd2c3e3897a7cbef2207423ad2d8c}{LC\+\_\+\+DEFAULT}}
+\item 
+\#define \mbox{\hyperlink{pt_8h_a1ec8b8f4710dce1fa7fb87d3a31541ae}{LC\+\_\+\+RESUME}}(s)~switch(s) \{ case 0\+:
+\item 
+\#define \mbox{\hyperlink{pt_8h_ad8eec328a4868d767f0c00c8d1c6cfc1}{LC\+\_\+\+SET}}(s)~s = \+\_\+\+\_\+\+LINE\+\_\+\+\_\+; case \+\_\+\+\_\+\+LINE\+\_\+\+\_\+\+:
+\item 
+\#define \mbox{\hyperlink{pt_8h_a68f74e3ddf51e34a906cdd47fd05d203}{LC\+\_\+\+SET\+\_\+\+YIELD}}(s,  retval)~s = \+\_\+\+\_\+\+LINE\+\_\+\+\_\+; return retval; case \+\_\+\+\_\+\+LINE\+\_\+\+\_\+\+:
+\item 
+\#define \mbox{\hyperlink{pt_8h_aca51ceb2f5d855dfde55bcedf8d3b92d}{LC\+\_\+\+END}}(s)~default\+:;\}
+\item 
+typedef uint16\+\_\+t \mbox{\hyperlink{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}{lc\+\_\+t}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Protothread definitions for myos. 
+
+Based on Contiki 2.\+7 protothread implementation. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pt_8h_ab64bd2c3e3897a7cbef2207423ad2d8c}\label{pt_8h_ab64bd2c3e3897a7cbef2207423ad2d8c}} 
+\index{pt.h@{pt.h}!LC\_DEFAULT@{LC\_DEFAULT}}
+\index{LC\_DEFAULT@{LC\_DEFAULT}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{LC\_DEFAULT}{LC\_DEFAULT}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+DEFAULT~((\mbox{\hyperlink{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}{lc\+\_\+t}})($\sim$((\mbox{\hyperlink{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}{lc\+\_\+t}})(0))))}
+
+
+
+Definition at line 56 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_aca51ceb2f5d855dfde55bcedf8d3b92d}\label{pt_8h_aca51ceb2f5d855dfde55bcedf8d3b92d}} 
+\index{pt.h@{pt.h}!LC\_END@{LC\_END}}
+\index{LC\_END@{LC\_END}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{LC\_END}{LC\_END}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+END(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})~default\+:;\}}
+
+
+
+Definition at line 61 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a2c1bb4fa6d7a6ff951a41c73fc721109}\label{pt_8h_a2c1bb4fa6d7a6ff951a41c73fc721109}} 
+\index{pt.h@{pt.h}!LC\_INIT@{LC\_INIT}}
+\index{LC\_INIT@{LC\_INIT}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{LC\_INIT}{LC\_INIT}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+INIT(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})~s = 0;}
+
+
+
+Definition at line 55 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a1ec8b8f4710dce1fa7fb87d3a31541ae}\label{pt_8h_a1ec8b8f4710dce1fa7fb87d3a31541ae}} 
+\index{pt.h@{pt.h}!LC\_RESUME@{LC\_RESUME}}
+\index{LC\_RESUME@{LC\_RESUME}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{LC\_RESUME}{LC\_RESUME}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+RESUME(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})~switch(s) \{ case 0\+:}
+
+
+
+Definition at line 58 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_ad8eec328a4868d767f0c00c8d1c6cfc1}\label{pt_8h_ad8eec328a4868d767f0c00c8d1c6cfc1}} 
+\index{pt.h@{pt.h}!LC\_SET@{LC\_SET}}
+\index{LC\_SET@{LC\_SET}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{LC\_SET}{LC\_SET}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+SET(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})~s = \+\_\+\+\_\+\+LINE\+\_\+\+\_\+; case \+\_\+\+\_\+\+LINE\+\_\+\+\_\+\+:}
+
+
+
+Definition at line 59 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_ab5cc2dda29ad856d231320b831654f33}\label{pt_8h_ab5cc2dda29ad856d231320b831654f33}} 
+\index{pt.h@{pt.h}!LC\_SET\_DEFAULT@{LC\_SET\_DEFAULT}}
+\index{LC\_SET\_DEFAULT@{LC\_SET\_DEFAULT}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{LC\_SET\_DEFAULT}{LC\_SET\_DEFAULT}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+SET\+\_\+\+DEFAULT(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})~s = \mbox{\hyperlink{pt_8h_ab64bd2c3e3897a7cbef2207423ad2d8c}{LC\+\_\+\+DEFAULT}}}
+
+
+
+Definition at line 57 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a68f74e3ddf51e34a906cdd47fd05d203}\label{pt_8h_a68f74e3ddf51e34a906cdd47fd05d203}} 
+\index{pt.h@{pt.h}!LC\_SET\_YIELD@{LC\_SET\_YIELD}}
+\index{LC\_SET\_YIELD@{LC\_SET\_YIELD}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{LC\_SET\_YIELD}{LC\_SET\_YIELD}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+SET\+\_\+\+YIELD(\begin{DoxyParamCaption}\item[{}]{s,  }\item[{}]{retval }\end{DoxyParamCaption})~s = \+\_\+\+\_\+\+LINE\+\_\+\+\_\+; return retval; case \+\_\+\+\_\+\+LINE\+\_\+\+\_\+\+:}
+
+
+
+Definition at line 60 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a2ffbb9e554e08a343ae2f9de4bedfdfc}\label{pt_8h_a2ffbb9e554e08a343ae2f9de4bedfdfc}} 
+\index{pt.h@{pt.h}!PT\_BEGIN@{PT\_BEGIN}}
+\index{PT\_BEGIN@{PT\_BEGIN}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_BEGIN}{PT\_BEGIN}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+BEGIN(\begin{DoxyParamCaption}\item[{}]{pt }\end{DoxyParamCaption})}
+
+Declare the start of a protothread inside the C function implementing the protothread.
+
+This macro is used to declare the starting point of a protothread. It should be placed at the start of the function in which the protothread runs. All C statements above the \mbox{\hyperlink{pt_8h_a2ffbb9e554e08a343ae2f9de4bedfdfc}{PT\+\_\+\+BEGIN()}} invokation will be executed each time the protothread is scheduled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a7b04a0035bef29d905496c23bae066d2}\label{pt_8h_a7b04a0035bef29d905496c23bae066d2}} 
+\index{pt.h@{pt.h}!PT\_END@{PT\_END}}
+\index{PT\_END@{PT\_END}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_END}{PT\_END}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+END(\begin{DoxyParamCaption}\item[{}]{pt }\end{DoxyParamCaption})}
+
+Declare the end of a protothread.
+
+This macro is used for declaring that a protothread ends. It must always be used together with a matching \mbox{\hyperlink{pt_8h_a2ffbb9e554e08a343ae2f9de4bedfdfc}{PT\+\_\+\+BEGIN()}} macro.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a905451249dca72ce0385bf2a9ff178ee}\label{pt_8h_a905451249dca72ce0385bf2a9ff178ee}} 
+\index{pt.h@{pt.h}!PT\_EXIT@{PT\_EXIT}}
+\index{PT\_EXIT@{PT\_EXIT}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_EXIT}{PT\_EXIT}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+EXIT(\begin{DoxyParamCaption}\item[{}]{pt }\end{DoxyParamCaption})}
+
+Exit the protothread.
+
+This macro causes the protothread to exit. If the protothread was spawned by another protothread, the parent protothread will become unblocked and can continue to run.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 234 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_ae6bae7dc0225468c8a5ac269df549892}\label{pt_8h_ae6bae7dc0225468c8a5ac269df549892}} 
+\index{pt.h@{pt.h}!PT\_INIT@{PT\_INIT}}
+\index{PT\_INIT@{PT\_INIT}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_INIT}{PT\_INIT}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+INIT(\begin{DoxyParamCaption}\item[{}]{pt }\end{DoxyParamCaption})}
+
+Initialize a protothread.
+
+Initializes a protothread. Initialization must be done prior to starting to execute the protothread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pt_8h_a9e97a0b4d5cc7764d8e19758f5da53ae}{PT\+\_\+\+SPAWN()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 92 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a43f309c7d8c427c5d926c9d09b40cdb2}\label{pt_8h_a43f309c7d8c427c5d926c9d09b40cdb2}} 
+\index{pt.h@{pt.h}!PT\_IS\_RUNNING@{PT\_IS\_RUNNING}}
+\index{PT\_IS\_RUNNING@{PT\_IS\_RUNNING}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_IS\_RUNNING}{PT\_IS\_RUNNING}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+IS\+\_\+\+RUNNING(\begin{DoxyParamCaption}\item[{}]{pt }\end{DoxyParamCaption})~( ((pt)-\/$>$lc $>$ 0) \&\& ((pt)-\/$>$lc != \mbox{\hyperlink{pt_8h_ab64bd2c3e3897a7cbef2207423ad2d8c}{LC\+\_\+\+DEFAULT}}) )}
+
+
+
+Definition at line 76 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_acd3ac045f0a4ae63412e3b3d8780e8ab}\label{pt_8h_acd3ac045f0a4ae63412e3b3d8780e8ab}} 
+\index{pt.h@{pt.h}!PT\_RESTART@{PT\_RESTART}}
+\index{PT\_RESTART@{PT\_RESTART}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_RESTART}{PT\_RESTART}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+RESTART(\begin{DoxyParamCaption}\item[{}]{pt }\end{DoxyParamCaption})}
+
+Restart the protothread.
+
+This macro will block and cause the running protothread to restart its execution at the place of the \mbox{\hyperlink{pt_8h_a2ffbb9e554e08a343ae2f9de4bedfdfc}{PT\+\_\+\+BEGIN()}} call.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 217 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_afa82b860a64b67d25ab3abc21811896f}\label{pt_8h_afa82b860a64b67d25ab3abc21811896f}} 
+\index{pt.h@{pt.h}!PT\_SCHEDULE@{PT\_SCHEDULE}}
+\index{PT\_SCHEDULE@{PT\_SCHEDULE}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_SCHEDULE}{PT\_SCHEDULE}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+SCHEDULE(\begin{DoxyParamCaption}\item[{}]{f }\end{DoxyParamCaption})}
+
+Schedule a protothread.
+
+This function schedules a protothread. The return value of the function is non-\/zero if the protothread is running or zero if the protothread has exited.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & The call to the C function implementing the protothread to be scheduled \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 252 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a9e97a0b4d5cc7764d8e19758f5da53ae}\label{pt_8h_a9e97a0b4d5cc7764d8e19758f5da53ae}} 
+\index{pt.h@{pt.h}!PT\_SPAWN@{PT\_SPAWN}}
+\index{PT\_SPAWN@{PT\_SPAWN}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_SPAWN}{PT\_SPAWN}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+SPAWN(\begin{DoxyParamCaption}\item[{}]{pt,  }\item[{}]{child,  }\item[{}]{thread }\end{DoxyParamCaption})}
+
+Spawn a child protothread and wait until it exits.
+
+This macro spawns a child protothread and waits until it exits. The macro can only be used within a protothread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+{\em child} & A pointer to the child protothread\textquotesingle{}s control structure. \\
+\hline
+{\em thread} & The child protothread with arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 200 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a50fcdbe0264a6ac201108cd72fb47676}\label{pt_8h_a50fcdbe0264a6ac201108cd72fb47676}} 
+\index{pt.h@{pt.h}!PT\_STATE\_TERMINATED@{PT\_STATE\_TERMINATED}}
+\index{PT\_STATE\_TERMINATED@{PT\_STATE\_TERMINATED}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_STATE\_TERMINATED}{PT\_STATE\_TERMINATED}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+STATE\+\_\+\+TERMINATED~((\mbox{\hyperlink{pt_8h_aa8420180df76b733e4248ebd61f286c9}{ptstate\+\_\+t}})($\sim$((\mbox{\hyperlink{pt_8h_aa8420180df76b733e4248ebd61f286c9}{ptstate\+\_\+t}})(0))))}
+
+
+
+Definition at line 73 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a0616472afa5de1a24881899fb74803c6}\label{pt_8h_a0616472afa5de1a24881899fb74803c6}} 
+\index{pt.h@{pt.h}!PT\_STATE\_WAITING@{PT\_STATE\_WAITING}}
+\index{PT\_STATE\_WAITING@{PT\_STATE\_WAITING}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_STATE\_WAITING}{PT\_STATE\_WAITING}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+STATE\+\_\+\+WAITING~1}
+
+
+
+Definition at line 72 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a3d4c8bd4aada659eb34f5d2ffd3e7901}\label{pt_8h_a3d4c8bd4aada659eb34f5d2ffd3e7901}} 
+\index{pt.h@{pt.h}!PT\_THREAD@{PT\_THREAD}}
+\index{PT\_THREAD@{PT\_THREAD}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_THREAD}{PT\_THREAD}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+THREAD(\begin{DoxyParamCaption}\item[{}]{name\+\_\+args }\end{DoxyParamCaption})}
+
+Declaration of a protothread.
+
+This macro is used to declare a protothread. All protothreads must be declared with this macro.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\+\_\+args} & The name and arguments of the C function implementing the protothread. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a2f8f70c30b9ee08a103fbd69a4365c4c}\label{pt_8h_a2f8f70c30b9ee08a103fbd69a4365c4c}} 
+\index{pt.h@{pt.h}!PT\_WAIT\_THREAD@{PT\_WAIT\_THREAD}}
+\index{PT\_WAIT\_THREAD@{PT\_WAIT\_THREAD}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_WAIT\_THREAD}{PT\_WAIT\_THREAD}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+WAIT\+\_\+\+THREAD(\begin{DoxyParamCaption}\item[{}]{pt,  }\item[{}]{thread }\end{DoxyParamCaption})}
+
+Block and wait until a child protothread completes.
+
+This macro schedules a child protothread. The current protothread will block until the child protothread completes.
+
+\begin{DoxyNote}{Note}
+The child protothread must be manually initialized with the \mbox{\hyperlink{pt_8h_ae6bae7dc0225468c8a5ac269df549892}{PT\+\_\+\+INIT()}} function before this function is used.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+{\em thread} & The child protothread with arguments\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pt_8h_a9e97a0b4d5cc7764d8e19758f5da53ae}{PT\+\_\+\+SPAWN()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 186 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a99e43010ec61327164466aa2d902de45}\label{pt_8h_a99e43010ec61327164466aa2d902de45}} 
+\index{pt.h@{pt.h}!PT\_WAIT\_UNTIL@{PT\_WAIT\_UNTIL}}
+\index{PT\_WAIT\_UNTIL@{PT\_WAIT\_UNTIL}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_WAIT\_UNTIL}{PT\_WAIT\_UNTIL}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+WAIT\+\_\+\+UNTIL(\begin{DoxyParamCaption}\item[{}]{pt,  }\item[{}]{condition }\end{DoxyParamCaption})}
+
+Block and wait until condition is true.
+
+This macro blocks the protothread until the specified condition is true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+{\em condition} & The condition. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 148 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_aad14bbbf092b90aa0a5a4f9169504a8d}\label{pt_8h_aad14bbbf092b90aa0a5a4f9169504a8d}} 
+\index{pt.h@{pt.h}!PT\_WAIT\_WHILE@{PT\_WAIT\_WHILE}}
+\index{PT\_WAIT\_WHILE@{PT\_WAIT\_WHILE}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_WAIT\_WHILE}{PT\_WAIT\_WHILE}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+WAIT\+\_\+\+WHILE(\begin{DoxyParamCaption}\item[{}]{pt,  }\item[{}]{cond }\end{DoxyParamCaption})}
+
+Block and wait while condition is true.
+
+This function blocks and waits while condition is true. See \mbox{\hyperlink{pt_8h_a99e43010ec61327164466aa2d902de45}{PT\+\_\+\+WAIT\+\_\+\+UNTIL()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+{\em cond} & The condition. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_a155cba6121323726d02c00284428fed6}\label{pt_8h_a155cba6121323726d02c00284428fed6}} 
+\index{pt.h@{pt.h}!PT\_YIELD@{PT\_YIELD}}
+\index{PT\_YIELD@{PT\_YIELD}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_YIELD}{PT\_YIELD}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+YIELD(\begin{DoxyParamCaption}\item[{}]{pt }\end{DoxyParamCaption})}
+
+Yield from the current protothread.
+
+This function will yield the protothread, thereby allowing other processing to take place in the system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 264 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_ae3c821e3a388615528efda9d23c7d115}\label{pt_8h_ae3c821e3a388615528efda9d23c7d115}} 
+\index{pt.h@{pt.h}!PT\_YIELD\_UNTIL@{PT\_YIELD\_UNTIL}}
+\index{PT\_YIELD\_UNTIL@{PT\_YIELD\_UNTIL}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{PT\_YIELD\_UNTIL}{PT\_YIELD\_UNTIL}}
+{\footnotesize\ttfamily \#define PT\+\_\+\+YIELD\+\_\+\+UNTIL(\begin{DoxyParamCaption}\item[{}]{pt,  }\item[{}]{cond }\end{DoxyParamCaption})}
+
+
+
+Yield from the protothread until a condition occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & A pointer to the protothread control structure. \\
+\hline
+{\em cond} & The condition. \begin{DoxyVerb}        This function will yield the protothread, until the
+        specified condition evaluates to true.
+\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 281 of file pt.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}\label{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}} 
+\index{pt.h@{pt.h}!lc\_t@{lc\_t}}
+\index{lc\_t@{lc\_t}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{lc\_t}{lc\_t}}
+{\footnotesize\ttfamily typedef uint16\+\_\+t \mbox{\hyperlink{pt_8h_a6e2e10b5deb08ae49d9ffb71312f8c53}{lc\+\_\+t}}}
+
+Definitions for local continuations 
+
+Definition at line 54 of file pt.\+h.
+
+\mbox{\Hypertarget{pt_8h_aa8420180df76b733e4248ebd61f286c9}\label{pt_8h_aa8420180df76b733e4248ebd61f286c9}} 
+\index{pt.h@{pt.h}!ptstate\_t@{ptstate\_t}}
+\index{ptstate\_t@{ptstate\_t}!pt.h@{pt.h}}
+\doxysubsubsection{\texorpdfstring{ptstate\_t}{ptstate\_t}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{pt_8h_aa8420180df76b733e4248ebd61f286c9}{ptstate\+\_\+t}}}
+
+
+
+Definition at line 69 of file pt.\+h.
+

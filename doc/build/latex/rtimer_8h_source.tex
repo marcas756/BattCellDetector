@@ -1,0 +1,88 @@
+\doxysection{rtimer.\+h}
+\hypertarget{rtimer_8h_source}{}\label{rtimer_8h_source}\index{myos/os/rtimer.h@{myos/os/rtimer.h}}
+\mbox{\hyperlink{rtimer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00002}00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2005,\ Swedish\ Institute\ of\ Computer\ Science}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00003}00003\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00005}00005\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00006}00006\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00007}00007\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00008}00008\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00010}00010\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ \ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00013}00013\ \textcolor{comment}{\ *\ 3.\ Neither\ the\ name\ of\ the\ Institute\ nor\ the\ names\ of\ its\ contributors}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ \ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00016}00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00017}00017\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ INSTITUTE\ AND\ CONTRIBUTORS\ \`{}\`{}AS\ IS''\ AND}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00018}00018\ \textcolor{comment}{\ *\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00019}00019\ \textcolor{comment}{\ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00020}00020\ \textcolor{comment}{\ *\ ARE\ DISCLAIMED.\ \ IN\ NO\ EVENT\ SHALL\ THE\ INSTITUTE\ OR\ CONTRIBUTORS\ BE\ LIABLE}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00021}00021\ \textcolor{comment}{\ *\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00022}00022\ \textcolor{comment}{\ *\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00023}00023\ \textcolor{comment}{\ *\ OR\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00024}00024\ \textcolor{comment}{\ *\ HOWEVER\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00025}00025\ \textcolor{comment}{\ *\ LIABILITY,\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00026}00026\ \textcolor{comment}{\ *\ OUT\ OF\ THE\ USE\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00027}00027\ \textcolor{comment}{\ *\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00028}00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00029}00029\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Contiki\ operating\ system.}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00030}00030\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00031}00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00035}00035\ \textcolor{preprocessor}{\#ifndef\ RTIMER\_H\_}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00036}00036\ \textcolor{preprocessor}{\#define\ RTIMER\_H\_}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}rtimer\_arch.h"{}}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ "{}stdbool.h"{}}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00043}\mbox{\hyperlink{rtimer_8h_a57663675f5be5acf96aaf3207058a882}{00043}}\ \textcolor{keyword}{typedef}\ rtimer\_arch\_timestamp\_t\ \mbox{\hyperlink{rtimer_8h_a57663675f5be5acf96aaf3207058a882}{rtimer\_timestamp\_t}};}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00044}\mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{00044}}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{rtimer_8h_a57663675f5be5acf96aaf3207058a882}{rtimer\_timestamp\_t}}\ \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\_timespan\_t}};}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00046}\mbox{\hyperlink{rtimer_8h_a4c015dfcc989f59c0e8c9c69d142228d}{00046}}\ \textcolor{preprocessor}{\#define\ RTIMER\_TICKS\_PER\_SEC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTIMER\_ARCH\_TICKS\_PER\_SEC}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00047}\mbox{\hyperlink{rtimer_8h_af7af14704da752973f7a1107076b0f87}{00047}}\ \textcolor{preprocessor}{\#define\ rtimer\_now()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rtimer\_arch\_now()}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00048}\mbox{\hyperlink{rtimer_8h_a6bffd6257754849655158d5873e3cf3a}{00048}}\ \textcolor{preprocessor}{\#define\ rtimer\_init()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rtimer\_arch\_init()}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00049}\mbox{\hyperlink{rtimer_8h_a65d386cf514c24cd91a7d45743e8b9d2}{00049}}\ \textcolor{preprocessor}{\#define\ RTIMER\_TIMESTAMP\_DIFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTIMER\_TIMESTAMP\_ARCH\_DIFF}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00050}\mbox{\hyperlink{rtimer_8h_a94d8996134ebb2ba8f57a139b774436a}{00050}}\ \textcolor{preprocessor}{\#define\ rtimer\_timestamp\_less\_than(a,b)\ \ \ \ (RTIMER\_TIMESTAMP\_DIFF((a),(b))\ <\ 0)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00051}\mbox{\hyperlink{rtimer_8h_a54dda60624530e5db25116d848efbf17}{00051}}\ \textcolor{keyword}{typedef}\ void(*\mbox{\hyperlink{rtimer_8h_a54dda60624530e5db25116d848efbf17}{rtimer\_callback\_t}})(\textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00053}\mbox{\hyperlink{structrtimer__t}{00053}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00054}\mbox{\hyperlink{structrtimer__t_a1605a7b070c0581a9d3f48dfa2448393}{00054}}\ \ \ \ \mbox{\hyperlink{rtimer_8h_a57663675f5be5acf96aaf3207058a882}{rtimer\_timestamp\_t}}\ \mbox{\hyperlink{structrtimer__t_a1605a7b070c0581a9d3f48dfa2448393}{start}};}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00055}\mbox{\hyperlink{structrtimer__t_af6a26973795cc35bf7027d8089a2ffaf}{00055}}\ \ \ \ \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\_timespan\_t}}\ \mbox{\hyperlink{structrtimer__t_af6a26973795cc35bf7027d8089a2ffaf}{span}};}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00056}\mbox{\hyperlink{structrtimer__t_afd5fc1a7df33f561e1896e8593201476}{00056}}\ \ \ \ \mbox{\hyperlink{rtimer_8h_a54dda60624530e5db25116d848efbf17}{rtimer\_callback\_t}}\ \mbox{\hyperlink{structrtimer__t_afd5fc1a7df33f561e1896e8593201476}{callback}};}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00057}\mbox{\hyperlink{structrtimer__t_a735984d41155bc1032e09bece8f8d66d}{00057}}\ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{structrtimer__t_a735984d41155bc1032e09bece8f8d66d}{data}};}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00058}00058\ \}\ \mbox{\hyperlink{structrtimer__t}{rtimer\_t}};}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00062}\mbox{\hyperlink{rtimer_8h_aa871bcb41445122d3fb86fb8231d8936}{00062}}\ \textcolor{preprocessor}{\#define\ PROCESS\_RTIMER\_OBTAIN()\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00063}00063\ \textcolor{preprocessor}{\ \ \ do\{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00064}00064\ \textcolor{preprocessor}{\ \ \ \ \ \ while(!rtimer\_lock())\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00065}00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00066}00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ PROCESS\_SUSPEND();\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00067}00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00068}00068\ \textcolor{preprocessor}{\ \ \ \}while(0)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00073}00073\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{rtimer_8h_af04c19e5a026792236fb2c048d38e7d6}{rtimer\_start}}(\mbox{\hyperlink{structrtimer__t}{rtimer\_t}}\ *rtimer,\ \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\_timespan\_t}}\ span,\ \mbox{\hyperlink{rtimer_8h_a54dda60624530e5db25116d848efbf17}{rtimer\_callback\_t}}\ callback,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00074}00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{rtimer_8h_a772f00253fefe7197ab2031f8b63989a}{rtimer\_reset}}(\mbox{\hyperlink{structrtimer__t}{rtimer\_t}}\ *rtimer);}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00075}00075\ \mbox{\hyperlink{rtimer_8h_a53f3d910b9fbaa3becc4434c1e9576ab}{rtimer\_timespan\_t}}\ \mbox{\hyperlink{rtimer_8h_a13bd725f41860541876537794b14f1e8}{rtimer\_left}}(\mbox{\hyperlink{structrtimer__t}{rtimer\_t}}\ *rtimer);}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00076}\mbox{\hyperlink{rtimer_8h_a8c8b81bc9f837e9ae91d0a395f4b36a9}{00076}}\ \textcolor{preprocessor}{\#define\ rtimer\_expired(rtimerptr)\ (rtimer\_left(rtimerptr)\ ==\ 0)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00077}\mbox{\hyperlink{rtimer_8h_aa1ff7c0003bd8020aaaf49ced303d4b8}{00077}}\ \textcolor{preprocessor}{\#define\ rtimer\_timestamp\_stop(rtimerptr)\ ((rtimerptr)-\/>start+(rtimerptr)-\/>span)}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00078}00078\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{rtimer_8h_a0d05dbfdc854200a60b93a3a37c839b5}{rtimer\_lock}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00080}\mbox{\hyperlink{rtimer_8h_a50167cbeb702deac02ec6fbf36f6e497}{00080}}\ \textcolor{preprocessor}{\#define\ \ rtimer\_module\_init\ \ rtimer\_arch\_module\_init}}
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{rtimer_8h_source_l00082}00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SOURCE\_OS\_RTIMER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

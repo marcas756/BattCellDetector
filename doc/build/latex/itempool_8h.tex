@@ -1,0 +1,263 @@
+\hypertarget{itempool_8h}{}\doxysection{myos/lib/itempool.h File Reference}
+\label{itempool_8h}\index{myos/lib/itempool.h@{myos/lib/itempool.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for itempool.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{itempool_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{itempool_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{itempool_8h_a41d08d5bccde172fdb11bcebc8d88ad9}{ITEMPOOL\+\_\+\+ITEM\+\_\+\+FREE}}~0
+\item 
+\#define \mbox{\hyperlink{itempool_8h_ada489ff117851de4b331807ee07b5481}{ITEMPOOL\+\_\+\+ITEM\+\_\+\+USED}}~1
+\item 
+\#define \mbox{\hyperlink{itempool_8h_a3d46500303fbf44962fe78d4e89d95d0}{ITEMPOOL\+\_\+\+TYPEDEF}}(name,  type,  size)
+\item 
+\#define \mbox{\hyperlink{itempool_8h_ae07c1225c0de7e7bbebac73b5588b537}{ITEMPOOL\+\_\+T}}(name)~    name\#\#\+\_\+itempool\+\_\+t
+\item 
+\#define \mbox{\hyperlink{itempool_8h_abeb90f85c01ead7ed9229682300dc058}{ITEMPOOL\+\_\+\+INIT}}(itempool)
+\item 
+\#define \mbox{\hyperlink{itempool_8h_aeb74bd7b97a400ffe331efca878075cb}{ITEMPOOL\+\_\+\+SIZE}}(itempool)
+\item 
+\#define \mbox{\hyperlink{itempool_8h_adf9454a8a468db5a26f1f1e8ba06b52f}{ITEMPOOL\+\_\+\+ITEM\+\_\+\+SIZE}}(itempool)~    (sizeof($\ast$\mbox{\hyperlink{itempool_8h_ab7b69237390f9a4b789f9ff2e8395130}{ITEMPOOL\+\_\+\+ITEMS}}(itempool)))
+\item 
+\#define \mbox{\hyperlink{itempool_8h_a1d9dde130db0b40ab677e3c7c600dcee}{ITEMPOOL\+\_\+\+STATUS}}(itempool)~        ((itempool).status)
+\item 
+\#define \mbox{\hyperlink{itempool_8h_ab7b69237390f9a4b789f9ff2e8395130}{ITEMPOOL\+\_\+\+ITEMS}}(itempool)~        ((itempool).items)
+\item 
+\#define \mbox{\hyperlink{itempool_8h_aef96d8125ac99ffc9bb4c6914019b520}{ITEMPOOL\+\_\+\+ALLOC}}(itempool)
+\item 
+\#define \mbox{\hyperlink{itempool_8h_abc3a6b685efb1657f8130879687ceeb6}{ITEMPOOL\+\_\+\+CALLOC}}(itempool)
+\item 
+\#define \mbox{\hyperlink{itempool_8h_a46b875ad6d7cb98659e6964e86bfc620}{ITEMPOOL\+\_\+\+FREE}}(itempool,  itemptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{itempool_8h_aee591c7c3cd3b0203a714b748d4479fe}{itempool\+\_\+alloc}} (uint8\+\_\+t $\ast$items, uint8\+\_\+t $\ast$status, size\+\_\+t itemsize, size\+\_\+t poolsize)
+\item 
+void $\ast$ \mbox{\hyperlink{itempool_8h_a71eddaf5f85a9dda1ea89c30fbaab64b}{itempool\+\_\+calloc}} (uint8\+\_\+t $\ast$items, uint8\+\_\+t $\ast$status, size\+\_\+t itemsize, size\+\_\+t poolsize)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Memory pools, also known as fixed-\/size block allocation, enable dynamic memory allocation similar to malloc or C++\textquotesingle{}s operator new. However, these implementations are prone to fragmentation due to variable block sizes and are therefore not recommended for use in real-\/time systems where performance is critical. To address this issue, a more efficient approach is to preallocate a fixed number of memory blocks of the same size, which is known as a memory pool. During runtime, the application can allocate, access, and free blocks represented by handles, resulting in improved performance. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{itempool_8h_aef96d8125ac99ffc9bb4c6914019b520}\label{itempool_8h_aef96d8125ac99ffc9bb4c6914019b520}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_ALLOC@{ITEMPOOL\_ALLOC}}
+\index{ITEMPOOL\_ALLOC@{ITEMPOOL\_ALLOC}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_ALLOC}{ITEMPOOL\_ALLOC}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+ALLOC(\begin{DoxyParamCaption}\item[{}]{itempool }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{itempool_8h_aee591c7c3cd3b0203a714b748d4479fe}{itempool\_alloc}}( \(\backslash\)}
+\DoxyCodeLine{        (uint8\_t*)\mbox{\hyperlink{itempool_8h_ab7b69237390f9a4b789f9ff2e8395130}{ITEMPOOL\_ITEMS}}(itempool), \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{itempool_8h_a1d9dde130db0b40ab677e3c7c600dcee}{ITEMPOOL\_STATUS}}(itempool), \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{itempool_8h_adf9454a8a468db5a26f1f1e8ba06b52f}{ITEMPOOL\_ITEM\_SIZE}}(itempool), \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{itempool_8h_aeb74bd7b97a400ffe331efca878075cb}{ITEMPOOL\_SIZE}}(itempool))}
+
+\end{DoxyCode}
+
+
+Definition at line 80 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_abc3a6b685efb1657f8130879687ceeb6}\label{itempool_8h_abc3a6b685efb1657f8130879687ceeb6}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_CALLOC@{ITEMPOOL\_CALLOC}}
+\index{ITEMPOOL\_CALLOC@{ITEMPOOL\_CALLOC}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_CALLOC}{ITEMPOOL\_CALLOC}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+CALLOC(\begin{DoxyParamCaption}\item[{}]{itempool }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{itempool_8h_a71eddaf5f85a9dda1ea89c30fbaab64b}{itempool\_calloc}}( \(\backslash\)}
+\DoxyCodeLine{        (uint8\_t*)\mbox{\hyperlink{itempool_8h_ab7b69237390f9a4b789f9ff2e8395130}{ITEMPOOL\_ITEMS}}(itempool), \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{itempool_8h_a1d9dde130db0b40ab677e3c7c600dcee}{ITEMPOOL\_STATUS}}(itempool), \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{itempool_8h_adf9454a8a468db5a26f1f1e8ba06b52f}{ITEMPOOL\_ITEM\_SIZE}}(itempool), \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{itempool_8h_aeb74bd7b97a400ffe331efca878075cb}{ITEMPOOL\_SIZE}}(itempool))}
+
+\end{DoxyCode}
+
+
+Definition at line 87 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_a46b875ad6d7cb98659e6964e86bfc620}\label{itempool_8h_a46b875ad6d7cb98659e6964e86bfc620}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_FREE@{ITEMPOOL\_FREE}}
+\index{ITEMPOOL\_FREE@{ITEMPOOL\_FREE}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_FREE}{ITEMPOOL\_FREE}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+FREE(\begin{DoxyParamCaption}\item[{}]{itempool,  }\item[{}]{itemptr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        \textcolor{keywordflow}{do}\{\mbox{\hyperlink{itempool_8h_a1d9dde130db0b40ab677e3c7c600dcee}{ITEMPOOL\_STATUS}}(itempool) \(\backslash\)}
+\DoxyCodeLine{            [((uint8\_t*)itemptr-\/(uint8\_t*)\mbox{\hyperlink{itempool_8h_ab7b69237390f9a4b789f9ff2e8395130}{ITEMPOOL\_ITEMS}}(itempool))/ \(\backslash\)}
+\DoxyCodeLine{             \mbox{\hyperlink{itempool_8h_adf9454a8a468db5a26f1f1e8ba06b52f}{ITEMPOOL\_ITEM\_SIZE}}(itempool)] \(\backslash\)}
+\DoxyCodeLine{             =\mbox{\hyperlink{itempool_8h_a41d08d5bccde172fdb11bcebc8d88ad9}{ITEMPOOL\_ITEM\_FREE}};\}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line 102 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_abeb90f85c01ead7ed9229682300dc058}\label{itempool_8h_abeb90f85c01ead7ed9229682300dc058}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_INIT@{ITEMPOOL\_INIT}}
+\index{ITEMPOOL\_INIT@{ITEMPOOL\_INIT}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_INIT}{ITEMPOOL\_INIT}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+INIT(\begin{DoxyParamCaption}\item[{}]{itempool }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        memset(\mbox{\hyperlink{itempool_8h_a1d9dde130db0b40ab677e3c7c600dcee}{ITEMPOOL\_STATUS}}(itempool), \(\backslash\)}
+\DoxyCodeLine{               \mbox{\hyperlink{itempool_8h_a41d08d5bccde172fdb11bcebc8d88ad9}{ITEMPOOL\_ITEM\_FREE}}, \(\backslash\)}
+\DoxyCodeLine{               \mbox{\hyperlink{itempool_8h_aeb74bd7b97a400ffe331efca878075cb}{ITEMPOOL\_SIZE}}(itempool))}
+
+\end{DoxyCode}
+
+
+Definition at line 62 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_a41d08d5bccde172fdb11bcebc8d88ad9}\label{itempool_8h_a41d08d5bccde172fdb11bcebc8d88ad9}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_ITEM\_FREE@{ITEMPOOL\_ITEM\_FREE}}
+\index{ITEMPOOL\_ITEM\_FREE@{ITEMPOOL\_ITEM\_FREE}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_ITEM\_FREE}{ITEMPOOL\_ITEM\_FREE}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+ITEM\+\_\+\+FREE~0}
+
+
+
+Definition at line 50 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_adf9454a8a468db5a26f1f1e8ba06b52f}\label{itempool_8h_adf9454a8a468db5a26f1f1e8ba06b52f}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_ITEM\_SIZE@{ITEMPOOL\_ITEM\_SIZE}}
+\index{ITEMPOOL\_ITEM\_SIZE@{ITEMPOOL\_ITEM\_SIZE}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_ITEM\_SIZE}{ITEMPOOL\_ITEM\_SIZE}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+ITEM\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{itempool }\end{DoxyParamCaption})~    (sizeof($\ast$\mbox{\hyperlink{itempool_8h_ab7b69237390f9a4b789f9ff2e8395130}{ITEMPOOL\+\_\+\+ITEMS}}(itempool)))}
+
+
+
+Definition at line 71 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_ada489ff117851de4b331807ee07b5481}\label{itempool_8h_ada489ff117851de4b331807ee07b5481}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_ITEM\_USED@{ITEMPOOL\_ITEM\_USED}}
+\index{ITEMPOOL\_ITEM\_USED@{ITEMPOOL\_ITEM\_USED}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_ITEM\_USED}{ITEMPOOL\_ITEM\_USED}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+ITEM\+\_\+\+USED~1}
+
+
+
+Definition at line 51 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_ab7b69237390f9a4b789f9ff2e8395130}\label{itempool_8h_ab7b69237390f9a4b789f9ff2e8395130}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_ITEMS@{ITEMPOOL\_ITEMS}}
+\index{ITEMPOOL\_ITEMS@{ITEMPOOL\_ITEMS}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_ITEMS}{ITEMPOOL\_ITEMS}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+ITEMS(\begin{DoxyParamCaption}\item[{}]{itempool }\end{DoxyParamCaption})~        ((itempool).items)}
+
+
+
+Definition at line 77 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_aeb74bd7b97a400ffe331efca878075cb}\label{itempool_8h_aeb74bd7b97a400ffe331efca878075cb}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_SIZE@{ITEMPOOL\_SIZE}}
+\index{ITEMPOOL\_SIZE@{ITEMPOOL\_SIZE}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_SIZE}{ITEMPOOL\_SIZE}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{itempool }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    (\textcolor{keyword}{sizeof}(\mbox{\hyperlink{itempool_8h_a1d9dde130db0b40ab677e3c7c600dcee}{ITEMPOOL\_STATUS}}(itempool))/ \(\backslash\)}
+\DoxyCodeLine{     \textcolor{keyword}{sizeof}(*\mbox{\hyperlink{itempool_8h_a1d9dde130db0b40ab677e3c7c600dcee}{ITEMPOOL\_STATUS}}(itempool)))}
+
+\end{DoxyCode}
+
+
+Definition at line 67 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_a1d9dde130db0b40ab677e3c7c600dcee}\label{itempool_8h_a1d9dde130db0b40ab677e3c7c600dcee}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_STATUS@{ITEMPOOL\_STATUS}}
+\index{ITEMPOOL\_STATUS@{ITEMPOOL\_STATUS}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_STATUS}{ITEMPOOL\_STATUS}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+STATUS(\begin{DoxyParamCaption}\item[{}]{itempool }\end{DoxyParamCaption})~        ((itempool).status)}
+
+
+
+Definition at line 74 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_ae07c1225c0de7e7bbebac73b5588b537}\label{itempool_8h_ae07c1225c0de7e7bbebac73b5588b537}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_T@{ITEMPOOL\_T}}
+\index{ITEMPOOL\_T@{ITEMPOOL\_T}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_T}{ITEMPOOL\_T}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+T(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~    name\#\#\+\_\+itempool\+\_\+t}
+
+
+
+Definition at line 59 of file itempool.\+h.
+
+\mbox{\Hypertarget{itempool_8h_a3d46500303fbf44962fe78d4e89d95d0}\label{itempool_8h_a3d46500303fbf44962fe78d4e89d95d0}} 
+\index{itempool.h@{itempool.h}!ITEMPOOL\_TYPEDEF@{ITEMPOOL\_TYPEDEF}}
+\index{ITEMPOOL\_TYPEDEF@{ITEMPOOL\_TYPEDEF}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{ITEMPOOL\_TYPEDEF}{ITEMPOOL\_TYPEDEF}}
+{\footnotesize\ttfamily \#define ITEMPOOL\+\_\+\+TYPEDEF(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{type,  }\item[{}]{size }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \(\backslash\)}
+\DoxyCodeLine{        uint8\_t status[size]; \(\backslash\)}
+\DoxyCodeLine{        type items[size]; \(\backslash\)}
+\DoxyCodeLine{    \}name\#\#\_itempool\_t}
+
+\end{DoxyCode}
+
+
+Definition at line 53 of file itempool.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{itempool_8h_aee591c7c3cd3b0203a714b748d4479fe}\label{itempool_8h_aee591c7c3cd3b0203a714b748d4479fe}} 
+\index{itempool.h@{itempool.h}!itempool\_alloc@{itempool\_alloc}}
+\index{itempool\_alloc@{itempool\_alloc}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{itempool\_alloc()}{itempool\_alloc()}}
+{\footnotesize\ttfamily void$\ast$ itempool\+\_\+alloc (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{items,  }\item[{uint8\+\_\+t $\ast$}]{status,  }\item[{size\+\_\+t}]{itemsize,  }\item[{size\+\_\+t}]{poolsize }\end{DoxyParamCaption})}
+
+
+
+Definition at line 55 of file itempool.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{itempool_8h_aee591c7c3cd3b0203a714b748d4479fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{itempool_8h_a71eddaf5f85a9dda1ea89c30fbaab64b}\label{itempool_8h_a71eddaf5f85a9dda1ea89c30fbaab64b}} 
+\index{itempool.h@{itempool.h}!itempool\_calloc@{itempool\_calloc}}
+\index{itempool\_calloc@{itempool\_calloc}!itempool.h@{itempool.h}}
+\doxysubsubsection{\texorpdfstring{itempool\_calloc()}{itempool\_calloc()}}
+{\footnotesize\ttfamily void$\ast$ itempool\+\_\+calloc (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{items,  }\item[{uint8\+\_\+t $\ast$}]{status,  }\item[{size\+\_\+t}]{itemsize,  }\item[{size\+\_\+t}]{poolsize }\end{DoxyParamCaption})}
+
+
+
+Definition at line 73 of file itempool.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{itempool_8h_a71eddaf5f85a9dda1ea89c30fbaab64b_cgraph}
+\end{center}
+\end{figure}

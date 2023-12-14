@@ -1,0 +1,995 @@
+\hypertarget{dlist_8h}{}\doxysection{myos/lib/dlist.h File Reference}
+\label{dlist_8h}\index{myos/lib/dlist.h@{myos/lib/dlist.h}}
+
+
+Circular doubly linked list.  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for dlist.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{dlist_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dlist_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure representing a node in a circular doubly linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dlist_8h_a207dad2368bb8983a3fb2df6ca25a080}{DLIST\+\_\+\+NODE\+\_\+\+TYPE}}~\mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}} dlist\+\_\+node
+\begin{DoxyCompactList}\small\item\em Macro to embed a list node in a structure for a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a5d22ada75e1ef9d60ebe8d580f5ea05b}{dlist\+\_\+next}}(dlist,  existing\+\_\+node)~    (((\mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}$\ast$)(existing\+\_\+node))-\/$>$next)
+\begin{DoxyCompactList}\small\item\em Retrieves the next node in a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a79b530d7d8bc62657ffb605744bbc497}{dlist\+\_\+prev}}(dlist,  existing\+\_\+node)~    (((\mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}$\ast$)(existing\+\_\+node))-\/$>$prev)
+\begin{DoxyCompactList}\small\item\em Retrieves the previous node in a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\+\_\+init}}(dlist)
+\begin{DoxyCompactList}\small\item\em Initializes a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_aa4882a8fe635c6d04587830d7816473e}{dlist\+\_\+begin}}(dlist)~((dlist)-\/$>$next)
+\begin{DoxyCompactList}\small\item\em Returns an iterator to the beginning of the list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a6f6a586785093d37647d26709d9d90c8}{dlist\+\_\+front}}(dlist)~(\mbox{\hyperlink{dlist_8h_aa4882a8fe635c6d04587830d7816473e}{dlist\+\_\+begin}}(dlist))
+\begin{DoxyCompactList}\small\item\em Retrieves the first element in a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a6d3fcaf247e1020ca87d6cb65757a935}{dlist\+\_\+end}}(dlist)~(dlist)
+\begin{DoxyCompactList}\small\item\em Returns an iterator to the past-\/the-\/end element in a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_ad1d2033bf85a976df0264660e75897f4}{dlist\+\_\+back}}(dlist)~(\mbox{\hyperlink{dlist_8h_a79b530d7d8bc62657ffb605744bbc497}{dlist\+\_\+prev}}(dlist,dlist))
+\begin{DoxyCompactList}\small\item\em Returns the last node in a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a6f810c5c180e951efd3e89eca994dfb5}{dlist\+\_\+foreach}}(dlist,  iterator)~    for(iterator = (void$\ast$)\mbox{\hyperlink{dlist_8h_aa4882a8fe635c6d04587830d7816473e}{dlist\+\_\+begin}}(dlist); ((\mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}$\ast$)iterator) != \mbox{\hyperlink{dlist_8h_a6d3fcaf247e1020ca87d6cb65757a935}{dlist\+\_\+end}}(dlist); iterator=(void$\ast$)\mbox{\hyperlink{dlist_8h_a5d22ada75e1ef9d60ebe8d580f5ea05b}{dlist\+\_\+next}}(dlist,iterator))
+\begin{DoxyCompactList}\small\item\em Iterates through all elements in a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a32d6434a21efbaa32af5c6ea7778fbca}{dlist\+\_\+empty}}(dlist)~((dlist)-\/$>$next==(dlist))
+\begin{DoxyCompactList}\small\item\em Tests whether a circular doubly linked list is empty. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a65124d2ea3f72b8fb6f511d89e74c0d1}{dlist\+\_\+push\+\_\+front}}(dlist,  node\+\_\+to\+\_\+add)
+\begin{DoxyCompactList}\small\item\em Inserts an element at the beginning of a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_ab68129d82e32313b0174c636f735f80a}{dlist\+\_\+pop\+\_\+front}}(dlist)
+\begin{DoxyCompactList}\small\item\em Deletes the first node in a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_aab234e0b85f3f015ac0419939efb4987}{dlist\+\_\+push\+\_\+back}}(dlist,  node\+\_\+to\+\_\+add)
+\begin{DoxyCompactList}\small\item\em Inserts an element at the end of a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a31e6ae1179141b1425f476b5d9423b71}{dlist\+\_\+pop\+\_\+back}}(dlist)
+\begin{DoxyCompactList}\small\item\em Removes the last element from a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_afafccb52bd9b1129aa39c59f6f3fbcd3}{dlist\+\_\+erase}}(dlist,  existing\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Removes a specific node from a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a0d504f97bec128e16205f0fa63bce82f}{dlist\+\_\+insert\+\_\+after}}(dlist,  existing\+\_\+node,  node\+\_\+to\+\_\+insert)
+\begin{DoxyCompactList}\small\item\em Inserts an element after a specified node in a circular doubly linked list. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dlist_8h_a103da03cca6343606bc32a3c6a8fec9c}{dlist\+\_\+insert\+\_\+before}}(dlist,  existing\+\_\+node,  node\+\_\+to\+\_\+insert)
+\begin{DoxyCompactList}\small\item\em Inserts an element before a specified node in a circular doubly linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}} \mbox{\hyperlink{dlist_8h_a0a945596fd137b14273b421383b45734}{dlist\+\_\+node\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Typedef for the structure representing a node in a circular doubly linked list. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}} \mbox{\hyperlink{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}{dlist\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Typedef for the circular doubly linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{dlist_8h_a643bd1eb05da6561fcf98ea81bf160c6}{dlist\+\_\+size}} (\mbox{\hyperlink{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}{dlist\+\_\+t}} $\ast$dlist)
+\begin{DoxyCompactList}\small\item\em Counts the number of nodes in a circular doubly linked list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}} $\ast$ \mbox{\hyperlink{dlist_8h_aba7d109449bb740a61d7e8558b1c9321}{dlist\+\_\+find}} (\mbox{\hyperlink{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}{dlist\+\_\+t}} $\ast$dlist, void $\ast$node)
+\begin{DoxyCompactList}\small\item\em Checks if a node is in the circular doubly linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Circular doubly linked list. 
+
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+\begin{DoxyAuthor}{Authors}
+\href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+\end{DoxyAuthor}
+In computer science, a linked list is a linear collection of data elements, whose order is not given by their physical placement in memory. Instead, each element points to the next. It is a data structure consisting of a collection of nodes which together represent a sequence. In its most basic form, each node contains\+: data, and a reference (in other words, a link) to the next node in the sequence. This structure allows for efficient insertion or removal of elements from any position in the sequence during iteration. \mbox{[}\href{https://en.wikipedia.org/wiki/Linked_list}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Linked\+\_\+list}}\mbox{]}
+
+In a \textquotesingle{}doubly linked list\textquotesingle{}, each node contains, besides the next-\/node link, a second link field pointing to the \textquotesingle{}previous\textquotesingle{} node in the sequence. The two links may be called \textquotesingle{}forward(\textquotesingle{}s\textquotesingle{}) and \textquotesingle{}backwards\textquotesingle{}, or \textquotesingle{}next\textquotesingle{} and \textquotesingle{}prev\textquotesingle{}(\textquotesingle{}previous\textquotesingle{}). \mbox{[}\href{https://en.wikipedia.org/wiki/Linked_list\#Doubly_linked_list}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Linked\+\_\+list\#\+Doubly\+\_\+linked\+\_\+list}}\mbox{]}
+
+In the last node of a list, the link field often contains a null reference, a special value is used to indicate the lack of further nodes. A less common convention is to make it point to the first node of the list; in that case, the list is said to be \textquotesingle{}circular\textquotesingle{} or \textquotesingle{}circularly linked\textquotesingle{}; otherwise, it is said to be \textquotesingle{}open\textquotesingle{} or \textquotesingle{}linear\textquotesingle{}. It is a list where the last pointer points to the first node. \mbox{[}\href{https://en.wikipedia.org/wiki/Linked_list\#Circular_linked_list}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Linked\+\_\+list\#\+Circular\+\_\+linked\+\_\+list}}\mbox{]}
+
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\href{https://opensource.org/license/mit/}{\texttt{ https\+://opensource.\+org/license/mit/}}
+
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright 2013-\/2023 Marco Bacchi \href{mailto:marco@bacchi.at}{\texttt{ marco@bacchi.\+at}} 
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License\+:}
+This file is released under the MIT License.~\newline
+ \href{https://opensource.org/licenses/MIT}{\texttt{ https\+://opensource.\+org/licenses/\+MIT}}
+\end{DoxyParagraph}
+In computer science, a linked list is a linear collection of data elements, whose order is not given by their physical placement in memory. Instead, each element points to the next. It is a data structure consisting of a collection of nodes which together represent a sequence. In its most basic form, each node contains\+: data, and a reference (in other words, a link) to the next node in the sequence. This structure allows for efficient insertion or removal of elements from any position in the sequence during iteration. \mbox{[}\href{https://en.wikipedia.org/wiki/Linked_list}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Linked\+\_\+list}}\mbox{]}
+
+In a \textquotesingle{}doubly linked list\textquotesingle{}, each node contains, besides the next-\/node link, a second link field pointing to the \textquotesingle{}previous\textquotesingle{} node in the sequence. The two links may be called \textquotesingle{}forward(\textquotesingle{}s\textquotesingle{}) and \textquotesingle{}backwards\textquotesingle{}, or \textquotesingle{}next\textquotesingle{} and \textquotesingle{}prev\textquotesingle{}(\textquotesingle{}previous\textquotesingle{}). \mbox{[}\href{https://en.wikipedia.org/wiki/Linked_list\#Doubly_linked_list}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Linked\+\_\+list\#\+Doubly\+\_\+linked\+\_\+list}}\mbox{]}
+
+In the last node of a list, the link field often contains a null reference, a special value is used to indicate the lack of further nodes. A less common convention is to make it point to the first node of the list; in that case, the list is said to be \textquotesingle{}circular\textquotesingle{} or \textquotesingle{}circularly linked\textquotesingle{}; otherwise, it is said to be \textquotesingle{}open\textquotesingle{} or \textquotesingle{}linear\textquotesingle{}. It is a list where the last pointer points to the first node. \mbox{[}\href{https://en.wikipedia.org/wiki/Linked_list\#Circular_linked_list}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Linked\+\_\+list\#\+Circular\+\_\+linked\+\_\+list}}\mbox{]}
+
+Comparison Singly Linked List vs. Doubly Linked List\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Singly Linked List   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Doubly Linked List    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Singly Linked List   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Doubly Linked List    }\\\cline{1-2}
+\endhead
+Linked lists are not stored in contiguous location.   &Linked lists are not stored in contiguous location.    \\\cline{1-2}
+Dynamic in size.   &Dynamic in size.    \\\cline{1-2}
+Memory is allocated at run time (not necessarily true).   &Memory is allocated at run time (not necessarily true).    \\\cline{1-2}
+Uses less memory than a doubly linked list.   &Uses more memory as it also stores the address of the previous node.    \\\cline{1-2}
+Element accessing requires the traversal of whole linked list.   &Element accessing requires the traversal of whole linked list.    \\\cline{1-2}
+Insertion and deletion operation is slower.   &Insertion and deletion operation is faster.   \\\cline{1-2}
+\end{longtabu}
+
+
+This file was redocumented in doxygen style format by using Chat\+GPT 4. ~\newline
+ Input \+: existing doxygen documentation and source for each documentation entity ~\newline
+ Request \+: Extend doxygen documentation part ~\newline
+ Output \+: New doxygen documentation ~\newline
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dlist_8h_ad1d2033bf85a976df0264660e75897f4}\label{dlist_8h_ad1d2033bf85a976df0264660e75897f4}} 
+\index{dlist.h@{dlist.h}!dlist\_back@{dlist\_back}}
+\index{dlist\_back@{dlist\_back}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_back}{dlist\_back}}
+{\footnotesize\ttfamily \#define dlist\+\_\+back(\begin{DoxyParamCaption}\item[{}]{dlist }\end{DoxyParamCaption})~(\mbox{\hyperlink{dlist_8h_a79b530d7d8bc62657ffb605744bbc497}{dlist\+\_\+prev}}(dlist,dlist))}
+
+
+
+Returns the last node in a circular doubly linked list. 
+
+This macro provides an iterator to the last node in a circular doubly linked list. It uses the {\ttfamily dlist\+\_\+prev} macro to find the node that precedes the list node itself ({\ttfamily dlist}). In a circular doubly linked list, the \textquotesingle{}prev\textquotesingle{} pointer of the list node points to the last element, making this an efficient method to access the last node.
+
+This is particularly useful for operations that require access to the end of the list, such as appending elements or performing operations in reverse order. It is important to note that if the list is empty, the macro will return the list node itself, which should not be treated as a valid data-\/containing node.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *last\_node = \mbox{\hyperlink{dlist_8h_ad1d2033bf85a976df0264660e75897f4}{dlist\_back}}(\&mylist);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (last\_node != \&mylist) \{}
+\DoxyCodeLine{    \textcolor{comment}{// The list is not empty, process the last node}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator to the last node in the list, or the list node itself if the list is empty. 
+\end{DoxyReturn}
+
+
+Definition at line 308 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_aa4882a8fe635c6d04587830d7816473e}\label{dlist_8h_aa4882a8fe635c6d04587830d7816473e}} 
+\index{dlist.h@{dlist.h}!dlist\_begin@{dlist\_begin}}
+\index{dlist\_begin@{dlist\_begin}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_begin}{dlist\_begin}}
+{\footnotesize\ttfamily \#define dlist\+\_\+begin(\begin{DoxyParamCaption}\item[{}]{dlist }\end{DoxyParamCaption})~((dlist)-\/$>$next)}
+
+
+
+Returns an iterator to the beginning of the list. 
+
+This macro provides an iterator pointing to the first element in a circular doubly linked list. It returns the node immediately following the list node, which is considered the first element of the list. If the list is empty, this iterator will point back to the list node itself.
+
+It is important to note that if the list is empty, the returned iterator should not be dereferenced, as it would point to the list node instead of a valid data node. Users should check whether the list is empty (e.\+g., using {\ttfamily dlist\+\_\+empty}) before dereferencing the iterator.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *begin = \mbox{\hyperlink{dlist_8h_aa4882a8fe635c6d04587830d7816473e}{dlist\_begin}}(\&mylist);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (begin != \&mylist) \{}
+\DoxyCodeLine{    \textcolor{comment}{// The list is not empty, process the first element}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator (pointer) to the first node in the list, or to the list node itself if the list is empty. 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a32d6434a21efbaa32af5c6ea7778fbca}\label{dlist_8h_a32d6434a21efbaa32af5c6ea7778fbca}} 
+\index{dlist.h@{dlist.h}!dlist\_empty@{dlist\_empty}}
+\index{dlist\_empty@{dlist\_empty}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_empty}{dlist\_empty}}
+{\footnotesize\ttfamily \#define dlist\+\_\+empty(\begin{DoxyParamCaption}\item[{}]{dlist }\end{DoxyParamCaption})~((dlist)-\/$>$next==(dlist))}
+
+
+
+Tests whether a circular doubly linked list is empty. 
+
+This macro checks if a circular doubly linked list is empty by comparing the \textquotesingle{}next\textquotesingle{} pointer of the list node ({\ttfamily dlist}) to the address of the list node itself. In an empty circular doubly linked list, the \textquotesingle{}next\textquotesingle{} and \textquotesingle{}prev\textquotesingle{} pointers of the list node point to the list node itself. If the \textquotesingle{}next\textquotesingle{} pointer points to the list node, the list is empty. Otherwise, it contains at least one element.
+
+This is a quick and efficient way to determine if the list has any elements without traversing the entire list. It is particularly useful for checking list state before performing operations that require the list to have elements.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Operations that may modify the list}}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{dlist_8h_a32d6434a21efbaa32af5c6ea7778fbca}{dlist\_empty}}(\&mylist)) \{}
+\DoxyCodeLine{    \textcolor{comment}{// The list is empty, handle accordingly}}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    \textcolor{comment}{// The list is not empty, proceed with further operations}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer\+: 0 if the list is not empty, or 1 if it is empty. 
+\end{DoxyReturn}
+
+
+Definition at line 372 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a6d3fcaf247e1020ca87d6cb65757a935}\label{dlist_8h_a6d3fcaf247e1020ca87d6cb65757a935}} 
+\index{dlist.h@{dlist.h}!dlist\_end@{dlist\_end}}
+\index{dlist\_end@{dlist\_end}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_end}{dlist\_end}}
+{\footnotesize\ttfamily \#define dlist\+\_\+end(\begin{DoxyParamCaption}\item[{}]{dlist }\end{DoxyParamCaption})~(dlist)}
+
+
+
+Returns an iterator to the past-\/the-\/end element in a circular doubly linked list. 
+
+This macro provides an iterator referring to the past-\/the-\/end element in a circular doubly linked list. The past-\/the-\/end element is a theoretical element that follows the last element in the list. It is not a valid element and thus shall not be dereferenced. This iterator is commonly used in combination with {\ttfamily dlist\+\_\+begin} to specify a range that includes all the elements in the container.
+
+In a circular doubly linked list, the successor of the last element is the list node itself, signifying the end of the list. Therefore, this macro returns the list node to represent the past-\/the-\/end element. It is particularly useful for loop conditions and iterator comparisons where a sentinel value is needed to represent the end of the list.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *it = \mbox{\hyperlink{dlist_8h_aa4882a8fe635c6d04587830d7816473e}{dlist\_begin}}(\&mylist); it != \mbox{\hyperlink{dlist_8h_a6d3fcaf247e1020ca87d6cb65757a935}{dlist\_end}}(\&mylist); it = \mbox{\hyperlink{dlist_8h_a5d22ada75e1ef9d60ebe8d580f5ea05b}{dlist\_next}}(\&mylist, it)) \{}
+\DoxyCodeLine{    \textcolor{comment}{// Process each element}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator referring to the past-\/the-\/end element, which is the list node itself. 
+\end{DoxyReturn}
+
+
+Definition at line 278 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_afafccb52bd9b1129aa39c59f6f3fbcd3}\label{dlist_8h_afafccb52bd9b1129aa39c59f6f3fbcd3}} 
+\index{dlist.h@{dlist.h}!dlist\_erase@{dlist\_erase}}
+\index{dlist\_erase@{dlist\_erase}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_erase}{dlist\_erase}}
+{\footnotesize\ttfamily \#define dlist\+\_\+erase(\begin{DoxyParamCaption}\item[{}]{dlist,  }\item[{}]{existing\+\_\+node }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do}\{ \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)existing\_node)-\/>prev-\/>next = ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)existing\_node)-\/>next; \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)existing\_node)-\/>next-\/>prev = ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)existing\_node)-\/>prev; \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Removes a specific node from a circular doubly linked list. 
+
+This macro removes a specific node ({\ttfamily existing\+\_\+node}) from the circular doubly linked list. It achieves this by adjusting the \textquotesingle{}next\textquotesingle{} pointer of the node\textquotesingle{}s predecessor and the \textquotesingle{}prev\textquotesingle{} pointer of the node\textquotesingle{}s successor to bypass {\ttfamily existing\+\_\+node}, effectively removing it from the list.
+
+This operation is efficient as it directly manipulates the pointers of the neighboring nodes, and does not require traversing the list. It is crucial to ensure that {\ttfamily existing\+\_\+node} is indeed a member of the list; removing a node that is not part of the list will result in undefined behavior.
+
+Users should also handle memory management for the removed node if it was dynamically allocated. This macro only removes the node from the list structure; it does not free the memory associated with the node.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *node\_to\_remove = find\_node(mylist, some\_criteria); \textcolor{comment}{// Assume find\_node returns a valid node}}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (node\_to\_remove) \{}
+\DoxyCodeLine{    \mbox{\hyperlink{dlist_8h_afafccb52bd9b1129aa39c59f6f3fbcd3}{dlist\_erase}}(\&mylist, node\_to\_remove);}
+\DoxyCodeLine{    \textcolor{comment}{// Now 'node\_to\_remove' is removed from 'mylist'}}
+\DoxyCodeLine{    \textcolor{comment}{// Free node\_to\_remove if necessary}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+{\em existing\+\_\+node} & A pointer to the node to be removed from the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 560 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a6f810c5c180e951efd3e89eca994dfb5}\label{dlist_8h_a6f810c5c180e951efd3e89eca994dfb5}} 
+\index{dlist.h@{dlist.h}!dlist\_foreach@{dlist\_foreach}}
+\index{dlist\_foreach@{dlist\_foreach}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_foreach}{dlist\_foreach}}
+{\footnotesize\ttfamily \#define dlist\+\_\+foreach(\begin{DoxyParamCaption}\item[{}]{dlist,  }\item[{}]{iterator }\end{DoxyParamCaption})~    for(iterator = (void$\ast$)\mbox{\hyperlink{dlist_8h_aa4882a8fe635c6d04587830d7816473e}{dlist\+\_\+begin}}(dlist); ((\mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}$\ast$)iterator) != \mbox{\hyperlink{dlist_8h_a6d3fcaf247e1020ca87d6cb65757a935}{dlist\+\_\+end}}(dlist); iterator=(void$\ast$)\mbox{\hyperlink{dlist_8h_a5d22ada75e1ef9d60ebe8d580f5ea05b}{dlist\+\_\+next}}(dlist,iterator))}
+
+
+
+Iterates through all elements in a circular doubly linked list. 
+
+This macro sets up a loop that iterates from the first to the last element in a circular doubly linked list. It initializes the iterator to the first element in the list using {\ttfamily dlist\+\_\+begin}, and then continues to iterate over each element until it reaches the end of the list, indicated by {\ttfamily dlist\+\_\+end}. This macro is useful for performing operations on each element in the list, such as searching, modifying, or printing values.
+
+The macro uses a for loop to traverse the list, making it easy to apply a block of code to each element. It is important to ensure that the list is properly initialized before using this macro to avoid undefined behavior.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *iterator;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a6f810c5c180e951efd3e89eca994dfb5}{dlist\_foreach}}(\&mylist, iterator) \{}
+\DoxyCodeLine{    \textcolor{comment}{// Process each element pointed to by iterator}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list to be iterated over. \\
+\hline
+{\em iterator} & A pointer that will be used as an iterator over the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 339 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a6f6a586785093d37647d26709d9d90c8}\label{dlist_8h_a6f6a586785093d37647d26709d9d90c8}} 
+\index{dlist.h@{dlist.h}!dlist\_front@{dlist\_front}}
+\index{dlist\_front@{dlist\_front}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_front}{dlist\_front}}
+{\footnotesize\ttfamily \#define dlist\+\_\+front(\begin{DoxyParamCaption}\item[{}]{dlist }\end{DoxyParamCaption})~(\mbox{\hyperlink{dlist_8h_aa4882a8fe635c6d04587830d7816473e}{dlist\+\_\+begin}}(dlist))}
+
+
+
+Retrieves the first element in a circular doubly linked list. 
+
+This macro provides access to the first data-\/containing node in a circular doubly linked list. It utilizes the {\ttfamily dlist\+\_\+begin} macro to obtain an iterator pointing to the first element. If the list is empty, it returns an iterator pointing to the list node itself, which should not be dereferenced.
+
+The {\ttfamily dlist\+\_\+front} macro is useful for accessing the first element of the list in a direct and concise way. However, users should verify that the list is not empty before attempting to use the returned iterator to access list data.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *front = \mbox{\hyperlink{dlist_8h_a6f6a586785093d37647d26709d9d90c8}{dlist\_front}}(\&mylist);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (front != \&mylist) \{}
+\DoxyCodeLine{    \textcolor{comment}{// The list is not empty, access the data of the first element}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator (pointer) to the first element in the list, or to the list node itself if the list is empty. 
+\end{DoxyReturn}
+
+
+Definition at line 248 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}\label{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}} 
+\index{dlist.h@{dlist.h}!dlist\_init@{dlist\_init}}
+\index{dlist\_init@{dlist\_init}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_init}{dlist\_init}}
+{\footnotesize\ttfamily \#define dlist\+\_\+init(\begin{DoxyParamCaption}\item[{}]{dlist }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do}\{ \(\backslash\)}
+\DoxyCodeLine{        (dlist)-\/>next = (dlist); \(\backslash\)}
+\DoxyCodeLine{        (dlist)-\/>prev = (dlist); \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Initializes a circular doubly linked list. 
+
+This macro is used to initialize a circular doubly linked list, setting it up as an empty list. In an empty list, both the \textquotesingle{}next\textquotesingle{} and \textquotesingle{}prev\textquotesingle{} pointers of the list node point to the list node itself, creating a circular structure. Initializing the list in this way is crucial, as it ensures that the list is in a known state, preventing undefined behavior when performing other operations on the list.
+
+Proper initialization of the list is essential before using any other list functions or function-\/like macros, as they rely on the list being correctly initialized to a circular structure.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Now 'mylist' is initialized and ready for operations}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list to be initialized. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a0d504f97bec128e16205f0fa63bce82f}\label{dlist_8h_a0d504f97bec128e16205f0fa63bce82f}} 
+\index{dlist.h@{dlist.h}!dlist\_insert\_after@{dlist\_insert\_after}}
+\index{dlist\_insert\_after@{dlist\_insert\_after}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_insert\_after}{dlist\_insert\_after}}
+{\footnotesize\ttfamily \#define dlist\+\_\+insert\+\_\+after(\begin{DoxyParamCaption}\item[{}]{dlist,  }\item[{}]{existing\+\_\+node,  }\item[{}]{node\+\_\+to\+\_\+insert }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do}\{ \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)node\_to\_insert)-\/>next = ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)existing\_node)-\/>next; \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)node\_to\_insert)-\/>prev = existing\_node; \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)existing\_node)-\/>next-\/>prev = node\_to\_insert; \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)existing\_node)-\/>next = node\_to\_insert; \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Inserts an element after a specified node in a circular doubly linked list. 
+
+This macro inserts a new node ({\ttfamily node\+\_\+to\+\_\+insert}) into the circular doubly linked list immediately after a specified node ({\ttfamily existing\+\_\+node}). The insertion is achieved by adjusting the \textquotesingle{}next\textquotesingle{} and \textquotesingle{}prev\textquotesingle{} pointers of {\ttfamily node\+\_\+to\+\_\+insert}, as well as the \textquotesingle{}next\textquotesingle{} pointer of {\ttfamily existing\+\_\+node} and the \textquotesingle{}prev\textquotesingle{} pointer of the original successor of {\ttfamily existing\+\_\+node}.
+
+This operation allows for efficient insertion in the list without needing to traverse it. It is crucial that both {\ttfamily existing\+\_\+node} and {\ttfamily node\+\_\+to\+\_\+insert} are valid pointers to nodes properly allocated. The macro assumes that {\ttfamily existing\+\_\+node} is a part of the list and {\ttfamily node\+\_\+to\+\_\+insert} is not yet in the list. Improper usage may lead to undefined behavior.
+
+Users should ensure that {\ttfamily node\+\_\+to\+\_\+insert} is correctly initialized before using this macro, as it only handles the linking of the node into the list structure.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *existing\_node = find\_node(mylist, some\_criteria); \textcolor{comment}{// Assume find\_node returns a valid node}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *new\_node = create\_node(data); \textcolor{comment}{// Assume create\_node allocates and initializes a new node}}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a0d504f97bec128e16205f0fa63bce82f}{dlist\_insert\_after}}(\&mylist, existing\_node, new\_node);}
+\DoxyCodeLine{\textcolor{comment}{// Now 'new\_node' is inserted after 'existing\_node' in 'mylist'}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+{\em existing\+\_\+node} & A pointer to the node in the list after which the new node will be inserted. \\
+\hline
+{\em node\+\_\+to\+\_\+insert} & A pointer to the new node to be inserted into the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 600 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a103da03cca6343606bc32a3c6a8fec9c}\label{dlist_8h_a103da03cca6343606bc32a3c6a8fec9c}} 
+\index{dlist.h@{dlist.h}!dlist\_insert\_before@{dlist\_insert\_before}}
+\index{dlist\_insert\_before@{dlist\_insert\_before}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_insert\_before}{dlist\_insert\_before}}
+{\footnotesize\ttfamily \#define dlist\+\_\+insert\+\_\+before(\begin{DoxyParamCaption}\item[{}]{dlist,  }\item[{}]{existing\+\_\+node,  }\item[{}]{node\+\_\+to\+\_\+insert }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do}\{ \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)node\_to\_insert)-\/>next = existing\_node; \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)node\_to\_insert)-\/>prev = ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)existing\_node)-\/>prev; \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)existing\_node)-\/>prev-\/>next = node\_to\_insert; \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)existing\_node)-\/>prev = node\_to\_insert; \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Inserts an element before a specified node in a circular doubly linked list. 
+
+This macro inserts a new node ({\ttfamily node\+\_\+to\+\_\+insert}) into the circular doubly linked list immediately before a specified node ({\ttfamily existing\+\_\+node}). The insertion is achieved by adjusting the \textquotesingle{}next\textquotesingle{} and \textquotesingle{}prev\textquotesingle{} pointers of {\ttfamily node\+\_\+to\+\_\+insert}, as well as the \textquotesingle{}prev\textquotesingle{} pointer of {\ttfamily existing\+\_\+node} and the \textquotesingle{}next\textquotesingle{} pointer of the original predecessor of {\ttfamily existing\+\_\+node}.
+
+This operation allows for efficient insertion in the list without needing to traverse it. It is crucial that both {\ttfamily existing\+\_\+node} and {\ttfamily node\+\_\+to\+\_\+insert} are valid pointers to nodes properly allocated. The macro assumes that {\ttfamily existing\+\_\+node} is a part of the list and {\ttfamily node\+\_\+to\+\_\+insert} is not yet in the list. Improper usage may lead to undefined behavior.
+
+Users should ensure that {\ttfamily node\+\_\+to\+\_\+insert} is correctly initialized before using this macro, as it only handles the linking of the node into the list structure.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *existing\_node = find\_node(mylist, some\_criteria); \textcolor{comment}{// Assume find\_node returns a valid node}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *new\_node = create\_node(data); \textcolor{comment}{// Assume create\_node allocates and initializes a new node}}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a103da03cca6343606bc32a3c6a8fec9c}{dlist\_insert\_before}}(\&mylist, existing\_node, new\_node);}
+\DoxyCodeLine{\textcolor{comment}{// Now 'new\_node' is inserted before 'existing\_node' in 'mylist'}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+{\em existing\+\_\+node} & A pointer to the node in the list before which the new node will be inserted. \\
+\hline
+{\em node\+\_\+to\+\_\+insert} & A pointer to the new node to be inserted into the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 641 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a5d22ada75e1ef9d60ebe8d580f5ea05b}\label{dlist_8h_a5d22ada75e1ef9d60ebe8d580f5ea05b}} 
+\index{dlist.h@{dlist.h}!dlist\_next@{dlist\_next}}
+\index{dlist\_next@{dlist\_next}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_next}{dlist\_next}}
+{\footnotesize\ttfamily \#define dlist\+\_\+next(\begin{DoxyParamCaption}\item[{}]{dlist,  }\item[{}]{existing\+\_\+node }\end{DoxyParamCaption})~    (((\mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}$\ast$)(existing\+\_\+node))-\/$>$next)}
+
+
+
+Retrieves the next node in a circular doubly linked list. 
+
+This macro provides an efficient way to access the successor of a given node ({\ttfamily existing\+\_\+node}) in a circular doubly linked list. It returns the node that immediately follows the specified node in the list. This is particularly useful for iterating over a circular doubly linked list, where each node is connected to both its predecessor and successor.
+
+The macro assumes that {\ttfamily existing\+\_\+node} is not NULL and is a valid member of the list. If {\ttfamily existing\+\_\+node} is the last node in the list, {\ttfamily dlist\+\_\+next} returns the list node itself, as the next node in the circular structure.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *current = get\_some\_node(dlist);}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *next\_node = \mbox{\hyperlink{dlist_8h_a5d22ada75e1ef9d60ebe8d580f5ea05b}{dlist\_next}}(dlist, current);}
+\DoxyCodeLine{\textcolor{comment}{// Process next\_node as needed}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+{\em existing\+\_\+node} & A pointer to the current node in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the next node in the list, which could be the list node itself. 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a207dad2368bb8983a3fb2df6ca25a080}\label{dlist_8h_a207dad2368bb8983a3fb2df6ca25a080}} 
+\index{dlist.h@{dlist.h}!DLIST\_NODE\_TYPE@{DLIST\_NODE\_TYPE}}
+\index{DLIST\_NODE\_TYPE@{DLIST\_NODE\_TYPE}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{DLIST\_NODE\_TYPE}{DLIST\_NODE\_TYPE}}
+{\footnotesize\ttfamily \#define DLIST\+\_\+\+NODE\+\_\+\+TYPE~\mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}} dlist\+\_\+node}
+
+
+
+Macro to embed a list node in a structure for a circular doubly linked list. 
+
+Add {\ttfamily DLIST\+\_\+\+NODE\+\_\+\+TYPE} as the first member of a structure to make it suitable for use as a node in a circular doubly linked list. This macro defines an embedded {\ttfamily \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}} structure, allowing any structure that includes it to be linked into a circular doubly linked list. The embedded {\ttfamily \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}} structure is named {\ttfamily dlist\+\_\+node}, and it contains the necessary pointers to the next and previous nodes in the list.
+
+This approach allows for the creation of nodes that can store additional data while still being compatible with circular doubly linked list operations.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \mbox{\hyperlink{dlist_8h_a207dad2368bb8983a3fb2df6ca25a080}{DLIST\_NODE\_TYPE}}; \textcolor{comment}{// Embeds the list node}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} data;        \textcolor{comment}{// Additional data field}}
+\DoxyCodeLine{\} custom\_node\_t;}
+
+\end{DoxyCode}
+
+
+With this definition, {\ttfamily custom\+\_\+node\+\_\+t} can be used as a node in a circular doubly linked list, and additional data can be associated with each node. 
+
+Definition at line 106 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a31e6ae1179141b1425f476b5d9423b71}\label{dlist_8h_a31e6ae1179141b1425f476b5d9423b71}} 
+\index{dlist.h@{dlist.h}!dlist\_pop\_back@{dlist\_pop\_back}}
+\index{dlist\_pop\_back@{dlist\_pop\_back}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_pop\_back}{dlist\_pop\_back}}
+{\footnotesize\ttfamily \#define dlist\+\_\+pop\+\_\+back(\begin{DoxyParamCaption}\item[{}]{dlist }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        (dlist)-\/>prev = (dlist)-\/>prev-\/>prev; \(\backslash\)}
+\DoxyCodeLine{        (dlist)-\/>prev-\/>next = (dlist); \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Removes the last element from a circular doubly linked list. 
+
+This macro removes the last element in the circular doubly linked list, effectively reducing the container\textquotesingle{}s size by one. The removal is done by adjusting the \textquotesingle{}prev\textquotesingle{} pointer of the list node ({\ttfamily dlist}) to point to the second-\/to-\/last node, and then setting the \textquotesingle{}next\textquotesingle{} pointer of this new last node to point back to the list node. This effectively removes the original last node from the list.
+
+The operation is efficient as it directly manipulates the pointers without needing to traverse the entire list. However, it is important to ensure that the list is not empty before calling this macro. If the list is empty (i.\+e., {\ttfamily dlist-\/$>$prev} is {\ttfamily dlist}), calling {\ttfamily dlist\+\_\+pop\+\_\+back} will have no effect.
+
+Users should also handle memory management for the removed node if it was dynamically allocated. This macro only removes the node from the list structure; it does not free the memory associated with the node.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (!\mbox{\hyperlink{dlist_8h_a32d6434a21efbaa32af5c6ea7778fbca}{dlist\_empty}}(\&mylist)) \{}
+\DoxyCodeLine{    \mbox{\hyperlink{dlist_8h_a31e6ae1179141b1425f476b5d9423b71}{dlist\_pop\_back}}(\&mylist);}
+\DoxyCodeLine{    \textcolor{comment}{// The last node is now removed from 'mylist'}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 519 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_ab68129d82e32313b0174c636f735f80a}\label{dlist_8h_ab68129d82e32313b0174c636f735f80a}} 
+\index{dlist.h@{dlist.h}!dlist\_pop\_front@{dlist\_pop\_front}}
+\index{dlist\_pop\_front@{dlist\_pop\_front}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_pop\_front}{dlist\_pop\_front}}
+{\footnotesize\ttfamily \#define dlist\+\_\+pop\+\_\+front(\begin{DoxyParamCaption}\item[{}]{dlist }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do}\{ \(\backslash\)}
+\DoxyCodeLine{        (dlist)-\/>next = (dlist)-\/>next-\/>next; \(\backslash\)}
+\DoxyCodeLine{        (dlist)-\/>next-\/>prev = (dlist); \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while}(0);}
+
+\end{DoxyCode}
+
+
+Deletes the first node in a circular doubly linked list. 
+
+This macro removes the first node of the circular doubly linked list. It does this by setting the \textquotesingle{}next\textquotesingle{} pointer of the list node ({\ttfamily dlist}) to point to the second node in the list, and then updating the \textquotesingle{}prev\textquotesingle{} pointer of the new first node to point back to the list node. This effectively removes the original first node from the list.
+
+The operation is efficient as it directly manipulates the pointers without needing to traverse the list. However, it is important to ensure that the list is not empty before calling this macro. If the list is empty (i.\+e., {\ttfamily dlist-\/$>$next} is {\ttfamily dlist}), calling {\ttfamily dlist\+\_\+pop\+\_\+front} will have no effect.
+
+Users should also handle memory management for the removed node if it was dynamically allocated. This macro only removes the node from the list structure; it does not free the memory associated with the node.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (!\mbox{\hyperlink{dlist_8h_a32d6434a21efbaa32af5c6ea7778fbca}{dlist\_empty}}(\&mylist)) \{}
+\DoxyCodeLine{    \mbox{\hyperlink{dlist_8h_ab68129d82e32313b0174c636f735f80a}{dlist\_pop\_front}}(\&mylist);}
+\DoxyCodeLine{    \textcolor{comment}{// The first node is now removed from 'mylist'}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 442 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a79b530d7d8bc62657ffb605744bbc497}\label{dlist_8h_a79b530d7d8bc62657ffb605744bbc497}} 
+\index{dlist.h@{dlist.h}!dlist\_prev@{dlist\_prev}}
+\index{dlist\_prev@{dlist\_prev}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_prev}{dlist\_prev}}
+{\footnotesize\ttfamily \#define dlist\+\_\+prev(\begin{DoxyParamCaption}\item[{}]{dlist,  }\item[{}]{existing\+\_\+node }\end{DoxyParamCaption})~    (((\mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}$\ast$)(existing\+\_\+node))-\/$>$prev)}
+
+
+
+Retrieves the previous node in a circular doubly linked list. 
+
+This macro is designed to access the predecessor of a given node ({\ttfamily existing\+\_\+node}) in a circular doubly linked list. It returns the node that immediately precedes the specified node in the list. This macro is particularly useful for reverse iteration over a circular doubly linked list, where each node is linked to both its next and previous nodes.
+
+The macro assumes that {\ttfamily existing\+\_\+node} is not NULL and is a valid member of the list. If {\ttfamily existing\+\_\+node} is the first node in the list (after the list node), {\ttfamily dlist\+\_\+prev} returns the list node itself, which is the predecessor in the circular structure of the list.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *current = get\_some\_node(dlist);}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *previous\_node = \mbox{\hyperlink{dlist_8h_a79b530d7d8bc62657ffb605744bbc497}{dlist\_prev}}(dlist, current);}
+\DoxyCodeLine{\textcolor{comment}{// Process previous\_node as needed}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+{\em existing\+\_\+node} & A pointer to the current node in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the previous node in the list, which could be the list node itself. 
+\end{DoxyReturn}
+
+
+Definition at line 162 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_aab234e0b85f3f015ac0419939efb4987}\label{dlist_8h_aab234e0b85f3f015ac0419939efb4987}} 
+\index{dlist.h@{dlist.h}!dlist\_push\_back@{dlist\_push\_back}}
+\index{dlist\_push\_back@{dlist\_push\_back}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_push\_back}{dlist\_push\_back}}
+{\footnotesize\ttfamily \#define dlist\+\_\+push\+\_\+back(\begin{DoxyParamCaption}\item[{}]{dlist,  }\item[{}]{node\+\_\+to\+\_\+add }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)(node\_to\_add))-\/>next = (dlist); \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)(node\_to\_add))-\/>prev = (dlist)-\/>prev; \(\backslash\)}
+\DoxyCodeLine{        (dlist)-\/>prev-\/>next = ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)(node\_to\_add)); \(\backslash\)}
+\DoxyCodeLine{        (dlist)-\/>prev = ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)(node\_to\_add)); \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Inserts an element at the end of a circular doubly linked list. 
+
+This macro inserts a new node ({\ttfamily node\+\_\+to\+\_\+add}) at the end of the circular doubly linked list, right after the current last node. The insertion is achieved by adjusting the \textquotesingle{}next\textquotesingle{} and \textquotesingle{}prev\textquotesingle{} pointers of the new node, as well as the \textquotesingle{}prev\textquotesingle{} pointer of the list node and the \textquotesingle{}next\textquotesingle{} pointer of the original last node in the list.
+
+This operation is efficient as it directly manipulates the pointers without needing to traverse the list. After insertion, the new node becomes the last element of the list. It is important to ensure that {\ttfamily node\+\_\+to\+\_\+add} is properly allocated and initialized before using this macro. Additionally, the list must be correctly initialized for this macro to function as expected.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *new\_node = create\_node(data); \textcolor{comment}{// Assume create\_node allocates and initializes a new node}}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_aab234e0b85f3f015ac0419939efb4987}{dlist\_push\_back}}(\&mylist, new\_node);}
+\DoxyCodeLine{\textcolor{comment}{// Now 'new\_node' is the last element of 'mylist'}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+{\em node\+\_\+to\+\_\+add} & A pointer to the node to be added to the end of the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 477 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_a65124d2ea3f72b8fb6f511d89e74c0d1}\label{dlist_8h_a65124d2ea3f72b8fb6f511d89e74c0d1}} 
+\index{dlist.h@{dlist.h}!dlist\_push\_front@{dlist\_push\_front}}
+\index{dlist\_push\_front@{dlist\_push\_front}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_push\_front}{dlist\_push\_front}}
+{\footnotesize\ttfamily \#define dlist\+\_\+push\+\_\+front(\begin{DoxyParamCaption}\item[{}]{dlist,  }\item[{}]{node\+\_\+to\+\_\+add }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do}\{ \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)(node\_to\_add))-\/>next = (dlist)-\/>next; \(\backslash\)}
+\DoxyCodeLine{        ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)(node\_to\_add))-\/>prev = (dlist); \(\backslash\)}
+\DoxyCodeLine{        (dlist)-\/>next-\/>prev = ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)(node\_to\_add)); \(\backslash\)}
+\DoxyCodeLine{        (dlist)-\/>next = ((\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}}*)(node\_to\_add)); \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{while}(0);}
+
+\end{DoxyCode}
+
+
+Inserts an element at the beginning of a circular doubly linked list. 
+
+This macro inserts a new node ({\ttfamily node\+\_\+to\+\_\+add}) at the beginning of the circular doubly linked list, right before its current first element. The insertion is done by adjusting the \textquotesingle{}next\textquotesingle{} and \textquotesingle{}prev\textquotesingle{} pointers of the node to add, as well as the \textquotesingle{}next\textquotesingle{} pointer of the list node and the \textquotesingle{}prev\textquotesingle{} pointer of the original first element of the list.
+
+This operation is efficient as it does not require traversing the list and directly modifies the necessary pointers to insert the new node. After insertion, the new node becomes the first element of the list.
+
+It is important to ensure that {\ttfamily node\+\_\+to\+\_\+add} is properly allocated and initialized before using this macro. Additionally, the list must be correctly initialized for this macro to function as expected.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *new\_node = create\_node(data); \textcolor{comment}{// Assume create\_node allocates and initializes a new node}}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a65124d2ea3f72b8fb6f511d89e74c0d1}{dlist\_push\_front}}(\&mylist, new\_node);}
+\DoxyCodeLine{\textcolor{comment}{// Now 'new\_node' is the first element of 'mylist'}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+{\em node\+\_\+to\+\_\+add} & A pointer to the node to be added to the beginning of the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 403 of file dlist.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{dlist_8h_a0a945596fd137b14273b421383b45734}\label{dlist_8h_a0a945596fd137b14273b421383b45734}} 
+\index{dlist.h@{dlist.h}!dlist\_node\_t@{dlist\_node\_t}}
+\index{dlist\_node\_t@{dlist\_node\_t}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_node\_t}{dlist\_node\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}} \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}}
+
+
+
+Typedef for the structure representing a node in a circular doubly linked list. 
+
+
+
+Definition at line 1 of file dlist.\+h.
+
+\mbox{\Hypertarget{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}\label{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}} 
+\index{dlist.h@{dlist.h}!dlist\_t@{dlist\_t}}
+\index{dlist\_t@{dlist\_t}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_t}{dlist\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}} \mbox{\hyperlink{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}{dlist\+\_\+t}}}
+
+
+
+Typedef for the circular doubly linked list. 
+
+This typedef is used to create an instance of a circular doubly linked list. It defines a list node type ({\ttfamily \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}}) which also acts as the head of the list. The list instance itself is a member of the list, simplifying list operations by eliminating special cases for the head of the list. List instance is also a member of the list 
+
+Definition at line 681 of file dlist.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dlist_8h_aba7d109449bb740a61d7e8558b1c9321}\label{dlist_8h_aba7d109449bb740a61d7e8558b1c9321}} 
+\index{dlist.h@{dlist.h}!dlist\_find@{dlist\_find}}
+\index{dlist\_find@{dlist\_find}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_find()}{dlist\_find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structdlist__node__t}{dlist\+\_\+node\+\_\+t}}$\ast$ dlist\+\_\+find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}{dlist\+\_\+t}} $\ast$}]{dlist,  }\item[{void $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Checks if a node is in the circular doubly linked list. 
+
+This function iterates through the circular doubly linked list and checks if a specific node ({\ttfamily node}) is present in the list. It uses a linear search, comparing each node\textquotesingle{}s address with the address of the specified node. If the node is found, the function returns a pointer to that node; otherwise, it returns NULL.
+
+The search is performed using the {\ttfamily dlist\+\_\+foreach} macro, which iterates over each node in the list. This function is useful for verifying the presence of a node in the list before performing operations that depend on its existence in the list.
+
+\begin{DoxyNote}{Note}
+The function assumes that the list is properly initialized and the {\ttfamily node} pointer is valid. The function runs in linear time complexity, as it may need to traverse the entire list to find the node or determine its absence.
+\end{DoxyNote}
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *search\_node = create\_node(data); \textcolor{comment}{// Assume create\_node allocates and initializes a new node}}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_aab234e0b85f3f015ac0419939efb4987}{dlist\_push\_back}}(\&mylist, search\_node);}
+\DoxyCodeLine{\textcolor{comment}{// Now search for the node}}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_node\_t}} *found\_node = \mbox{\hyperlink{dlist_8c_aba7d109449bb740a61d7e8558b1c9321}{dlist\_find}}(\&mylist, search\_node);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (found\_node) \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Node found in the list\(\backslash\)n"{}});}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Node not found in the list\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+{\em node} & The node to search for in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the node if it exists in the list, NULL otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file dlist.\+c.
+
+\mbox{\Hypertarget{dlist_8h_a643bd1eb05da6561fcf98ea81bf160c6}\label{dlist_8h_a643bd1eb05da6561fcf98ea81bf160c6}} 
+\index{dlist.h@{dlist.h}!dlist\_size@{dlist\_size}}
+\index{dlist\_size@{dlist\_size}!dlist.h@{dlist.h}}
+\doxysubsubsection{\texorpdfstring{dlist\_size()}{dlist\_size()}}
+{\footnotesize\ttfamily size\+\_\+t dlist\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dlist_8h_af95cb0e87f5c2fc68cda38f6b98c77b7}{dlist\+\_\+t}} $\ast$}]{dlist }\end{DoxyParamCaption})}
+
+
+
+Counts the number of nodes in a circular doubly linked list. 
+
+This function calculates and returns the number of elements (nodes) present in a circular doubly linked list, excluding the list node itself. It traverses the list starting from the first element after the list node and counts each node until it reaches the list node again.
+
+This traversal makes use of the {\ttfamily dlist\+\_\+foreach} macro, which iterates over each node in the list. The function is useful for determining the size of the list for various operations such as allocation, serialization, or applying algorithms that depend on the number of elements.
+
+\begin{DoxyNote}{Note}
+The function assumes that the list is properly initialized. An uninitialized or improperly formed list might lead to undefined behavior. The function runs in linear time complexity, as it traverses each element of the list.
+\end{DoxyNote}
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structdlist__node__t}{dlist\_t}} mylist;}
+\DoxyCodeLine{\mbox{\hyperlink{dlist_8h_a91b88be10a7e1ecc7763abae712aa7fc}{dlist\_init}}(\&mylist);}
+\DoxyCodeLine{\textcolor{comment}{// Add elements to the list}}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t} list\_size = \mbox{\hyperlink{dlist_8c_a643bd1eb05da6561fcf98ea81bf160c6}{dlist\_size}}(\&mylist);}
+\DoxyCodeLine{printf(\textcolor{stringliteral}{"{}List contains \%zu elements\(\backslash\)n"{}}, list\_size);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em dlist} & A pointer to the circular doubly linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements in the list, excluding the list node itself. 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file dlist.\+c.
+

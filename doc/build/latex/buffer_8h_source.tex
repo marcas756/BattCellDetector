@@ -1,0 +1,65 @@
+\doxysection{buffer.\+h}
+\hypertarget{buffer_8h_source}{}\label{buffer_8h_source}\index{myos/lib/buffer.h@{myos/lib/buffer.h}}
+\mbox{\hyperlink{buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00037}00037\ \textcolor{preprocessor}{\#ifndef\ BUFFER\_H\_}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00038}00038\ \textcolor{preprocessor}{\#define\ BUFFER\_H\_}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00050}\mbox{\hyperlink{buffer_8h_ae0985a6e4da09d654a62ef58b0fddf96}{00050}}\ \textcolor{preprocessor}{\#define\ BUFFER\_TYPEDEF(name,type,size)\ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00051}00051\ \textcolor{preprocessor}{\ \ \ \ typedef\ struct\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00052}00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ size\_t\ count;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00053}00053\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ type\ items\ [size];\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00054}00054\ \textcolor{preprocessor}{\ \ \ \ \}\ name\#\#\_buffer\_t}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00061}\mbox{\hyperlink{buffer_8h_aa259250388828ca8420c86e29e78fb51}{00061}}\ \textcolor{preprocessor}{\#define\ BUFFER\_T(name)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00062}00062\ \textcolor{preprocessor}{\ \ \ \ name\#\#\_buffer\_t}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00069}\mbox{\hyperlink{buffer_8h_a122faae9d4efaa285ed4e24b9f55a18f}{00069}}\ \textcolor{preprocessor}{\#define\ BUFFER\_ITEMS(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00070}00070\ \textcolor{preprocessor}{\ \ \ \ ((buffer).items)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00076}\mbox{\hyperlink{buffer_8h_a6568f0e1f747eea13f38f3e7641dfe79}{00076}}\ \textcolor{preprocessor}{\#define\ BUFFER\_RAW(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00077}00077\ \textcolor{preprocessor}{\ \ \ \ ((uint8\_t*)BUFFER\_ITEMS(buffer))}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00082}\mbox{\hyperlink{buffer_8h_a68fdb1229372b46cd26febf086fea51d}{00082}}\ \textcolor{preprocessor}{\#define\ BUFFER\_SIZEOF(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00083}00083\ \textcolor{preprocessor}{\ \ \ \ (sizeof(BUFFER\_ITEMS(buffer)))}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00089}\mbox{\hyperlink{buffer_8h_a810227511c92083861a7b2ee5ea20fec}{00089}}\ \textcolor{preprocessor}{\#define\ BUFFER\_SIZE(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00090}00090\ \textcolor{preprocessor}{\ \ \ \ (BUFFER\_SIZEOF(buffer)/sizeof(BUFFER\_ITEMS(buffer)[0]))}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00095}\mbox{\hyperlink{buffer_8h_a826dbfcbc8e6e44da1a998d941e9070d}{00095}}\ \textcolor{preprocessor}{\#define\ BUFFER\_COUNT(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00096}00096\ \textcolor{preprocessor}{\ \ \ \ ((buffer).count)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00101}\mbox{\hyperlink{buffer_8h_af0b1d34e68bf849ce66e4d0227c5152c}{00101}}\ \textcolor{preprocessor}{\#define\ BUFFER\_INIT(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00102}00102\ \textcolor{preprocessor}{\ \ \ \ do\{BUFFER\_COUNT(buffer)=0;\}while(0)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00109}\mbox{\hyperlink{buffer_8h_ad89005fadfa7b7c7fcbb4e1bd1447bd5}{00109}}\ \textcolor{preprocessor}{\#define\ BUFFER\_FULL(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00110}00110\ \textcolor{preprocessor}{\ \ \ \ (BUFFER\_COUNT(buffer)>=BUFFER\_SIZE(buffer))}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00116}\mbox{\hyperlink{buffer_8h_a2b5d2196112df1c9a8be7983615b5e6e}{00116}}\ \textcolor{preprocessor}{\#define\ BUFFER\_EMPTY(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00117}00117\ \textcolor{preprocessor}{\ \ \ \ (!BUFFER\_COUNT(buffer))}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00124}\mbox{\hyperlink{buffer_8h_a1e5fb1cf72e3f500dd55507497ddeb60}{00124}}\ \textcolor{preprocessor}{\#define\ BUFFER\_NEXT(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00125}00125\ \textcolor{preprocessor}{\ \ \ \ (++BUFFER\_COUNT(buffer))}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00130}\mbox{\hyperlink{buffer_8h_a37f9cf513bd9786bb01c8671e869b888}{00130}}\ \textcolor{preprocessor}{\#define\ BUFFER\_VAL(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00131}00131\ \textcolor{preprocessor}{\ \ \ \ (BUFFER\_ITEMS(buffer)[BUFFER\_COUNT(buffer)])}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00136}\mbox{\hyperlink{buffer_8h_a2e4a4a97802a800c50d03ac1e058c001}{00136}}\ \textcolor{preprocessor}{\#define\ BUFFER\_PTR(buffer)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00137}00137\ \textcolor{preprocessor}{\ \ \ \ (\&BUFFER\_VAL(buffer))}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00146}\mbox{\hyperlink{buffer_8h_ae6d37bd10eaaf2a2eb094f18396444e4}{00146}}\ \textcolor{preprocessor}{\#define\ BUFFER\_APPEND(buffer,item)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00147}00147\ \textcolor{preprocessor}{\ \ \ \ do\{BUFFER\_VAL(buffer)\ =\ item;\ BUFFER\_NEXT(buffer);\}while(0)}}
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{buffer_8h_source_l00150}00150\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ BUFFER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

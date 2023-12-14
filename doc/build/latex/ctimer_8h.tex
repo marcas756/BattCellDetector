@@ -1,0 +1,166 @@
+\hypertarget{ctimer_8h}{}\doxysection{myos/os/ctimer.h File Reference}
+\label{ctimer_8h}\index{myos/os/ctimer.h@{myos/os/ctimer.h}}
+
+
+Callback timer implementation (ctimer)  
+
+
+{\ttfamily \#include \char`\"{}myos.\+h\char`\"{}}\newline
+Include dependency graph for ctimer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ctimer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ctimer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structctimer__t}{ctimer\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ctimer_8h_a1a932a7df03b8a4ffd57abb8fe025ec4}{ctimer\+\_\+module\+\_\+init}}()~\mbox{\hyperlink{ptimer_8h_ae7a8871f02efe1b7e41efdf1fc0b72e5}{ptimer\+\_\+module\+\_\+init}}()
+\item 
+\#define \mbox{\hyperlink{ctimer_8h_aed7e2e9009d0846c6092dcbf0d253161}{ctimer\+\_\+restart}}(ctimerptr)~\mbox{\hyperlink{ptimer_8h_a0a6b2385d6c2b3b7d9fb67dfaf354ede}{ptimer\+\_\+restart}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)ctimerptr)
+\item 
+\#define \mbox{\hyperlink{ctimer_8h_a12d3c107417ca108d2768a3758c80655}{ctimer\+\_\+reset}}(ctimerptr)~ptimer\+\_\+rreset((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)ctimerptr)
+\item 
+\#define \mbox{\hyperlink{ctimer_8h_ae08618dc1e66f57f106e958b647d4eec}{ctimer\+\_\+stop}}(ctimerptr)~\mbox{\hyperlink{ptimer_8h_a906040f37907d7466f54f9d5a06f1af2}{ptimer\+\_\+stop}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)ctimerptr)
+\item 
+\#define \mbox{\hyperlink{ctimer_8h_a374d788e28bdccfec20a00e1afe58b30}{ctimer\+\_\+expired}}(ctimerptr)~\mbox{\hyperlink{ptimer_8h_ab49316344f13f780decabfab54985ec0}{ptimer\+\_\+expired}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)ctimerptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structctimer__t}{ctimer\+\_\+t}} \mbox{\hyperlink{ctimer_8h_ae2d7890ecdc83b536dbf025511ebe147}{ctimer\+\_\+t}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{ctimer_8h_ab969cf1ebd9004f320a3d798daec3efb}{ctimer\+\_\+callback\+\_\+t}}) (\mbox{\hyperlink{structctimer__t}{ctimer\+\_\+t}} $\ast$ctimer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ctimer_8h_ac7f0d43947ea284eefd3def7f5d96182}{ctimer\+\_\+start}} (\mbox{\hyperlink{structctimer__t}{ctimer\+\_\+t}} $\ast$ctimer, \mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\+\_\+t}} span, \mbox{\hyperlink{ctimer_8h_ab969cf1ebd9004f320a3d798daec3efb}{ctimer\+\_\+callback\+\_\+t}} callback, void $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Callback timer implementation (ctimer) 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2006, Swedish Institute of Computer Science. 
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License\+:}
+This file is released under the 3-\/Clause BSD License.~\newline
+ \href{https://opensource.org/license/bsd-3-clause/}{\texttt{ https\+://opensource.\+org/license/bsd-\/3-\/clause/}}
+\end{DoxyParagraph}
+In computer programming, a callback or callback function is any reference to executable code that is passed as an argument to another piece of code; that code is expected to call back (execute) the callback function as part of its job. This execution may be immediate as in a synchronous callback, or it might happen at a later point in time as in an asynchronous callback. They are also called blocking and non-\/blocking.
+
+\href{https://en.wikipedia.org/wiki/Callback_(computer_programming)}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Callback\+\_\+(computer\+\_\+programming)}}
+
+Callback timer callbacks are asynchronous callbacks.
+
+The callback function gets invoked in the context of the process that started the callback timer. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ctimer_8h_a374d788e28bdccfec20a00e1afe58b30}\label{ctimer_8h_a374d788e28bdccfec20a00e1afe58b30}} 
+\index{ctimer.h@{ctimer.h}!ctimer\_expired@{ctimer\_expired}}
+\index{ctimer\_expired@{ctimer\_expired}!ctimer.h@{ctimer.h}}
+\doxysubsubsection{\texorpdfstring{ctimer\_expired}{ctimer\_expired}}
+{\footnotesize\ttfamily \#define ctimer\+\_\+expired(\begin{DoxyParamCaption}\item[{}]{ctimerptr }\end{DoxyParamCaption})~\mbox{\hyperlink{ptimer_8h_ab49316344f13f780decabfab54985ec0}{ptimer\+\_\+expired}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)ctimerptr)}
+
+
+
+Definition at line 80 of file ctimer.\+h.
+
+\mbox{\Hypertarget{ctimer_8h_a1a932a7df03b8a4ffd57abb8fe025ec4}\label{ctimer_8h_a1a932a7df03b8a4ffd57abb8fe025ec4}} 
+\index{ctimer.h@{ctimer.h}!ctimer\_module\_init@{ctimer\_module\_init}}
+\index{ctimer\_module\_init@{ctimer\_module\_init}!ctimer.h@{ctimer.h}}
+\doxysubsubsection{\texorpdfstring{ctimer\_module\_init}{ctimer\_module\_init}}
+{\footnotesize\ttfamily \#define ctimer\+\_\+module\+\_\+init(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{ptimer_8h_ae7a8871f02efe1b7e41efdf1fc0b72e5}{ptimer\+\_\+module\+\_\+init}}()}
+
+
+
+Definition at line 76 of file ctimer.\+h.
+
+\mbox{\Hypertarget{ctimer_8h_a12d3c107417ca108d2768a3758c80655}\label{ctimer_8h_a12d3c107417ca108d2768a3758c80655}} 
+\index{ctimer.h@{ctimer.h}!ctimer\_reset@{ctimer\_reset}}
+\index{ctimer\_reset@{ctimer\_reset}!ctimer.h@{ctimer.h}}
+\doxysubsubsection{\texorpdfstring{ctimer\_reset}{ctimer\_reset}}
+{\footnotesize\ttfamily \#define ctimer\+\_\+reset(\begin{DoxyParamCaption}\item[{}]{ctimerptr }\end{DoxyParamCaption})~ptimer\+\_\+rreset((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)ctimerptr)}
+
+
+
+Definition at line 78 of file ctimer.\+h.
+
+\mbox{\Hypertarget{ctimer_8h_aed7e2e9009d0846c6092dcbf0d253161}\label{ctimer_8h_aed7e2e9009d0846c6092dcbf0d253161}} 
+\index{ctimer.h@{ctimer.h}!ctimer\_restart@{ctimer\_restart}}
+\index{ctimer\_restart@{ctimer\_restart}!ctimer.h@{ctimer.h}}
+\doxysubsubsection{\texorpdfstring{ctimer\_restart}{ctimer\_restart}}
+{\footnotesize\ttfamily \#define ctimer\+\_\+restart(\begin{DoxyParamCaption}\item[{}]{ctimerptr }\end{DoxyParamCaption})~\mbox{\hyperlink{ptimer_8h_a0a6b2385d6c2b3b7d9fb67dfaf354ede}{ptimer\+\_\+restart}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)ctimerptr)}
+
+
+
+Definition at line 77 of file ctimer.\+h.
+
+\mbox{\Hypertarget{ctimer_8h_ae08618dc1e66f57f106e958b647d4eec}\label{ctimer_8h_ae08618dc1e66f57f106e958b647d4eec}} 
+\index{ctimer.h@{ctimer.h}!ctimer\_stop@{ctimer\_stop}}
+\index{ctimer\_stop@{ctimer\_stop}!ctimer.h@{ctimer.h}}
+\doxysubsubsection{\texorpdfstring{ctimer\_stop}{ctimer\_stop}}
+{\footnotesize\ttfamily \#define ctimer\+\_\+stop(\begin{DoxyParamCaption}\item[{}]{ctimerptr }\end{DoxyParamCaption})~\mbox{\hyperlink{ptimer_8h_a906040f37907d7466f54f9d5a06f1af2}{ptimer\+\_\+stop}}((\mbox{\hyperlink{structptimer__t}{ptimer\+\_\+t}}$\ast$)ctimerptr)}
+
+
+
+Definition at line 79 of file ctimer.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ctimer_8h_ab969cf1ebd9004f320a3d798daec3efb}\label{ctimer_8h_ab969cf1ebd9004f320a3d798daec3efb}} 
+\index{ctimer.h@{ctimer.h}!ctimer\_callback\_t@{ctimer\_callback\_t}}
+\index{ctimer\_callback\_t@{ctimer\_callback\_t}!ctimer.h@{ctimer.h}}
+\doxysubsubsection{\texorpdfstring{ctimer\_callback\_t}{ctimer\_callback\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ ctimer\+\_\+callback\+\_\+t) (\mbox{\hyperlink{structctimer__t}{ctimer\+\_\+t}} $\ast$ctimer)}
+
+
+
+Definition at line 66 of file ctimer.\+h.
+
+\mbox{\Hypertarget{ctimer_8h_ae2d7890ecdc83b536dbf025511ebe147}\label{ctimer_8h_ae2d7890ecdc83b536dbf025511ebe147}} 
+\index{ctimer.h@{ctimer.h}!ctimer\_t@{ctimer\_t}}
+\index{ctimer\_t@{ctimer\_t}!ctimer.h@{ctimer.h}}
+\doxysubsubsection{\texorpdfstring{ctimer\_t}{ctimer\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structctimer__t}{ctimer\+\_\+t}} \mbox{\hyperlink{structctimer__t}{ctimer\+\_\+t}}}
+
+
+
+Definition at line 1 of file ctimer.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ctimer_8h_ac7f0d43947ea284eefd3def7f5d96182}\label{ctimer_8h_ac7f0d43947ea284eefd3def7f5d96182}} 
+\index{ctimer.h@{ctimer.h}!ctimer\_start@{ctimer\_start}}
+\index{ctimer\_start@{ctimer\_start}!ctimer.h@{ctimer.h}}
+\doxysubsubsection{\texorpdfstring{ctimer\_start()}{ctimer\_start()}}
+{\footnotesize\ttfamily void ctimer\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structctimer__t}{ctimer\+\_\+t}} $\ast$}]{ctimer,  }\item[{\mbox{\hyperlink{timestamp_8h_a368ca9278a7fdffcd8952420a98a5be7}{timespan\+\_\+t}}}]{span,  }\item[{\mbox{\hyperlink{ctimer_8h_ab969cf1ebd9004f320a3d798daec3efb}{ctimer\+\_\+callback\+\_\+t}}}]{callback,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 57 of file ctimer.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ctimer_8h_ac7f0d43947ea284eefd3def7f5d96182_cgraph}
+\end{center}
+\end{figure}

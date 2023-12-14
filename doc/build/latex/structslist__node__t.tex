@@ -1,0 +1,55 @@
+\hypertarget{structslist__node__t}{}\doxysection{slist\+\_\+node\+\_\+t Struct Reference}
+\label{structslist__node__t}\index{slist\_node\_t@{slist\_node\_t}}
+
+
+Structure representing a node in a circular singly linked list.  
+
+
+
+
+{\ttfamily \#include $<$slist.\+h$>$}
+
+
+
+Collaboration diagram for slist\+\_\+node\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{structslist__node__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structslist__node__t}{slist\+\_\+node\+\_\+t}} $\ast$ \mbox{\hyperlink{structslist__node__t_acde7555eca71d1f823fbaf6f6a1f4670}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing a node in a circular singly linked list. 
+
+This structure represents a single node in a circular singly linked list. Each node contains a pointer to the next node in the list, forming a circular structure. The circular nature allows traversal of the list from any node, and the last node links back to the head of the list. 
+
+Definition at line 555 of file slist.\+h.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structslist__node__t_acde7555eca71d1f823fbaf6f6a1f4670}\label{structslist__node__t_acde7555eca71d1f823fbaf6f6a1f4670}} 
+\index{slist\_node\_t@{slist\_node\_t}!next@{next}}
+\index{next@{next}!slist\_node\_t@{slist\_node\_t}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily next}
+
+Pointer to the next node in the list.
+
+Pointer to the next node in the list. In the last node of the list, this pointer points back to the head of the list, completing the circular structure. 
+
+Definition at line 556 of file slist.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+myos/lib/\mbox{\hyperlink{slist_8h}{slist.\+h}}\end{DoxyCompactItemize}

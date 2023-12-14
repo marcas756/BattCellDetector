@@ -1,0 +1,28 @@
+\doxysection{crc16.\+c}
+\hypertarget{crc16_8c_source}{}\label{crc16_8c_source}\index{myos/lib/crc16.c@{myos/lib/crc16.c}}
+\mbox{\hyperlink{crc16_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crc16_8h}{crc16.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00003}00003\ \textcolor{comment}{//\ https://gist.github.com/hemonserrat/d6b1a9ceff6a3a4d01fc0c706a4be325}}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00005}\mbox{\hyperlink{crc16_8c_aad5a592c83cdaf11e9d96e739de21ef0}{00005}}\ uint16\_t\ \mbox{\hyperlink{crc16_8c_aad5a592c83cdaf11e9d96e739de21ef0}{crc16\_acc}}(uint16\_t\ seed,\ uint16\_t\ polynom,\ uint8\_t\ \textcolor{keywordtype}{byte})}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00007}00007\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ i;}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (((seed\ \&\ 0x8000)\ >>\ 8)\ \string^\ (seed\ \&\ 0x80))\{}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ seed\ =\ (seed\ <<\ 1)\ \ \string^\ polynom;}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ seed\ =\ (seed\ <<\ 1);}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00015}00015\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}\ <<=\ 1;}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ seed;}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{crc16_8c_source_l00022}00022\ }
+
+\end{DoxyCode}
