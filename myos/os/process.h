@@ -49,7 +49,40 @@
 #include <stdbool.h>
 #include "rtimer.h"
 
-
+/**
+ * @file
+ * @brief Configuration for the type of list used for the running process list in myos.
+ *
+ * @details
+ * This section of the code allows for the configuration of the type of list used to manage
+ * the running processes in the operating system. The type of list can be specified in the
+ * myos configuration file. By default, a singly linked list is used.
+ *
+ * The configuration can be modified to use a doubly linked list by defining the
+ * MYOSCONF_DLIST macro in the configuration file. If MYOSCONF_DLIST is defined, the
+ * corresponding doubly linked list implementation will be used; otherwise, the default
+ * singly linked list implementation (slist) is utilized.
+ *
+ * The list type affects how processes are stored, accessed, and manipulated during
+ * execution. The choice between a singly or doubly linked list can have implications
+ * for performance and memory usage, depending on the specific needs and constraints of
+ * the system.
+ *
+ * Singly Linked List Implementation:
+ * - A singly linked list (slist) is used when MYOSCONF_DLIST is not defined.
+ * - The singly linked list provides a simple and memory-efficient way to manage the
+ *   running processes with basic operations like initialization, addition, deletion,
+ *   and iteration over the list.
+ *
+ * Example of configuring a singly linked list for process management:
+ * \code{.c}
+ * #define MYOSCONF_PROC_LIST_TYPE MYOSCONF_SLIST
+ * \endcode
+ *
+ * @note Currently, only the singly linked list implementation is supported. The
+ *       implementation for the doubly linked list (dlist) is planned for future
+ *       development.
+ */
 #if (MYOSCONF_PROC_LIST_TYPE == MYOSCONF_DLIST)
 #else
 #include "slist.h"
@@ -65,7 +98,30 @@ typedef slist_node_t plist_node_t;
 #endif
 
 
-
+/**
+ * @def PROCESS_EVENT_QUEUE_SIZE
+ * @brief Defines the size of the process event queue.
+ *
+ * @details
+ * This macro sets the size of the event queue used by the process scheduler. The size determines
+ * how many events can be queued at one time before the system starts dropping or ignoring new events.
+ *
+ * If the macro `MYOSCONF_PROC_EVENT_QUEUE_SIZE` is defined in the myos configuration file, its value
+ * is used to set the size of the event queue. If it is not defined, a default size of 8 is used.
+ *
+ * Adjusting the event queue size can have implications on the system's performance and memory usage.
+ * A larger queue size can handle more events but requires more memory, whereas a smaller queue size
+ * conserves memory but may lead to dropped events in high-load scenarios.
+ *
+ * Example of configuring a custom event queue size:
+ * \code{.c}
+ * // In the myos configuration file
+ * #define MYOSCONF_PROC_EVENT_QUEUE_SIZE 16
+ * \endcode
+ *
+ * @note The configuration of the event queue size should be carefully considered based on the expected
+ *       workload and available system resources.
+ */
 #ifdef MYOSCONF_PROC_EVENT_QUEUE_SIZE
 #define PROCESS_EVENT_QUEUE_SIZE    MYOSCONF_PROC_EVENT_QUEUE_SIZE
 #else
@@ -73,13 +129,59 @@ typedef slist_node_t plist_node_t;
 #endif
 
 
+/**
+ * @def PROCESS_EVENT_START
+ * @brief Event indicating that a process is starting.
+ *
+ * @details
+ * This event is posted to a process when it is starting. It can be used by the process to perform
+ * initialization tasks. The process receives this event only once when it is first started.
+ */
 #define PROCESS_EVENT_START     0
-#define PROCESS_EVENT_POLL      1
-#define PROCESS_EVENT_CONTINUE  2
-#define PROCESS_EVENT_TIMEOUT   3
-#define PROCESS_EVENT_EXIT      4
 
-#define PROCESS_BROADCAST NULL
+/**
+ * @def PROCESS_EVENT_POLL
+ * @brief Event for polling a process.
+ *
+ * @details
+ * This event is used to poll a process, typically to request it to update its state.
+ * The process receives this event when the system or another process explicitly requests
+ * a status update or immediate attention from the process.
+ */
+#define PROCESS_EVENT_POLL      1
+
+/**
+ * @def PROCESS_EVENT_CONTINUE
+ * @brief Event to signal a process to continue its operation.
+ *
+ * @details
+ * This event is used to signal a process to continue its execution, usually after being
+ * suspended or waiting for a condition. It is a way to resume the process's activity
+ * programmatically.
+ */
+#define PROCESS_EVENT_CONTINUE  2
+
+/**
+ * @def PROCESS_EVENT_TIMEOUT
+ * @brief Event indicating a timeout has occurred.
+ *
+ * @details
+ * This event is posted to a process when a specified time duration has elapsed.
+ * It is often used for handling time-related tasks, such as periodic updates or
+ * timeouts in response to external events.
+ */
+#define PROCESS_EVENT_TIMEOUT   3
+
+/**
+ * @def PROCESS_EVENT_EXIT
+ * @brief Event indicating that a process is exiting.
+ *
+ * @details
+ * This event is sent to a process when it is about to exit or terminate. It allows
+ * the process to perform any necessary cleanup before it stops executing. Processes
+ * can also use this event to signal other processes about their termination.
+ */
+#define PROCESS_EVENT_EXIT      4
 
 
 

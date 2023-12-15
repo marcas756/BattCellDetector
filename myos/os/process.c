@@ -47,12 +47,62 @@
 #define DBG_PROCESS(...)
 #endif
 
+/**
+ * @var process_current
+ * @brief Currently running process.
+ *
+ * @details
+ * Pointer to the currently running process in the system. This is used to keep track of the
+ * process context that is currently executing. It is set to NULL when no process is active.
+ */
 process_t *process_current = NULL;
 
+/**
+ * @var process_running_list
+ * @brief List of processes that are currently active and scheduled for execution.
+ *
+ * @details
+ * This list maintains all the processes that are currently running in the system. It is used
+ * by the scheduler to manage and iterate through active processes for execution.
+ * The implementation of the list is determined by the configuration (singly or doubly linked list).
+ */
 static plist_t process_running_list;
 
+/**
+ * @typedef process_event_queue
+ * @brief Ringbuffer type for storing process events.
+ *
+ * @details
+ * Defines a ringbuffer type for queuing process events. This ringbuffer holds events that are
+ * posted to processes and are pending to be processed. The size of the ringbuffer is defined by
+ * PROCESS_EVENT_QUEUE_SIZE.
+ *
+ * @param process_event_t Type of items in the ringbuffer (process events).
+ * @param PROCESS_EVENT_QUEUE_SIZE Size of the ringbuffer, number of events it can hold.
+ */
 RINGBUFFER_TYPEDEF(process_event_queue,process_event_t,PROCESS_EVENT_QUEUE_SIZE);
+
+/**
+ * @var process_event_queue
+ * @brief Ringbuffer instance for managing process events.
+ *
+ * @details
+ * An instance of the ringbuffer that is used to queue events for processes in the system.
+ * Events posted to processes are stored in this ringbuffer until they are processed.
+ * This ensures that events are handled in a FIFO manner and provides a mechanism for
+ * event-driven process scheduling.
+ */
 static RINGBUFFER_T(process_event_queue) process_event_queue;
+
+/**
+ * @var process_global_pollreq
+ * @brief Global flag indicating whether any process has requested a poll.
+ *
+ * @details
+ * This flag is set to true when any process in the system requests to be polled. The poll request
+ * indicates that a process needs immediate attention. When set, the system's scheduler will
+ * prioritize handling poll requests before processing other events in the event queue.
+ */
 static bool process_global_pollreq = false;
 
 
