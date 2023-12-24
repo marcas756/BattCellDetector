@@ -383,7 +383,6 @@
 #define BUFFER_NEXT(buffer) \
     (++BUFFER_COUNT(buffer))
 
-Copy code
 /**
  * @brief Retrieves the current free item in the buffer.
  * @details This macro provides access to the next free (or current end) item in the
@@ -471,6 +470,23 @@ Copy code
  */
 #define BUFFER_APPEND(buffer,item) \
 	do{BUFFER_VAL(buffer) = item; BUFFER_NEXT(buffer);}while(0)
+
+
+/**
+ * @brief Iterates over each item in the buffer.
+ *
+ * This macro provides a way to iterate over each item in the buffer.
+ * It sets up a loop structure, iterating through each item until it reaches
+ * the end of the buffer.
+ *
+ * @param buffer The buffer to iterate over.
+ * @param itemptr A pointer to the current item in the buffer.
+ *
+ * @note The buffer must be initialized before using this macro.
+ * @note The macro creates a loop structure, so break and continue can be used as normal.
+ */
+#define BUFFER_FOREACH(buffer,itemptr) \
+    for(itemptr=buffer; itemptr!=BUFFER_PTR(buffer); itemptr++)
 
 
 #endif /* BUFFER_H_ */

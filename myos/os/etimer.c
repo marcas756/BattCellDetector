@@ -39,7 +39,21 @@
 
 extern bool process_deliver_event(process_event_t *evt);
 
-void etimer_timeout_handler(ptimer_t* ptimer)
+
+/*!
+ * @brief Handler for event timer expiration.
+ * @details This function serves as the timeout handler for event timers (etimers) in MyOS. It's invoked when an etimer expires.
+ *          The function casts the provided ptimer to its derived etimer type and then checks if the destination process for
+ *          the event is running. If so, it delivers the scheduled event to the target process using process_deliver_event.
+ *          This mechanism is key to the event-driven architecture of MyOS, allowing timers to trigger specific actions in processes.
+ * @param[in] ptimer Pointer to the process timer associated with the etimer.
+ *
+ * Usage Example:
+ * @code
+ *     // This handler is used internally by etimers and not typically called directly by user code.
+ * @endcode
+ */
+static void etimer_timeout_handler(ptimer_t* ptimer)
 {
    etimer_t *etimer = (etimer_t*)ptimer;
 
@@ -54,11 +68,8 @@ void etimer_start(etimer_t *etimer, timespan_t span, process_t *to, process_even
 {
    etimer->evt.id = evtid;
    etimer->evt.data = data;
-#if (PROCESS_CONF_EVENT_FROM == MYOSCONF_YES)
    etimer->evt.from = PROCESS_THIS();
-#endif
    etimer->evt.to = to;
-
    ptimer_start(&(etimer->ptimer), span, etimer_timeout_handler);
 }
 

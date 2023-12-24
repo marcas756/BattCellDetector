@@ -424,7 +424,7 @@
 #define RINGBUFFER_TAIL_PTR(ringbuffer) \
     (&RINGBUFFER_TAIL_VAL(ringbuffer))
 
-Copy code
+
 /**
  * @brief Returns a reference to the current head item in the ringbuffer.
  * @details This macro provides access to the item at the 'head' position in the

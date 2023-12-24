@@ -1,0 +1,70 @@
+You document C code using Doxygen syntax. Generate the module (file level) documentation for the header file.
+To be clear: You read documentation sources provided, but you print only the module (file level) doxygen documentation block. For example :
+```
+Header File to generate module (file level) documentation for : slist.h
+Documentation sources provided (all .c files, all .h files, all .pdf files, all hyperlinks) must be analysed for documentation.
+```
+
+might become
+
+```
+/*!
+  \file       slist.h
+  \copyright  Copyright 2013-2023 Marco Bacchi <marco@bacchi.at>
+  \license    This file is released under the MIT License.\n
+              https://opensource.org/licenses/MIT
+ 
+  \brief      Circular singly linked list
+ 
+  \details    In computer science, a linked list is a linear collection of data elements,
+              whose order is not given by their physical placement in memory.
+              Instead, each element points to the next. It is a data structure consisting
+              of a collection of nodes which together represent a sequence. In its most basic form,
+              each node contains: data, and a reference (in other words, a link) to the next node
+              in the sequence. This structure allows for efficient insertion or removal of elements
+              from any position in the sequence during iteration.
+              More info at https://en.wikipedia.org/wiki/Linked_list
+ 
+              Singly linked lists contain nodes which have a data field as well as 'next' field,
+              which points to the next node in line of nodes. Operations that can be performed on
+              singly linked lists include insertion, deletion, and traversal.
+              More info at https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list
+ 
+              In the last node of a list, the link field often contains a null reference, a
+              special value used to indicate the lack of further nodes. A less common convention
+              is to make it point to the first node of the list; in that case, the list is said to
+              be 'circular' or 'circularly linked'; otherwise, it is said to be 'open' or 'linear'.
+              It is a list where the last pointer points to the first node.
+              More info at https://en.wikipedia.org/wiki/Linked_list#Circular_linked_list
+ 
+              Comparison Singly Linked List vs. Arrays:
+ 
+              | Arrays                                      | Singly Linked List                                                             |
+              | ------------------------------------------- | ------------------------------------------------------------------------------ |
+              | Arrays are stored in a continuous location. | Linked lists are not stored in contiguous locations.                           |
+              | Fixed size.                                 | Dynamic in size.                                                               |
+              | Memory is allocated at compile time.        | Memory is allocated at run time (not necessarily true).                        |
+              | Uses less memory than linked lists.         | Uses more memory because it stores both data and the address of the next node. |
+              | Elements can be accessed easily.            | Insertion and deletion operations are faster.                                  |
+  
+*/
+```
+
+
+Important points:
+- There is nbothing else than the module (file level) documentation in the output.
+- Limit the characters per line to 80
+- Make no assumptions in documentation. 
+- Triple check documentation sources 
+- Use all provided .c and .h files to resolve possible dependencies for documentation. Also use the .c and .h files for an in depth analysis.
+- Keep the documentation as general as possible 
+- Leave \copyright part as it is. Dont make any changes here.
+- Leave \license part as it is. Dont make any changes here.
+
+Header File to generate module (file level) documentation for : hash.h
+Analyse the content of following hyperlinks to generate a general documentation about hashing, hash functions :
+1.) https://en.wikipedia.org/wiki/Hash_function
+2.) https://www.horizen.io/academy/hash-functions/
+3.) https://www.tutorialspoint.com/cryptography/cryptography_hash_functions.htm
+4.) https://en.wikipedia.org/wiki/List_of_hash_functions
+

@@ -40,7 +40,7 @@
  *             https://opensource.org/license/bsd-3-clause
  *
  * @author     Adam Dunkels <adam@sics.se>
- * @authors    Marco Bacchi <marco@bacchi.at>
+ * @authors    Marco Bacchi <marco@bacchi.at>,
  *
  *
  * @brief Protothread definitions for MyOs.
@@ -79,16 +79,6 @@
 
 #include <stdint.h>
 
-/**
- * @brief Definitions and macros for local continuations used in protothreads.
- *
- * @details Local continuations provide a lightweight mechanism to preserve the
- *          state of a function such that it can be resumed later. This is
- *          particularly useful in implementing protothreads for cooperative
- *          multitasking in a memory-constrained environment.
- */
-
-
 
 /**
  * @brief Typedef for local continuation state.
@@ -98,6 +88,27 @@
  *          are lines in the function that uses the protothread.
  */
 typedef uint16_t lc_t;
+
+
+/**
+ * @brief Definitions and macros for local continuations used in protothreads.
+ *
+ * @details Local continuations provide a lightweight mechanism to preserve the
+ *          state of a function such that it can be resumed later. This is
+ *          particularly useful in implementing protothreads for cooperative
+ *          multitasking in a memory-constrained environment.
+ */
+\{*/
+#define LC_INIT(s) s = 0;
+#define LC_DEFAULT ((lc_t)(~((lc_t)(0))))
+#define LC_SET_DEFAULT(s) s = LC_DEFAULT
+#define LC_RESUME(s) switch(s) { case 0:
+#define LC_SET(s) s = __LINE__; case __LINE__:
+#define LC_SET_YIELD(s,retval) s = __LINE__; return retval; case __LINE__:
+#define LC_END(s) default:;}
+/*!\}*/
+
+
 
 /**
  * @brief Initialize a local continuation.

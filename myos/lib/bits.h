@@ -27,7 +27,7 @@
 
 /**
  * @file bits.h
-
+ *
  * @copyright  Copyright 2013-2023 Marco Bacchi <marco@bacchi.at>
  * @license    This file is released under the MIT License.\n
  *             https://opensource.org/licenses/MIT

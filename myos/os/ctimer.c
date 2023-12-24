@@ -34,12 +34,20 @@
 #include "ctimer.h"
 
 /*!
-    \brief      Callback timer handler used by process timer
-
-    \param      data    Current node
-
-    \return     Precessor of current node
-*/
+ * @brief Callback timer handler used by process timer.
+ * @details This function is the timeout handler for callback timers (ctimers) in MyOS. When a ctimer expires,
+ *          this handler is invoked. It checks if there is a callback function associated with the ctimer and, if so,
+ *          executes it within the context of the task that started the ctimer. This is crucial for ensuring that the
+ *          callback is executed in the correct task context, enabling a context switch if necessary.
+ * @param[in] ptimer Pointer to the process timer associated with the ctimer.
+ *
+ * Usage Example:
+ * @code
+ *     // This handler is used internally by ctimers and is not typically called directly.
+ * @endcode
+ *
+ * @return Predecessor of current node.
+ */
 static void ctimer_timeout_handler(ptimer_t* ptimer)
 {
    ctimer_t *ctimer = (ctimer_t*)ptimer;

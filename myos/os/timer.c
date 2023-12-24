@@ -33,29 +33,9 @@
  */
 
 
-
-/*!
-    \file       timer.c
-
-    \brief
-
-    \details
-*/
-
-
 #include "timer.h"
 
-/*!
-    \brief      Starts a timer using a time span
-    \details    Timer will expire as soon as the time span elapsed.
-                If the timer is running yet, the timer gets reinitialized with
-                the new parameters provided. Any information about the previous timer setting
-                gets lost.
 
-
-    \param[in]      timer       Timer instance to set
-    \param[in]      span        Time span to wait to elapse
-*/
 void timer_start(timer_t *timer, timespan_t span)
 {
    timer->span = span;
