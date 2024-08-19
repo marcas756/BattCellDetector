@@ -78,80 +78,11 @@ int __io_putchar(int ch);
 
 
 
-inline void anasig_start_conversion(void)
-{
-    if( PIE1bits.ADIE )
-    {
-        return;
-    }
-
-    PT_INIT(&anasig_pt);
-    PT_SCHEDULE(anasig_mesasurement(&anasig_pt));
-}
-
-void Timer0_Expired(void) // 0,2ms Timer
-{
-    g_Timer1mS_Divisor++; /* 0 .. 1 .. 2 .. 3 .. 4 .. 5 .. 0 .. 1 ... */
-
-    anasig_start_conversion();
-
-    if ( g_Timer1mS_Divisor >= 5 )
-    {
-        g_Timer1mS_Event++;
-        g_Timer1mS_Divisor = 0;
-        timestamp_myos_tick();
-    }
-
-    ACSense_Timers();
-}
-#if _18F47Q83
-void __interrupt(irq(IRQ_AD),base(8), low_priority) ADC_ISR()
-#else
-void irq_adc_handler(void)
-#endif
-{
-    if( PIE1bits.ADIE && PIR1bits.ADIF )
-    {
-
-        PIR1bits.ADIF = 0;
-
-        if ( 0 == ADCON0bits.GO_NOT_DONE )
-        {
-           íf( anasig_adc_isr() == PT_STATE_TERMINATED )
-           {
-               PIE1bits.ADIE = 0;
-           }
-        }
-    }
-}
-
-inline void anasig_adc_isr (void)
-{
-    PT_SCHEDULE(anasig_mesasurement(&anasig_pt));
-}
-
-
 PROCESS(test,test);
 PROCESS_THREAD(test)
 {
-   static etimer_t et;
-
-
    PROCESS_BEGIN();
 
-   etimer_start(&et, TIMESTAMP_TICKS_PER_SEC/250, PROCESS_THIS(), PROCESS_EVENT_TIMEOUT, NULL);
-
-   while(1)
-   {
-
-      PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
-
-      while(etimer_expired(&et))
-      {
-         etimer_reset(&et);
-         HAL_GPIO_TogglePin(DEBUG_GPIO_Port, DEBUG_Pin);
-      }
-   }
 
    PROCESS_END();
 }

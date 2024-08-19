@@ -41,7 +41,7 @@ typedef uint16_t rtimer_arch_timestamp_t;
 typedef uint16_t rtimer_arch_timespan_t;
 
 #define RTIMER_TIMESTAMP_ARCH_DIFF(a,b)         ((int16_t)((a)-(b)))
-#define RTIMER_ARCH_RESOLUTION                  (16e-6)        //!< 16us
+#define RTIMER_ARCH_RESOLUTION                   (16e-6)        //!< 16us
 #define RTIMER_ARCH_TICKS_PER_SEC               (1/RTIMER_ARCH_RESOLUTION)
 
 

@@ -40,9 +40,9 @@
 		bool istate = !__get_PRIMASK(); \
 		__disable_irq();
 
-/* Enable interrupts back only if they were enabled before we disable it here in this function */
+
 #define CRITICAL_ARCH_SECTION_END()   \
-		if( istate ) __enable_irq(); \
+        __set_PRIMASK(istate); \
 	}while(0)
 
 #endif /* CRITICAL_ARCH_H_ */
